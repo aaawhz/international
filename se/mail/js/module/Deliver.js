@@ -227,8 +227,6 @@ Deliver.prototype = {
             });
         } catch (e1) {
  
-            //haha
- 
         }
     },
     rankList:function(){
