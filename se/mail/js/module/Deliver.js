@@ -226,6 +226,7 @@ Deliver.prototype = {
                 "height": bodyH + "px"
             });
         } catch (e1) {
+            //
         }
     },
     rankList:function(){
