@@ -1,0 +1,6 @@
+1. 
+ 根据 lang  js 下面的文件的格式 把文字
+ 
+ Lang.Mail.Write = {
+   "啊" : "hi";
+ }
