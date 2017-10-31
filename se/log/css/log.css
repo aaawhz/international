@@ -1,0 +1,106 @@
+@charset "utf-8";
+html{color:#000;background:#FFF;}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset, img{border:0;}
+address, caption, cite, code, dfn, em, strong, th, var{font-style:normal;font-weight:normal;}
+li{list-style:none;}
+caption, th{text-align:left;}
+h1, h2, h3, h4, h5, h6{font-size:100%;font-weight:normal;}
+q:before, q:after{content:'';}
+abbr, acronym{border:0;font-variant:normal;}
+/* to preserve line-height and selector appearance */
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+input, textarea, select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+/*to enable resizing for IE*/
+input, textarea, select{#font-size:100%;}
+/*because legend doesn't inherit in IE */
+legend{color:#000;}
+/*reset.css结束*/
+/*
+html{_filter:expression(document.execCommand("BackgroundImageCache",false,true));}
+*/
+html{color:#333;}
+iframe{background-color:white;}
+body{text-align:center; padding:0 0 0 5px;}
+button{margin:0;padding:0;}
+legend{#margin-left:-7px;}
+body, input, button, textarea{font-size:12px;font-family:'Microsoft Yahei',verdana,'Hiragino Sans GB';}
+a{text-decoration:none;outline:none;}
+a:hover{cursor:pointer;}
+table{table-layout:fixed;}
+th, td{vertical-align:top;}
+i{overflow:hidden;display:inline-block;}
+input[type="radio"], input[type="checkbox"]{margin-right:2px;#margin-right:0;}
+label input{position:relative;#position:static;top:2px;#top:auto;}
+
+
+/*float*/
+.fl{float:left;display:inline;}
+.fr{float:right;display:inline;}
+/* clear float */
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+.clearfix{zoom:1;}
+.clearAll{overflow:hidden;_zoom:1;}
+/*textColor*/
+.c_cc0000{color:#CC0000;}
+/* 登录查询 */
+.loginSearchWrap{text-align:left;}
+.loginSearchTab{height:35px; border-bottom-style:solid; border-bottom-width:1px;font-size:14px;}
+.loginSearchTab li{float:left;height:35px;margin-bottom:-1px;}
+.loginSearchTab li a{display:block;line-height:33px;height:33px;float:left;padding:0 15px;text-align:center;}
+.loginSearchTab li a:hover{ text-decoration:none;color: #444;}
+.loginSearchTab li a.current{}
+.topPageWrap{line-height:40px;padding:0 5px 0 10px;}
+.topPageWrap h2{font-size:14px;font-weight:bold;color:#444;}
+.bottomPageWrap{height:35px;line-height:35px;text-align:right;padding:0 5px 0 10px; border-top-style:solid; border-top-width:1px;}
+.loginSearch_paging{_margin-top:10px;}
+.loginSearch_paging a{color:#495BAC;margin:0 5px;}
+.loginSearch_paging a:hover{text-decoration:underline; color:#003BE2;}
+.loginSearch_paging select{_position:relative;_top:2px;}
+.loginSearchTable{ /*border:1px solid #C8C8C8; border-width:1px 0;*/}
+.loginSearchTable thead th{height:28px;border-right:none;line-height:28px;padding-left:10px;background:#f8f8f8;border:1px solid #e8e8e8;border-width:1px 0 0 0;color:#444;}
+.loginSearchTable tbody th{height:30px;line-height:30px;border-bottom:1px solid #e8e8e8;color:#2C4A77;font-size:14px;font-weight:bold;padding-left:10px;}
+.loginSearchTable tbody td{height:28px;line-height:28px;border-bottom:1px solid #e8e8e8;color:#444;padding-left:10px;}
+.loginSearchTable tbody td a{color:#cc0000;text-decoration:underline;}
+.loginSearchTable tbody .sub{background:#FFF9E1;}
+
+.logSeach{	
+    background: #F1F1F1;
+    position: relative;
+	height:150px;line-height:35px;padding:10px 5px 0 10px;
+	color: #333333; font-size: 12px; font-weight: normal;
+	text-decoration: none;
+}
+.logSeach table{
+	padding:10px 0px;margin:0px;
+}
+
+.logSeach table tr td input{
+	width:180px;height:22px;
+}
+
+.logSeach table tr td span{
+	color:#999999;
+}
+
+.set_rule_box_tips {
+	background: #FDFAFA;
+	border: 2px solid #EBEAEA;
+	height: 120px;
+	line-height: 120px;
+	font-weight: bold;
+	text-align: center;
+	font-size: 15px;
+	margin-top: 10px;
+	
+}
+
+.log_self_tip {
+    text-align: left;
+    color: #828282;
+    padding-left: 15px;
+}
+
+.log_self_tip{ font-size:12px; font-weight:normal;}

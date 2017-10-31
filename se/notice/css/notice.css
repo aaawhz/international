@@ -1,0 +1,193 @@
+html, BODY
+{
+    font-size: 12px;
+    color: #000000;
+    line-height: 20px;
+    font-family: 'Microsoft Yahei',verdana,'Hiragino Sans GB';
+    text-align: left;
+}
+body{ padding: 0 5px 0 0; margin:0;}
+p{ margin:0; padding:0;}
+body.print{margin:10px;}
+
+TABLE {
+    BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px; BORDER-COLLAPSE: collapse
+}
+TR {
+    FONT-SIZE: 12px; MARGIN: 0px;
+}
+
+TD {
+ MARGIN: 0px;
+}
+
+a:link { COLOR: #495BAC; TEXT-DECORATION: none;}
+a:visited { COLOR: #333333; TEXT-DECORATION: none;}
+a:hover { COLOR: #003BE2; TEXT-DECORATION: none;}
+a:active{ COLOR: #003BE2; TEXT-DECORATION: none;}
+
+.floatleft{ float: left;}
+.floatright{float: right; }
+.iframePageNub{padding:10px 0 5px;border:none!important;}
+#smimgreturn{}
+.public_bt1 {
+    background-image: url("icon_bt.gif");
+    background-position: -10px -13px;
+    background-repeat: no-repeat;
+    float: left;
+    height: 23px;
+    line-height: 20px;
+    overflow: hidden;
+    text-align: center;
+    width: 51px;
+	cursor:pointer;
+}
+.public_bt2 {
+    background-image: url("icon_bt.gif");
+    background-position: -10px -51px;
+    background-repeat: no-repeat;
+    float: left;
+    height: 21px;
+    line-height: 23px;
+    overflow: hidden;
+    text-align: center;
+    width: 41px;
+	cursor:pointer;
+}
+
+#locker03_tb1 th{background:#f8f8f8;
+    color: #444;
+    font-weight: normal;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    text-align: left;
+    vertical-align: middle; text-indent:5px;
+	border-top:1px solid #e8e8e8;
+	}
+
+
+
+
+#locker03_tb1 td{
+    height:28px;line-height:28px;border-bottom:1px #f2f2f2 solid;text-align:left;text-indent:5px;overflow:hidden; padding-left:10px;
+}
+.notice_bt{margin-top:3px !important;}
+#locker03_tb1{width:100%;border-collapse:collapse;}
+.notice_biaoti a:link,.notice_biaoti a:visited{text-decoration:none; color:#000;}
+.notice_biaoti a:hover, .notice_biaoti a:active{text-decoration:none;color:#000;}
+.floatright a,.floatright select{margin:3px 5px 0 5px;}
+
+
+.receivecontent1, .receivecontent2{
+    text-indent: 0px;
+    height: 35px;
+    line-height: 35px;
+	font-family:"Courier New";
+}
+.receivecontent2{ background-color: #f5f5f5; color: #888888; }
+
+.receivecontent1 .title{
+    margin-left: 10px;
+    float: left;
+    line-height: 35px;
+    color: #000;
+    font-weight: bold;
+	font-family:Courier New;
+}
+.receivecontent2 .title{
+    margin-left: 20px;
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    color: Black;
+ }
+ 
+ #Notice_body{
+    overflow:auto;height:100%;
+}
+.notice_tb{
+    width:100%;/*border:1px #efefef solid;*/
+}
+
+.notice_tb td{
+    line-height:30px;border:1px #cdcdcd solid;
+}
+.notice_td1{
+    text-align:center;width:15%;color:#000;background:#f4f4f4;font-size:14px;
+}
+.notice_td2{
+    text-indent:24px;color:#666;
+}
+.notice_td2{
+    overflow:auto;height:300px;padding:10px;word-break:break-all;margin:0;
+    text-indent:24px;color:#666;vertical-align:top;border:1px #efefef solid;border-top:none;
+	word-break:break-all;word-wrap:break-word;
+}
+.notice_td3{ width:35%; text-indent:10px;
+   
+}
+#txt_person{text-indent:10px;}
+.txt_title{ width:35%;}
+#txt_title{ text-indent:10px;}
+
+.jnote_til{ background:#E8EBFA; border-bottom:1px solid #C0CAE7; padding:0 10px;}
+.fr{ float:right;}
+.clear{ clear:both;}
+
+.jnotice_table{ table-layout:fixed; border-spacing:0;}
+.jnotice_table thead tr th{ padding-left:10px;}
+.jnotice_border_r{ }
+#headCon{ }
+.jnotice_table tfoot tr td{ text-align:right; background:#E8EBFA; border-top:1px solid #6699FF; padding:6px 10px;}
+
+
+/*j_search*/
+.j_search{ border:1px solid #E0E0E0; height:23px; *height:25px; width:238px; position:relative; margin-top:5px;}
+
+.j_search_txt{ height:19px; line-height:19px; padding-top:1px; color:#cfcfcf; border:none medium; width:190px;}
+.j_search_btn{ height:21px;background: url("../../images/global.png") no-repeat -144px -11px; border:medium none; cursor:pointer; position:absolute; top:0; right:0;}
+.j_search_d{ position:absolute; right:34px; top:9px; display:block; background:url(../css/j_search_d.png) no-repeat; width:10px; height:6px;}
+
+
+
+.btm_pager{ height:36px; background:#e8ecfa; border-top:1px solid #b8c2e3; box-shadow:inset 0px 1px 0 #FFF;}
+.top_pager{height:36px; background:#e8ecfa; border-bottom:1px solid #b8c2e3; margin-bottom:1px;}
+
+.pager_height{ height:25px; line-height:25px; padding-top:5px; padding-right:15px;}
+
+.notice_num{ line-height:35px; display:inline-block;}
+.notice_biaoti{}
+
+#author{ padding-left:45px;}
+#list_page_suf{ *margin-top:2px; vertical-align:middle;}
+
+/*n_btn*/
+.n_btn,.n_btn_slide,.n_btn_slide span,.n_btn_slide span span{ display:inline-block; height:25px; line-height:25px;  cursor:pointer;}
+.n_btn span span{padding:0 10px;}
+.n_btn_slide span span{ padding:0 20px 0 7px; }
+.n_btn span span,.n_btn_slide span span{color:#666;}
+.n_btn:hover,.n_btn_on:hover,.n_btn_slide:hover{ text-decoration:none;}
+.n_btn_slide span span{ position:relative;}
+.n_btn_slide span span i{ display:block; width:7px; height:5px; position:absolute; top:10px; right:6px; background:url(../images/edit.png) no-repeat 0 -86px;}
+.font-bold span span{ font-weight:bold;}
+
+.n_btn:hover,.n_btn:hover span,.n_btn:hover span span,.n_btn_slide:hover,.n_btn_slide:hover span,.n_btn_slide:hover span span{text-decoration:none;}
+.n_btn:hover span span{ padding:0 10px;}
+.n_btn_slide:hover span span{ padding:0 20px 0 7px;}
+
+.n_btn:active,.n_btn:active span,.n_btn:active span span,.n_btn_slide:active,.n_btn_slide:active span,.n_btn_slide:active span span{text-decoration:none;}
+.n_btn:active span span{padding:0 10px;}
+.n_btn_slide:active span span{  padding:0 20px 0 7px;}
+
+/*n_btn_on*/
+.n_btn_on span span{ color:#fff;}
+.n_btn_on,.n_btn_on span,.n_btn_on span span{ display:inline-block; height:25px; line-height:25px;  cursor:pointer;}
+.n_btn_on{ border-style: solid; border-width: 1px;}
+.n_btn_on span span{ padding:0 15px; color:#fff;}
+
+.n_btn_on:hover,.n_btn_on:hover span,.n_btn_on:hover span span{text-decoration:none;}
+.n_btn_on:hover span span{ padding: 0 15px;}
+
+.n_btn_on:active,.n_btn_on:active span,.n_btn_on:active span span{text-decoration:none;}
+.n_btn_on:active span span{ padding:0 15px;}

@@ -1,0 +1,132 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+body{font:12px/1.5 'Microsoft Yahei',verdana,'Hiragino Sans GB';}
+.branchListWrap h2{font-size:12px;}
+.j_search_txt{font-size:12px;}
+.enclosure_table thead tr th{ font-size: 12px;}
+#container .nav-hd li{font-size: 14px;}
+#RichInputBoxID input{font-size:12px;}
+#attachlist_container h2 strong{ font-size:14px;}
+.move-top{font-size:12px; }
+#container .nav-hd li{}
+#pageSetIndex .nav-hd li{font-size: 14px;}
+.skin-topNote{ font-size:12px;}
+.set_til{font-size:14px;}
+.set_til span{ font-size:12px;}
+.senior_box h3 span{ font-size:12px;}
+#pageDefault #sidebar .receiveCompose{font-size:14px;}
+.listHeader h1{font-size:14px;}
+.set_rule_box_tips{font-size:14px; }
+.writeSidebar .tab li{ font-size:12px; }
+.boxIframeTitle h2{ font-size:12px;}
+.cbox-head{ font-size:14px;}
+.form .label{ width:95px;}
+#subjectColor span.title{ padding:5px 15px 0px 15px;}
+#subjectColor{height: 168px;}
+#template{left:328px;}
+#sign{left:376px;}
+.blue-sbox h2{ font-size:14px;}
+.mailinfo h2{ font-size:14px;}
+.advSearchpop{ width:368px;}
+.toolbar .pager{ top:10px;}
+
+.mailList th.date{width:105px;}
+.mailList td.date{ width:89px;}
+.mailList th.from{ width:250px;}
+.mailList td.from{ width:250px;}
+.mailList_sender{ width:200px;}
+.newsletterData .labelIndex a{ padding:2px 4px;}
+.addr_Page_mt{ margin-top:15px;}
+.singtitleWidth{ width:45px;}
+.titleOper{ width:357px;}
+.title_show_w{}
+.autoReply-table{ width:600px;}
+.mailPOP_tdWidth{ width:145px;}
+.gonggao p{ line-height:22px; word-wrap: break-word;word-break:break-all;}
+.rMList .rMr{ margin-left:48px;}
+.addrTitle_font{ font-size:14px;}
+.senior_box h3{ font-size:15px;}
+
+.userSet { width:800px;}
+#pageSetIndex li{width:370px;}
+#pageSetIndex dl{min-height:140px;_height:140px;}
+#pageSetIndex dd{line-height:14px;width:275px;}
+#pageSetIndex dt a{line-height:14px;}
+
+#pageDefault #sidebar .nav li{ font-size: 13px;}
+.leftFolder-FolderName{ font-size: 13px;}
+
+
+/**************************disk.css*/
+.filename_css{ font-size:12px;}
+.enclosure_table td{ font-size:12px;}
+.nav-hd li{ font-size:14px;}
+
+
+
+
+/************************ content.css**********/
+.branchListWrap h2{font-size:12px;}
+
+
+/************************ readMail.css**********/
+.readMail .hTitle h2{ }
+.send-state-table tr td{ font-size:12px;}
+
+
+
+
+/************************ notice.css**********/
+.receivecontent1 .title{ font-size:14px;}
+.receivecontent1, .receivecontent2{ font-size:12px;}
+#locker03_tb1 th{ font-size:12px;}
+#locker03_tb1 td{ font-size:14px;}
+
+
+
+/*登录超时*/
+.alarm-font h3{ font-size:12px;}
+.alarm-font p{ font-size:12px;}
+.mailSummary_style{ font-size: 12px; font-weight: normal};
+
+
+
+
+#RichInputBoxID .addrItem b{ font-size:12px;}
+#RichInputBoxID .addrItem span{ font-size:12px;}
+.ban-til a{ font-size:13px;}
+.encript li span.left{ width:80px;}
+#subjectColor{ width:90px;}
+#aRecallMail{ font-size:12px;}
+
+.state_setul{ padding:10px 0 0 25px;}
+
+.ul_302 li label{ width:85px;}
+
+.notice_td1{ font-size:14px;}
+.notice_tb td{ font-size:12px;}
+.notice_td2{ font-size:12px;}
+.hoverUnderline{ font-size:14px;}
+
+#pageDefault #sidebar .nav a.manage{ right:6px; }
+#pageDefault #sidebar .nav a.action.add{ /*right:24px;*/}
+#RichInputBoxID{ font-size:12px;}
+#personPage{ font-size:14px;}
+
+.list th a{ font-size: 12px;}
+.mailList_sender{ font-size: 14px;}
+.tagText a{ font-size: 14px;}
+#adjManage .list td{ font-size: 14px;}
+#adjManage .list td a{ font-size: 12px;}
+.addr_table_body tr td{ font-size: 14px;}
+
+
+
+
+
+
+
+

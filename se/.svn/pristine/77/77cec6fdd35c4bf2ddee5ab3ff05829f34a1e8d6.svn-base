@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+html,body,p,h1,h2,h3{ margin:0; padding:0;}
+img{ border:none;}
+/* clear float */
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+.clearfix{zoom:1;}
+.clearAll{overflow:hidden;_zoom:1;}
+
+body{background:url(../images/bg.jpg) repeat-x;}
+.wrapper{ width:655px; margin:0 auto;}
+.header{ height:69px; }
+.store-top{background:url(../images/logo-top.jpg) no-repeat; float:left; width:328px; height:69px; overflow:hidden; line-height:200px;}
+.logo{ width:124px; height:69px; float:right;background:url(../images/mobile-logo.jpg) no-repeat;overflow:hidden; line-height:200px;}
+
+/*notfind*/
+.notfind{ padding-left:70px;background:url(../images/excla.jpg) no-repeat; margin:120px 0 0 25px;}
+.notfind h3{ color:#000; font-size:14px; padding-bottom:5px;}
+.notfind p{ color:#666; font-size:14px; line-height:22px;}
+.notfind p strong{ font-weight:bold;}
+
+/*downLoadBox*/
+.downLoadBox{ margin:120px 0 0 60px;}
+.sma-img{ border:2px solid #dcdcdc; display:block; float:left; padding:15px; margin-right:30px;}
+.deadTime{ padding-left:10px;}
+.down-rig h3{ color:#000; font-weight:bold; font-size:16px; padding-bottom:10px;}
+.down-rig p{ color:#797979; font-size:12px; padding-bottom:30px;}
+.down-btn{background:url(../images/down-btn.jpg) no-repeat; width:58px; height:25px; line-height:25px; display:inline-block; text-align:center; color:#fff; font-size:12px; text-decoration:none;}

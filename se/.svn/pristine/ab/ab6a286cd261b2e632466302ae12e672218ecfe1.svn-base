@@ -1,0 +1,112 @@
+﻿
+
+
+/*图标*/
+.i-sadd,.i-hminus,.i-edit,.i-close,.i-rfx,.i-triangle{display:inline-block;background:url(../images/contact.png) no-repeat;}
+.i-sadd,.i-hminus{width:10px;height:10px;}
+.i-sadd{background-position:0 -138px;}
+.i-hminus{background-position:-11px -138px;}
+.i-edit{width:13px;height:13px;background-position:-49px -149px;}
+.i-close{width:12px;height:12px;background-position:-24px -138px;}
+.i-rfx{width:18px;height:21px;background-position:-29px -149px;}
+.i-triangle{width:7px;height:4px;background-position:-37px -138px;}
+/*cat_button*/
+.button,.button span{display:inline-block;height:22px;background:url(../images/contact.png) no-repeat;cursor:pointer;color:#343434;}
+.button{padding-left:10px;background-position:left top;}
+.button span{background-position:right top;padding:5px 10px 5px 0;height:auto;}
+.button:hover{background-position:0 -24px;text-decoration:none;}
+.button:hover span{background-position:right -24px;}
+.button.current{background-position:0 -48px;}
+.button.current span{background-position:right -48px;}
+/*background*/
+.bg_FEFFD5{background:#FAFF81;}
+.bg_B1B1B1{background:#B1B1B1;}
+/*fontStyle*/
+
+.fw_b{font-weight:bold;}
+/*通讯录*/
+.catInfoWrap{}
+.catInfo_title{height:32px;padding:0 20px 0 40px;background:#E8EBFA;border-bottom:1px solid #6B6D9E;}
+.catInfo_title h2{line-height:32px;font-size:14px;font-weight:bold;color:#1e1e1e;}
+.catInfo_mes{padding:20px 60px;width:410px;position:relative;}
+.catInfo_mes li{margin-bottom:10px;}
+.catInfo_mes .txtInfo{width:260px;display:inline-block;*display:inline;*zoom:1;word-break:break-all;}
+.catInfo_phone{position:absolute;right:60px;top:24px;width:102px;height:102px;border:3px solid #D9DFF6;}
+.catInfo_phone2{width:102px;height:102px;border:3px solid #D9DFF6;}
+.catInfo_phone img{border:1px solid white;}
+
+.newsletterWrap{}
+.newsletter_tab{height:32px;background:#E8ECFA;border-bottom:1px solid #6B6D9D;}
+.newsletter_tab ul{position:relative;top:7px;height:26px;font-size:14px;font-weight:bold;}
+.newsletter_tab li{float:left;}
+.newsletter_tab li a{display:block;line-height:24px;padding:0 20px;color:#1E1E1E;border:1px solid #E8ECFA;border-bottom-color:#6B6D9D;text-decoration:none;}
+.newsletter_tab li.current a{background:white;border-color:#6B6D9D;border-bottom-color:white;}
+.newsletter_tab li a:hover{text-decoration:none;}
+.newsletterCon{overflow:hidden;_zoom:1;}
+.newsletterMain{width:100%;float:left;}
+.newsletterMainInfo{margin-right:260px;}
+.newsletterSide{width:240px;float:left;margin-left:-250px;margin-top:5px;}
+.newsletterMain_tool{height:38px;line-height:38px;background:#E8ECFA;padding-left:10px;}
+.buttonBar{margin-top:8px;line-height:normal;}
+.buttonBar input{padding:2px 5px;visibility:visible;width:auto;margin:0 2px;}
+.pageBar{padding-top:11px;line-height:normal;}
+.pageBar span{color:#8F8E8E;margin-right:5px;}
+.pageBar a{color:#3568A6;margin-right:5px;text-decoration:underline;}
+.newsletterData{margin-top:10px;}
+.newsletterData .labelIndex{padding-left:20px;border-bottom:1px solid #B8B8B8;}
+.newsletterData .labelIndex a{color:#010101;border:1px solid #E2E2E2;border-bottom:none;margin-left:1px;text-transform:uppercase;}
+.newsletterData .labelIndex a:hover,.newsletterData .labelIndex a.current{background:#4E63CE;color:white;text-decoration:none;}
+.newsletterTable{table-layout:fixed;}
+.newsletterTable th{height:24px;background:#F4F4F4;border-top:1px solid white;border-bottom:1px solid #D0D0D0;text-align:left;padding-left:20px;font-weight:normal;}
+.newsletterTable th.br{border-right:1px solid #C8C8C8}
+.newsletterTable td{padding-left:20px;height:24px;border-bottom:1px solid #E7E7E7;}
+.newsletter_search{height:26px; vertical-align:middle;}
+#totalCount,#showPersonListDetail{ height:35px; vertical-align:middle; padding-left:10px; line-height:35px;}
+.newsletter_search .txt{height:16px;width:203px;padding:3px;border:1px solid #BAC7F4;border-right:0;color:#ADADAD;background:none; margin-top:-1px}
+.newsletter_search .btn,.newsletter_search .close{border:1px solid #B4B4B4;width:26px;height:24px;background:url(../images/contact.png) 0 -149px no-repeat;}
+.newsletter_search .btn{ vertical-align:middle;}
+.newsletter_search .close{border:none;position:relative;top:1px;top:0\9;*top:0px;border-left:none;background:url(../images/contact.png) -1px -174px no-repeat;}
+.branchListWrap{border:1px solid #BAC7F4;margin-top:3px;}
+.branchListWrap h2{line-height:38px;background:#E8ECFA;padding:0 10px;font-weight:bold;font-size:14px;}
+.branchList{height:415px;padding:8px 0;overflow:hidden;overflow-y:auto;}
+.branchList ul{overflow:hidden;}
+.branchList li{line-height:22px;vertical-align:top; }
+.branchList li a{color:#333;}
+.branchList li a:hover{text-decoration:none;}
+.branchList li a.fw_b:hover{text-decoration:underline;}
+.branchList li a.current{background:#FEFFD5;text-decoration:none;}
+.sKey{background:#F9FF7E;font-weight:bold;padding:1px;}
+.catPeoEdit{color:#424240;}
+.catPeoEdit th{font-weight:normal;}
+.catPeoEdit td{height:32px;}
+.catPeoEdit td .text{width:228px;height:14px;padding:4px;border:1px solid #B1B1B1;}
+.catPeoGroup{width:236px;border:1px solid #B1B1B1;background:#F3F3F3;margin:5px 0 10px;}
+.catPeoGroup ul{height:114px;overflow:auto;}
+.catPeoGroup li{padding:5px;margin:0;}
+.catPeoGroupNew{height:25px;padding:4px;background:white;border-top:1px solid #B1B1B1;}
+.catPeoDate{position:relative;}
+.catPeoDate .i-triangle{position:relative;top:0px;*top:-3px;_top:4px;left:-12px;}
+.catPeoDate ul{position:absolute;z-index:3;width:62px;border:1px solid #B1B1B1;background:white;}
+.catPeoDate ul li{line-height:20px;height:20px;margin-bottom:0;vertical-align:top;}
+.catPeoDate ul a{color:#4A4A4A;text-decoration:none;display:block;padding:0 5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.catPeoDate ul a:hover{background:#3879D9;color:white;text-decoration:none;}
+.catPeoEdit_phone{width:130px;position:relative;}
+.catInfo_phone2{margin:0 auto;}
+.catPeoEdit_phone .but{width:49px;height:25px;border:0;background:#F0F0F0;}
+
+/*调用时赋值float,width=字数+1.5em,间距1em*/
+.btn{overflow:hidden;height:20px;text-decoration:none;text-align:center;}
+.btn .r1{background-color:#ccc;}
+.btn .rContent{border-left:1px #ccc solid;border-right:1px #ccc solid;overflow:hidden;height:18px;line-height:18px;background-image:url(../images/bg_1.png);background-repeat:repeat-x;background-position:0 -550px;}
+/*hover变效果*/
+.btn:hover .rContent{background-position:0 -600px;}
+#newsletterTable tbody tr td{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;-moz-text-overflow:ellipsis; height:24px;}
+#newsletterTable tbody tr td a{ color:#4E63CE;}
+#newsletterTableGroup tbody tr td{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;-moz-text-overflow:ellipsis; height:24px;}
+#newsletterTableGroup tr td a{ color:#4E63CE;}
+#selectPage{ margin-top:-2px;}
+#personPage,#corperationPage,#createNewPerson,#deleteContactList,#copyTo,#moveTo,#ccopyTo,#personImport,#personExport,#corExport,#createGroup{ visibility:hidden;}
+#showHideTd{ vertical-align:middle;}
+
+
+

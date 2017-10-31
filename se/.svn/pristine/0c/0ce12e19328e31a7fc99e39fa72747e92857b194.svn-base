@@ -1,0 +1,17 @@
+﻿
+domain.error_invalid=\u0022\u007B\u0030\u007D\u0022\u0020\u683C\u5F0F\u4E0D\u5408\u6CD5
+domain.error_required=\u0022\u007B\u0030\u007D\u0022\u662F\u5FC5\u586B\u7684
+domain.field_domain=\u57DF\u540D
+domain.field_user_id=\u7528\u6236\u8CEC\u865F
+domain.field_pwd=\u5BC6\u78BC
+domain.field_r_pwd=\u78BA\u8A8D\u5BC6\u78BC
+domain.field_veri_code=\u9A57\u8B49\u78BC
+domain.field_corpName=\u7D44\u7E54\u540D\u7A31
+domain.exists=\u57DF\u540D\u5DF2\u88AB\u4F7F\u7528
+domain.op_failure=\u64CD\u4F5C\u5931\u6557
+domain.user_not_found=\u7528\u6236\u4E0D\u5B58\u5728\u6216\u5BC6\u78BC\u4E0D\u6B63\u78BA
+domain.ows_verify=\u57DF\u540D\u6240\u6709\u6B0A\u9A57\u8B49\u5931\u6557
+
+
+
+

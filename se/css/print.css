@@ -1,0 +1,3 @@
+﻿#pageComposeReview .action, #pageComposeReview .print{display:none;}
+#pageReadMail .action, #pageReadMail .addToContact, #pageReadMail .changeEncode{display:none;}
+#pageReadMail h1{padding-right:0;}

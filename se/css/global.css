@@ -1,0 +1,1131 @@
+﻿@charset "utf-8";
+@import url('reset.css');
+/*@import url('http://lighttp.cmail2008.rd139.com/disk/cmail2008/addressList/css/global.css');*/
+/*====================reset结束====================*/
+input.text, textarea{border:1px #83a5be solid;text-align:left;}
+textarea{overflow:auto;}
+input.text{line-height:18px;}
+input[type="text"]{line-height:18px;}
+a{color:#333;}
+a:hover{color:#c00;}
+/*====================特效====================*/
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus{background-color:#e5edf8;}
+input.focus, textarea.focus{background-color:#e5edf8;}
+/*====================强制不换行====================*/
+.list td.subject, .list td.subject a, .mailList td.from, .mailList td.from a, #pageDefault #header .tab p, #pageDefault #sidebar .folderOn li a, .mailDrag p, .citySelect dd,#mailReceive #receiveRecord em.l span.l{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis;}
+/*====================强制换行====================*/
+td.content{overflow:hidden;#overflow:auto;word-break:break-all;}
+/*====================圆角====================*/
+.r1, .r2, .r3, .rContent{display:block;}
+.r1, .r2, .r3{height:1px;overflow:hidden;font-size:0;}
+.r1{margin:0 1px;}
+.r2{margin:0 2px;}
+.r3{margin:0 3px;}
+/*====================圆角标签====================*/
+.l, .m, .m p, .close, .r{float:left;}
+/*====================容量条====================*/
+.progressBar{position:relative;left:5px;width:100px;height:11px;line-height:11px;border:1px #64879a solid;background-image:url('../images/bg_1.png');background-repeat:repeat-x;background-position:0 -1150px;font-size:10px;}
+.progressBar p{position:absolute;z-index:2;top:0;left:30px;color:#959595;}
+.progressBar em{margin-left:5px;color:#D30009;}
+.progressBar i{position:absolute;z-index:1;left:0;top:0;height:11px;overflow:hidden;background-image:url('../images/bg_1.png');background-repeat:repeat-x;background-position:0 -1450px;}
+/*====================按钮====================*/
+/*调用时赋值float,width=字数+1.5em,间距1em*/
+.btn{overflow:hidden;height:20px;text-decoration:none;text-align:center;}
+.btn .r1{background-color:#ccc;}
+.btn .rContent{border-left:1px #ccc solid;border-right:1px #ccc solid;overflow:hidden;height:18px;line-height:18px;background-image:url('../images/bg_1.png');background-repeat:repeat-x;background-position:0 -550px;}
+/*hover变效果*/
+.btn:hover .rContent{background-position:0 -600px;}
+/*====================菜单====================*/
+.menu{display:none;position:absolute;z-index:99;}
+.menu ul{min-width:100px;_width:100px;border:1px #6666cc solid;padding:1px;background-color:#fefce7;text-align:left;}
+.menu li{position:relative;padding:4px 10px;cursor:pointer;line-height:1;#zoom:1;min-width:100px;}
+.menu li:hover, .menu li.hover{background-color:#ffcc99;}
+.menu li.line, .menu li.line:hover{height:1px;padding:0;margin:2px 0;overflow:hidden;background-color:#6666cc;cursor:default;font-size:0;}
+.menu i.more{position:absolute;top:7px;right:5px;width:5px;height:5px;background-image:url('../images/icon.png');background-repeat:no-repeat;background-position:-750px -350px;}
+.menu li:hover ul{display:block;}
+.menu ul ul{display:none;position:absolute;left:99px;top:0;}
+.menu li em{float:left;width:16px;height:12px;}
+.menu .icon{float:left;#float:none;#display:inline-block;position:relative;#top:-2px;width:18px;height:12px;background-image:url('../images/icon.png');background-repeat:no-repeat;}
+.menu .layout0{background-position:0 -350px;}
+.menu .layout1{background-position:-250px -350px;}
+/*====================下拉框====================*/
+/*调用时二者宽度相同，IE下宽6px*/
+.select{display:block;overflow:hidden;border:1px #cdcdcd solid;}
+.select select{border:0;#margin:-3px 0 -3px -3px;}
+/*====================单选复选框====================*/
+.aspNetList input{position:relative;top:1px;#position:static;#top:auto;#margin:-1px;}
+.aspNetList label{margin-right:10px;}
+/*====================提交按钮行====================*/
+p.action{overflow:hidden;}
+/*====================分页====================*/
+.pager a{margin:0 3px;}
+/*====================Grid====================*/
+.list .empty{display:none;height:60px;line-height:60px;background-color:#FFFFD6;font-weight:bold;font-size:14px;color:#666;}
+.list table{width:100%;text-align:left;}
+.list tr{vertical-align:middle;}
+.list tr.new{font-weight:bold;}
+.list caption, .list th, .list td, .list .empty{border-bottom:1px #efefef solid;}
+.list th, .list td{text-indent:5px;}
+.list th{height:20px;line-height:20px;border:1px #ccc solid;border-left:0;background-image:url('../images/bg_1.png');background-repeat:repeat-x;background-position:0 -1050px;font-weight:bold;}
+.list th, .list th a{color:#4c62d1;}
+.list th a{float:left;}
+.list th i.asc, .list th i.desc{float:left;width:10px;height:20px;margin-left:3px;background-image:url('../images/skin_1.png');background-repeat:no-repeat;}
+.list th i.asc{background-position:-750px -295px;#background-position:-750px -296px;}
+.list th i.desc{background-position:-500px -295px;#background-position:-500px -296px;}
+.list td{height:25px;line-height:25px;}
+.list tfoot td{height:0;overflow:hidden;border-bottom:0;font-size:0;}
+.list .scroll{width:15px;}
+.list .check{width:30px;text-align:center;text-indent:0;}
+.list th.check input{margin-top:3px;#margin-top:0;}
+.list td.check input{margin-top:5px;#margin-top:1px;}
+.listBody{position:relative;overflow-y:scroll;overflow-x:hidden;width:100%;}
+.listBody tr.on, .listBody tr:hover{background-color:#fffdd7;}
+/*====================编辑器====================*/
+#pageCompose .editorToolbar{background:#F2F2F2;padding:5px;float:left;width:100%;}
+#pageCompose .editorToolbar a{float:left;width:18px;#width:20px;height:18px;#height:20px;line-height:20px;margin:0 0 0 2px;background:url(../images/icon.png);border:1px solid #f2f2f2;text-align:left;}
+#pageCompose .editorToolbar i{float:left;width:1px;height:14px;background:#ACC6E2;margin:3px 2px 0 2px;}
+#pageCompose .editorToolbar a:hover{border:1px solid #ccc;background-color:#fff;}
+#pageCompose .editorToolbar a.fontFamily{background-position:-513px -2097px;border:0px;width:52px;height:20px;text-indent:4px;}
+#pageCompose .editorToolbar a.fontFamily:hover{background-position:-578px -2097px;border:0px;}
+#pageCompose .editorToolbar a.fontSize{background-position:-654px -2097px;border:0px;width:52px;height:20px;text-indent:4px;}
+#pageCompose .editorToolbar a.fontSize:hover{background-position:-732px -2097px;border:0px;}
+#pageCompose .editorToolbar a.fontWeight{background-position:-7px -2098px;}
+#pageCompose .editorToolbar a.italic{background-position:-29px -2098px;}
+#pageCompose .editorToolbar a.underline{background-position:-50px -2098px;}
+#pageCompose .editorToolbar a.fontColor{background-position:-79px -2098px;}
+#pageCompose .editorToolbar a.backColor{background-position:-105px -2098px;width:20px;}
+#pageCompose .editorToolbar a.alignMode{background-position:-137px -2098px;width:22px;}
+#pageCompose .editorToolbar a.list{background-position:-164px -2098px;width:23px;}
+#pageCompose .editorToolbar a.Indent{background-position:-193px -2098px;width:22px;}
+#pageCompose .editorToolbar a.hyperLinks{background-position:-238px -2098px;width:20px;}
+#pageCompose .editorToolbar a.addImage{background-position:-263px -2096px;width:20px;}
+#pageCompose .editorToolbar a.magicFeel{background-position:-291px -2097px;}
+#pageCompose .editorToolbar a.snapshot{background-position:-331px -2097px;width:44px;#width:46px;text-indent:19px;}
+#pageCompose .editorToolbar a.letterPage{background-position:-798px -2098px;width:44px;text-indent:16px;}
+#pageCompose .editorToolbar a.sign{background-position:-438px -2098px;width:46px;text-indent:12px;}
+#pageCompose .editorToolbar a.HTML{color:#1F2BA1;width:56px;text-decoration:underline;}
+#pageCompose #fontFamily{left:7px;top:30px;}
+#pageCompose #fontSize{left:61px;top:30px;}
+#pageCompose #alignMode{left:235px;top:30px;}
+#pageCompose #list{left:261px;top:30px;}
+#pageCompose #Indent{left:289px;top:30px;}
+#pageCompose #sign{left:485px;top:30px;}
+#pageCompose #bgColorSelect{left:205px;top:30px;}
+#pageCompose #fontColorSelect{left:183px;top:30px;}
+#pageCompose #divPortrait{position:absolute;display:none;z-index:999;left:100px;top:30px;}
+#pageCompose div.colorSelect{border:1px solid #838383;padding:1px;height:90px;width:141px;background:#F9F9F9;position:absolute;display:none;z-index:999;}
+#pageCompose div.colorSelect a{float:left;width:10px;height:10px;overflow:hidden;margin:5px 0 0 5px;border:1px solid #ccc;}
+#pageCompose div.colorSelect a:hover{border:1px solid black;}
+#pageCompose div.fontSelect{text-align:left;border:1px solid #838383;padding:2px;background:#fff;position:absolute;display:none;z-index:999;}
+#pageCompose div.fontSelect a{width:100px;display:block;white-space:nowrap;overflow:hidden;padding:3px 10px;}
+#pageCompose div.fontSelect a:hover{background:#efefef;}
+#pageCompose div.fontSelect p{border-top:1px dashed #838383;background:#f8f8f8;}
+#pageCompose .sentOneself{position:absolute;top:34px;right:5px;z-index:999;}
+#pageCompose .sentOneself label{float:left;}
+#pageCompose .sentOneself i{float:left;background:url('../images/icon.png') -1750px -100px;width:50px;height:22px;cursor:pointer;}
+#pageCompose div.searchArea{border-left: 1px solid rgb(131, 165, 190); position: absolute; top: 25px; left: 0px; width: 184px;height:600px;}
+div.searchArea div.searchInput{width:160px;margin:5px 0 0 10px;border: 1px solid rgb(131, 165, 190);height:18px;text-align:left;}
+div.searchArea div.searchInput div{float:left;height:18px;}
+div.searchArea div.searchInput div input{width:136px;height:16px;line-height:16px;padding:2px 2px 0px 2px;#padding:0 2px 0px 2px;border:0px;margin:0;}
+div.searchArea div.searchInput a{float:left;background:url('../images/icon.png') -1997px -99px;width:20px;height:18px;}
+div.searchArea div.searchInput a.searchDelete{background-position:-2248px -97px;}
+div.searchArea div.searchBottom{width:160px;height:5px;border-bottom:1px solid rgb(131, 165, 190);margin:0 0 0 10px;overflow:hidden;}
+ul.searchContent{display:none;width:174px;padding:5px;}
+ul.searchContent li div.action{color:#4C63CD;margin:8px 0 5px 5px;overflow:hidden;}
+ul.searchContent li.searchResult{overflow-y:auto;}
+ul.searchContent li.searchResult a span{display:block;width:150px;+width:147px;overflow:hidden;word-wrap:break-word;color:#999;}
+ul.searchContent li.searchResult a span.name{color:#000;}
+ul.searchContent li.searchResult a span b{color:#D30047;}
+ul.searchContent li.searchResult a{padding:5px;display:block;cursor:pointer;}
+ul.searchContent li.searchResult a:hover{color:#000;background:#efefef;}
+ul.searchContent li.searchResult a.hover{color:#000;background:#efefef;}
+/*邮件列表*/
+.mailList caption{height:25px;line-height:25px;background-color:#f5f5f5;cursor:pointer;font-weight:bold;color:#888;}
+.mailList caption i{float:left;width:15px;height:13px;margin:5px 1px 0 7px;background-image:url('../images/icon.png');background-repeat:no-repeat;background-position:0 -500px;}
+.mailList caption i.off{background-position:-250px -500px;}
+.mailList th{cursor:pointer;}
+.mailList .date{width:130px;}
+.mailList .attach{width:15px;}
+.mailList .attach i{display:block;width:10px;height:20px;background-image:url('../images/icon.png');background-repeat:no-repeat;}
+.mailList th.attach i{background-position:3px -547px;}
+.mailList td.attach i{float:right;margin-right:3px;background-position:3px -545px;}
+.mailList .priority{width:20px;}
+.mailList .status{width:20px;}
+.mailList .status i,.mailList .priority i{display:block;width:17px;height:20px;background-image:url('../images/icon.png');background-repeat:no-repeat;}
+.mailList th.status i{background-position:-247px -545px;}
+.mailList td.status i{float:right;/*background-position:-1747px -143px;*/}
+.mailList .status i.status1{background-position:-1247px -2043px;}
+.mailList .status i.status2{background-position:-997px -2043px;}
+.mailList .status i.status3{background-position:-497px -2043px;}
+.mailList .status i.status4{background-position:-747px -2043px;}
+.mailList .status i.status5{background-position:0px -2043px;}
+.mailList .status i.status6{background-position:-247px -2043px;}
+.mailList .priority i.status7{background-position:-1511px -2043px;}
+/*.mailList tr.new td.status i{background-position:/*-247px -543px*/-1497px -143px;;}*/
+.mailList .from{width:165px;}
+.mailList .size{width:70px;}
+.mailList td.size{#width:85px;}
+.listHeader,.listFooter{position:relative;#zoom:1;height:30px;line-height:30px;padding:0 15px;text-align:left;}
+.listHeader h1, .listHeader p{display:inline;}
+.listHeader p.keyword{color:red;font-weight:bold;}
+#listHeader_search h1{font-weight:normal;color:#333;}
+.listHeader h1{font-weight:bold;font-size:14px;color:#d30009;}
+.listHeader em{color:#D30009;}
+.listHeader .action, .listHeader .pager, .listFooter .pager{position:absolute;right:15px;top:5px;line-height:1em;}
+.listHeader .pager select, .listFooter .pager select{margin-left:7px;}
+/*====================邮件列表拖拽====================*/
+.mailDrag{position:absolute;z-index:999;width:250px;height:22px;line-height:22px;padding-right:5px;border:1px #bec6ca solid;background-color:#fffdd7;text-align:left;}
+.mailDrag i{float:left;width:22px;height:22px;margin-right:5px;border-right:1px #bec6ca solid;background-image:url('../images/icon.png');background-repeat:no-repeat;background-position:0 -650px;}
+.mailDragOn i{background-position:-250px -650px;}
+.mailDrag p{float:left;width:220px;}
+/*====================工具条====================*/
+.toolbar{position:relative;z-index:1;#zoom:1;height:38px;padding-left:10px;background-image:url('../images/bg_1.png');background-position:0 -350px;background-repeat:repeat-x;}
+.toolbar .menu{left:1px;top:28px;}
+.btnContainer{position:relative;#zoom:1;}
+.btnWrapper{float:left;position:relative;z-index:1;margin:4px 3px 0 0;cursor:pointer;}
+.btnWrapper .l, .btnWrapper .r, .btnWrapper .m{height:29px;line-height:29px;#line-height:31px;_line-height:29px;}
+.btnWrapper .l, .btnWrapper .r{width:5px;}
+.btnWrapperHover .m, .btnWrapperClick .m{background-image:url('../images/bg_1.png');background-repeat:repeat-x;}
+.btnWrapperHover .m{background-position:0 -650px;}
+.btnWrapperClick .m{background-position:0 -750px;}
+.btnWrapperHover .l, .btnWrapperHover .r, .btnWrapperClick .l, .btnWrapperClick .r{background-image:url('../images/skin_1.png');background-repeat:no-repeat;}
+.btnWrapperHover .l{background-position:0 -250px;}
+.btnWrapperHover .r{background-position:-250px -250px;}
+.btnWrapperClick .l{background-position:-500px -250px;}
+.btnWrapperClick .r{background-position:-750px -250px;}
+.btnWrapper p{float:left;padding-right:2px;background-image:url('../images/icon.png');background-repeat:no-repeat;}
+.btnWrapper .menuSwitch{float:left;width:10px;height:25px;margin:2px 0;background-image:url('../images/icon.png');background-repeat:no-repeat;background-position:-496px -339px;}
+.btnWrapperHover .menuSwitch, .btnWrapperClick .menuSwitch{width:9px;background-position:-497px -339px;}
+.btnWrapperHover .menuSwitch{border-left:1px #92c6dc solid;}
+.btnWrapperClick .menuSwitch{border-left:1px #d5a70b solid;}
+/*图标*/
+/*收件箱*/
+.btnWrapper .reply{padding-left:18px;background-position:0 -292px;}
+.btnWrapper .forward{padding-left:22px;background-position:-250px -293px;}
+.btnWrapper .refuse{padding-left:18px;background-position:-500px -292px;}
+.btnWrapper .refresh{padding-left:19px;background-position:-750px -294px;}
+.btnWrapper .delete{padding-left:17px;background-position:-1000px -292px;}
+.btnWrapper .move{padding-left:23px;background-position:-1250px -292px;}
+.btnWrapper .mark{padding-left:16px;background-position:-2000px -290px;}
+.btnWrapper p.search{padding-left:22px;background-position:-1500px -292px;}
+.btnWrapper .layout{padding-left:18px;background-position:-1750px -292px;}
+/*垃圾箱*/
+.btnWrapper .deleteAll{padding-left:18px;background-position:-1250px -393px;}
+/*草稿箱*/
+.btnWrapper .edit{padding-left:21px;background-position:-1000px -392px;}
+/*读信*/
+.btnWrapper .print{padding-left:18px;background-position:-500px -393px;}
+.btnWrapper .viewSource{padding-left:18px;background-position:-250px -392px;}
+/*写信*/
+.btnWrapper .send{padding-left:23px;background-position:0 -393px;}
+.btnWrapper .save{padding-left:18px;background-position:-250px -392px;}
+.btnWrapper .cancel{padding-left:17px;background-position:-1000px -292px;}
+/*日程提醒*/
+.btnWrapper .scheduleAdd{padding-left:18px;background-position:0 -1143px;}
+.btnWrapper .remindMail{padding-left:20px;background-position:-250px -1142px;}
+.btnWrapper .remindSMS{padding-left:15px;background-position:-500px -1144px;}
+.btnWrapper .remindMMS{padding-left:18px;background-position:-750px -1143px;}
+.btnWrapper .scheduleCategory{padding-left:20px;background-position:-1000px -1142px;}
+/*设置*/
+.btnWrapper .setMail{padding-left:19px;background-position:0 -442px;}
+.btnWrapper .setUserInfo{padding-left:20px;background-position:-250px -444px;}
+.btnWrapper .setParameter{padding-left:19px;background-position:-500px -443px;}
+.btnWrapper .setSignature{padding-left:18px;background-position:-750px -443px;}
+.btnWrapper .setSmsNotify{padding-left:20px;background-position:-1000px -444px;}
+.btnWrapper .setPop{padding-left:20px;background-position:-1250px -442px;}
+.btnWrapper .setFiltration{padding-left:22px;background-position:-1500px -443px;}
+/*短信*/
+.btnWrapper .SMSCompose{padding-left:18px;background-position:0 -144px;}
+.btnWrapper .SMSSignature{padding-left:19px;background-position:-500px -142px;}
+.btnWrapper .SMSSetTime{padding-left:18px;background-position:-250px -143px;}
+.btnWrapper .SMSSent{padding-left:18px;background-position:-250px -143px;}
+/*彩信*/
+.btnWrapper .MMSCompose{padding-left:18px;background-position:0 -193px;}
+.btnWrapper .MMSFolder{padding-left:19px;background-position:-1000px -193px;}
+.btnWrapper .MMSTitle{padding-left:21px;background-position:-750px -192px;}
+.btnWrapper .MMSSignature{padding-left:18px;background-position:-500px -192px;}
+.btnWrapper .MMSSent{padding-left:18px;background-position:-250px -193px;}
+/*传真*/
+.btnWrapper .faxCompose{padding-left:19px;background-position:0 -245px;}
+.btnWrapper .faxInbox{padding-left:19px;background-position:-250px -244px;}
+.btnWrapper .faxSent{padding-left:19px;background-position:-500px -243px;}
+.btnWrapper .faxSpam{padding-left:20px;background-position:-750px -243px;}
+/*通讯录*/
+.btnWrapper .conect{padding-left:19px;background-position:0 -742px;}
+.btnWrapper .add{padding-left:18px;background-position:-250px -743px;}
+.btnWrapper .import{padding-left:20px;background-position:-500px -742px;}
+.btnWrapper .export{padding-left:20px;background-position:-750px -742px;}
+.btnWrapper .sync{padding-left:14px;background-position:-1000px -743px;}
+.btnWrapper .eCard{padding-left:21px;background-position:-1250px -742px;}
+.btnWrapper .manage{padding-left:16px;background-position:-1750px -742px;}
+.btnWrapper .email{padding-left:21px;background-position:-2000px -741px;}
+/*文件柜*/
+.btnWrapper .upload{padding-left:17px;background-position:-1000px -1642px;}
+.btnWrapper .download{padding-left:17px;background-position:-1250px -1642px;}
+.btnWrapper .share{padding-left:17px;background-position:-1750px -1643px;}
+.btnWrapper .shareCancel{padding-left:17px;background-position:-2000px -1643px;}
+.btnWrapper .addFolder{padding-left:19px;background-position:-2250px -1642px;}
+/*右侧*/
+.toolbar div.search{overflow:hidden;position:absolute;z-index:3;right:10px;top:8px;height:20px;}
+.toolbar div.search select{float:left;margin-right:3px;height:20px;}
+.toolbar div.search input.text, .bodyMSList .search input.text{float:left;height:18px;width:120px;border:1px #ccc solid;}
+.toolbar div.search .btn, .bodyMSList .search .btn{float:left;margin-left:3px;width:42px;}
+.toolbar div.search .btn .rContent *, .bodyMSList .search .btn .rContent *{display:block;background-image:url('../images/icon.png');background-repeat:no-repeat;background-position:-495px -547px;text-align:left;text-indent:20px;}
+.toolbar .pager{position:absolute;z-index:3;right:10px;top:10px;}
+/*====================高工具条====================*/
+.tbHeader{height:90px;background-image:url('../images/bg_1.png');background-repeat:repeat-x;background-position:0 -298px;text-align:left;}
+/*====================弹出层====================*/
+/*
+.dialogContainer{display:none;}
+*/
+.shareLayer{display:none;position:absolute;z-index:999;left:0;top:0;width:100%;height:100%;background-color:white;opacity:0.1;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";#filter:alpha(opacity=10);}
+.shareLayer img{width:100%;height:100%;}
+.dialog{display:none;position:absolute;z-index:1000;}
+.dialog h2{position:relative;z-index:0;height:29px;line-height:29px;text-align:left;font-weight:bold;color:white;text-indent:7px;}
+.dialog h2 span{display:block;#zoom:1;margin:0 6px;background-image:url('../images/bg_1.png');background-repeat:repeat-x;background-position:0 -450px;}
+.dialog h2 .l, .dialog h2 .r, .dialog h2 .close{float:none;position:absolute;top:0;height:29px;background-image:url('../images/skin_1.png');background-repeat:no-repeat;}
+.dialog h2 .l, .dialog h2 .r{width:6px;}
+.dialog h2 .l{left:0;background-position:0 -200px;}
+.dialog h2 .r{right:0;background-position:-250px -200px;}
+.dialog h2 .close{right:8px;width:10px;background-position:-500px -191px;}
+.dialog h2 .close:hover{background-position:-750px -191px;}
+.dialog .dContent{border-bottom:2px #6666cc solid;border-left:2px #6666cc solid;border-right:2px #6666cc solid;background-color:white;}
+.dialog input.text{height:18px;}
+#divDialogalert .msgDialog{padding:15px 0 0 0;margin:0px auto;width:300px;overflow:hidden;}
+.msgDialog{padding:15px 25px 0;text-align:left;}
+p.dialogAction{height:50px;overflow:hidden;padding-right:10px;_padding-right:0;}
+p.dialogAction .btn{float:right;width:3.5em;margin:15px 10px 0 0;}
+#opactity{display:none;position:absolute;z-index:999;left:0;top:0;width:100%;height:100%;background-color:black;opacity:0.05;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=5)";#filter:alpha(opacity=5);}
+#opactity img{width:100%;height:100%;}
+/*====================弹出IFRAME层页面====================*/
+.bodyDialogIframe .setWrapper{margin:10px;}
+.bodyDialogIframe th{width:5em;}
+.bodyDialogIframe textarea{width:350px;}
+/*====================loading====================*/
+#pageLoading .dialog{display:block;top:100px;left:50%;width:370px;margin-left:-185px;}
+#pageLoading .dContent{padding:20px 0;border-bottom:1px solid #6666CC;border-left:1px solid #6666CC;border-right:1px solid #6666CC;}
+#pageLoading .dContent a{text-decoration:underline;}
+#pageLoading .close{display:none;}
+#pageLoading img.logo{display:block;width:170px;height:60px;margin:0 auto 5px;/*放首页重写样式*/position:static;left:auto;top:auto;}
+#pageLoading p.slogan{font-size:14px;color:#263fcf;}
+#pageLoading i.line, #pageLoading i.loading{display:block;height:7px;margin:5px auto;}
+#pageLoading i.line{width:330px;background-image:url('../images/skin_1.png');background-repeat:no-repeat;background-position:0 -350px;}
+#pageLoading i.loading{width:237px;background-image:url('../images/loading.gif');background-repeat:no-repeat;}
+#pageLoading i.shadow{display:block;height:5px;margin-top:1px;background-image:url('../images/bg_1.png');background-repeat:repeat-x;background-position:0 -1200px;}
+/*====================模板提示信息====================*/
+#pageAlert .alert{margin:50px;padding:20px;border:1px #ccc solid;line-height:1.5;}
+#pageAlert p{margin:0 auto;}
+#pageAlert p.action{width:3.5em;margin:20px auto 0;}
+#pageAlert .btn{width:3.5em;}
+/*====================主框架====================*/
+#pageDefault, #pageDefault body{height:100%;overflow:hidden;}
+#tipsLoading{position:absolute;z-index:1000;top:15px;right:140px;padding:3px 5px 3px 25px;border:1px #8bad76 solid;background-color:#FFFDD2;background-image:url('../images/loading_16x16.gif');background-repeat:no-repeat;background-position:4px 2px;}
+#pageDefault #header{position:relative;z-index:2;width:100%;height:84px;background-image:url('../images/bg_1.png');background-repeat:repeat-x;}
+#pageDefault .logo{position:absolute;z-index:0;left:15px;top:7px;width:170px;height:60px;}
+#pageDefault .chinaMobile, #pageDefault .sfz{position:absolute;z-index:0;right:10px;top:3px;width:127px;height:45px;background-repeat:no-repeat;}
+#pageDefault .chinaMobile{background-image:url('../images/icon.png');background-position:-500px 0;}
+#pageDefault .sfz{background-image:url('../images/sfz/sfrightlogo.gif');background-position:right center;}
+#pageDefault .userWrapper{position:absolute;z-index:2;left:205px;top:15px;}
+#pageDefault .userWrapper a.cutVersion{color:#0033ff;margin-left:5px;text-decoration:underline;}
+#pageDefault .userWrapper div.rollPost{color:#cc0000;white-space:nowrap;line-height:14px;height:14px;position:absolute;top:0;left:200px;width:240px;overflow:hidden;margin-top:0px;.margin-top:1px;}
+#pageDefault .userInfo{float:left;}
+#pageDefault .useraAction{float:left;position:relative;margin-left:5px;}
+#pageDefault .useraAction a{margin:0 2px;}
+#pageDefault a.setting{margin-right:17px;}
+#pageDefault .useraAction i{position:absolute;top:1px;left:32px;width:15px;height:12px;background-image:url('../images/icon.png');background-position:-250px 0;background-repeat:no-repeat;cursor:pointer;}
+#pageDefault #header .menu{top:12px;left:32px;}
+#pageDefault #header .link{position:absolute;z-index:0;top:55px;right:10px;}
+#pageDefault #header .link a{margin:0 .5em;}
+#pageDefault #header .tab{position:absolute;z-index:1;top:50px;left:204px;height:29px;overflow:hidden;}
+#pageDefault #header .tab li{float:left;display:inline;overflow:hidden;height:29px;line-height:29px;margin-right:1px;cursor:pointer;font-weight:bold;color:#003399;}
+#pageDefault #header .tab .l, #pageDefault #header .tab .m, #pageDefault #header .tab .r{height:29px;}
+#pageDefault #header .tab .l, #pageDefault #header .tab .r{width:4px;background-image:url('../images/skin_1.png');background-repeat:no-repeat;}
+#pageDefault #header .tab .l{background-position:-750px 0;}
+#pageDefault #header .tab .r{background-position:-1000px 0;}
+#pageDefault #header .tab .m{padding-left:6px;background-image:url('../images/bg_1.png');background-position:0 -950px;background-repeat:repeat-x;}
+#pageDefault #header .tab p{width:100px;}
+#pageDefault #header .tab li.home p{width:32px;padding-left:20px;background-image:url('../images/skin_1.png');background-position:0 -93px;background-repeat:repeat-x;text-align:left;}
+#pageDefault #header .tab .close{width:10px;height:29px;margin-left:2px;background-image:url('../images/skin_1.png');background-position:0 -40px;background-repeat:no-repeat;}
+#pageDefault #header .tab .close:hover{background-position:-250px -40px;}
+#pageDefault #header .tab .on{color:white;}
+#pageDefault #header .tab li.home.on p{background-position:-250px -93px;}
+#pageDefault #header .tab .on .m{background-position:0 -250px;}
+#pageDefault #header .tab .on .l{background-position:-250px 0;}
+#pageDefault #header .tab .on .r{background-position:-500px 0;}
+#pageDefault #header .tab .on .close{background-position:-500px -40px;}
+#pageDefault #header .tab .on .close:hover{background-position:-750px -40px;}
+#pageDefault #content{margin-left:205px;}
+#pageDefault #content .main{/*_overflow:hidden;*/position:relative;#zoom:1;}
+.ifrContent{width:100%;}
+#drag{display:none;position:absolute;z-index:999;left:205px;bottom:250px;height:5px;font-size:0;background-color:#ccc;}
+.readInbox{display:none;position:relative;z-index:0;#zoom:1;height:250px;}
+.readInbox .border{height:7px;overflow:hidden;background-position:0 -850px;background-image:url('../images/bg_1.png');background-repeat:repeat-x;cursor:n-resize;font-size:0;}
+.readInbox .border i{display:block;width:60px;height:7px;margin:0 auto;background-image:url('../images/skin_1.png');background-position:-250px -300px;background-repeat:no-repeat;}
+.selectResult{display:none;margin:10px 20px;text-align:left;}
+.readInbox .selectResult h2{font-size:16px;font-weight:bold;color:#4C62D1;}
+.readInbox .selectResult p{margin-top:5px;}
+.riWrapper{display:none;}
+.btnRIWrapper{position:relative;z-index:1;#zoom:1;}
+.btnReadInbox{float:left;position:relative;#zoom:1;z-index:1;margin-right:15px;cursor:pointer;}
+.btnReadInbox p{float:left;color:#5864c0;}
+.btnReadInbox .menuSwitch{float:left;height:25px;width:10px;background-image:url('../images/icon.png');background-position:-497px -340px;background-repeat:no-repeat;}
+.btnReadInbox .menu{left:0;top:20px;}
+#pageDefault .riHeader{position:relative;#zoom:1;height:25px;line-height:25px;border-bottom:1px #e7e7e7 solid;background-color:#f5f5f5;}
+#pageDefault .riHeader h1{float:left;margin-right:25px;font-weight:bold;}
+#pageDefault .riHeader h1 i{float:left;width:12px;height:12px;margin:8px 0 0 8px;background-image:url('../images/icon.png');background-repeat:no-repeat;cursor:pointer;}
+#pageDefault .riHeader h1 i.off{background-position:-750px -550px;}
+#pageDefault .riHeader h1 i.on{background-position:-1000px -550px;}
+#pageDefault .riHeader h1 p{float:left;}
+#pageDefault .riHeader .action{position:absolute;right:10px;top:0;padding-left:13px;background-image:url('../images/icon.png');background-repeat:no-repeat;background-position:-1250px -542px;}
+#pageDefault .riWrapper .ifrReadInbox{width:100%;}
+#pageDefault #sidebar{float:left;position:relative;z-index:2;width:204px;border-right:1px #6666cc solid;background-color:#f9faff;text-align:left;}
+#pageDefault #sidebar .menu{left:177px;top:0;}
+#pageDefault #sidebar .receiveCompose{overflow:hidden;width:190px;height:45px;line-height:45px;padding-left:14px;background-image:url('../images/bg_1.png');background-position:0 -150px;background-repeat:repeat-x;font-size:14px;}
+#pageDefault #sidebar .receiveCompose li{display:inline;float:left;width:95px;}
+#pageDefault #sidebar .receiveCompose i{float:left;width:20px;height:20px;margin:14px 2px 0 10px;background-image:url('../images/icon.png');background-repeat:no-repeat;}
+#pageDefault #sidebar .receive i{background-position:-250px -50px;}
+#pageDefault #sidebar .compose i{background-position:0 -50px; }
+#pageDefault #sidebar .receiveCompose a{display:block;}
+#pageDefault #sidebar .receiveCompose a:hover{background-image:url('../images/skin_1.png');background-position:0px -293px;background-repeat:no-repeat;}
+#pageDefault #sidebar .search{position:relative;z-index:2;margin:0 auto;width:186px;height:19px;}
+#pageDefault #sidebar .search input.text{float:left;width:100px;height:17px;line-height:17px;text-indent:18px;margin-left:12px;border:1px #ccc solid;}
+#pageDefault #sidebar .search i{width:16px;height:16px;position:absolute;display:block;left:13px;top:1px;background:#fff url('../images/icon.png') -1000px -100px;}
+#pageDefault #sidebar .search a{float:left;height:19px;background-image:url('../images/icon.png');background-repeat:no-repeat;}
+#pageDefault #sidebar .search .btnSubmit{width:33px;background-position:-1250px -100px;}
+#pageDefault #sidebar .search .btnSubmit:hover{background-position:-1500px -100px;}
+#pageDefault #sidebar .search .more{width:12px;background-position:-1283px -100px;}
+#pageDefault #sidebar .search .more:hover{background-position:-1533px -100px;}
+#pageDefault #sidebar .tab{clear:both;overflow:hidden;position:absolute;z-index:1;top:73px;left:8px;}
+#pageDefault #sidebar .tab li{display:inline;float:left;width:46px;height:22px;line-height:22px;margin-right:1px;text-align:center;}
+#pageDefault #sidebar .tab a{display:block;background-image:url('../images/skin_1.png');background-position:-250px -150px;background-repeat:no-repeat;}
+#pageDefault #sidebar .tab a:hover, #pageDefault #sidebar .tab .on a{background-position:0 -150px;}
+#pageDefault #sidebar .navWrapper{position:relative;top:31px;}
+#pageDefault #sidebar .navWrapper li{vertical-align:top;}
+#pageDefault #sidebar .nav1{height:167px;overflow:auto;}
+#pageDefault #sidebar .nav{position:relative;#zoom:1;margin:0 0 1px 8px;width:185px;padding:7px 0;overflow:auto;border:1px #ccc solid;background-color:white;}
+#pageDefault #sidebar .nav li{clear:both;position:relative;#zoom:1;height:19px;line-height:19px;margin-bottom:3px;}
+/*
+#pageDefault #sidebar .nav li:hover{background-image:url('../images/skin_1.png');background-repeat:no-repeat;background-position:5px -450px;}
+*/
+#pageDefault #sidebar .nav li.hover{background-image:url('../images/skin_1.png');background-repeat:no-repeat;background-position:5px -450px;}
+#pageDefault #sidebar .tab li.on a, #pageDefault #sidebar .tab li.on{height:23px;}
+#pageDefault #sidebar .nav li a{/*display:block;width:110px;*/ float:left;padding:0 0 0 20px;margin:0 0 0 25px;background-image:url('../images/icon.png');background-repeat:no-repeat;}
+#pageDefault #sidebar .nav a.action{position:absolute;right:7px;top:0px;margin:0;padding:0;width:3em;background-image:none;line-height:1.5;color:#989898;}
+#pageDefault #sidebar .nav .count{float:left;}
+#pageDefault #sidebar .nav .count em{font-weight:bold;color:#d30009;cursor:pointer;}
+#pageDefault #sidebar .inbox a{background-position:-500px -47px;}
+#pageDefault #sidebar .sent a{background-position:-750px -47px;}
+#pageDefault #sidebar .drafts a{background-position:0 -97px;}
+#pageDefault #sidebar .spam a{background-position:-250px -97px;}
+#pageDefault #sidebar .del a{background-position:-2250px -47px;}
+#pageDefault #sidebar .virus a{background-position:-2500px -47px;}
+#pageDefault #sidebar .folderOff i, #pageDefault #sidebar .folderOn i{position:absolute;left:25px;top:3px;width:14px;height:12px;cursor:pointer;background-image:url('../images/icon.png');background-repeat:no-repeat;}
+#pageDefault #sidebar .folderOff i{background-position:-500px -100px;}
+#pageDefault #sidebar .folderOn i{background-position:-775px -100px;}
+#pageDefault #sidebar .folderOn li{margin-bottom:0;}
+#pageDefault #sidebar .folderOn li a{text-overflow:clip;float:left;min-width:30px;max-width:72px;+width:72px;margin-left:30px;padding-left:10px;background-position:-750px -500px;overflow:hidden;}
+#pageDefault #sidebar .folderOn li.last a{background-position:-500px -500px;}
+#pageDefault #sidebar .contacts a{background-position:-1000px -47px;}
+#pageDefault #sidebar .pushEmail a{background-position:-1999px -48px;}
+#pageDefault #sidebar .notice a{background-position:-1250px -47px;}
+#pageDefault #sidebar .Calendar a{background-position:-2250px -197px;}
+#pageDefault #sidebar .RSS a{background-position:-1750px -47px;}
+#pageDefault #sidebar .huiMin a{background-position:-1500px -47px;}
+#pageDefault #sidebar .disk a{background-position:-2000px -197px;}
+#pageDefault #sidebar .diskEp a{background-position:-2499px -197px;}
+#pageDefault #sidebar .SMSCompose a{background-position:0 -149px;}
+#pageDefault #sidebar .SMSSignature a{background-position:-500px -147px;}
+#pageDefault #sidebar .SMSSetTime a{background-position:-250px -149px;}
+#pageDefault #sidebar .SMSSent a{background-position:-250px -149px;}
+#pageDefault #sidebar .MMSCompose a{background-position:0 -199px;}
+#pageDefault #sidebar .MMSFolder a{background-position:-1000px -197px;}
+#pageDefault #sidebar .MMSSent a{background-position:-250px -199px;}
+#pageDefault #sidebar .MMSSignature a{background-position:-500px -197px;}
+#pageDefault #sidebar .MMSTitle a{background-position:-750px -198px;}
+#pageDefault #sidebar .faxCompose a{background-position:0 -249px;}
+#pageDefault #sidebar .faxInbox a{background-position:-250px -249px;}
+#pageDefault #sidebar .faxSent a{background-position:-500px -249px;}
+#pageDefault #sidebar .faxSpam a{background-position:-750px -249px;}
+#pageDefault #sidebar .link0, #pageDefault #sidebar .link1{display:block;text-align:center;}
+#pageDefault #sidebar .link0 img, #pageDefault #sidebar .link1 img{width:167px;height:70px;margin:0 auto;}
+#pageDefault #sidebar .link0{margin:35px auto 0;}
+#pageDefault #sidebar a.link0:link,#pageDefault #sidebar a.link0:visited{color:#999;text-decoration:underline;}
+#pageDefault #sidebar a.link0:hover{text-decoration:none;}
+#pageDefault #sidebar .link1{margin:4px auto 0;}
+#pageDefault #wrapper{float:right;width:100%;margin-left:-205px;}
+/*主内容*/
+#pageDefault .tbHeader em{color:red;}
+#pageDefault .tbHeader h1{float:left;font-weight:bold;font-size:14px;}
+#pageDefault .progressBar{float:left;top:2px;}
+#pageDefault .tbHeader{position:relative;#zoom:1;z-index:1;height:75px;padding:15px 10px 0 20px;}
+#pageDefault .tbHeader p{clear:both;}
+#pageDefault .tbHeader ul a{text-decoration:underline;}
+#pageDefault .tbHeader .new{margin:0 3px;font-weight:bold;color:red;}
+#pageDefault .mailInfo{padding-top:5px;#zoom:1;}
+#pageDefault .mailInfo em{margin-right:1em;}
+#pageDefault .lastLogin{padding-top:5px;color:#999;}
+.iconWeather{position:absolute;top:0;right:175px;width:80px;height:90px;background-position:right center;background-repeat:no-repeat;}
+.weather{position:absolute;right:10px;top:15px;width:165px;text-align:right;}
+.weather a{margin-left:1em;}
+.weather a.city{font-weight:bold;}
+.weather li{position:relative;#zoom:1;z-index:2;margin-bottom:5px;}
+.citySelect{display:none;position:absolute;z-index:2;top:72px;right:0;width:380px;padding:10px;border:1px #cdcdcd solid;background-color:#F9FAFE;text-align:center;}
+.citySelect .close{float:right;}
+.citySelect p.action{clear:both;padding-top:5px;_margin-top:-10px;}
+.citySelect p.action label{float:left;line-height:20px;font-weight:bold;color:#4F61CF;}
+.citySelect p.action select{float:left;width:90px;margin-left:10px;}
+.citySelect .btn{float:left;margin-left:10px;}
+.citySelect .btnSee{width:3.5em;}
+.citySelect .btnSetDefault{width:7.5em;}
+.citySelect ul{width:362px;overflow:hidden;margin:5px auto 0;}
+.citySelect li{float:left;display:inline;width:120px;border-right:1px #cdcdcd solid;font-weight:bold;}
+.citySelect li.last{border-right:0;}
+.citySelect li p{margin-top:5px;}
+.citySelect .from{color:#E40100;}
+.citySelect .to{color:#00999B;}
+.citySelect dl{margin-top:5px;text-align:left;line-height:2;}
+.citySelect dt{clear:both;float:left;width:5em;font-weight:bold;}
+.citySelect dd{float:left;width:315px;}
+.weatherLoading{position:relative;top:20px;height:40px;}
+/*====================主页====================*/
+#pageHome body{text-align:left;}
+#pageHome em{color:red;}
+.strongPoint{position:absolute;left:10px;top:10px;width:450px;height:250px;border:1px #cdcdcd solid;}
+.strongPoint .nav{overflow:hidden;text-align:center;}
+.strongPoint .nav li{float:left;display:inline;width:150px;border-bottom:1px #cdcdcd solid;cursor:pointer;}
+.strongPoint .nav li.li0{margin-left:-1px;}
+.strongPoint .nav li.li1{width:300px;}
+.strongPoint .nav li p{height:26px;line-height:26px;border:1px white solid;background-image:url('../images/home.png');background-repeat:repeat-x;background-position:0 -500px;}
+.strongPoint .nav li.on{width:149px;border-right:1px #cdcdcd solid;border-bottom:1px white solid;border-left:1px #cdcdcd solid;font-weight:bold;}
+.strongPoint .nav li.on p{background-position:0 -450px;}
+.strongPoint .spList li{float:left;display:inline;width:208px;height:93px;margin:10px 0 0 10px;border:1px white solid;cursor:pointer;}
+.strongPoint .spList > li:hover{border:1px #cdcdcd solid;}
+.strongPoint .spList li.hover{border:1px #cdcdcd solid;}
+.strongPoint .spList li ul{position:relative;height:100%;padding:0 0 0 100px;background-image:url('../images/home.png');background-repeat:no-repeat;}
+.strongPoint .spList .li0 ul{background-position:20px 5px;}
+.strongPoint .spList .li1 ul{background-position:20px -95px;}
+.strongPoint .spList .li2 ul{background-position:20px -195px;}
+.strongPoint .spList .li3 ul{background-position:20px -295px;}
+.strongPoint .spList li li{float:none;display:block;width:auto;height:auto;border:0;margin:0;padding-top:10px;}
+.service{position:absolute;left:10px;top:270px;width:450px;padding:12px 0 15px;border:1px #cdcdcd solid;}
+.service li{position:relative;#zoom:1;height:20px;line-height:20px;margin:0 0 5px 20px;}
+.service .btn{position:absolute;left:220px;top:0;width:5em;}
+.service .btn .rContent *{display:block;margin-left:0.75em;padding-left:0.75em;background-image:url('../images/home.png');background-repeat:no-repeat;background-position:0 -393px;text-align:left;}
+img.ad{position:absolute;left:470px;top:10px;border:1px #cdcdcd solid;}
+/*====================文件夹====================*/
+/*
+#pageFolder ,#pageFolder body{height:100%;overflow:hidden;}
+*/
+#pageFolder{position:relative;z-index:1;#zoom:1;}
+#pageFolder .listHeader{position:static;height:55px;line-height:55px;background-color:#f5f5f5;border-bottom:1px solid #ccc;}
+#pageFolder .btn{float:left;margin:10px 0 0 20px;}
+#pageFolder .btn span{font-size:12px;font-weight:normal;color:#000;text-indent:0;}
+#pageFolder .listHeader p{float:left;}
+#pageFolder .listHeader .progressBar{float:left;top:21px;}
+#pageFolder .action{top:17px;}
+#pageFolder .creat{width:6.5em;}
+#pageFolder .refresh{width:3.5em;}
+#pageFolder h3 span.action{float:left;}
+#pageFolder th, #pageFolder td{text-indent:0;text-align:center;}
+#pageFolder .new, #pageFolder .total, #pageFolder .size, #pageFolder th.action{width:100px;}
+#pageFolder td.clean, #pageFolder td.delete{width:50px;}
+#pageFolder td.delete{#width:65px;text-align:left;}
+#pageFolder td.subject{text-align:left;text-indent:20px;}
+#pageFolder h3,#pageFolder td,#pageFolder th{text-align:left;text-indent:20px;}
+#pageFolder h3{line-height:40px;overflow:auto;}
+#pageFolder h3 span{font-size:14px;font-weight:bold;color:#4D63D2;}
+#pageFolder table{width:100%;}
+#pageFolder td,#pageFolder th{line-height:30px;border-bottom:1px solid #B4B7B0;}
+#pageFolder th{background-color:#f5f5f5;border-top:1px solid #B4B7B0;}
+#pageFolder th.newMail,#pageFolder td.newMail,#pageFolder th.mailNum,#pageFolder td.mailNum,#pageFolder th.spaceNum,#pageFolder td.spaceNum{width:80px;text-align:center;}
+#pageFolder td a,#pageFolder h3.action a{color:#4D63D2;text-decoration:underline;margin-left:20px;}
+#pageFolder th.operation,#pageFolder td.operation{width:240px;#width:260px;text-indent:0;}
+#pageFolder .listBody{overflow-y:auto;}
+/*====================写邮件公用====================*/
+.writeTips{position:relative;#zoom:1;height:20px;line-height:20px;border-bottom:1px #e7eaef solid;background-color:#feffd7;text-align:left;color:#525963;}
+.writeTips i, .writeTips a{width:17px;height:20px;background-image:url('../images/icon.png');background-repeat:no-repeat;}
+.writeTips i{float:left;margin-left:3px;background-position:-1750px -497px;}
+.writeTips a.close{position:absolute;right:0;top:3px;background-position:-2000px -497px;}
+.writeContent, .writeSwitch, .writeSidebar{text-align:left;}
+.writeWrapper{float:left;width:100%;}
+.writeContent{margin-right:194px;}
+#pageCompose .writeContent{position:relative;#zoom:1;}
+.writeContent table{width:100%;}
+.writeContent input.text, .writeContent textarea, .editorWrapper{width:98%;}
+.writeContent th, .writeContent td{padding-top:7px;}
+.writeContent th{width:77px;}
+.writeContent th .btn{float:right;width:70px;text-align:center;}
+.writeContent th .btn .r1{margin:0 0 0 1px;background-color:#9b9b9b;}
+.writeContent th .btn .rContent{border-left:1px #9b9b9b solid;border-right:1px #9b9b9b solid;}
+.writeContent select{float:left;height:20px;}
+.writeContent input.text, .writeContent textarea{padding-left:4px;#margin:-1px 0;}
+.writeContent input.text{height:18px;}
+.writeSwitch{float:left;width:10px;margin-left:-194px;}
+.writeSwitch i{display:block;margin-top:200px;height:50px;background-image:url('../images/icon.png');background-repeat:no-repeat;background-position:-1750px -550px;cursor:pointer;}
+.writeSwitch i.on{background-position:-1500px -550px;}
+.writeSidebar{float:left;position:relative;width:184px;margin-left:-184px;margin-top:7px;}
+.writeSidebar .tab{position:absolute;left:0;top:0;}
+.writeSidebar .tab li{float:left;display:inline;width:91px;height:24px;line-height:24px;border-top:1px #dadada solid;border-left:1px #dadada solid;border-bottom:1px #83a5be solid;background-image:url('../images/bg_1.png');background-repeat:repeat-x;background-position:0 -1350px;cursor:pointer;text-align:center;font-weight:bold;}
+.writeSidebar .tab li.on{border-left:1px #83a5be solid;border-top:1px #83a5be solid;border-bottom:1px white solid;background-image:none;}
+.writeSidebar .tab li.li0{border-right:0;}
+.writeSidebar .tab li.li1{border-left:1px #83a5be solid;}
+.writeSContent{clear:both;position:absolute;left:0;top:25px;width:184px;}
+.writeSContentOther{clear:both;position:absolute;left:0;top:25px;width:184px;border-left:1px solid #83A5BE;}
+.writeSContent li,.writeSContentOther li{padding-top:5px;}
+.writeSContent .wsWrapper{overflow:auto;}
+.writeSContent dl{padding-left:7px;}
+.writeSContent dt{padding-left:12px;margin-top:3px;}
+.writeSContent dd a{display:block;margin :0 7px;padding:3px 5px;border:1px white solid;}
+.writeSContent dd a:hover{border:1px #cccccc solid;background-color:#ffeda1;}
+.writeSContent dt{background-image:url('../images/icon.png');background-repeat:no-repeat;background-position:-747px -897px;cursor:pointer;}
+.writeSContent dt.on{background-position:-1000px -895px;}
+.writeSContent dd{display:none;}
+.writeSContent dd a{display:block;}
+.writeSContentOther li.li1{display:none;}
+.letterPaper a{float:left;margin:7px 0 0 6px;padding:2px;border:1px white solid;}
+.letterPaper a:hover{border:1px #cccccc solid;background-color:#ffeda1;}
+.letterPaper a img{display:block;width:68px;height:50px;}
+.writeSContentOther li.li1 .wsWrapper{overflow-y:scroll;}
+.writeSContentOther li.li1 .pager{clear:both;overflow:hidden;padding:10px 0;}
+.writeSContentOther li.li1 .pager *{float:left;}
+.writeSContentOther li.li1 .pager i{width:12px;height:14px;background-image:url('../images/icon.png');background-repeat:no-repeat;cursor:pointer;}
+.writeSContentOther li.li1 .pager i.previous{background-position:-2000px -548px;margin-left:58px;}
+.writeSContentOther li.li1 .pager i.next{background-position:-2250px -548px;}
+.writeSContentOther li.li1 .pager span{margin:0 10px;}
+.writeSContentOther li.li1 .btn{clear:both;float:left;width:6.5em;margin-left:50px;}
+/*自动完成*/
+.autoComplete{position:absolute;left:77px;z-index:5;border:1px #83A5BE solid;background-color:white;text-align:left;}
+.autoComplete a{display:block;padding:2px;}
+.autoComplete a:hover{background-color:#316ac5;color:white;}
+.autoComplete a.hover{background-color:#316ac5;color:white;}
+.autoComplete a strong{color:red;}
+/*====================写邮件====================*/
+#pageIfrUpload input.file{position:absolute;top:-5px;left:-130px;z-index:0;cursor:pointer;font-size:5em;}
+#pageCompose .upload{position:relative;#zoom:1;z-index:1;}
+#pageCompose .upload label{position:absolute;top:0;right:0;z-index:1;}
+#pageCompose .upload iframe{position:absolute;top:0;right:0;z-index:2;width:70px;height:20px;opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";#filter:alpha(opacity=0);}
+#pageCompose, #pageCompose body{height:100%;overflow:hidden;}
+#pageCompose tr.send td{text-align:right;}
+#pageCompose tr.send td .cc{margin-right:7px;}
+#pageCompose tr.send td .bcc{margin-right:20px;}
+#pageCompose tr.subject .subjectWrapper{position:relative;#zoom:1;z-index:3;}
+.menuSubject{display:none;position:absolute;z-index:2;left:7px;top:19px;width:260px;padding:2px;background-color:white;border:1px #83a5be solid;}
+.menuSubject a{display:block;padding:3px 5px;border:1px white solid;}
+.menuSubject a:hover{background-color:#E5EDF8;border:1px #83a5be solid;}
+#pageCompose tr.subject .rContent *{float:left;}
+#pageCompose tr.subject .rContent{width:68px;overflow:hidden;}
+#pageCompose tr.subject .rContent span{width:52px;text-align:right;}
+#pageCompose tr.subject .more{position:absolute;left:60px;top:1px;height:18px;width:15px;background-image:url('../images/icon.png');background-position:-495px -342px;background-repeat:no-repeat;cursor:pointer;}
+#pageCompose tr.attach td ul{margin-top:4px;overflow:hidden;}
+#pageCompose tr.attach td li{position:relative;#zoom:1;padding-left:12px;padding-top:5px;}
+#pageCompose tr.attach td li .del{font-weight:bold;color:red;}
+#pageCompose tr.attach td p{margin-top:4px;color:#7f7f7f;}
+#pageCompose tr.attach td i{background-image:url('../images/icon.png');background-position:0 -550px;background-repeat:no-repeat;height:13px;left:0;position:absolute;top:5px;width:10px;}
+#pageCompose .editorWrapper{margin:7px 0 0 7px;border:1px #cdcdcd solid;background-color:#f2f2f2;position:relative;}
+#pageCompose .editorWrapper iframe{width:100%;}
+#pageCompose p.action{overflow:hidden;margin:7px 0;padding-left:10px;+height:1%;}
+#pageCompose p.action .btn{float:left;width:4.5em;margin-right:10px;}
+#pageCompose p.action label{float:left;margin-top:2px;margin-left:5px;}
+#pageCompose p.action label input{#margin:-1px;}
+#pageCompose .definite{display:block;clear:both;padding-left:10px;height:30px;}
+#pageCompose .definite label{margin-right:10px;}
+#pageCompose .definite select{float:none;margin-right:2px;}
+/*====================写信成功====================*/
+.pageSuccess{text-align:left;}
+.pageSuccess h1, .pageSuccess dt, .pageSuccess ul{margin-left:40px;}
+.pageSuccess h1{margin-top:40px;font-size:14px;font-weight:bold;color:#D30009;}
+.pageSuccess dt{margin-top:7px;}
+.pageSuccess dd{margin:10px 40px;padding:10px;border-top:1px #c8e0f8 solid;border-bottom:1px #c8e0f8 solid;background-color:#f7ffff;line-height:1.5;}
+.pageSuccess li{display:inline;margin-right:10px;}
+.pageSuccess em{font-weight:bold;color:#4b5dc3;}
+.pageSuccess a{text-decoration:underline;}
+/*====================上传附件====================*/
+#pageUpload dt{font-weight:bold;}
+#pageUpload .tbHeader{padding:0 40px;line-height:1.5;}
+#pageUpload .tbHeader dt{padding-top:15px;}
+.uploaded, .selectToUpload{position:absolute;top:120px;width:365px;height:285px;border:1px #dcdcdc solid;background-color:#fbfbfb;text-align:left;}
+.uploaded{left:40px;}
+.selectToUpload{left:396px;}
+#pageUpload em{color:#D30009;}
+.uploaded dt, .selectToUpload dt, .uploaded dd, .selectToUpload dd{margin-left:20px;}
+.uploaded dt{margin-top:15px;}
+.selectToUpload dt{margin-top:35px;}
+.uploaded dd{margin-top:5px;}
+.uploaded .select{width:310px;margin-top:5px;}
+.uploaded .select select{width:310px;#width:316px;}
+.uploaded .btn{float:left;margin-top:5px;width:5.5em;}
+.selectToUpload input{margin-top:4px;#height:22px;width:310px;}
+.selectToUpload .btn{float:left;width:3.5em;margin :15px 0 0;}
+#pageUpload p.action{position:absolute;left:310px;top:420px;}
+#pageUpload p.action .btn{float:left;}
+#pageUpload .done{width:7.5em;margin-right:10px;}
+#pageUpload .back{width:3.5em;}
+/*====================设置首页====================*/
+#pageSetIndex body{text-align:left;width:780px;}
+#pageSetIndex h1, #pageSetIndex li{margin:20px 0 0 20px;}
+#pageSetIndex li{float:left;display:inline;width:370px;}
+#pageSetIndex h1, #pageSetIndex h2{font-weight:bold;}
+#pageSetIndex h2, #pageSetIndex dt{text-indent:1em;}
+#pageSetIndex h1{font-size:14px;}
+#pageSetIndex h2{height:26px;line-height:26px;border-bottom:1px solid #e6e6e6;background-color:#F5F5F5;}
+#pageSetIndex dl{overflow:hidden;}
+#pageSetIndex dt, #pageSetIndex dd{float:left;margin-top:10px;}
+#pageSetIndex dt{clear:both;width:95px;}
+#pageSetIndex dt a{text-decoration:underline;color:#4C62D1;line-height:14px;}
+#pageSetIndex dd{width:275px;line-height:14px;}
+/*====================设置公用====================*/
+.bodySet{text-align:left;}
+.bodySet .inputTipSet{color:#999;}
+.bodySet .btn{float:left;width:3.5em;margin-right:10px;}
+.bodySet textarea{display:block;width:470px;height:160px;margin:7px 0;}
+.bodySet input.text{float:left;width:190px;height:18px;line-height:18px;margin-right:5px;}
+.bodySet p.action{line-height:160%;color:#999;margin-bottom:10px;}
+.navSet{overflow:hidden;padding-left:30px;height:30px;line-height:30px;border-bottom:1px #d7d7d7 solid;}
+.navSet li{float:left;margin-right:1em;font-family:宋体, Arial, Helvetica, sans-serif;}
+.navSet li.on{font-weight:bold;}
+.setWrapper{margin-left:40px;}
+.setWrapper h1{position:relative;left:-15px;margin:30px 0 10px 0;padding-left:15px;background-image:url('../images/icon.png');background-repeat:no-repeat;background-position:0 -598px;#background-position:0 -600px;_background-position:0 -598px;font-weight:bold;}
+.setWrapper .explanation{padding-bottom:7px;font-weight:normal;}
+.setWrapper .explanation strong{font-weight:bold;color:red;}
+.tblFormSet, .tblFormSet th, .tblFormSet td{border:1px #d7d7d7 solid;}
+.tblFormSet{width:100%;margin:10px 0 30px 0;}
+.tblFormSet th{width:160px;padding:7px 0;background-color:#fafafa;text-align:right;}
+.tblFormSet td{padding:7px;}
+.formSet th, .formSet td{padding-bottom:7px;}
+.formSet th{width:9em;line-height:20px;text-align:right;}
+.formSet td label{margin-right:10px;}
+.setWrapper .tips{margin-top:50px;padding-top:10px;border-top:1px #d7d7d7 solid;color:#999;}
+.setWrapper .tips li{margin-bottom:5px;list-style-type:decimal;list-style-position:inside;}
+.msgSet{color:red;}
+.formSet .msgSet{line-height:20px;}
+.msgSetList{background-color:#FFFFD6;font-weight:bold;text-align:center;}
+.tblSetList{width:100%;border:1px #cdcdcd solid;}
+.tblSetList th, .tblSetList td{border-bottom:1px #cdcdcd solid;}
+.tblSetList th{padding:7px 0;background-color:#eee;text-indent:10px;}
+.tblSetList td{padding:7px 10px;overflow:hidden;}
+.tblSetList .check{width:30px;}
+.tblSetList .check input{#margin:-5px 0;}
+.tblSetList .action{width:110px;}
+.tblSetList .action a{margin-right:10px;}
+.tblSetList .date{width:140px;}
+.tblSetList .mobile{width:100px;}
+.tblSetList .tel{width:110px;}
+/*coremail*/
+.formArea{width:560px;padding:10px 20px 20px;margin-bottom:15px;background-color:#F9FAFF;border:1px #ccc solid;}
+.formArea table{width:100%;}
+.formArea th{text-align:right;}
+.formArea th, .formArea td{padding:5px 0;line-height:20px;}
+.formArea td{color:#999;}
+.formArea .li{overflow:hidden;height:2.5em;line-height:2.5;}
+.formArea .li a{color:#2a3cc2;text-decoration:underline;}
+.formArea .li span{float:left;}
+.formArea .li .title{position:relative;padding-left:16px;width:370px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis;}
+.formArea .li .title i{position:absolute;left:0;top:8px;}
+.formArea .li .title br{display:none;}
+.formArea .li .action{float:right;margin-right:2em;}
+.formArea .li .action a{margin-right:1em;}
+.formArea .li .action a.delete{margin-left:0;width:auto;background-image:none;}
+/*====================smtp发信保存====================*/
+#letterKeep{text-align:left;}
+#letterKeep ul li{margin:10px 0;}
+#letterKeep ul li span.action{color:#4C62D1;}
+#letterKeep a.btn{width:3.5em;float:left;margin-left:20px;}
+/*====================高级搜索====================*/
+#pageSearch h1{clear:both;}
+#pageSearch th{width:8em;padding-right:.5em;}
+#pageSearch td span{margin-left:.5em;}
+#pageSearch td select{width:223px;margin-right:.5em;#margin-right:0;}
+#pageSearch input.text{width:220px;}
+#pageSearch .btn{width:4em;}
+#pageSearch label{color:#333;}
+/*====================别名设置====================*/
+#pageUserAlias .setWrapper{width:600px;}
+#pageUserAlias td .msgSet, #pageUserAlias a.delete{float:left;}
+a.delete{width:13px;height:13px;margin-left:5px;background-image:url('../images/icon.png');background-repeat:no-repeat;background-position:-1000px -850px;}
+#pageUserAlias .formSet .btn{margin-right:5px;}
+/*====================个人资料修改====================*/
+#pageModifyUserInfo .formSet th{width:3em;}
+/*====================修改密码====================*/
+#pagePassword .setWrapper{width:600px;}
+#pagePassword .formSet th{width:6em;}
+.pwdLevel{float:left;width:20px;height:18px;line-height:18px;margin-left:5px;border:1px #939393 solid;background-color:#f3f3f3;text-align:center;}
+.pwdOn{color:#ff0032;}
+/*====================基本参数====================*/
+#pageSetBasic .formSet th{width:10em;}
+#pageSetBasic .layout0, #pageSetBasic .layout1{padding-left:13px;margin-left:2px;background-image:url('../images/icon.png');background-repeat:no-repeat;}
+#pageSetBasic .layout0{background-position:0 -349px;#background-position:0 -350px;}
+#pageSetBasic .layout1{background-position:-250px -349px;#background-position:-250px -350px;}
+/*====================自动回复====================*/
+#pageAutoReply .formSet .msgSet{line-height:1;}
+/*====================自动转发====================*/
+/*====================发件人姓名====================*/
+#pageSetSenderName .formSet th{width:6em;}
+/*====================邮件到达通知====================*/
+#pageSmsNotify .setWrapper{width:620px;}
+#pageSmsNotify .explanation a{text-decoration:underline;color:#4C62D1;}
+#pageSmsNotify .tblFormSet{margin-bottom:10px;}
+#pageSmsNotify th{#padding-top:10px;width:120px;}
+#pageSmsNotify p.action{margin-left:127px;}
+#pageSmsNotify td p.action{margin:7px 0 0;}
+#pageSmsNotify .select{clear:both;float:left;width:190px;margin-right:7px;}
+#pageSmsNotify .select select{width:190px;#width:196px;}
+/*====================邮件签名====================*/
+#pageSetSignature .tip{height:27px;line-height:27px;width:600px;border:1px #ccc solid;border-bottom:0;background-color:#F9FAFF;text-indent:1em;}
+#pageSetSignature .formArea1{background-color:white;}
+#pageSetSignature .formArea th{width:6em;}
+#pageSetSignature .formArea td{color:#333;}
+#pageSetSignature .formArea label{margin-left:1em;}
+#pageSetSignature .formArea textarea{height:85px;}
+/*====================邮件代收====================*/
+#pageSetReceiveOther .formArea th{width:11em;}
+#pageSetReceiveOther .formArea td{padding-left:10px;}
+#pageSetReceiveOther .formArea input.long{width:220px;}
+#pageSetReceiveOther .action{#zoom:1;padding-bottom:20px;}
+#pageSetReceiveOther p.action a{color:#2a3cc2;text-decoration:underline;margin-left:550px;}
+#pageSetReceiveOther .formArea input.text{width:150px;}
+#pageSetReceiveOther .formArea input.long{width:220px;}
+#pageSetReceiveOther .formArea label{color:red;}
+#pageSetReceiveOther a.advanced{color:#2a3cc2;text-decoration:underline;}
+#pageSetReceiveOther .btnCheck{width:5.5em;}
+/*====================代收结果====================*/
+#pageFetchmail .tblFormSet{margin-top:0;margin-bottom:1em;}
+#pageFetchmail .tblFormSet caption{margin-left:-1px;#margin-left:0;padding:7px;border:1px #D7D7D7 solid;border-bottom:0;font-weight:bold;}
+#pageFetchmail .tblFormSet caption .msgSet{margin-left:1em;}
+#pageFetchmail .tblFormSet th{width:80px;text-align:center;}
+#pageFetchmail .setWrapper{margin-right:40px;}
+#pageFetchmail .btn{width:4em;}
+#receiveRecord{width:440px;padding:15px;border:1px solid #ccc;margin:30px auto 0;}
+#receiveRecord h3{font-size:14px;font-weight:bold;line-height:30px;text-align:left;width:440px;}
+#receiveRecord p{overflow:auto;line-height:26px;+height:1%;width:440px;}
+#receiveRecord em.l{width:360px;}
+#receiveRecord em.l span.l{width:360px;text-align:left;}
+#receiveRecord em.r{width:80px;}
+#receiveRecord em.r a:link,#mailReceive #receiveRecord em.r a:visited{color:#0000cc;text-decoration:underline;}
+#receiveRecord em.r a:hover{text-decoration:none;}
+#receiveRecord div a.done{width:6.5em;float:right;}
+#receiveRecord div a.sentTwo{width:3.5em;float:right;}
+#receiveRecord div a.sentThree{width:4.5em;float:right;margin-left:5px;}
+#receiveRecord div{width:100%;margin-top:15px;text-align:right;overflow:auto;+height:1%;}
+#mailReceive .dialog{width:500px;}
+#mailReceive .close{display:none;}
+/*====================过滤器列表====================*/
+#pageFilter .setWrapper{width:660px;}
+#pageFilter .setWrapper{margin-right:40px;}
+#pageFilter .btn{width:6.5em;}
+#pageFilter .explanation{margin:7px 0;padding:0;}
+#pageFilter .explanation a{color:#2a3cc2;text-decoration:underline;}
+#pageFilter table, #pageFilter th, #pageFilter td{border:1px #ccc solid;text-align:center;}
+#pageFilter table{width:100%;}
+#pageFilter caption{padding:7px 0;font-weight:bold;}
+#pageFilter th{height:25px;line-height:25px;background-color:#fafafa;color:#999;}
+#pageFilter td{padding:10px 0;}
+#pageFilter .order{width:40px;}
+#pageFilter .order i{float:left;display:inline;overflow:hidden;width:10px;height:10px;margin:2px 0 0 7px;background-image:url('../images/jt.png');}
+#pageFilter i.asc1{background-position:0 -20px;}
+#pageFilter i.asc2{background-position:0 -40px;}
+#pageFilter i.desc1{background-position:0 0;}
+#pageFilter i.desc2{background-position:0 -60px;}
+#pageFilter th.name{width:130px;text-align:center}
+#pageFilter td.name{padding:10px 5px;width:160px;word-break:break-all;text-align:left;overflow:hidden;#overflow:visible;}
+#pageFilter td.name span{word-wrap:break-word;}
+#pageFilter .action{width:120px;}
+#pageFilter td.action a{margin:0 .7em;color:#2a3cc2;text-decoration:underline;}
+#pageFilter td.content{padding:10px;text-align:left;}
+#pageFilter td.content br{display:none;}
+/*====================新建过滤器====================*/
+#pageCreateFilter .formArea{width:660px;}
+#pageCreateFilter th{width:11em;}
+#pageCreateFilter td{color:#333;}
+#pageCreateFilter td p{overflow:hidden;clear:both;#zoom:1;padding-bottom:10px;}
+#pageCreateFilter label{float:left;width:87px;}
+#pageCreateFilter label input{#margin-left:-3px;}
+#pageCreateFilter select{float:left;width:80px;height:20px;margin-right:.5em;}
+#pageCreateFilter textarea{float:left;height:75px;margin:0;}
+#pageCreateFilter input.text{width:120px;}
+#pageCreateFilter tr.ifNew input.text{width:175px;}
+#pageCreateFilter tr.next input.text, #pageCreateFilter textarea{width:260px;}
+#pageCreateFilter tr.next select{width:262px;}
+/*====================黑白名单====================*/
+.bodyBwList .setWrapper{position:relative;width:600px;}
+.bodyBwList .bwSet th{width:6.5em;}
+.bodyBwList .bwSet p.action{position:absolute;top:47px;#top:75px;_top:77px;left:280px;}
+.bodyBwList .bwList p.action{position:absolute;top:93px;#top:123px;right:0;}
+.bodyBwList .bwList h1{margin-top:20px;}
+.bodyBwList .delAll{width:5.5em;margin-right:0;}
+.bodyBwList .no, .bodyBwList table .action{width:70px;text-align:center;text-indent:0;}
+.bodyBwList table .action a{margin-right:0;}
+/*====================短信彩信发送====================*/
+.bodySendMS .setWrapper{margin-right:40px;}
+.bodySendMS h1{left:0;background-image:none;padding-left:0;padding-bottom:7px;border-bottom:1px #c9c9c9 solid;line-height:2;}
+.bodySendMS th{width:5em;}
+.bodySendMS tr.receive textarea{overflow:hidden;float:left;margin:0 5px 0 0;width:325px;height:18px;}
+.bodySendMS tr.receive .btn{width:4.5em;}
+.bodySendMS tr.receive .inputTipSet{line-height:20px;}
+.bodySendMS tr.content textarea{margin:0 0 2px;width:500px;}
+.bodySendMS tr.content .btn{width:5.5em;}
+.bodySendMS tr.content .inputTipSet{float:right;margin:-4px 7px 0 0;}
+.bodySendMS tr.mode p{display:none;margin-top:2px;}
+.bodySendMS tr.randNum td *{float:left;}
+.bodySendMS tr.randNum input.text{width:100px;}
+.bodySendMS tr.randNum td a{height:20px;line-height:20px;margin-left:7px;}
+#pageSendSMS table{width:570px;}
+.bodyMMS .MMSPreview{float:left;position:relative;z-index:1;width:193px;height:277px;margin-top:10px;background-image:url('../images/mms.png');background-repeat:no-repeat;text-align:center;}
+.bodyMMS .setWrapper h1{margin-bottom:0;}
+.bodyMMS .formSet{margin-top:10px;}
+.bodyMMS .MMSPreview img{display:none;margin:55px auto 0;}
+.bodyMMS .ring{display:none;position:absolute;left:32.5px;top:65px;width:128px;height:128px;background-image:url('../images/mms.png');background-repeat:no-repeat;background-position:-250px 0;}
+.bodyMMS .MMSPreview a{position:absolute;bottom:0;left:15px;}
+.bodyMMS .formSet{position:absolute;left:250px;width:500px;}
+.bodyMMS table{width:100%;}
+.bodyMMS h1{_zoom:1;}
+.bodyMMS tr.receive textarea{width:260px;}
+.bodyMMS tr.title input.text{width:319px;margin-right:10px;}
+.bodyMMS tr.content p{overflow:hidden;}
+.bodyMMS tr.content textarea{margin-top:7px;width:437px;}
+.bodyMMS tr.content .btnInsert{width:9.5em;margin-right:170px;}
+.bodyMMS tr.content .btnInsert .rContent *{background-image:url('../images/icon.png');background-position:-743px -648px;background-repeat:no-repeat;display:block;text-align:left;text-indent:24px;}
+/*编辑彩信*/
+#pageEditMMS textarea{height:250px;}
+#pageEditMMS .setWrapper{margin-top:10px;}
+#pageEditMMS .MMSPreview a{position:static;}
+#pageEditMMS .pager{position:absolute;bottom:-20px;left:33px;}
+#pageEditMMS .pager label{display:block;}
+/*====================写信、传真后发短信====================*/
+.bodySendSMSAfter h1{border-bottom:0;}
+.bodySendSMSAfter .setWrapper .explanation{width:568px;margin-bottom:14px;padding:5px 7px;border:1px #ccc solid;background-color:#f4f4f4;line-height:1.5;}
+.bodySendSMSAfter table{width:590px;}
+.bodySendSMSAfter tr.receiveInfo td span{display:block;width:486px;padding:5px 7px;border:1px #c8e1f8 solid;background-color:#f7ffff;line-height:1.5;}
+.bodySendSMSAfter th{width:7em;}
+/*====================短信彩信发送成功====================*/
+.bodySuccessMS h1{margin-bottom:7px;}
+.bodySuccessMS fieldset{margin:12px 40px;border:1px #b2b2b2 solid;}
+.bodySuccessMS table{width:100%;}
+.bodySuccessMS caption{height:30px;line-height:30px;text-indent:2em;}
+.bodySuccessMS th{height:25px;line-height:25px;background-color:#f2f2f2;text-align:center;}
+.bodySuccessMS td{padding:5px 0;text-align:center;vertical-align:middle;}
+.bodySuccessMS .check{width:50px;text-align:right;}
+.bodySuccessMS input.text{width:80%;height:18px;line-height:18px;}
+.bodySuccessMS p.action{height:20px;padding:10px;}
+.bodySuccessMS .btn{float:right;margin-right:10px;width:4.5em;text-decoration:none;}
+#pageSuccessMMS .bodySuccessMS fieldset{margin-top:0;}
+#pageSuccessMMS .bodySuccessMS fieldset.saveMMS{margin-top:12px;margin-bottom:0;border-bottom:0;}
+#pageSuccessMMS .bodySuccessMS fieldset p{padding:10px;background-color:#F2F2F2;}
+#pageSuccessMMS .bodySuccessMS p.action{background-color:transparent;}
+#pageSuccessMMS .bodySuccessMS fieldset label{font-weight:bold;}
+#pageSuccessMMS .bodySuccessMS caption{#text-indent:2.5em;}
+/*====================短信彩信签名列表====================*/
+.bodyMSSignList .btn{width:5.5em;margin-right:0;}
+.bodyMSSignList .setWrapper{position:relative;#zoom:1;margin-right:40px;border-bottom:1px #bdbdbd solid;}
+.bodyMSSignList p.action{position:absolute;right:0;top:23px;#top:53px;}
+.bodyMSSignList p.signContent, .bodyMSAttchSign dd{overflow:hidden;padding:7px;margin:0 0 5px 30px;border:1px #dedede solid;line-height:1.5;word-break:break-all;}
+.bodyMSSignList .tblSetList, .bodyMSSignList td{border:0;}
+.bodyMSSignList th{border-bottom:0;border-top:1px #bdbdbd solid;}
+.bodyMSSignList th{text-indent:0;text-align:center;}
+.bodyMSSignList td{padding:7px 0;}
+.bodyMSSignList h2, .bodyMSAttchSign dt{margin-left:10px;vertical-align:middle;font-weight:bold;color:#4d61c4;}
+.bodyMSSignList h2 i, .bodyMSAttchSign dt i, .formArea .li .title i{float:left;width:17px;height:13px;background-image:url('../images/icon.png');background-repeat:no-repeat;background-position:0 -500px;cursor:pointer;}
+.bodyMSSignList h2 i.off, .bodyMSAttchSign dt i.off, .formArea .li .title i.off{background-position:-250px -500px;}
+.bodyMSSignList td.date{text-align:center;}
+.bodyMSSignList td.action{text-indent:17px;}
+/*====================短信彩信传真列表公用====================*/
+.bodyMSList .setWrapper{position:relative;#zoom:1;margin-right:40px;}
+.bodyMSList .search{position:absolute;left:95px;top:-2px;#top:25px;}
+.bodyMSList .search select{float:left;margin-right:5px;}
+.bodyMSList .search input.text{width:150px;border:1px #83A5BE solid;}
+.bodyMSList .search .btn{margin-left:0;}
+.bodyMSList .MSList h1{background-image:none;}
+.bodyMSList h1 span{font-weight:normal;}
+.bodyMSList .tblSetList{border-left:0;border-right:0;}
+.bodyMSList p.checkAll{padding:7px 10px;background-color:#f8f8f8;border-top:1px #CDCDCD solid;}
+.bodyMSList p.checkAll a{margin-left:1.5em;}
+.bodyMSList .type{width:70px;}
+.bodyMSList .no{width:40px;}
+.bodyMSList td.no{text-indent:0;text-align:center;}
+.bodyMSList .count{width:60px;text-indent:0;text-align:center;}
+.bodyMSList .state{width:170px;}
+.bodyMSList .pager{float:right;width:330px;margin-top:10px;/*position:relative;left:-150px;margin-left:50%;_zoom:1;*/}
+.bodyMSList .pager a.btn{margin:0 3px;}
+.bodyMSList .pager .prevous, .bodyMSList .pager .next{width:4.5em;}
+/*====================传真列表公用====================*/
+.bodyFax h1 a{color:#4B5DC3;text-decoration:underline;}
+.bodyFax .from{width:80px;}
+.bodyFax th.date a{display:block;background-image:url('../images/icon.png');background-repeat:no-repeat;background-position:-440px -344px;}
+.bodyFax th.date a.up{background-position:-940px -344px;}
+/*====================定时短信列表====================*/
+#pageSMSSetTimeList .tblSetList .action{width:55px;}
+/*====================短信发送记录列表====================*/
+#pageSMSSendedList .MSList h1{position:relative;#zoom:1;}
+#pageSMSSendedList .MSList h1 .msg{position:absolute;right:0;top:0;}
+/*====================彩信夹列表====================*/
+#pageFolderList .setWrapper{position:relative;#zoom:1;}
+#pageFolderList .tblSetList .action{width:125px;}
+#pageFolderList .tblSetList .date{width:90px;}
+#pageFolderList p.action{position:absolute;top:0;#top:30px;right:0;}
+#pageFolderList .btn{width:6.5em;}
+/*====================彩信列表====================*/
+#pageMMSList body{margin:10px 25px 25px;#margin-top:0;}
+#pageMMSList .msgSetList{display:block;padding:7px;border-bottom:1px #BDBDBD solid;}
+#pageMMSList .MLHeader, #pageMMSList .MLFooter{position:relative;#zoom:1;height:28px;padding-top:7px;border-bottom:1px #bdbdbd solid;}
+#pageMMSList .MLHeader .selectAll{margin:0 10px;}
+#pageMMSList .MLHeader .btn{float:right;width:8.5em;margin:-19px 10px 0 0;#margin:-18px 10px 0 0;}
+#pageMMSList .MLHeader .now{float:right;margin:-18px 10px 0 0;font-weight:bold;}
+#pageMMSList .MLHeader .now select{font-weight:normal;}
+#pageMMSList ul{overflow:hidden;padding:10px;}
+#pageMMSList li{float:left;display:inline;margin:8px;width:128px;border:1px #7f9db9 solid;text-align:center;}
+#pageMMSList li img{width:128px;height:128px;}
+#pageMMSList li label{display:block;font-weight:normal;}
+#pageMMSList li p{margin:5px auto;}
+#pageMMSList li p a{margin:0 5px;}
+#pageMMSList .moveTo{float:left;}
+#pageMMSList .MLFooter{clear:both;#margin-top:10px;border-top:1px #bdbdbd solid;}
+#pageMMSList .MLFooter .moveTo{margin:0;font-weight:bold;}
+#pageMMSList .pager{width:auto;margin:0;}
+#pageMMSList select{font-weight:normal;}
+/*====================短信彩信联系人弹出层====================*/
+.pageConectDialog dl{width:540px;margin:0 auto 10px;text-align:left;}
+.pageConectDialog dt{clear:both;padding:10px 0 3px 0;font-weight:bold;}
+.pageConectDialog dt span{font-weight:normal;color:#999;}
+.pageConectDialog .scWrapper{overflow:hidden;height:98px;border:1px #789bb9 solid;}
+.pageConectDialog .select{float:left;width:430px;height:98px;border:0;}
+.pageConectDialog .select select{width:430px;#width:436px;height:98px;#height:104px;}
+.pageConectDialog dd div.action{float:left;width:6.5em;height:78px;padding:20px 0 0 13px;border-left:1px #eaeaea solid;text-align:center;}
+.pageConectDialog dd .btn{display:block;margin-bottom:10px;}
+.pageConectDialog ul{overflow:hidden;height:21px;margin-bottom:2px;border-bottom:1px #5261d6 solid;}
+.pageConectDialog ul li{float:left;width:105px;height:20px;line-height:20px;margin-right:1px;border:1px #5261d6 solid;cursor:pointer;text-align:center;}
+.pageConectDialog ul li.on{background-color:#5261d6;color:white;}
+.pageConectDialog .dd1 .scWrapper{height:140px;}
+.pageConectDialog .dd1 .nav{float:left;overflow:auto;width:110px;height:140px;border-right:1px #789bb9 solid;}
+.pageConectDialog .dd1 .nav a{display:block;margin-top:10px;text-align:center;}
+.pageConectDialog .dd1 .select{width:320px;height:140px;}
+.pageConectDialog .dd1 .select select{width:320px;#width:326px;height:140px;#height:146px;}
+.pageConectDialog .dd1 div.action{height:110px;padding:30px 0 0 13px;}
+.pageConectDialog p.action{position:relative;#zoom:1;left:-50px;margin-left:50%;padding-bottom:10px;}
+.pageConectDialog p.action .btn{float:left;width:3.5em;margin-left:10px;}
+/*====================短信彩信附加签名====================*/
+.bodyMSAttchSign #container{margin:10px 15px 10px 0;}
+.bodyMSAttchSign .msgSetList{display:block;padding:7px;margin-left:15px;border:1px #dedede solid;}
+.bodyMSAttchSign dl{text-align:left;}
+.bodyMSAttchSign dt{position:relative;#zoom:1;z-index:1;margin-top:5px;margin-bottom:5px;padding-right:2.5em;word-break:break-all;}
+.bodyMSAttchSign dt a{position:absolute;right:0;top:0;font-weight:normal;}
+/*====================传真收件箱====================*/
+#pageMFaxReceive h1 a, #pageMFaxRemoveList h1 span{margin-left:1em;font-weight:normal;}
+#pageMFaxQueryList .tblSetList .action{width:120px;}
+#pageMFaxRemoveList .action{width:160px;}
+/*====================发传真====================*/
+#pageMFaxSend body{color:#666;}
+.faxHeader{overflow:hidden;height:35px;line-height:35px;border-bottom:1px solid #EBEBEB;background-color:#F8F8F8;text-align:left;}
+.faxHeader p{float:left;margin-left:30px;}
+.faxHeader p em{font-weight:bold;color:red;}
+.faxHeader ul{float:left;margin-left:2em;}
+.faxHeader li{display:inline;margin-right:7px;}
+.faxHeader li a{text-decoration:underline;color:#4D61C4;}
+#pageMFaxSend .writeSContent li{border-left:1px solid #83A5BE;}
+#pageMFaxSend th{width:100px;text-align:right;line-height:1.5;}
+#pageMFaxSend th em{color:red;margin-right:2px;}
+#pageMFaxSend .writeContent input.txtInfo{width:55%;}
+#pageMFaxSend .writeContent input.txtTime{float:left;width:150px;margin-left:5px;}
+#pageMFaxSend .writeSwitch i{display:none;}
+#pageMFaxSend tr.switch input.txtInfo{float:left;}
+#pageMFaxSend tr.switch i{float:left;width:30px;height:20px;margin-left:5px;#margin-top:-1px;background-image:url('../images/icon.png');background-repeat:no-repeat;background-position:-1000px -250px;cursor:pointer;}
+#pageMFaxSend tr.switch i.off{background-position:-1250px -250px;}
+#pageMFaxSend tr.upload input{#height:20px;}
+#pageMFaxSend tr.upload p{margin-top:3px;color:#a4a4a4;}
+#pageMFaxSend tr.upload li{line-height:20px;#height:20px;}
+#pageMFaxSend tr.upload li i{background:url('../images/icon.png') 0 -550px;height:13px;width:10px;position:relative;float:left;top:2px;}
+#pageMFaxSend tr.action td{padding-top:20px;}
+#pageMFaxSend td iframe{width:99%;height:120px;border:1px #83A5BE solid;}
+#pageMFaxSend tr.type label{float:left;}
+#pageMFaxSend tr.type i{float:left;width:20px;height:20px;background-image:url('../images/icon.png');background-repeat:no-repeat;background-position:-1497px -247px;cursor:pointer;}
+#pageMFaxSend .btnSend{float:left;width:3.5em;margin-right:10px;}
+#pageMFaxSend .btnPreview{float:left;width:5.5em;}
+#pageMFaxSend .writeSidebar .tab li.li1{cursor:default;}
+#pageMFaxSend .wsWrapper{height:400px;border-bottom:1px #83A5BE solid;}
+#pageCreateMMSFolder th{width:7em;}
+.faxError{color:#d30009;height:91px;font-weight:bold;background:url(../images/baocuo_icon01.png) no-repeat left top;padding-left:120px;text-align:left;line-height:91px;margin:40px 0 0 30px;font-size:14px;}
+/*====================Hack====================*/
+@media screen and (-webkit-min-device-pixel-ratio:0){
+	.bodyBwList .bwSet p.action{top:45px;}
+}
+/* #pageMFaxSend .writeWrapper{position:absolute;}
+#pageMFaxSend .writeSwitch{display:none;}  
+#pageMFaxSend .writeSidebar{position:absolute;margin-left:0;right:0; float:none;} */
+#pageMFaxSend .writeWrapper{}
+#pageMFaxSend .writeSwitch{display:none;}
+#pageMFaxSend .writeSidebar{position:static;}
+#pageMFaxSend .writeSidebar .tab{position:static;}
+#pageMFaxSend .writeSidebar .writeSContent{position:static;}
+#pageCompose .flash{position:absolute;left:8px;width:240px;height:40px;z-index:2;top:88px;}
+#pageCompose .flashDisp{position:static;width:300px;height:50px;margin:0px;}
+#pageCompose ol#attachContainer{position:relative;overflow:auto;}
+#pageCompose ol#attachContainer li a{margin-left:1em;text-decoration:underline;color:#0040C5;}
+.fixControl{text-align:left;padding:20px 30px;width:286px;}
+.fixControl h3{font-weight:bold;font-size:14px;color:#3466C9;line-height:30px;}
+.fixControl .btn{float:right;width:3.5em;}
+.fixControl p{line-height:24px;}
+.fixControl div{padding:10px 0;text-align:center;}
+.fixControl div .loadFix{width:5.5em;margin-right:15px;}
+#fixControl_step3 h3{color:#CB0101;}
+.scHomeLink{color:#999;text-decoration:underline;margin-left:20px;}
+.addressTips{background:#FEFFD7;height:20px;line-height:20px;border-bottom:1px solid #efefef;color:#FF0101;position:relative;width:100%;float:left;text-align:left;}
+.addressTips a{color:#4C63CD;text-decoration:underline;margin:0 5px;}
+.addressTips i,.addressTips span.close a{height:20px;width:17px;background:url(../images/icon.png) no-repeat;}
+.addressTips i{float:left;background-position:-2500px -96px;margin:0 5px;}
+.addressTips span.close {cursor:pointer;line-height:20px;width:80px;position:absolute;top:0;right:0;text-decoration:none;color:#666;padding-left:18px;#padding-left:20px;}
+.addressTips span.close a{background-position:-1995px -498px;position:absolute;#top:2px !important;top:4px;right:0;display:block;}
+.addressTips span.close input{position:absolute;left:0px;top:4px;#top:-2px;_top:0;}
+.strongPoint .spList li ul li.abso{position:absolute;left:20px;top:50px;font-weight:bold;width:60px;text-align:center;}
+
+
+
+/************add by xu**************/
+.todayCalendar{padding-top:5px;}
+.todayCalendar li{ height:23px; clear:both; padding-top:5px; padding-right:35px; border-bottom:1px solid #cdcdcd;}
+.todayCalendar li.lastTd{border-bottom:none; *height:18px;}
+.todayCalendar li.lastTd a:link , .todayCalendar li.lastTd a:visited{ color:#0040c4;}
+.todayCalendar li p { float:left;}
+.todayCalendar li span { float:right; }
+
+.news li {padding-left:25px;}
+.news li ins{ text-decoration:none; padding-right:15px;}
+
+
+
+.calendar1{ background:url(../images/colorsIcon.png) 30px 5px no-repeat; padding-left:55px;}
+.calendar2{ background:url(../images/colorsIcon.png) 30px -25px no-repeat; padding-left:55px;}
+.calendar3{ background:url(../images/colorsIcon.png) 30px -55px no-repeat; padding-left:55px;}
+.calendar4{ background:url(../images/colorsIcon.png) 30px -85px no-repeat; padding-left:55px;}
+.calendar5{ background:url(../images/colorsIcon.png) 30px -115px no-repeat; padding-left:55px;}
+.calendar6{ background:url(../images/colorsIcon.png) 30px -145px no-repeat; padding-left:55px;}
+.calendar7{ background:url(../images/colorsIcon.png) 30px -175px no-repeat; padding-left:55px;}
+.calendar8{ background:url(../images/colorsIcon.png) 30px -205px no-repeat; padding-left:55px;}
+.calendar9{ background:url(../images/colorsIcon.png) 30px -235px no-repeat; padding-left:55px;}
+.calendar10{ background:url(../images/colorsIcon.png) 30px -265px no-repeat; padding-left:55px;}
+.calendar11{ background:url(../images/colorsIcon.png) 30px -295px no-repeat; padding-left:55px;}
+.calendar12{ background:url(../images/colorsIcon.png) 30px -325px no-repeat; padding-left:55px;}
+.calendar13{ background:url(../images/colorsIcon.png) 30px -355px no-repeat; padding-left:55px;}
+.calendar14{ background:url(../images/colorsIcon.png) 30px -385px no-repeat; padding-left:55px;}
+.calendar15{ background:url(../images/colorsIcon.png) 30px -415px no-repeat; padding-left:55px;}
+.calendar16{ background:url(../images/colorsIcon.png) 30px -445px no-repeat; padding-left:55px;}
+.calendar17{ background:url(../images/colorsIcon.png) 30px -475px no-repeat; padding-left:55px;}
+.calendar18{ background:url(../images/colorsIcon.png) 30px -505px no-repeat; padding-left:55px;}
+.calendar19{ background:url(../images/colorsIcon.png) 30px -535px no-repeat; padding-left:55px;}
+.calendar20{ background:url(../images/colorsIcon.png) 30px -565px no-repeat; padding-left:55px;}
+
+.calendarSms{ background:url(../images/colorsIcon.png) 30px -595px no-repeat; padding-left:55px;}
+.calendarMail{ background:url(../images/colorsIcon.png) 30px -625px no-repeat; padding-left:55px;}
+.calendarFax{ background:url(../images/colorsIcon.png) 30px -655px no-repeat; padding-left:55px;}
+
+
+ul.addDoc{ padding-left:12px;}
+ul.addDoc a:link , ul.addDoc a:hover , ul.addDoc a:visited{ color:#003fc5; text-decoration:underline;}
+ul.addDoc li span{color:#7f7f7f;}
+#pageCompose tr.attach td ul.addDoc li .del{font-weight:200;color:#003fc5; padding-left:15px;}
+
+
+
+
+
+
+
+
+

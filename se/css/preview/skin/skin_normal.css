@@ -1,0 +1,100 @@
+﻿@charset "utf-8";
+/* body背景颜色 */
+/* body.bodycolor, */body.newwindowsread{background-color:#3f6ca3;} 
+/* 选项卡下面的长线条颜色 */
+.mainTop{border-bottom-color:#2c4a74;}
+/* iframe 边框颜色 */
+.mainIframeBg{border-color:#2c4a74;}
+/* 头部左边字体颜色 */
+.logo .info a{color:#dde5ee;} 
+.logo .info  .linespan{color:#DDE5EE;}
+/* 头部右边字体颜色 */
+.setInfoText a{color:#dde5ee;}
+/* 头部右边线条颜色 */
+.setInfoText .linespan{color:#DDE5EE;}
+/* 左边北京 和圆角 */
+.skintopBg,.skinBottomBg,.readWrite,
+.tab-lc,.tab-rc,
+.mainTop .closeAll,.mainTop .i_close,
+.s-s-btn,.i_t_close,.i_t_min,
+.i_write,.i_read,.i_comm,.i_funtion,.i_add,.i_minus2,.i_plus,.i_set,.i_iphone,.i_sj,.mailLogo,
+.newwlogo,.i_xiax,.i_xias
+{background:url(../../../images/skin/normal/bg.png) no-repeat}
+.skintopBg,.skinBottomBg{width:200px;height:7px;}
+.skintopBg{background-position:-203px 0;}
+.skinBottomBg{background-position:-203px -8px;}
+.readWrite{border:none;background-position:0 0;}
+.readWrite a{font-weight:bold;color:#333333;}
+.readWrite a:hover{color:#2C4F7E;text-decoration:none;}
+
+.sub,.main{border-color:#3f6ca3;}
+
+/* logo */
+.mailLogo{width:114px;height:30px;background-position:-386px -46px;}
+/* 搜索框 边框 和颜色 */
+.searchWrap,.searchWrap .searchContent{border-color:#2a4973;}
+.searchWrap{background-color:#355c91;}
+.searchWrap .searchContent{background-color:#edf4fe;}
+.searchWrap .searchContentOn{background-color:#FFF;}
+
+/* 选项卡中间平铺背景和字体颜色 */
+.topBg,.mainTop li .m{color:#FFFFFF;background:url(../../../images/skin/normal/bg_x.png) repeat-x;}
+.mainTop li .m{color:#FFFFFF;}
+.mainTop li .m{background-position:0 -107px;}
+.mainTop li.on .m{background-position:0 -76px;color:#1f2026;}
+/* 关闭全部按纽 */
+.mainTop .i_close{width:7px;height:7px;background-position:-410px -8px;}
+.mainTop .i_close:hover{background-position:-419px -8px;}
+.mainTop li.on .i_close{background-position:-419px -0;}
+.mainTop li.on .i_close:hover{background-position:-410px -0;}
+.mainTop .closeAll{width:22px;height:28px;background-position:-229px -17px;display:inline-block;overflow:hidden;margin-top:2px;margin-left:1px;}
+.mainTop .closeAll:hover{background-position:-254px -17px;}
+
+.skinTop{background:url(../../../images/skin/normal/topbg.jpg) repeat;height:124px;width:100%;position:absolute;left:0;top:0;z-index:1;}	
+.skinTopLeft{background:url(../../../images/skin/normal/leftbg.jpg) no-repeat;width:251px;height:80px;position:absolute;left:0;top:0;z-index:2;}
+.skinTopRight{background:url(../../../images/skin/normal/rightbg.jpg) no-repeat;width:747px;height:80px;position:absolute;right:0;top:0;z-index:3;}
+
+/* ===== 弹出层 =====   */
+.boxIframeTitle{border:1px solid #486fa8;border-bottom:none;background-color:#4c75b2;color:#FFF;}
+.boxIframeTitle h2{border-color:#6184c5;}
+.boxIframeMain{border-color:#a2b0c6;border-top-color:#2c4f7e;background-color:#fff;}
+.boxIframeBtn{border-top-color:1px solid #a2b0c6;background-color:#f4f5f9;}
+
+/* 弹出层关闭按纽 */
+.i_t_close{background-position:-461px 0;}
+.i_t_close:hover{background-position:-484px 0;}
+.i_t_min{background-position:-461px -20px;}
+.i_t_min:hover{background-position:-484px -20px;}
+
+/* 图标  */
+.i_write{width:14px;height:13px;background-position:0 -76px;}
+.i_write:hover,.writeBtn:hover .i_write{background-position:-27px -76px;}
+.i_read{width:13px;height:12px;background-position:0 -96px;}
+.i_read:hover,.redBtn:hover .i_read{background-position:-27px -96px;}
+.i_comm{width:14px;height:13px;background-position:-54px -96px;}
+.i_comm:hover,.commBtn:hover .i_comm{background-position:-81px -96px;}
+.i_funtion{width:17px;height:17px;background-position:-162px -76px;}
+.i_add{width:18px;height:18px;background-position:4px -112px;}
+.i_add:hover{background-position:-23px -112px;}
+.i_plus{width:11px;height:11px;background-position:-54px -76px;}
+.i_plus:hover{background-position:-81px -76px;}
+.i_minus2{width:11px;height:11px;background-position:-108px -76px;}
+.i_minus2:hover{background-position:-135px -76px;}
+.i_set{width:18px;height:18px;background-position:-51px -113px;}
+.i_set:hover,.setApp:hover i,.adminMyAppBtn:hover i{background-position:-78px -113px;}
+.i_iphone{width:12px;height:12px;background-position:-108px -96px;}
+.i_iphone:hover,.iphone-btn:hover i{background-position:-135px -96px;}
+/* 三角 */
+.i_sj{width:8px;height:4px;background-position:-108px -116px;}
+.i_sj:hover{background-position:-135px -116px;}
+.i_xiax{width:7px;height:5px;overflow:hidden;background-position:0 -136px;vertical-align:middle;}
+.i_xiax:hover{background-position:-27px -136px;}
+.i_xias{width:7px;height:5px;overflow:hidden;background-position:-54px -136px;vertical-align:middle;}
+.i_xias:hover{background-position:-81px -136px;}
+
+
+/* 新窗口读信页 */
+.newwindowsread{padding:4px;}
+.newwlogo{width:130px;height:40px;background-position:-407px -80px;display:block;overflow:hidden;margin-bottom:6px;margin-left:3px;}
+.newredcontent{border:1px solid #2c4a74;background-color:#FFF;}
+

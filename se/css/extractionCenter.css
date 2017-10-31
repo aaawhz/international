@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+html,body,p,h1,h2,h3{ margin:0; padding:0;}
+img{ border:none;}
+/* clear float */
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+.clearfix{zoom:1;}
+.clearAll{overflow:hidden;_zoom:1;}
+
+body{background:url(../images/extractionCenter/bg.jpg) repeat-x;}
+.wrapper{ width:655px; margin:0 auto;}
+.header{ height:69px; border-bottom-style: none;}
+.logo{ width:573px; height:69px; float:left;overflow:hidden; line-height:200px;}
+.mobile{background:url(../images/extractionCenter/logo.jpg) no-repeat;}
+.post{background:url(../images/extractionCenter/logo_post.jpg) no-repeat;}
+.richinfo{background:url(../images/extractionCenter/logo_richinfo.jpg) no-repeat;}
+.cernet{background:url(../images/extractionCenter/logo_cernet.jpg) no-repeat;}
+.sg{background:url(../images/extractionCenter/logo_sg.jpg) no-repeat;}
+
+
+/*notfind*/
+.notfind{ padding-left:70px;background:url(../images/extractionCenter/excla.jpg) no-repeat; margin:120px 0 0 25px;}
+.notfind h3{ color:#000; font-size:14px; padding-bottom:5px;}
+.notfind p{ color:#666; font-size:14px; line-height:22px;}
+.notfind p strong{ font-weight:bold;}
+
+/*downLoadBox*/
+.downLoadBox{ margin:120px 0 0 60px;}
+.sma-img{ border:2px solid #dcdcdc; display:block; float:left; padding:15px; margin-right:30px;}
+.deadTime{ padding-left:10px;}
+.down-rig h3{ color:#000; font-weight:bold; font-size:16px; padding-bottom:10px;}
+.down-rig p{ color:#797979; font-size:12px; padding-bottom:30px;}
+.down-btn{background:url(../images/extractionCenter/down-btn.jpg) no-repeat; width:58px; height:25px; line-height:25px; display:inline-block; text-align:center; color:#fff; font-size:12px; text-decoration:none;}

@@ -1,0 +1,113 @@
+/*139工单样式*/
+.i-new{ width: 30px; height: 16px; display: inline-block; background: url(../../../../se/images/NEW.gif) no-repeat 0 0; vertical-align: middle; margin: 0 5px;}
+.table_Box{ padding: 10px;}
+.table_new{border-left: 1px solid #ddd; border-top: 1px solid #ddd;}
+.table_new td{ border-right: 1px solid #ddd; border-bottom:1px solid #ddd; padding: 5px 3px 5px 10px; word-break:break-all; word-wrap:break-word;}
+.table_tit{}
+.table_con{ margin:5px 0;}
+.attaList li{ width:100%; display:table;}
+.nbd{ border: 0;}
+
+
+
+textarea{
+    outline: none;
+}
+textarea.write-input{
+    font-family: 'Microsoft Yahei', verdana, 'Hiragino Sans GB';
+}
+.process{
+    background: none;
+}
+.tooBig{
+    color: red;
+}
+.toolBut li,#dateFilter li{
+    height: 25px;
+    line-height: 25px;
+}
+#hasReview{
+    /*padding-top:1px\9;*/
+}
+.toolBut li button{
+    height: 24px;
+    line-height: 24px;
+    padding: 0 12px;
+}
+
+/*ul.toolBut{*/
+    /*height: 24px;*/
+    /*padding: 8px auto;*/
+/*}*/
+.ui-date{
+    width: 234px;
+}
+.ui-date .main{
+    height: 175px;
+    width: 234px;
+}
+.ui-date .ui-date-list{
+    width: 220px;
+}
+
+.ui-date .ui-date-week{
+    width: 220px;
+}
+.ui-date .ui-date-list .ui-date-week .ui-week{
+    width: 30px;
+}
+.ui-date .ui-date-list .ui-date-days div{
+    width: 30px;
+}
+
+
+
+
+/*task*/
+a.ws-font{
+    cursor: text;
+    text-decoration: none;
+
+}
+a.ws-font:hover{
+    color: #5A759E;
+}
+.requiredStyle{
+    background:#ffff00;
+}
+
+.process{
+    padding-left: 8px;
+}
+p.attachment{
+    padding-left:14px ;
+    background:url('../../../../se/images/attachment_icon.png' )  left 5px no-repeat;
+}
+li.attachment{
+    text-indent: 14px;
+    background:url('../../../../se/images/attachment_icon.png' )  left 5px no-repeat;
+}
+
+
+#comments_tr{
+    display: none;
+}
+span.fw_b{
+    max-height: 90%;
+    font-weight: bold;
+}
+
+
+.ms-controller{
+    visibility: hidden;
+}
+
+/*附件样式*/
+.fileName{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 300px;
+    display: inline-block;
+    vertical-align: bottom;
+}

@@ -1,0 +1,50 @@
+﻿#container{
+	width:828px;
+	text-align:left;
+}
+.after:after{display:block;clear:both;content:".";visibility:hidden;height:0;}
+.after{#zoom:1;}
+.text{padding:2px;}
+.btnFG{padding:3px 12px 1px 12px;}
+.btn3{padding:5px 12px 2px 12px;}
+.btn2{padding:0 0.5em;}
+.red{color:#F56421;}
+.C-mid .red{color:#F56421;}
+.blue{color:#2D3194;}
+.C-top div{float:left;height:35px;}
+.C-top-l{width:4px;background:url('../images/pw-top.png');}
+.C-top-r{width:4px;background:url('../images/pw-top.png') -4px 0;}
+.C-top-m{width:820px;background:url('../images/pw-top-bg.png');line-height:35px;color:#fff;font-weight:bold;font-size:14px;text-indent:12px;}
+.C-mid{width:640px;padding:0;}
+.C-mid h3{color:#000;line-height:36px;font-size:14px;}
+.step-all a{float:left;height:23px;line-height:23px;width:190px;text-align:center;background:#e6e6e6 url('../images/ps-step1.png') no-repeat right top;}
+.step-all a.current{background:#ACD1FB url('../images/ps-step3.png') no-repeat right top;color:#000;font-weight:bold;}
+.step-all a.current-last{background:#e6e6e6 url('../images/ps-step2.png') no-repeat right top;}
+.step-all span a{font-size:14px;color:#666;text-decoration:none;}
+.step-all{padding:12px 0;}
+.step-all .step-4 a{background-image:none;}
+.info{margin:0 0 0 24px;color:#666;font-size:12px;padding-top:18px;}
+.menuFg{padding:24px 0 0 0;margin:0;color:#000;}
+.menuFg label,.menuFg input,.menuFg span{float:left;}
+.menuFg label{font-weight:bold;text-align:right;width:120px;}
+.menuFg .text,.menuFg .error{margin:-4px 0 0 4px;}
+.menuFg .error{white-space:nowrap;padding:3px 4px 4px 24px;background:#FEFAD7 url('../images/ps-error.png') no-repeat 4px center;border:1px solid #FDC29A;color:#F56421;font-size:12px;}
+.menu-btn{padding:12px 0;}
+.menu-btn .btnFG,.menuFg p,.btn3{margin-left:122px;}
+.method-2{padding:12px 0;border-top:1px dashed #ccc;}
+.method-2 p{margin:12px 0 0 24px;color:#666;}
+.method-2 p span{font-weight:bold;}
+.menuFg p{padding-top:18px;clear:both;}
+.get-yz{background:#FFFADD;color:#2D3194;padding:4px;font-size:12px;line-height:14px;margin-right:4px;}
+.pass-gui{font-size:12px;color:#666;margin-left:4px;}
+.safe{width:154px;border:1px solid #ccc;background:#efefef;height:22px;line-height:22px;font-size:12px;}
+.safe-1{width:33%;color:#fff;text-align:center;line-height:22px;background:#FF7802;}
+.safe-2{width:66%;color:#000;text-align:center;line-height:22px;background:#FFD92E;}
+.safe-3{width:100%;color:#fff;text-align:center;line-height:22px;background:#27CA01;}
+.success{margin:30px auto;width:270px;background:url('../images/pw-succes.png') no-repeat left center;padding-left:100px;}
+.success h3{color:green;}
+.success p{font-size:12px;}
+.success .btnFG{margin:12px 0 0 0;}
+.setWrapper h1 a{font-weight:normal;}
+#tryout2{ text-align:left;}
+.success a{color:blue; text-decoration:underline;}

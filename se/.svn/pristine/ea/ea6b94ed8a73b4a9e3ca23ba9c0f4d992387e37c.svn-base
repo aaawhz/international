@@ -1,0 +1,128 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+
+
+body{font:18px/1.5 'Microsoft Yahei',verdana,'Hiragino Sans GB';}
+
+.branchListWrap h2{font-size:18px;}
+.j_search_txt{font-size:18px;}
+.enclosure_table thead tr th{ font-size: 18px;}
+#container .nav-hd li{font-size: 18px;}
+#container .nav-hd li a{_font-size: 18px;}
+#RichInputBoxID input{font-size:18px;}
+#attachlist_container h2 strong{ font-size:20px;}
+.move-top{font-size:18px; }
+#container .nav-hd li{}
+#pageSetIndex .nav-hd li{font-size: 18px;}
+.skin-topNote{ font-size:18px;}
+
+.set_til{font-size:18px;}
+.set_til span{ font-size:14px;}
+.senior_box h3 span{ font-size:18px;}
+
+#pageDefault #sidebar .receiveCompose{font-size:18px;}
+.listHeader h1{font-size:20px;}
+.set_rule_box_tips{font-size:18px; }
+.writeSidebar .tab li{ font-size:18px; }
+.boxIframeTitle h2{ font-size:18px;}
+.cbox-head{ font-size:18px;}
+.form .label{ width:118px;}
+.#addrList a{ font-size:18px;}
+#subjectColor span.title{padding:5px 5px 0px 5px;}
+#subjectColor{height: 150px;}
+#template{ left:344px;}
+#sign{ left:402px;}
+.blue-sbox h2{ font-size:18px;}
+.mailinfo h2{ font-size:18px;}
+.advSearchpop{ width:420px;}
+.toolbar .pager{ top:5px;}
+
+.mailList th.date{width:145px;}
+.mailList td.date{ width:133px;}
+.mailList th.from{ width:270px;}
+.mailList td.from{ width:270px;}
+.mailList_sender{ width:230px;}
+.newsletterData .labelIndex a{ padding:0 6px;}
+.addr_Page_mt{ margin-top:10px;}
+.singtitleWidth{ width:67px;}
+.titleOper{ width:376px;}
+.title_show_w{ width:70px;}
+.autoReply-table{ width:715px;}
+.mailPOP_tdWidth{ width:170px;}
+.gonggao p{ line-height:26px;}
+.mailinfo p{ padding-bottom:7px;}
+.mailinfo h2{ padding-bottom:8px;}
+.rMList .rMr{ margin-left:70px;}
+.addrTitle_font{ font-size:18px;}
+.senior_box h3{ font-size:18px;}
+
+.userSet { width:1000px;}
+#pageSetIndex li{width:479px;}
+#pageSetIndex dl{ min-height:240px;}
+#pageSetIndex dd{line-height:30px;width:380px;}
+#pageSetIndex dt{ line-height:30px;}
+#pageSetIndex dt a{}
+
+.#pageDefault #sidebar .nav a.manage{ right:1px;}
+
+
+
+
+
+
+/**************************disk.css*/
+.filename_css{ font-size:18px;}
+.enclosure_table td{ font-size:18px;}
+.nav-hd li{ font-size:18px;}
+
+
+
+
+/************************ content.css**********/
+.branchListWrap h2{font-size:18px;}
+
+
+/************************ readMail.css**********/
+.readMail .hTitle h2{ }
+.send-state-table tr td{ font-size:18px;}
+
+
+
+
+/*登录超时*/
+.alarm-font h3{ font-size:18px;}
+.alarm-font p{ font-size:13px;}
+
+
+/************************ notice.css**********/
+.receivecontent1 .title{ font-size:20px;}
+.receivecontent1, .receivecontent2{ font-size:18px;}
+#locker03_tb1 th{ font-size:18px;}
+#locker03_tb1 td{ font-size:18px;}
+
+.mailSummary_style{color: black; font-size: 18px; font-weight: normal};
+
+
+
+#RichInputBoxID .addrItem b{ font-size:16px;}
+#RichInputBoxID .addrItem span{ font-size:16px;}
+.ban-til a{ font-size:16px;}
+.encript li span.left{ width:110px;}
+#subjectColor{ width:110px;}
+#aRecallMail{ font-size:16px;}
+.state_setul{ padding:10px 0 0 0;}
+
+.ul_302 li label{ width:125px;}
+.state_ul li{ font-size:13px;}
+
+.notice_td1{ font-size:18px;}
+.notice_tb td{ font-size:17px;}
+.notice_td2{ font-size:18px;}
+.hoverUnderline{ font-size:20px;}
+
+
+#pageDefault #sidebar .nav a.manage{ right:1px;}
+#pageDefault #sidebar .nav a.action.add{ right:20px!important;}
+#RichInputBoxID{ font-size:18px;}
+#personPage{ font-size:20px;}

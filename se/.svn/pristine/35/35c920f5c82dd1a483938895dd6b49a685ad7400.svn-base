@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*=  by liuyuwan 20140404  =*/
+/*404 500 加载失败 错误页面*/
+.Error_Box { width: 100%; height: 100%; background: #f3f3f3; display: table; }
+.ErrorIn { width: 520px; height: 480px; position: absolute; left: 50%; top: 50%; margin: -240px 0 0 -260px; text-align: center; }
+.LoadError{width:262px; height:192px; display:inline-block;background:url(../images/error/Error_failure.jpg) no-repeat center center;}
+.Error_500{width:409px; height:390px; display:inline-block;background:url(../images/error/Error_500.jpg) no-repeat center center; }
+.Error_404{ width:514px; height:386px; display:inline-block; background:url(../images/error/Error_404.jpg) no-repeat center center;}
+.mt_55 { margin-top: 55px; }
+/*404 500 加载失败 错误页面*/
+
+
+/*登录超时*/
+.Rlogin{ margin:24px;}
+.OverTimeTips{ background:#fff5f5; line-height:25px; color:#999; text-align:center; border-bottom:1px solid #ffe5e5; font-family:}
+.Rlogin li{ margin:10px 0;}
+.Rlogin ul{ margin:5px 0 25px 0;}
+.dw100{ width:100px; text-align:center}
+
+.loginIpt { background: none repeat scroll 0 0 #FFFFFF; border: 1px solid #CCCCCC; border-radius: 5px; height: 35px; position: relative; z-index: 1;}
+.loginIpt-focus { box-shadow: 0 0 5px rgba(0, 210, 255, 0.5); }
+.login-txt { border: medium none; color: #BEBEBE; font-family: verdana; font-size: 14px; height: 21px; ime-mode: disabled; left: 5px; line-height: 21px; outline: medium none; padding: 7px 0; position: absolute; top: 0; width: 245px; }
+.pswtip { color: #C3C3C3; cursor: text; font-size: 14px; left: 8px; line-height: 33px; padding-left: 4px; position: absolute; top: 2px; visibility: visible; }
+/*登录超时*/

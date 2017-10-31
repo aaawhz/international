@@ -1,0 +1,7 @@
+﻿/*可以在这里添加你自己的css*/
+
+
+#mailTemp{margin-bottom:0;}
+#mailTemp td{border:0px solid #DDD; padding:0}
+.errorWord {border-bottom: 2px dotted #f00;
+cursor: pointer;}
