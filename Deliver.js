@@ -7,15 +7,15 @@ Deliver.prototype = {
     initialize: function(){
         var od = MM[gConst.deliver];
         od.name = "deliver";
-    	od.needRequest = true;
+        od.needRequest = true;
         od.func = "mbox:getDeliverStatus";
         od.start = 0;
-    	od.sort = 0;
+        od.sort = 0;
         od.total = 200;
         od.data = {sort:0,start:0,total:200};
         od.call = function(){}; 
-		GMC.initialize(od.name, this);
-	},  
+        GMC.initialize(od.name, this);
+    },  
     getDeliverStatus:function(){
         var p1 = this;
         var o = p1.name;
@@ -37,9 +37,9 @@ Deliver.prototype = {
         });
     },
     getHtml:function(){
-		var html = [];
-		var p1 = this;
-		var o = p1.name;
+        var html = [];
+        var p1 = this;
+        var o = p1.name;
         var om = CM["deliver"]["var"];
         p1.deliverData = {info:{},items:[]};
         p1.headId = "headStatus_" + o +"_";
@@ -60,7 +60,7 @@ Deliver.prototype = {
         var objStatus = {iTotal:0,iOk:0,iFail:0,iDeliver:0};
 
         //var text = p1.text.lefts(30);
-		var strTitle = '<h1>邮件发送状态</h1><p></p>';
+        var strTitle = '<h1>'+ Lang.Mail.deliver.mailsendstauts+'</h1><p></p>';
        
         html.push("<div id=\"mailsentStatus\" class=\"mailsentStatus\">");
         html.push("<div class=\"wrapper\"><div class=\"container\">");
@@ -68,18 +68,19 @@ Deliver.prototype = {
         //html.push("<div class=\"pageNav\"><a id=\"prev1\" href=\"#\">上一页</a>|<a id=\"next1\" href=\"#\">下一页</a>");
         //html.push("<select id=\"goto1\"><option value=\"1\">1/12</option></select>");
         //html.push("</div>");
-        html.push("<h3><strong>邮件发送状态</strong><span>[</span><div class=\"clearfloat\">");
-        html.push("<div class=\"deliver\"><i class=\"i-mD1\"></i><span id=\"{0}ok\">0封成功</span></div>".format(p1.headId));
-        html.push("<div class=\"deliver\"><i class=\"i-mD2\"></i><span id=\"{0}deliver\">0封投递中</span></div>".format(p1.headId));
-        html.push("<div class=\"deliver\"><i class=\"i-mD3\"></i><span id=\"{0}fail\">0封失败</span></div>".format(p1.headId));
+ 
+        html.push("<h3><strong>"+ Lang.Mail.deliver.mailsendstauts+"</strong><span>[</span><div class=\"clearfloat\">");
+        html.push("<div class=\"deliver\"><i class=\"i-mD1\"></i><span id=\"{0}ok\">"+ Lang.Mail.deliver.lsuccess+"</span></div>".format(p1.headId));
+        html.push("<div class=\"deliver\"><i class=\"i-mD2\"></i><span id=\"{0}deliver\">"+ Lang.Mail.deliver.lsending+"</span></div>".format(p1.headId));
+        html.push("<div class=\"deliver\"><i class=\"i-mD3\"></i><span id=\"{0}fail\">"+ Lang.Mail.deliver.lfailed+"</span></div>".format(p1.headId));
         html.push("</div><span>]</span></h3>");
         /** table head */
         html.push("<div class=\"list\" id=\"{0}{1}_main\"><table><tbody>".format(p1.divId,o));
-        html.push("<tr><th class=\"tos\">收件人</th><th class=\"subject\" >主题</th>");
-        html.push("<th class=\"dlStatus\" >投递状态</th>");
-        html.push("<th class=\"date\" onclick=\"MM['"+o+"'].rankList();\"><a title=\"点击可按此排序\" href=\"javascript:fGoto();\">时间 </a><i id=\"" + gConst.listMailSortIcon + "receiveDate_deliver\" class=\"desc\"></i></th>");
+        html.push("<tr><th class=\"tos\">"+ Lang.Mail.deliver.sender+"</th><th class=\"subject\" >"+ Lang.Mail.deliver.theme+"</th>");
+        html.push("<th class=\"dlStatus\" >"+ Lang.Mail.deliver.sendStatus+"</th>");
+        html.push("<th class=\"date\" onclick=\"MM['"+o+"'].rankList();\"><a title=\""+ Lang.Mail.deliver.clickbysort+"\" href=\"javascript:fGoto();\">"+ Lang.Mail.deliver.time+" </a><i id=\"" + gConst.listMailSortIcon + "receiveDate_deliver\" class=\"desc\"></i></th>");
         
-		if (om.length > 0) {
+        if (om.length > 0) {
             html[html.length] = '<table>';
             for (var i = 0; i < om.length; i++) {
                 var item = om[i];
@@ -87,7 +88,7 @@ Deliver.prototype = {
                 tos = toObj.toTotal.join(",");
                 tos = tos.encodeHTML();
                 var date = Util.formatDate(item.sendDate);
-                var subject = item.subject || "<无>";
+                var subject = item.subject || "<"+ Lang.Mail.deliver.sendStatus+">";
                 subject = subject.encodeHTML();
                 toObj.subject = subject;
                 toObj.date = date;
@@ -97,9 +98,9 @@ Deliver.prototype = {
                 html.push("<td class=\"subject\" >{0}</td>".format(subject));
                 html.push("<td class=\"dlStatus\" >");
                 html.push("<div>");
-                html.push("<div class=\"deliver\"><i class=\"i-mD1\"></i><a href=\"javascript:fGoto();\" onclick=\"MM['{0}'].showSendStatus(0,{1})\">{2}封成功</a></div>".format(o,i,toObj.iOk));
-                html.push("<div class=\"deliver\"><i class=\"i-mD2\"></i><span>{0}封投递中</span></div>".format(toObj.iDeliver));
-                html.push("<div class=\"deliver\"><i class=\"i-mD3\"></i><a href=\"javascript:fGoto();\" onclick=\"MM['{0}'].showSendStatus(1,{1})\">{2}封失败</a></div>".format(o,i,toObj.iFail));
+                html.push("<div class=\"deliver\"><i class=\"i-mD1\"></i><a href=\"javascript:fGoto();\" onclick=\"MM['{0}'].showSendStatus(0,{1})\">{2}"+ Lang.Mail.deliver.isuccess+"</a></div>".format(o,i,toObj.iOk));
+                html.push("<div class=\"deliver\"><i class=\"i-mD2\"></i><span>{0}"+ Lang.Mail.deliver.isending+"</span></div>".format(toObj.iDeliver));
+                html.push("<div class=\"deliver\"><i class=\"i-mD3\"></i><a href=\"javascript:fGoto();\" onclick=\"MM['{0}'].showSendStatus(1,{1})\">{2}"+ Lang.Mail.deliver.ifail+"</a></div>".format(o,i,toObj.iFail));
                 html.push("</div></td>");
                 html.push("<td class=\"date\" >{0}</td>".format(date));
                 html.push("</tr>");
@@ -112,7 +113,7 @@ Deliver.prototype = {
             p1.deliverData.info = objStatus;
             html.push("</tbody></table>");
         } else {
-            html[html.length] = '<p class="empty" style="display:block">没有邮件发送状态记录</p>';
+            html[html.length] = '<p class="empty" style="display:block">'+ Lang.Mail.deliver.nosenderecorder+'</p>';
         }  
         html.push("</div>");
         //html.push("<h3><div class=\"pageNav\">");
@@ -165,9 +166,9 @@ Deliver.prototype = {
         var n1 = $(id+"ok");
         var n2 = $(id+"fail");
         var n3 = $(id+"deliver");
-        n1.innerHTML  = data.iOk + "封成功";
-        n2.innerHTML = data.iFail + "封投递中";
-        n3.innerHTML = data.iDeliver + "封失败";
+        n1.innerHTML  = data.iOk + ""+ Lang.Mail.deliver.isuccess+"";
+        n2.innerHTML = data.iFail + ""+ Lang.Mail.deliver.isending+"";
+        n3.innerHTML = data.iDeliver + ""+ Lang.Mail.deliver.ifail+"";
     },
     /**
      * 显示发关状态详情
@@ -180,13 +181,13 @@ Deliver.prototype = {
         var data = this.deliverData.items[index];
         if (data) {
             var tos = (type==0)?data.toOk:data.toFail;
-            var status = (type==0)?"投递成功":"投递失败";
+            var status = (type==0)?""+ Lang.Mail.deliver.sendesuccess+"":"sendefail";
             html.push("<div class=\"mailsentStatus\"><div class=\"list\">");
             html.push("<h3><strong>{0}</strong></h3>".format(data.subject));
             html.push("<br><table><tbody>");
-            html.push("<tr><th class=\"to\">收件人</th>");
-            html.push("<th class=\"type\" >投递状态</th>");
-            html.push("<th class=\"date\" >时间</th></tr>");
+            html.push("<tr><th class=\"to\">"+ Lang.Mail.deliver.toer+"</th>");
+            html.push("<th class=\"type\" >"+ Lang.Mail.deliver.sendestatus+"</th>");
+            html.push("<th class=\"date\" >"+ Lang.Mail.deliver.time+"</th></tr>");
             for (var i = 0; i < tos.length; i++) {
                 html.push("<tr class=\"\">");
                 html.push("<td class=\"to\">{0}</td>".format(tos[i]));
@@ -197,13 +198,13 @@ Deliver.prototype = {
             html.push("</tbody></table><br></div></div>");    
             var ao = {
                 id : id,
-                title : "邮件发送状态",
+                title : ""+ Lang.Mail.deliver.sendestatus+"",
                 text : html.join(""),
-    			width:400,
-    			zindex : 1100,
+                width:400,
+                zindex : 1100,
                 buttons : []
-        	};
-    		CC.msgBox(ao); 
+            };
+            CC.msgBox(ao); 
         }
     },        
     init:function(){
@@ -212,21 +213,21 @@ Deliver.prototype = {
     },
     setDivHeight: function(){
         var p1 = this;
-		var o = p1.name;
-		//得到邮件列表页面总高度(不带工具条)        
-		var mh = CC.docHeight() - GE.pos()[1];    //$(gConst.divToolbar + o).offsetHeight;
-		var rh = 0;
+        var o = p1.name;
+        //得到邮件列表页面总高度(不带工具条)        
+        var mh = CC.docHeight() - GE.pos()[1];    //$(gConst.divToolbar + o).offsetHeight;
+        var rh = 0;
        //得到邮件列表显示区域高度(不带标题和状态栏)
-		//var bodyH = mh - $(gConst.listHeaderId + o).offsetHeight - $(gConst.listHeaderId + o).offsetHeight;
-		//bodyH += 4;
+        //var bodyH = mh - $(gConst.listHeaderId + o).offsetHeight - $(gConst.listHeaderId + o).offsetHeight;
+        //bodyH += 4;
         var bodyH = mh;
         try {
-			El.setStyle($("mailsentStatus"), {
-				"height": bodyH + "px"
-			});
-		} catch (e1) {
-		}
-	},
+            El.setStyle($("mailsentStatus"), {
+                "height": bodyH + "px"
+            });
+        } catch (e1) {
+        }
+    },
     rankList:function(){
         this.sort = 1 - this.sort;
         this.getDeliverStatus();
@@ -234,11 +235,11 @@ Deliver.prototype = {
         El.setClass($(gConst.listMailSortIcon + 'receiveDate_deliver'), icon);
     },
     resize: function(){
-		var p1 = this;
-		p1.setDivHeight();
-	},
-	exit: function(){
-		return true;
-	}
+        var p1 = this;
+        p1.setDivHeight();
+    },
+    exit: function(){
+        return true;
+    }
 };
 

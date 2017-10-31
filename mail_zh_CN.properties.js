@@ -1864,30 +1864,42 @@ mail.write.pwdWrong=\u5BC6\u7801\u6216\u8D26\u53F7\u9519\u8BEF\u002C\u8BF7\u91CD
 mail.write.hasMoved=\u8BE5\u7528\u6237\u5DF2\u542F\u52A8\u4E86\u90AE\u7BB1\u642C\u5BB6
 
 
-mail.compose.send = "·¢&nbsp;ËÍ";
-mail.compose.saveDraft = "´æ²İ¸å";
-mail.compose.closeComposeTip = "¹Ø±ÕĞ´ĞÅÒ³£¬Î´±£´æµÄÄÚÈİ½«»á¶ªÊ§£¬ÊÇ·ñ¹Ø±Õ£¿";
+mail.compose.send = "å‘&nbsp;é€";
+mail.compose.saveDraft = "å­˜è‰ç¨¿";
+mail.compose.closeComposeTip = "å…³é—­å†™ä¿¡é¡µï¼Œæœªä¿å­˜çš„å†…å®¹å°†ä¼šä¸¢å¤±ï¼Œæ˜¯å¦å…³é—­ï¼Ÿ";
 
-mail.deliver.viewDeliverStatus = "²éÑ¯ÓÊ¼şÍ¶µİ×´Ì¬";
-mail.deliver.bynomailgroup = "±¾Óò·ÇÓÊ¼ş×é";
-mail.deliver.bdmailgroup = "±¾ÓòÓÊ¼ş×é";
-mail.deliver.foreignmail = "ÍâÓòÓÊ¼ş"
-mail.deliver.goqueque = "½øÈë¶ÓÁĞ";
-mail.deliver.bydelivered = "±¾ÓòÒÑÍ¶µİ";
-mail.deliver.byreaded = "±¾ÓòÓÃ»§ÒÑÔÄ¶Á";
-mail.deliver.bydeleted = "±¾ÓòÓÃ»§ÒÑÉ¾³ı";
-mail.deliver.bydfail = "±¾ÓòÍ¶µİÊ§°Ü";
-mail.deliver.bytransfroms = "ÍâÓòÒÑ×ª·¢µ½¶Ô·½·şÎñÆ÷";
-mail.deliver.foreigncf = "ÍâÓò³¢ÊÔÖØ·¢";
+mail.deliver.viewDeliverStatus = "æŸ¥è¯¢é‚®ä»¶æŠ•é€’çŠ¶æ€";
+mail.deliver.bynomailgroup = "æœ¬åŸŸéé‚®ä»¶ç»„";
+mail.deliver.bdmailgroup = "æœ¬åŸŸé‚®ä»¶ç»„";
+mail.deliver.foreignmail = "å¤–åŸŸé‚®ä»¶"
+mail.deliver.goqueque = "è¿›å…¥é˜Ÿåˆ—";
+mail.deliver.bydelivered = "æœ¬åŸŸå·²æŠ•é€’";
+mail.deliver.byreaded = "æœ¬åŸŸç”¨æˆ·å·²é˜…è¯»";
+mail.deliver.bydeleted = "æœ¬åŸŸç”¨æˆ·å·²åˆ é™¤";
+mail.deliver.bydfail = "æœ¬åŸŸæŠ•é€’å¤±è´¥";
+mail.deliver.bytransfroms = "å¤–åŸŸå·²è½¬å‘åˆ°å¯¹æ–¹æœåŠ¡å™¨";
+mail.deliver.foreigncf = "å¤–åŸŸå°è¯•é‡å‘";
 
-mail.deliver.foreigncf = "ÍâÓò³¢ÊÔÖØ·¢";
-mail.deliver.foreigncf = "ÍâÓò³¢ÊÔÖØ·¢";
-mail.deliver.foreigncf = "ÍâÓò³¢ÊÔÖØ·¢";
-mail.deliver.foreigncf = "ÍâÓò³¢ÊÔÖØ·¢";
-mail.deliver.foreigncf = "ÍâÓò³¢ÊÔÖØ·¢";
-mail.deliver.foreigncf = "ÍâÓò³¢ÊÔÖØ·¢";
-mail.deliver.foreigncf = "ÍâÓò³¢ÊÔÖØ·¢";
-mail.deliver.foreigncf = "ÍâÓò³¢ÊÔÖØ·¢";
-mail.deliver.foreigncf = "ÍâÓò³¢ÊÔÖØ·¢";
-mail.deliver.foreigncf = "ÍâÓò³¢ÊÔÖØ·¢";
+mail.deliver.mailsendstauts = "é‚®ä»¶å‘é€çŠ¶æ€";
+mail.deliver.lsuccess = "0å°æˆåŠŸ";
+mail.deliver.lsending = "0å°æŠ•é€’ä¸­";
+mail.deliver.lfailed = "0å°å¤±è´¥";
+mail.deliver.sender = "æ”¶ä»¶äºº";
+mail.deliver.theme = "ä¸»é¢˜";
+mail.deliver.sendStatus = "æŠ•é€’çŠ¶æ€";
+mail.deliver.clickbysort = "ç‚¹å‡»å¯æŒ‰æ­¤æ’åº";
+mail.deliver.time = "æ—¶é—´";
+mail.deliver.hasno = "æ— ";
+
+mail.deliver.isuccess = "å°æˆåŠŸ";
+mail.deliver.isending = "å°æŠ•é€’ä¸­";
+mail.deliver.ifail = "å°å¤±è´¥";
+mail.deliver.nosenderecorder = "æ²¡æœ‰é‚®ä»¶å‘é€çŠ¶æ€è®°å½•";
+mail.deliver.sendesuccess = "æŠ•é€’æˆåŠŸ";
+mail.deliver.sendefail = "æŠ•é€’å¤±è´¥";
+mail.deliver.toer = "æ”¶ä»¶äºº";
+mail.deliver.sendestatus = "æŠ•é€’çŠ¶æ€";
+
+mail.deliver.foreigncf = "æ— ";
+mail.deliver.foreigncf = "æ— ";
 
