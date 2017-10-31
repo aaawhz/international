@@ -225,7 +225,7 @@ Deliver.prototype = {
             El.setStyle($("mailsentStatus"), {
                 "height": bodyH + "px"
             });
-        } catch (e1) {
+        } catch (e1) { 
         }
     },
     rankList:function(){
