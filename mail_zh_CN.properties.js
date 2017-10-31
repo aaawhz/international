@@ -1900,7 +1900,71 @@ mail.deliver.sendefail = "投递失败";
 mail.deliver.toer = "收件人";
 mail.deliver.sendestatus = "投递状态";
 
-mail.deliver.foreigncf = "无";
-mail.deliver.foreigncf = "无";
+mail.fax.sensitivemail = "敏感邮件";
+mail.fax.unhandlemail = "待办邮件";
+mail.fax.alltipread = "全部标记为已读";
+mail.fax.hasdone = "已完成";
+mail.fax.ddate = "删除日期";
+mail.fax.remailTip = "只可以恢复最近3天彻底删除的邮件";
+mail.fax.showpart = "只显示部分项";
+mail.fax.showall = "显示全部";
+mail.fax.showS = "展开分类搜索";
+mail.fax.hideS = "隐藏分类搜索";
+
+mail.fax.dfj = "带附件";
+mail.fax.bdfj = "不带附件";
+mail.fax.afjlx = "按附件类型";
+mail.fax.asjfw = "按时间范围";
+mail.fax.aszwjj = "按所在文件夹";
+mail.fax.afjr = "按发件人";
+mail.fax.flcz = "分类查找";
+mail.fax.dsyjj = "代收邮件夹";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+mail.fax.foreigncf = "无";
+
 
 
