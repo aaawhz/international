@@ -27,7 +27,7 @@ for (var i = 0; i < data.length; i++) {
     		console.log(item)
 
     		//如果前一个字符是 \\ ， 也继续往前走
-    		while(  data[j] !== item || data[j-1] == '\\'   ){
+    		while(   data[j] !== item || data[j-1] == '\\'     ){
     			
     			str += data[j];
     			j++
