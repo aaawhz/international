@@ -22,16 +22,21 @@ for (var i = 0; i < data.length; i++) {
     		str += next; //存第一个中文
     		
     		j++
-    		if(j++ && ( data[j] == item || data[j] == item) ){
+
+    		console.log(data[j])
+    		console.log(item)
+
+    		while(  data[j] !== item  ){
+    			
     			str += data[j];
     			j++
     		}
-    		console.log(str)
-    		str = item + 'hahhahahha'
+    		//console.log(str)
+    		str = item + 'hahhahahha' + item
     		result += str;
 
     		//console.log(str);
-
+    		//跳过已匹配的
     		i = j;
 
     		

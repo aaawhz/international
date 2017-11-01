@@ -610,7 +610,7 @@
                  icoTitle = Lang.Mail.label_NewLabel;
                  break;
                  case -6 :
-                 icoTitle ="hahhahahha代收邮箱";
+                 icoTitle ="hahhahahha;
                  break;	
              }
              a.title = icoTitle;
@@ -643,7 +643,7 @@
                     cls += ' ' + actionClass;
                 }
                 a.className = cls;
-                a.title = (flag==-6?"hahhahahha代收邮箱":Lang.Mail.folder_AdminFolder);
+                a.title = (flag==-6?"hahhahahha:Lang.Mail.folder_AdminFolder);
                 a.href = "javascript:fGoto();";
                 a.innerHTML = html;
                 if (url) {
@@ -719,7 +719,7 @@
                     initFolderMain({
                         fid: 7,
                         type: 1,
-                        name: "hahhahahha底删除 ",
+                        name: "hahhahahha,
                         stats: {
                             attachmentNum: 0,
                             messageCount: 0,
@@ -859,7 +859,7 @@
                     CC.addFolderItem(ao["var"], {
                         "fid": 9999999,
                         "location": 31800,
-                        "name": "hahhahahha邀请",
+                        "name": "hahhahahha,
                         "type": 5,
                         "flag": {"meeting": 1}
                     });
@@ -885,7 +885,7 @@
                     CC.addFolderItem(ao["var"], {
                         "fid": 9999997,
                         "location": 31800,
-                        "name": "hahhahahha邮件",
+                        "name": "hahhahahha,
                         "type": 5,
                         "flag": {"signed": 1}
                     });
@@ -898,7 +898,7 @@
                     CC.addFolderItem(ao["var"], {
                         "fid": 9999996,
                         "location": 31800,
-                        "name": "hahhahahha邮件",
+                        "name": "hahhahahha,
                         "type": 5,
                         "flag": {"starFlag": 1}
                     });
@@ -1157,7 +1157,7 @@
                     GE.evts = {};
                 }
                 if (!GE.evts.mt) {
-                    mt = new MarqueeTitle('hahhahahha {0} 封新邮件！'.format(newMailCount));
+                    mt = new MarqueeTitle('hahhahahha.format(newMailCount));
                     mt.speed = 500;
                     mt.run();
                     GE.evts.mt = mt;
@@ -1389,9 +1389,9 @@
                           '<p style="padding-bottom:5px; font-size:14px;">想要免费发起多人电话会议吗？</p>' +
                           '<p style="padding-bottom:5px; font-size:14px;">赶紧进绑定手机号码吧~</p>'
  
-        CC.alert(htmlcontent,wo );//Lang.Mail.ConfigJs.phoneBindTip"hahhahahha没有绑定手机号码，请进入设置-账号与安全中绑定您的手机号码。"
+        CC.alert(htmlcontent,wo );//Lang.Mail.ConfigJs.phoneBindTip"hahhahahha
         if(url){
-            jQuery("#divDialogClosealertbtn_0").find("span").find("span").html("hahhahahha绑定");
+            jQuery("#divDialogClosealertbtn_0").find("span").find("span").html("hahhahahha);
         }
     },
     /***
@@ -1453,7 +1453,7 @@
             };
 
             title = Lang.Mail.Write.niceTip;
-            //text = "<p>您的密码还有"+pwd_expired_date+"hahhahahha期</p>";
+            //text = "<p>您的密码还有"+pwd_expired_date+"hahhahahha;
             text = "<p style='font-size:13px;color: #333333; padding:5px 0 5px'>  " + Lang.Mail.Write.pwdlongTimeNoMod + "</p>";
 
             CC.confirm(text, wo, title, fnCancel);
@@ -1598,22 +1598,22 @@ function closeAllConfirm(callback){
     if(aChangedFrame.length==0){//没有未保存的直接跳转
         callback()
     }else if(aChangedFrame.length>1){
-        parent.CC.confirm('hahhahahha有未完成编辑操作，是否要立即跳转？', callback);
+        parent.CC.confirm('hahhahahha, callback);
     }else if(aChangedFrame.length==1){
         switch(aChangedFrame[0].type){
             case 'mail':
-            parent.CC.confirm('hahhahahha写信页，未保存的内容将会丢失，是否关闭？', callback);
+            parent.CC.confirm('hahhahahha, callback);
                     //aChangedFrame[0].window.oWrite.doMailInfo(true,callback)
 
                     break;
                     case 'meeting':
-                    parent.CC.confirm('hahhahahha离开已编辑的会议邀请内容将会丢失，是否确认关闭？', callback);
+                    parent.CC.confirm('hahhahahha, callback);
                     break;
                     case 'sms':
-                    parent.CC.confirm('hahhahahha离开已编辑的短信内容将会丢失，是否确认关闭？', callback);
+                    parent.CC.confirm('hahhahahha, callback);
                     break;
                     case 'mms':
-                    parent.CC.confirm('hahhahahha离开已编辑的彩信内容将会丢失，是否确认关闭？', callback);
+                    parent.CC.confirm('hahhahahha, callback);
                     break;
                 }
             }
