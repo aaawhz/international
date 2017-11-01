@@ -1957,6 +1957,57 @@ mail.write.nxzwyd = 您选择了加密邮件，请解密后再标记为已读
 mail.write.cd = 存档
 
 mail.write.writemail = 写信
+mail.write.xc = 续传
+mail.write.scsb = 上传失败
+mail.write.sccg = 上传成功
+mail.write.sc = 删除
+mail.write.zd = 最大{0}
+mail.write.scbdfj = 删除本次上传的附件
+mail.write.wjshcs = 文件上传失败，请删除后重试！
+mail.write.tjxdfj = 添加小于{0}的附件
+mail.write.tjzdfj = 添加最大{0}的附件
+mail.write.tjzcfj = 添加最大{0}的附件<br/>可使用Ctrl+V粘贴上传附件
+mail.write.az = 安装
+mail.write.yxxgj = 邮箱小工具
+mail.write.jkncfj = 即可Ctrl+V粘贴上传附件
+mail.write.nsfczj =  您是否要禁用Flash上传组件?
 
+mail.write.sczcfs = Flash上传组件已经禁用，您下次打开写信页将使用原始但是稳定的上传方式。
+mail.write.azxgj = 安装小工具
+mail.write.sycjsc = 使用超大附件上传
+mail.write.qxsc = 取消上传
+mail.write.sccjcj = 上传超大附件, 需要先安装企邮小工具插件.
+mail.write.azhxgn = 安装后：您可以使用以下功能：
+mail.write.upload = 上传
+mail.write.cdfj = 超大附件
+mail.write.nttdzw = 粘贴图到正文
+mail.write.ntfcfj = 粘贴方式上传附件
+mail.write.jp = 截屏
+mail.write.qyxzts = 企邮小工具安装提示
 
+mail.write.xzaz = 下载安装
+mail.write.cancel = 取消
+mail.write.fjsdfj = 附件上传中，请稍后再添加新的附件
+mail.write.ntjxcg = 您添加的文件大小超过{0}
+mail.write.bydlfs = 不用担心 您可以使用超大附件来发送。
+mail.write.cdfsxz = 超大附件保存在文件中转站中，更环保，对方也可以高速下载.
+mail.write.xtdzsc = 相同的文件名已经存在,请重命名后再上传
+mail.write.wjscsb = 文件\"{0}'上传失败
+mail.write.dbqhzs = 对不起，文件正在被其它应用程序占用，请关闭文件后再试。
+mail.write.ndlpgn = 您的浏览器暂不支持截屏功能
+mail.write.hqdhzs = 获取大附件失败，请稍后再试
+mail.write.yschzs = 已上传附件中存在相同文件名，请重命名后再试。
+
+mail.write.wjdfsc = 文件大小为 0 字节，无法上传
+mail.write.wjshcs = 文件上传失败，请删除后重试！
+mail.write.dbqhcs = 对不起，上传附件失败，请删除后重试！
+mail.write.qbwjtj = 请把文件拖放到这个区域，就可作为附件添加。
+mail.write.bntdwj = 不能拖放文件夹，以及大小为零的文件
+mail.write.tpjzz = 图片加载中...
+mail.write.scz = 上传中
+mail.write.scsqcs = 上传失败，请重试
+mail.write.fjsqcs = 附件上传失败，请重试。
+mail.write.scfj = 上传附件
+mail.write.sxfjsb = 刷新附件失败
+mail.write.wjmszf = "文件名包含:\\\/*\?\"\'\<\>等特殊字符"
 
