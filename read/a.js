@@ -35,7 +35,7 @@ if(str){
 
 function trans(str){
 	 if(!str){
-	 	return;
+	 	return '';
 	 }
 
 	var arr = str.split('=');
@@ -75,5 +75,8 @@ function pad(str){
 	}
 }
 
+
+//同步方法
+rf.writeFileSync('./message.txt', result);
   
 console.log(result); 

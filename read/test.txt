@@ -1,5 +1,5 @@
 mail.write.writemail = 写信
-mail.write.xc = 续传
+mail.write.xc = "续传"
 mail.write.scsb = 上传失败
 mail.write.sccg = 上传成功
 mail.write.sc = 删除
