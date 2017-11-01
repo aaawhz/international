@@ -38,7 +38,7 @@
         if (ht_fax.length > 0 && !GC.checkModule(GC.module.fax)) {
             loadLink(ht_fax, $(gConst.menuC.fax));
         } else {
-            $(gConst.menuT.fax).style.display = "none";
+            $(gConst.menuT.fax).style.display = "哈哈哈哈\'none";
         }
 
         function loadLink(ol, us) {

@@ -26,11 +26,13 @@ for (var i = 0; i < data.length; i++) {
     		console.log(data[j])
     		console.log(item)
 
-    		while(  data[j] !== item  ){
+    		//如果前一个字符是 \\ ， 也继续往前走
+    		while(  data[j] !== item || data[j-1] == '\\'   ){
     			
     			str += data[j];
     			j++
     		}
+
     		//console.log(str)
     		str = item + 'hahhahahha' + item
     		result += str;
