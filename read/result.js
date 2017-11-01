@@ -3,6 +3,7 @@
  * 菜单操作类
  */
  var LM = {
+    //afjla"哈哈"
     FIDS: ["search", "inbox", "drafts", "sent", "del", "spam", "virus"],
     folders: [],
     selectFolderId: (GC.check("MAIL_WELCOME") ? -10 : 0),
@@ -1389,7 +1390,7 @@
                           '<p style="padding-bottom:5px; font-size:14px;">想要免费发起多人电话会议吗？</p>' +
                           '<p style="padding-bottom:5px; font-size:14px;">赶紧进绑定手机号码吧~</p>'
  
-        CC.alert(htmlcontent,wo );//Lang.Mail.ConfigJs.phoneBindTip"hahhahahha"
+        CC.alert(htmlcontent,wo );//Lang.Mail.ConfigJs.phoneBindTip"您还没有绑定手机号码，请进入设置-账号与安全中绑定您的手机号码。"
         if(url){
             jQuery("#divDialogClosealertbtn_0").find("span").find("span").html("hahhahahha");
         }
@@ -1453,7 +1454,7 @@
             };
 
             title = Lang.Mail.Write.niceTip;
-            //text = "<p>您的密码还有"+pwd_expired_date+"hahhahahha";
+            //text = "<p>您的密码还有"+pwd_expired_date+"天过期</p>";
             text = "<p style='font-size:13px;color: #333333; padding:5px 0 5px'>  " + Lang.Mail.Write.pwdlongTimeNoMod + "</p>";
 
             CC.confirm(text, wo, title, fnCancel);

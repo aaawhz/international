@@ -8,11 +8,29 @@ var zhRe = /[\u4E00-\u9FA5]/;
 var item = '';
 var next = '';
 var j = 0;
+var ditem = '';
+
+var singlezs = /\/\//;
+var iszs = false;
 
 for (var i = 0; i < data.length; i++) {
 	item = data[i];
     
-    if(spliterRe.test(item) ){ //如果匹配 item 就是引号
+    ditem = item + data[i+1]; 
+
+    //判断是否是单行注释
+    if(singlezs.test(ditem)){
+    	console.log(singlezs)
+    	iszs = true;
+    }
+
+    //如果是回车，单行注释失效
+    if(item == '\r'){
+    	 
+    	iszs = false;
+    }
+
+    if(spliterRe.test(item) && !iszs ){ //如果匹配 item 就是引号, 而且不在注释中
     	str = '';
 
     	next = data[i+1];

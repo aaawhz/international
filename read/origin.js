@@ -3,6 +3,7 @@
  * 菜单操作类
  */
  var LM = {
+    //afjla"哈哈"
     FIDS: ["search", "inbox", "drafts", "sent", "del", "spam", "virus"],
     folders: [],
     selectFolderId: (GC.check("MAIL_WELCOME") ? -10 : 0),
