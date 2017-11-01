@@ -1956,6 +1956,7 @@ mail.write.nxzzzf = 您选择了加密或签名邮件，请解密或验签后再
 mail.write.nxzwyd = 您选择了加密邮件，请解密后再标记为已读
 mail.write.cd = 存档
 
+mail.write.writemail = 写信
 
 
 
