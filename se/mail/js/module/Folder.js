@@ -647,7 +647,7 @@ Folder.prototype = {
                 html.push(Lang.Mail.Write.unlockAndsearch + "</a></div>");
             }
         }
-        if (p.text === Lang.Mail.fax.sensitivemail ) {
+        if (p.text === Lang.Mail.write.sensitivemail ) {
             html.push(SensitiveMail.addTips());
         }
 
@@ -684,7 +684,7 @@ Folder.prototype = {
             tempNum = GE.taskMailNum;
         }
         //待办邮件
-        return (me.text === Lang.Mail.fax.unhandlemail && tempNum !== me.stats.messageCount);
+        return (me.text === Lang.Mail.write.unhandlemail && tempNum !== me.stats.messageCount);
     },
     /***
      * 得到邮件列表HTML
@@ -745,7 +745,7 @@ Folder.prototype = {
             label = fid;
         }
         var text = p1.text.lefts(30).encodeHTML();
-        var readAllBtn = /^(sys|user)[1-9]\d*$/.test(o) ? '  <a href="#" onclick="CC.setAllRead(\'' + o + '\')">'+Lang.Mail.fax.alltipread+'</a>':""; //全部标记为已读
+        var readAllBtn = /^(sys|user)[1-9]\d*$/.test(o) ? '  <a href="#" onclick="CC.setAllRead(\'' + o + '\')">'+Lang.Mail.write.alltipread+'</a>':""; //全部标记为已读
         var strTitle = '<h1 id="' + gConst.listMailId + "h1_" + o + '">' + text + '</h1><p id="' + gConst.listMailId + 'mailCount_' + o + '">(<span>' + Lang.Mail.maicountTitle.format(mailCount) + '，<a href="#" onclick="CC.searchNewMail(' + fid + ',true, ' + label + ')">' + Lang.Mail.unreadMailTitle + '</a>' + Lang.Mail.countTitle.format(newMailCount) + '</span>' + readAllBtn;
         var mailFileCount = (gMain.mailFileCount ? parseInt(gMain.mailFileCount) : 10000);
         if (mailCount >= mailFileCount && fid == 1) {
@@ -823,10 +823,10 @@ Folder.prototype = {
         html[html.length] = '<div class="main" id="' + gConst.listMailId + o + '">';
 
         html[html.length] = this.getLockTip(this);
-        if (p1.text === Lang.Mail.fax.unhandlemail) {//"待办邮件"
+        if (p1.text === Lang.Mail.write.unhandlemail) {//"待办邮件"
             html[html.length] = '<div class="header" id="' + gConst.listHeaderId + o + '">';
             html[html.length] = '<div style="overflow:hidden;">';
-            html[html.length] = '<ul class="nav-hd"><li ' + (Folder.taskType !== 2 ? 'class="currentd"' : '') + '><a onclick="CC.receiveMail({taskFlag: 1});return false;" href="javascript:fGoto();">'+Lang.Mail.fax.unhandlemail+'</a></li><li ' + (Folder.taskType === 2 ? 'class="currentd"' : '') + '><a onclick="CC.receiveMail({taskFlag: 2}); return false;" href="javascript:fGoto();">'+Lang.Mail.fax.hasdone+'</a></li></ul>';//已完成
+            html[html.length] = '<ul class="nav-hd"><li ' + (Folder.taskType !== 2 ? 'class="currentd"' : '') + '><a onclick="CC.receiveMail({taskFlag: 1});return false;" href="javascript:fGoto();">'+Lang.Mail.write.unhandlemail+'</a></li><li ' + (Folder.taskType === 2 ? 'class="currentd"' : '') + '><a onclick="CC.receiveMail({taskFlag: 2}); return false;" href="javascript:fGoto();">'+Lang.Mail.write.hasdone+'</a></li></ul>';//已完成
             html[html.length] = '</div></div>';
         }
         if (this.fid == 8) {
@@ -860,7 +860,7 @@ Folder.prototype = {
         if (p1.fid !== 7) {
             html[html.length] = Lang.Mail.list_Date;
         } else {
-            html[html.length] = Lang.Mail.fax.ddate; //"删除日期";
+            html[html.length] = Lang.Mail.write.ddate; //"删除日期";
         }
         html[html.length] = '</a>' + sortArr[0] + '</th>';
         html[html.length] = '<th class="size" onClick="MM[\'' + o + '\'].rankList(\'size\')"><a href="javascript:fGoto();" title="' + Lang.Mail.list_ClickSort + '" ><em style=" width:15px; display:inline-block;"></em>' + Lang.Mail.list_Size + '</a>' + sortArr[3] + '</th>';
@@ -869,7 +869,7 @@ Folder.prototype = {
         html[html.length] = '</tr></thead></table>';
 
         if (CC.power.offRestoreDeleted() && p1.fid === 7) {
-            html.push("<div style=\"margin: 0px;text-indent: 5px;\" class=\"set-tips\">"+Lang.Mail.fax.remailTip+"</div>"); //只可以恢复最近3天彻底删除的邮件
+            html.push("<div style=\"margin: 0px;text-indent: 5px;\" class=\"set-tips\">"+Lang.Mail.write.remailTip+"</div>"); //只可以恢复最近3天彻底删除的邮件
         }
 
         html[html.length] = '<div class="listBody p_relative" id="' + gConst.listBodyId + o + '">';
@@ -5156,7 +5156,7 @@ Folder.prototype = {
             $("mailFileName").focus();
             return true;
         }
-        if (mailFileName == Lang.Mail.folder_MyFolder || mailFileName === Lang.Mail.fax.dsyjj ) {
+        if (mailFileName == Lang.Mail.folder_MyFolder || mailFileName === Lang.Mail.write.dsyjj ) {
             tip.show($("mailFileName"), Lang.Mail.folder_NameExist);
             $("mailFileName").focus();
             return true;
@@ -5246,9 +5246,9 @@ Folder.prototype = {
             during = [];
 
         html += "<div id=\"boxCloseInBar\" style=\"background-color: #ffffff; right: 0px; top:-1px;\" class=\"close-search pb_10\">";
-        html += "<a id=\"btnCloseInBar\" title=\""+Lang.Mail.fax.hideS +"\" href=\"javascript:;\" class=\"tx-tr\" style=\"right:206px; top:39px;\"><i></i></a>";
+        html += "<a id=\"btnCloseInBar\" title=\""+Lang.Mail.write.hideS +"\" href=\"javascript:;\" class=\"tx-tr\" style=\"right:206px; top:39px;\"><i></i></a>";
         html += "<div class=\"close-search-hd p_relative\">";
-        html += ""+Lang.Mail.fax.flcz +"（<em>" + stats.messageCount + "</em>）";
+        html += ""+Lang.Mail.write.flcz +"（<em>" + stats.messageCount + "</em>）";
         html += "<i class=\"triangle-bg\"></i>";
         html += "</div>";
         html += "<div class=\"close-search-bd\">";
@@ -5302,7 +5302,7 @@ Folder.prototype = {
             len = names.length;
 
             html += "<dl id=\"boxSenderList\">";
-            html += "<dt>"+Lang.Mail.fax.afjr +"</dt>";
+            html += "<dt>"+Lang.Mail.write.afjr +"</dt>";
             html += "<dd>";
             html += "<ul>";
             for (i = 0; i < len; i++) {
@@ -5315,7 +5315,7 @@ Folder.prototype = {
 
             html += "</ul>";
             if (len > 4) {
-                html += "<div class=\"see-all-cont\"><span class=\"see-all btn-see-more\"><span>"+Lang.Mail.fax.showall +"</span><i class=\"i-c i_2trid_down ml_5\" style=\"margin-top:-2px;\"></i></span></div>";
+                html += "<div class=\"see-all-cont\"><span class=\"see-all btn-see-more\"><span>"+Lang.Mail.write.showall +"</span><i class=\"i-c i_2trid_down ml_5\" style=\"margin-top:-2px;\"></i></span></div>";
             }
             html += "</dd>";
             html += "</dl>";
@@ -5326,7 +5326,7 @@ Folder.prototype = {
             len = folders.length;
 
             html += "<dl id=\"boxFolderList\">";
-            html += "<dt>"+Lang.Mail.fax.aszwjj +"</dt>";
+            html += "<dt>"+Lang.Mail.write.aszwjj +"</dt>";
             html += "<dd>";
             html += "<ul>";
             for (i = 0; i < len; i++) {
@@ -5338,7 +5338,7 @@ Folder.prototype = {
             }
             html += "</ul>";
             if (len > 4) {
-                html += "<div class=\"see-all-cont\"><span class=\"see-all btn-see-more\"><span>"+Lang.Mail.fax.showall +"</span><i class=\"i-c i_2trid_down ml_5\" style=\"margin-top:-2px;\"></i></span></div>";
+                html += "<div class=\"see-all-cont\"><span class=\"see-all btn-see-more\"><span>"+Lang.Mail.write.showall +"</span><i class=\"i-c i_2trid_down ml_5\" style=\"margin-top:-2px;\"></i></span></div>";
             }
             html += "</dd>";
             html += "</dl>";
@@ -5348,7 +5348,7 @@ Folder.prototype = {
             during = stats.during;
             len = during.length;
             html += "<dl id=\"boxDuringList\">";
-            html += "<dt>"+Lang.Mail.fax.asjfw +"</dt>";
+            html += "<dt>"+Lang.Mail.write.asjfw +"</dt>";
             html += "<dd>";
             html += "<ul>";
             for (i = 0; i < len; i++) {
@@ -5360,7 +5360,7 @@ Folder.prototype = {
             }
             html += "</ul>";
             if (len > 4) {
-                html += "<div class=\"see-all-cont\"><span class=\"see-all btn-see-more\"><span>"+Lang.Mail.fax.showall +"</span><i class=\"i-c i_2trid_down ml_5\" style=\"margin-top:-2px;\"></i></span></div>";
+                html += "<div class=\"see-all-cont\"><span class=\"see-all btn-see-more\"><span>"+Lang.Mail.write.showall +"</span><i class=\"i-c i_2trid_down ml_5\" style=\"margin-top:-2px;\"></i></span></div>";
             }
             html += "</dd>";
             html += "</dl>";
@@ -5368,14 +5368,14 @@ Folder.prototype = {
 
         if (GE.approachSearchData.attached === undefined) {
             html += "<dl id=\"boxAttachList\">";
-            html += "<dt>"+Lang.Mail.fax.afjlx +"</dt>";
+            html += "<dt>"+Lang.Mail.write.afjlx +"</dt>";
             html += "<dd>";
             html += "<ul>";
             if (stats.attachMessageCount > 0) {
-                html += "<li data=\"1\"><a href=\"#\" title=\""+Lang.Mail.fax.dfj +"\"><span class=\"max-ft\">"+Lang.Mail.fax.dfj +"</span><span>(" + stats.attachMessageCount + ")</span></a></li>";
+                html += "<li data=\"1\"><a href=\"#\" title=\""+Lang.Mail.write.dfj +"\"><span class=\"max-ft\">"+Lang.Mail.write.dfj +"</span><span>(" + stats.attachMessageCount + ")</span></a></li>";
             }
             if ((stats.messageCount - stats.attachMessageCount) > 0) {
-                html += "<li data=\"0\"><a href=\"#\" title=\""+Lang.Mail.fax.bdfj +"\"><span class=\"max-ft\">"+Lang.Mail.fax.bdfj +"</span><span>(" + (stats.messageCount - stats.attachMessageCount) + ")</span></a></li>";
+                html += "<li data=\"0\"><a href=\"#\" title=\""+Lang.Mail.write.bdfj +"\"><span class=\"max-ft\">"+Lang.Mail.write.bdfj +"</span><span>(" + (stats.messageCount - stats.attachMessageCount) + ")</span></a></li>";
             }
             html += "</ul>";
             html += "</dd>";
@@ -5393,10 +5393,10 @@ Folder.prototype = {
 
             if (cls) {
                 $("#boxCloseInBar").animate({"right": "-191px"});
-                $(this).removeClass("tx-tr").addClass("tx-tl").attr("title", Lang.Mail.fax.showS ); //"展开分类搜索"
+                $(this).removeClass("tx-tr").addClass("tx-tl").attr("title", Lang.Mail.write.showS ); //"展开分类搜索"
             } else {
                 $("#boxCloseInBar").animate({"right": "0px"});
-                $(this).removeClass("tx-tl").addClass("tx-tr").attr("title",Lang.Mail.fax.hideS ); //"隐藏分类搜索"
+                $(this).removeClass("tx-tl").addClass("tx-tr").attr("title",Lang.Mail.write.hideS ); //"隐藏分类搜索"
             }
         });
 
@@ -5448,11 +5448,11 @@ Folder.prototype = {
             var unfold = $(this).attr("unfold");
 
             if (unfold === "true") {
-                $(this).children("span").html(Lang.Mail.fax.showall ); //显示全部
+                $(this).children("span").html(Lang.Mail.write.showall ); //显示全部
                 $(this).parent().siblings("ul").find("li:gt(3)").hide();
                 $(this).removeAttr("unfold").children("i").addClass("i_2trid_down").removeClass("i_2trid_up");
             } else {
-                $(this).children("span").html(Lang.Mail.fax.showpart); ///"只显示部分项"
+                $(this).children("span").html(Lang.Mail.write.showpart); ///"只显示部分项"
                 $(this).parent().siblings("ul").children().show();
                 $(this).attr("unfold", "true").children("i").addClass("i_2trid_up").removeClass("i_2trid_down");
                 ;
