@@ -1316,24 +1316,24 @@ Folder.prototype = {
              }
              */
             var retStr, taskTypeStr, imageUrl;
-            if (p1.text === "待办邮件") {
+            if (p1.text === Lang.Mail.Write.dbyj) {
                 imageUrl = CC.getResourceAbsoluteURL() + "/images/undomission_default.jpg";
                 if (Folder.taskType === 1) {
-                    taskTypeStr = "待办邮件";
+                    taskTypeStr = Lang.Mail.Write.dbyj;
                 } else {
-                    taskTypeStr = "已完成";
+                    taskTypeStr = Lang.Mail.Write.ywc;
                 }
                 retStr = '<div class="undo_default">';
-                retStr += '<h2>您暂时没有"' + taskTypeStr + '"邮件</h2>';
-                retStr += '<p>您可以将您的待办任务邮件设为' + taskTypeStr + '。</p>';
+                retStr += '<h2>'+Lang.Mail.Write.nzsmy+'"' + taskTypeStr + '"'+Lang.Mail.Write.yj+'</h2>';
+                retStr += '<p>'+Lang.Mail.Write.nkyjsw + taskTypeStr + '。</p>';
                 retStr += '<img src="' + imageUrl + '">';
                 retStr += '</div>';
                 return retStr;
-            } else if (p1.isFilter === "已加星标") {
+            } else if (p1.isFilter === Lang.Mail.Write.yjxb) {
                 imageUrl = CC.getResourceAbsoluteURL() + "/images/StarIntro.gif";
                 retStr = '<div class="undo_default">';
-                retStr += '<h2>您暂时没有"星标"邮件</h2>';
-                retStr += '<p>您可以在邮件列表中将邮件设为星标，方便查找重要邮件。</p>';
+                retStr += '<h2>'+Lang.Mail.Write.nzsbyj+'</h2>';
+                retStr += '<p>'+Lang.Mail.Write.nkyyyj+'</p>';
                 retStr += '<img src="' + imageUrl + '">';
                 retStr += '</div>';
                 return retStr;
@@ -1682,11 +1682,11 @@ Folder.prototype = {
         if (ao.flags.selfdestruct) {
             html += "<span style=\"color: red;\">";
             if (ao.keepDay === 0) {
-                html += "【读完自销毁】";
+                html += "【"+Lang.Mail.Write.dwzxh+"】";
             } else if (ao.keepDay > 0) {
                 s = (ao.keepDay * 24 * 3600) + ao.receiveDate;
                 t = new Date(s * 1000);
-                html += "【" + t.getFullYear() + "年" + (t.getMonth() + 1) + "月" + t.getDate() + "号过期】";
+                html += "【" + t.getFullYear() + Lang.Mail.Write.year + (t.getMonth() + 1) + Lang.Mail.Write.month + t.getDate() + Lang.Mail.Write.hgq+"】";
             }
             html += "</span>";
         }
@@ -2403,19 +2403,19 @@ Folder.prototype = {
             if (flag.hasOwnProperty('recallok')) {
                 switch (flag.recallok.toString()) {
                     case "1":
-                        t = "<i class='m18' title='召回成功'></i>"; // 召回成功
+                        t = "<i class='m18' title='"+Lang.Mail.Write.zhcg+"'></i>"; // 召回成功
                         break;
                     case "2":
-                        t = "<i class='m17' title='部分召回成功'></i>"; // 部分召回成功
+                        t = "<i class='m17' title='"+Lang.Mail.Write.bfzhcg+"'></i>"; // 部分召回成功
                         break;
                     case "3":
-                        t = "<i class='m16' title='召回失败'></i>"; //召回失败
+                        t = "<i class='m16' title='"+Lang.Mail.Write.zhsb+"'></i>"; //召回失败
                         break;
                 }
             }
         }
         if (ao.flags.signed) {
-            t = "<i class=\"m19\" title='敏感邮件'></i>";
+            t = "<i class=\"m19\" title='"+Lang.Mail.Write.mgyj+"'></i>";
         }
         return t;
     },
@@ -2431,11 +2431,11 @@ Folder.prototype = {
         flag = flag || {};
         var t = "";
         if (+(ao.meetingFlag) === 1) {
-            t = "<i class='i-meetiv' title='会议邀请'></i>";
+            t = "<i class='i-meetiv' title='"+Lang.Mail.Write.hyyq+"'></i>";
         } else if (flag.signed === 1) {
-            t = "<i class=\"m19\" title='敏感邮件'></i>";
+            t = "<i class=\"m19\" title='"+Lang.Mail.Write.mgyj+"'></i>";
         } else if (flag.selfdestruct) {
-            t = "<i class='m21' title='自销毁邮件'></i>";
+            t = "<i class='m21' title='"+Lang.Mail.Write.zxhyj+"'></i>";
         } else if (flag.top) {
             t = "<i class='" + ((flag.read) ? "status8" : "status9") + "' title='" + listMailType[7] + "'></i>";
         }
@@ -2475,17 +2475,17 @@ Folder.prototype = {
             var issign  = ( typeof ao.secureSigned != 'undefined' ? ao.secureSigned : false ) ||( ao.flags && ao.flags.safemail_sign ) || ( ao.flags && ao.flags.secureSigned );
             
             if( typeof ao !== "undefined" && iscrypt == "1" && issign == "1" ){
-                 t = "<i class='i-redmedal' title='" + "加密签名邮件" + "'></i>";
+                 t = "<i class='i-redmedal' title='" + Lang.Mail.Write.jmqmyj + "'></i>";
             }else if( typeof ao !== "undefined" && iscrypt == "1"){
-                 t = "<i class='i-ykey' title='" + "加密邮件" + "'></i>";
+                 t = "<i class='i-ykey' title='" + Lang.Mail.Write.jmyj + "'></i>";
             }else if(typeof ao !== "undefined"  && issign == "1" ){
-                 t = "<i class='i-graymedal' title='" + "签名邮件" + "'></i>";
+                 t = "<i class='i-graymedal' title='" + Lang.Mail.Write.qmyj + "'></i>";
             }else if(typeof ao !== "undefined"  && issign == -1 ){
                 //签名不通过
-                t = "<i class='i-mixmedal' title='" + "签名不通过邮件" + "'></i>";
+                t = "<i class='i-mixmedal' title='" + Lang.Mail.Write.qmbtgyj + "'></i>";
             }else if( typeof ao !== "undefined"  && iscrypt == -1 ){
                 //加密不通过
-                t = "<i class='i-notPassed' title='" + "加密不通过邮件" + "'></i>";
+                t = "<i class='i-notPassed' title='" + Lang.Mail.Write.jmbtgyj + "'></i>";
             }
         }
         
@@ -3199,7 +3199,7 @@ Folder.prototype = {
 
         //如果有会话邮件长度， 说明这是会话模式， 需要特别提示
         if(sessionIds.length){
-            confirmText = '将彻底删除所选会话邮件下包含的所有邮件，删除后不能恢复，如需单独删除本主题某封邮件请去设置-常规-邮件视图中修改';
+            confirmText = Lang.Mail.Write.jcdzxg; //'将彻底删除所选会话邮件下包含的所有邮件，删除后不能恢复，如需单独删除本主题某封邮件请去设置-常规-邮件视图中修改';
         }
 
         //如果最后一页没有数据，则设置查询起始数据为上一页第一个；
@@ -3363,7 +3363,7 @@ Folder.prototype = {
             if (ao.code == gConst.statusOk) {
 
                 //标记成功提示
-                MM.showMsg(p1.isAll ? "所有邮件标记成功" : "标记成功", true, false, "option");
+                MM.showMsg(p1.isAll ? Lang.Mail.Write.syyjcg  : Lang.Mail.Write.bjcg, true, false, "option");
 
                 if (!p1.isFilter && p1.fid !=7 && !p1.isSearch)
                     MM.mailRequest(searchData);
@@ -3698,11 +3698,11 @@ Folder.prototype = {
                 return;
 			}else if(menuId == "FORWARD" && (isSecureEncrypt || isSecureSigned)){
 			    //您选择了加密或签名邮件，请解密或验签后再转发
-			    parent.CC.showMsg("您选择了加密或签名邮件，请解密或验签后再转发",true,false,"caution");
+			    parent.CC.showMsg(Lang.Mail.Write.nxzzzf ,true,false,"caution");
 			    return;
 			}else if(menuId == "MARKREAD" && (isSecureEncrypt)){
-                //您选择了加密或签名邮件，请解密或验签后再转发
-                parent.CC.showMsg("您选择了加密邮件，请解密后再标记为已读",true,false,"caution");
+                //"您选择了加密邮件，请解密后再标记为已读"
+                parent.CC.showMsg(Lang.Mail.Write.nxzwyd,true,false,"caution");
                 return;
             }
 
@@ -5136,7 +5136,7 @@ Folder.prototype = {
             + '<div class="place-flie">'
             + '<div class="place-flie-lt">' + Lang.Mail.mailFileSavePath + '</div>'
             + ' <div class="place-flie-rt">'
-            + '<input style="width:215px;color:#000" type="text" maxlength="14" value="存档[' + new Date().format("yyyy.mm") + ']" id="mailFileName" class="set-mand-txt"></div></div></div>';
+            + '<input style="width:215px;color:#000" type="text" maxlength="14" value="'+Lang.Mail.Write.cd+'[' + new Date().format("yyyy.mm") + ']" id="mailFileName" class="set-mand-txt"></div></div></div>';
         CC.showDiv(tempHtml, this.startMailFile, Lang.Mail.mailFile, null, null, 388);
         this.dropFileType_Time.loadEvent();
         this.dropFileType_count.loadEvent();

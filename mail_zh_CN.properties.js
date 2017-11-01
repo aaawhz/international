@@ -1919,8 +1919,7 @@ mail.write.aszwjj = 按所在文件夹
 mail.write.afjr = 按发件人
 mail.write.flcz = 分类查找
 mail.write.dsyjj = 代收邮件夹
-mail.write.foreigncf = 无
-mail.write.foreigncf = 无
+ 
  
 mail.write.tj = 添加
 mail.write.gldsyx = 管理代收邮箱
@@ -1939,6 +1938,7 @@ mail.write.mgyj = 敏感邮件
 mail.write.hyyq = 会议邀请
 mail.write.zxhyj = 自销毁邮件
 mail.write.jmqmyj = 加密签名邮件
+
 mail.write.jmyj = 加密邮件
 mail.write.qmyj = 签名邮件
 mail.write.qmbtgyj = 签名不通过邮件
