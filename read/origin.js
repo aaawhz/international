@@ -4,6 +4,9 @@
  */
  var LM = {
     //afjla"哈哈"
+    /*
+     aaa"哈哈哈
+    */
     FIDS: ["search", "inbox", "drafts", "sent", "del", "spam", "virus"],
     folders: [],
     selectFolderId: (GC.check("MAIL_WELCOME") ? -10 : 0),

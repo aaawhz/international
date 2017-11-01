@@ -10,7 +10,13 @@ var next = '';
 var j = 0;
 var ditem = '';
 
+/**/
+
 var singlezs = /\/\//; //单行注释
+var doublezs_start = /\/\*/; //多行注释
+var doublezs_end = /\*\//;
+var isSingglezs = false;
+var isDoublezs = false;
 var iszs = false;
 
 for (var i = 0; i < data.length; i++) {
@@ -19,14 +25,27 @@ for (var i = 0; i < data.length; i++) {
     ditem = item + data[i+1]; 
 
     //判断是否是单行注释
-    if(singlezs.test(ditem)){
+    if(singlezs.test(ditem)  ){
     	//console.log(singlezs)
     	iszs = true;
+    	isSingglezs = true;
+    }
+
+    if(doublezs_start.test(ditem)){
+    	iszs = true;
+    	isDoublezs = true;
     }
 
     //如果是回车，单行注释失效
-    if(item == '\r'){	 
+    if( item == '\r' && isSingglezs ){	 
+    	//console.log(ditem)
     	iszs = false;
+    	isSingglezs = false;
+    }
+
+    if( isDoublezs &&   doublezs_end.test(ditem)){
+    	iszs = false;
+    	isDoublezs = false;
     }
 
     if(spliterRe.test(item) && !iszs ){ //如果匹配 item 就是引号, 而且不在注释中
