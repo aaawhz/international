@@ -10,7 +10,7 @@ var next = '';
 var j = 0;
 var ditem = '';
 
-var singlezs = /\/\//;
+var singlezs = /\/\//; //单行注释
 var iszs = false;
 
 for (var i = 0; i < data.length; i++) {
@@ -20,13 +20,12 @@ for (var i = 0; i < data.length; i++) {
 
     //判断是否是单行注释
     if(singlezs.test(ditem)){
-    	console.log(singlezs)
+    	//console.log(singlezs)
     	iszs = true;
     }
 
     //如果是回车，单行注释失效
-    if(item == '\r'){
-    	 
+    if(item == '\r'){	 
     	iszs = false;
     }
 
@@ -37,29 +36,25 @@ for (var i = 0; i < data.length; i++) {
  		j = i;
 
     	if(zhRe.test(next)){ //如果第一个是中文
-    		str += next; //存第一个中文
-    		
+    		 		
     		j++
+    		//console.log(data[j])
+    		//console.log(item)
 
-    		console.log(data[j])
-    		console.log(item)
-
-    		//如果前一个字符是 \\ ， 也继续往前走
-    		while(   data[j] !== item || data[j-1] == '\\'     ){
+    		//如果前一个字符是 \\ ， 也继续往前走， 避免这种情况 "abc\"bcd"
+    		while( data[j] !== item || data[j-1] == '\\' ){
     			
-    			str += data[j];
+    			str += data[j]; 
     			j++
     		}
 
-    		//console.log(str)
+    		console.log(str)
     		str = item + 'hahhahahha' + item
     		result += str;
 
     		//console.log(str);
     		//跳过已匹配的
-    		i = j;
-
-    		
+    		i = j;  		
     	}else{
     		result += item;
     	}
@@ -77,20 +72,6 @@ for (var i = 0; i < data.length; i++) {
 //同步方法
 rf.writeFileSync('./result.js', result);
   
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
