@@ -85,16 +85,16 @@ var Util = {
 
  getPositonsAndTag: function(str){
    // pos 用来记录位置， 截取标签之间的内容
-   var pos = [], tags = []; arr=[] ,len,end;
+   var pos = [], tags = [], arr=[] ,len,end;
 
    //"ad<span>"不是标签开始， 则从0开始提取
-   if( str.chartAt(0) == "<"){
+   if( str.charAt(0) == "<"){
 
    }else{
      arr = [0]
    }
 
-   str.replace(getTag, functon($s,$0,start){
+   str.replace(getTag, function($s,$0,$1,start){
       len = $s.lengh;
       end = start+len+1;
 
@@ -146,7 +146,9 @@ var Util = {
  **/
 
 function pickText(str){
-   var posTag = Util.getPositons(str);
+   var posTag = Util.getPositonsAndTag(str);
+
+   console.dir(posTag)
 }
 
 
@@ -172,8 +174,8 @@ function pickText(str){
 
 
 
-function transform(str){
+function transf(str){
 
 };
 
- console.log(onlyAllowTag);
+ 
