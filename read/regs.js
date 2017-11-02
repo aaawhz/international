@@ -27,15 +27,25 @@ var getTag = new RegExp('<(\\/)?' + qnameCapture + '[^>]*>', 'g');
 
  var str = '<br><br> abc  <input> ddd ';
  
- //字符串是否只有容许的标签， 如果 'abc<br/>好滴' 就把这个整体提取出来做国际化， 简单易行
- var onlyAllowTag = true;
- //如果有开始标签
- if( getTag.test(str) ){
- 	str.replace(getTag, function ($s) {
- 		if(!allowTag.test($s)){
- 			onlyAllowTag = false;
- 		}
- 	})
+
+//检查字符串是否符合国际化要求， 返回true就全部提取出来， 返回false则进入标签解析， 分段提取
+ function checkTag(str){
+ 	//字符串是否只有容许的标签， 如果 'abc<br/>好滴' 就把这个整体提取出来做国际化， 简单易行
+	 var onlyAllowTag = true;
+	 //如果有开始标签
+	 if( getTag.test(str) ){
+	 	str.replace(getTag, function ($s) {
+	 		if(!allowTag.test($s)){
+	 			onlyAllowTag = false;
+	 			return onlyAllowTag;
+	 		}
+	 	});
+
+	 	return onlyAllowTag;
+	 }else{
+	 	return onlyAllowTag;
+	 }
  }
+ 
 
  console.log(onlyAllowTag);
