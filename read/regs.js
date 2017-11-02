@@ -2,29 +2,24 @@
 //匹配 <br> </br> </  br>  或者  <br  /> <br/>
 var allowTag = /<br\s{0,20}(\/?)>|<(\/?)\s{0,20}br>/;
 
-
 //ncname匹配的是以a-zA-Z_开头，然后是0或多个a-zA-Z_、-或.。
 var ncname = '[a-zA-Z_][\\w\\-\\.]*';
 
 //(?:' + ncname + '\\:)? 这个主要是为了兼容这样的标签 <svg:path.test /> => <svg:path.test， 是ncname的加强
 var qnameCapture = '((?:' + ncname + '\\:)?' + ncname + ')';
 
-
 var startTagOpen = new RegExp('<' + qnameCapture);
-
 var startTag = new RegExp('<' + qnameCapture + '[^>]*>');
 
 //'</div>'.match(endTag)
 // ["</div>", "div", index: 0, input: "</div>"]
 var endTag = new RegExp('<\\/' + qnameCapture + '[^>]*>');
-
 var getTag = new RegExp('<(\\/)?' + qnameCapture + '[^>]*>', 'g');
 
 
 /** -----------------------attrs  REGs -----------------------**/
 
 // 比如 "href='https://www.taobao.com'".match(attribute)
-
 // ["href='https://www.taobao.com'", "href", "=", 
 // undefined, "https://www.taobao.com", undefined, 
 // index: 0, input: "href='https://www.taobao.com'"]
@@ -50,21 +45,17 @@ var attribute = new RegExp(
   '\\s*(?:' + singleAttrValues.join('|') + '))?'
 )
 
-
 /** -----------------------attrs  end -----------------------**/
 
 
 var Util = {
-
-
  haszh: function (str){
  	//中文
 	var zhRe = /[\u4E00-\u9FA5]/;
 
  	return zhRe.test(str);
  },
-
-//检查字符串是否符合国际化要求， 返回true就全部提取出来， 返回false则进入标签解析， 分段提取
+ //检查字符串是否符合国际化要求， 返回true就全部提取出来， 返回false则进入标签解析， 分段提取
  checkTag: function (str){
  	//字符串是否只有容许的标签， 如果 'abc<br/>好滴' 就把这个整体提取出来做国际化， 简单易行
 	 var onlyAllowTag = true;
@@ -76,13 +67,11 @@ var Util = {
 	 			return onlyAllowTag;
 	 		}
 	 	});
-
 	 	return onlyAllowTag;
 	 }else{
 	 	return onlyAllowTag;
 	 }
  },
-
  /**  
   输入 "<br><br> 葫芦娃  <input> 变形金刚 "
   输出 {
@@ -99,15 +88,12 @@ var Util = {
 
    for (var i = 0; i < str.length; i++) {
     item = str.charAt(i);
-
     if(item == "<"){
       isinTag = true;
-
       if(s) texts.push(s);
       s = '';
     }
 
-  
     if( !isinTag ){
        s +=item;
     }
@@ -115,7 +101,6 @@ var Util = {
     if( item == ">"){
       isinTag = false;
     }
-
    
    }
    
@@ -139,7 +124,6 @@ var Util = {
      <span title=\"我是{0}降序\"></span></span>'；
  */
  
-
  /**
  	用标签来分割不明智， 应该直接循环用<>来判断， 遇到就截取
 
@@ -155,11 +139,10 @@ function pickText(str){
 }
 
 
-
+//test
 
  var str = '<br><br> 葫芦娃  <input> 变形金刚 ';
  
-
  if(Util.haszh(str)){
  	if(Util.checkTag(str)){
  		//进入提取中文
@@ -172,10 +155,6 @@ function pickText(str){
  	//跳过 result += str; i = j;
  }
   
-
-
-
-
 
 function transf(str){
 
