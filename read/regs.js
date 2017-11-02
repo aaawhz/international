@@ -21,16 +21,19 @@ var endTag = new RegExp('<\\/' + qnameCapture + '[^>]*>');
 var getTag = new RegExp('<(\\/)?' + qnameCapture + '[^>]*>', 'g');
 
 
-/** attrs  REGs **/
+/** -----------------------attrs  REGs -----------------------**/
 
-// 比如 "href='https://www.imliutao.com'".match(attribute)
+// 比如 "href='https://www.taobao.com'".match(attribute)
 
-// ["href='https://www.imliutao.com'", "href", "=", 
-// undefined, "https://www.imliutao.com", undefined, 
-// index: 0, input: "href='https://www.imliutao.com'"]
+// ["href='https://www.taobao.com'", "href", "=", 
+// undefined, "https://www.taobao.com", undefined, 
+// index: 0, input: "href='https://www.taobao.com'"]
 
-var singleAttrIdentifier = /([^\s"'<>/=]+)/
-var singleAttrAssign = /(?:=)/
+// href
+var singleAttrIdentifier = /([^\s"'<>/=]+)/;
+// =
+var singleAttrAssign = /(?:=)/;
+// https://www.taobao.com
 
 var singleAttrValues = [
   // attr value double quotes
@@ -38,7 +41,7 @@ var singleAttrValues = [
   // attr value, single quotes
   /'([^']*)'+/.source,
   // attr value, no quotes
-  /([^\s"'=<>`]+)/.source
+  /([^\s"'=<>`]+)/.source 
 ]
 
 var attribute = new RegExp(
@@ -46,6 +49,9 @@ var attribute = new RegExp(
   '(?:\\s*(' + singleAttrAssign.source + ')' +
   '\\s*(?:' + singleAttrValues.join('|') + '))?'
 )
+
+
+/** -----------------------attrs  end -----------------------**/
 
 
 var Util = {
