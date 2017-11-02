@@ -1651,6 +1651,7 @@ jQuery(document).on('click','a',function(event,skip_close_cofirm){
 
     }
 })
+
 jQuery(function () {
     //避免多次弹窗
     beforeunloadConfirm=true

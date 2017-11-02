@@ -15,6 +15,8 @@ var ditem = '';
 var singlezs = /\/\//; //单行注释
 var doublezs_start = /\/\*/; //多行注释
 var doublezs_end = /\*\//;
+
+ 
 var isSingglezs = false;
 var isDoublezs = false;
 var iszs = false;

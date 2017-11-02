@@ -20,6 +20,34 @@ var endTag = new RegExp('<\\/' + qnameCapture + '[^>]*>');
 
 var getTag = new RegExp('<(\\/)?' + qnameCapture + '[^>]*>', 'g');
 
+
+/** attrs  REGs **/
+
+// 比如 "href='https://www.imliutao.com'".match(attribute)
+
+// ["href='https://www.imliutao.com'", "href", "=", 
+// undefined, "https://www.imliutao.com", undefined, 
+// index: 0, input: "href='https://www.imliutao.com'"]
+
+var singleAttrIdentifier = /([^\s"'<>/=]+)/
+var singleAttrAssign = /(?:=)/
+
+var singleAttrValues = [
+  // attr value double quotes
+  /"([^"]*)"+/.source,
+  // attr value, single quotes
+  /'([^']*)'+/.source,
+  // attr value, no quotes
+  /([^\s"'=<>`]+)/.source
+]
+
+var attribute = new RegExp(
+  '^\\s*' + singleAttrIdentifier.source +
+  '(?:\\s*(' + singleAttrAssign.source + ')' +
+  '\\s*(?:' + singleAttrValues.join('|') + '))?'
+)
+
+
 var Util = {
 
 
