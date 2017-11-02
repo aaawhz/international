@@ -84,28 +84,16 @@ var Util = {
  },
 
  getPositonsAndTag: function(str){
-   // pos 用来记录位置， 截取标签之间的内容
+   // pos 用来记录位置，和 标签的长度
    var pos = [], tags = [], arr=[] ,len,end;
 
-   //"ad<span>"不是标签开始， 则从0开始提取
-   if( str.charAt(0) == "<"){
-
-   }else{
-     arr = [0]
-   }
-
-   str.replace(getTag, function($s,$0,$1,start){
-      len = $s.lengh;
-      end = start+len+1;
-
-      tags.push($s);
-
-      if(arr.length == 1){
-        arr.push(end);
-      }else{
-        arr = [start,end];
-      }
+   
+   str.replace(getTag, function(tag,$0,$1,start){
+ 
+      len = tag.length;
+      arr = [start, len];
       
+      tags.push(tag);
       pos.push(arr);
 
    });
