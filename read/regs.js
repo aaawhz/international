@@ -98,7 +98,7 @@ var Util = {
    tags = str.match(getTag);
 
    for (var i = 0; i < str.length; i++) {
-    item = str[i];
+    item = str.charAt(i);
 
     if(item == "<"){
       isinTag = true;
