@@ -134,19 +134,8 @@ var Util = {
 
  
  /** '拼写检查暂不支持中文。<br><br>        <input id="editorSpellChkTip" />&nbsp;不再提示'
-
-    ||
-    ||
-    ||
-
-   拼写检查暂不支持中文。 
-   <br><br>                          <input id="editorSpellChkTip" type="checkbox"/>&nbsp;
-   不再提示
-
- */
-
- /*
-     '排序{0}  &bnsp; h hehe 呵呵 en<span style="aa" title="这是升序哦"> 升序 
+ 
+     '排序{0} en<span style="aa" title="这是升序哦"> 升序 
      <span title=\"我是{0}降序\"></span></span>'；
  */
  
