@@ -90,76 +90,39 @@ var Util = {
      texts: ['葫芦娃' ,'变形金刚']
   }
   **/
- getPositonsAndTag: function(str){
+ getTextsAndTags: function(str){
    // pos 用来记录位置，和 标签的长度
-   var pos = [],  arr=[] ,len,end;
-   var tags = [], texts = '';
+   var pos = [],  s , item,len,end, isinTag = false;
+   var tags = [], texts = [];
 
-   str.replace(getTag, function(tag,$0,$1,start){
+   tags = str.match(getTag);
 
-      len = tag.length;
-      arr = [start, len];
-      
-      tags.push(tag);
-      pos.push(arr);
+   for (var i = 0; i < str.length; i++) {
+    item = str[i];
 
-   });
+    if(item == "<"){
+      isinTag = true;
 
-   /*
-     [0, 4]
-    
-     [6, 4]
-    
-     [14, 7]
+      if(s) texts.push(s);
+      s = '';
+    }
 
-     ==============
+  
+    if( !isinTag ){
+       s +=item;
+    }
 
-     [3, 4]
-    
-     [6, 4]
-    
-     [14, 7]
-    */
-   function getTextByPos(str, pos){
-      var ts = [], item, s, start = 0, end = 0, len = pos.length,
-           wb = pos[len-1][0] + pos[len-1][1];
+    if( item == ">"){
+      isinTag = false;
+    }
 
-      //处理 头部  [4,5] 这种情况
-      if( pos[0][0] != 0 ){
-        s = str.substring(0,pos[0][0]+1);
-        ts.push(s);
-        //下一个
-        start = pos[0][0]+1;
-        
-      }else{
-        start = pos[0][1]+1;
-      }
-
-      for (var i = 1; i < len-1; i++) {
-        item = pos[i];
-        start = item[0] + item[1];
-        end = pos[++i][0];
-
-        console.log(start + '  ' + end)
-
-        if(end > start){
-          s = str.substring(start, end);
-        
-          ts.push(s);
-        }
-        
-
-      }
-
-      //处理 尾巴 情况
-      if( wb < str.length ){
-        ts.push( str.substring(wb, str.length));
-      }
-
-      return ts;
+   
    }
-
-   texts = getTextByPos(str, pos);
+   
+   //收尾
+    if(s){
+      texts.push(s)
+    }
 
    return {
       tags: tags,
@@ -189,7 +152,7 @@ var Util = {
  
 
  /**
- 	还是第一个大步， 记录好每个标签的位置吧 , 利用repalce
+ 	用标签来分割不明智， 应该直接循环用<>来判断， 遇到就截取
 
  	1.看看标签属性有没有中文
 
@@ -197,7 +160,7 @@ var Util = {
  **/
 
 function pickText(str){
-   var posTag = Util.getPositonsAndTag(str);
+   var posTag = Util.getTextsAndTags(str);
 
    console.dir(posTag)
 }
