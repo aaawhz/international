@@ -34,7 +34,7 @@ var Util = {
  checkTag: function (str){
  	//字符串是否只有容许的标签， 如果 'abc<br/>好滴' 就把这个整体提取出来做国际化， 简单易行
 	 var onlyAllowTag = true;
-	 //如果有开始标签
+	 //如果有标签
 	 if( getTag.test(str) ){
 	 	str.replace(getTag, function ($s) {
 	 		if(!allowTag.test($s)){
@@ -52,10 +52,28 @@ var Util = {
 };
 
  
- //'拼写检查暂不支持中文。不过，我们仍可以检查您邮件中的所有英文拼写。<br><br>                         <input id="editorSpellChkTip" type="checkbox"/>&nbsp;不再提示'
- //拼写检查暂不支持中文。不过，我们仍可以检查您邮件中的所有英文拼写。
- //<br><br>                          <input id="editorSpellChkTip" type="checkbox"/>
- //&nbsp;不再提示
+ /** '拼写检查暂不支持中文。<br><br>        <input id="editorSpellChkTip" />&nbsp;不再提示'
+
+    ||
+    ||
+    ||
+
+   拼写检查暂不支持中文。 
+   <br><br>                          <input id="editorSpellChkTip" type="checkbox"/>&nbsp;
+   不再提示
+
+ */
+
+ /*
+     '排序{0}  &bnsp; h hehe 呵呵 en<span style="aa" title="这是升序哦"> 升序 
+     <span title=\"我是{0}降序\"></span></span>'；
+ */
+ 
+function pickText(str){
+
+}
+
+
 
 
  var str = '<br><br> 葫芦娃  <input> 变形金刚 ';
@@ -64,19 +82,17 @@ var Util = {
  if(Util.haszh(str)){
  	if(Util.checkTag(str)){
  		//进入提取中文
- 		pickText();
+ 		pickText(str);
  	}else{
  		//str全部提取， 直接转换
+ 		transf(str);
  	}
  }else{
- 	//跳过
+ 	//跳过 result += str; i = j;
  }
   
 
 
-function pickText(str){
-
-}
 
 
 
