@@ -106,7 +106,8 @@ var Util = {
      [14, 7]
     */
    function getTextByPos(str, pos){
-      var ts = [], item, s, start = 0, end = 0， wb = pos[length-1][0] + pos[length-1][1];
+      var ts = [], item, s, start = 0, end = 0, len = pos.length,
+           wb = pos[len-1][0] + pos[len-1][1];
 
       //处理 头部  [4,5] 这种情况
       if( pos[0][0] != 0 ){
@@ -114,13 +115,19 @@ var Util = {
         ts.push(s);
       }
 
-      for (var i = 0; i < pos.length-1; i++) {
+      for (var i = 0; i < len-1; i++) {
         item = pos[i];
         start = item[0] + item[1];
         end = pos[++i][0];
 
-        s = str.substring(start, end);
-        ts.push(s);
+        console.log(start + '  ' + end)
+
+        if(end > start){
+          s = str.substring(start, end);
+        
+          ts.push(s);
+        }
+        
 
       }
 
