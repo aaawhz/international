@@ -81,6 +81,39 @@ var Util = {
 	 }else{
 	 	return onlyAllowTag;
 	 }
+ },
+
+ getPositonsAndTag: function(str){
+   // pos 用来记录位置， 截取标签之间的内容
+   var pos = [], tags = []; arr=[] ,len,end;
+
+   //"ad<span>"不是标签开始， 则从0开始提取
+   if( str.chartAt(0) == "<"){
+
+   }else{
+     arr = [0]
+   }
+
+   str.replace(getTag, functon($s,$0,start){
+      len = $s.lengh;
+      end = start+len+1;
+
+      tags.push($s);
+
+      if(arr.length == 1){
+        arr.push(end);
+      }else{
+        arr = [start,end];
+      }
+      
+      pos.push(arr);
+
+   });
+
+   return {
+      pos: pos,
+      tags: tags
+   }
  }
 
 };
@@ -111,8 +144,9 @@ var Util = {
 
  	1.把位置中间的取出来， 看看有没有中文， 如果有中文就全部提取
  **/
-function pickText(str){
 
+function pickText(str){
+   var posTag = Util.getPositons(str);
 }
 
 
