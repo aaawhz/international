@@ -85,11 +85,11 @@ var Util = {
 
  getPositonsAndTag: function(str){
    // pos 用来记录位置，和 标签的长度
-   var pos = [], tags = [], arr=[] ,len,end;
+   var pos = [],  arr=[] ,len,end;
+   var tags = [], texts = '';
 
-   
    str.replace(getTag, function(tag,$0,$1,start){
- 
+
       len = tag.length;
       arr = [start, len];
       
@@ -98,11 +98,47 @@ var Util = {
 
    });
 
-   return {
-      pos: pos,
-      tags: tags
+   /*
+     [0, 4]
+    
+     [4, 4]
+    
+     [14, 7]
+    */
+   function getTextByPos(str, pos){
+      var ts = [], item, s, start = 0, end = 0， wb = pos[length-1][0] + pos[length-1][1];
+
+      //处理 头部  [4,5] 这种情况
+      if( pos[0][0] != 0 ){
+        s = str.substring(0,pos[0][0]+1);
+        ts.push(s);
+      }
+
+      for (var i = 0; i < pos.length-1; i++) {
+        item = pos[i];
+        start = item[0] + item[1];
+        end = pos[++i][0];
+
+        s = str.substring(start, end);
+        ts.push(s);
+
+      }
+
+      //处理 尾巴 情况
+      if( wb < str.length ){
+        ts.push( str.substring(wb, str.length));
+      }
+
+      return ts;
    }
- }
+
+   texts = getTextByPos(str, pos);
+
+   return {
+      tags: tags,
+      texts: texts
+   }
+ } 
 
 };
 
