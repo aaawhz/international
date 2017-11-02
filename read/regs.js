@@ -83,6 +83,13 @@ var Util = {
 	 }
  },
 
+ /**  
+  输入 "<br><br> 葫芦娃  <input> 变形金刚 "
+  输出 {
+     tags: [ <br>, <br>, <input>],
+     texts: ['葫芦娃' ,'变形金刚']
+  }
+  **/
  getPositonsAndTag: function(str){
    // pos 用来记录位置，和 标签的长度
    var pos = [],  arr=[] ,len,end;
@@ -101,7 +108,15 @@ var Util = {
    /*
      [0, 4]
     
-     [4, 4]
+     [6, 4]
+    
+     [14, 7]
+
+     ==============
+
+     [3, 4]
+    
+     [6, 4]
     
      [14, 7]
     */
@@ -113,9 +128,14 @@ var Util = {
       if( pos[0][0] != 0 ){
         s = str.substring(0,pos[0][0]+1);
         ts.push(s);
+        //下一个
+        start = pos[0][0]+1;
+        
+      }else{
+        start = pos[0][1]+1;
       }
 
-      for (var i = 0; i < len-1; i++) {
+      for (var i = 1; i < len-1; i++) {
         item = pos[i];
         start = item[0] + item[1];
         end = pos[++i][0];
