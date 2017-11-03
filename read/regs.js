@@ -173,16 +173,20 @@ function pickText(str){
       //处理标签属性， 有中文直接替换
       if(item.isTag){
        
-           value.replace(attribute,function($0,$1,$2,$3,$4){
-                    console.log($0)
+        value = value.replace(attribute,function($0,$1,$2,$3,$4){
+                    /*console.log($0)
                     console.log($1)
                     console.log($2)
                     console.log($3)
-                    console.log($4)
+                    console.log($4)*/
                     if(Util.haszh($3)){
-                      return transf($3)
+                      return $3 = $1 + $2 + transf($3)
+                    } else{
+                      return $0
                     }
                   });
+
+        console.log(value)
  
       }else{
         //处理文字， 有中文直接替换
@@ -199,9 +203,11 @@ function pickText(str){
 }
 
 
+
+
 //test
 
- var str = '<br><br> 葫芦娃  <input title="呵呵"> 变形金刚 ';
+ var str = '<br><br> 葫芦娃  <input title="呵呵"> <input ttt="ddd"> 变形金刚 ';
  
  if(Util.haszh(str)){
  	if(!Util.checkTag(str)){
