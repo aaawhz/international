@@ -61,7 +61,7 @@ var PinYin = {"a":"\u554a\u963f\u9515","ai":"\u57c3\u6328\u54ce\u5509\u54c0\u769
     }  
 
     if(I1.length > 10){
-      
+
       I1 = I1.substr(0,5) + I1.substr(-5);
     }else if(I1.length < 5 ){
       random = randomWord();
@@ -86,8 +86,9 @@ function arraySearch(l1,l2){
 *   例如：参数为xiao他们  输出Xiao他们  
 */  
 function ucfirst(l1){  
-    if (l1.length>0) {  
-        var first = l1.substr(0,1)();  
+    if (l1.length>0) { 
+    console.log(first) 
+        var first = l1.substr(0,1);  
         var spare = l1.substr(1,l1.length);  
         return first;// + spare;  
     }  
@@ -273,7 +274,7 @@ function pickText(str){
                     console.log($2)
                     console.log($3)
                     console.log($4)*/
-                    console.log(str[0])
+                    //console.log(str[0])
 
                     //replace 会改变匹配到的那部分， 只需要改变值后， 但不会改变原值
                     if(Util.haszh($3)){
@@ -285,7 +286,7 @@ function pickText(str){
 
                   });
 
-        console.log(value)
+       // console.log(value)
  
       }else{
         //处理文字， 有中文直接替换
@@ -297,7 +298,7 @@ function pickText(str){
       reArray.push(value);
     }
 
-    console.dir(reArray)
+     console.log(reArray.join(''))
     return reArray;
 }
 
@@ -322,9 +323,11 @@ function pickText(str){
   
 
 function transf(str){
-   console.log( chineseToPinYin(str))
-   
-   return "uu" + str + "uu"
+  
+  var py = chineseToPinYin(str.replace(/[\\\/\<\>"'~!@#$%^&*()?:]/,''));
+   console.log( py );
+
+   return "\'\"+" Lang.Mail.write." + py +  "\"\'";
 };
 
  
