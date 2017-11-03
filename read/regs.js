@@ -279,7 +279,7 @@ function pickText(str){
 
                     //replace 会改变匹配到的那部分， 只需要改变值后， 但不会改变原值
                     if(Util.haszh($3)){
-                      return $1 + $2 + transf($3)
+                      return $1 + $2 + transf($3,false,true)
                     } else{
                       return $0
                     }
@@ -292,7 +292,7 @@ function pickText(str){
       }else{
         //处理文字， 有中文直接替换
         if(Util.haszh(value)){
-          value = transf(value);
+          value = transf(value,true);
         }
       }
 
@@ -303,6 +303,7 @@ function pickText(str){
     return reArray.join('');
 }
 
+//demo
 var Lang = {
     "Mail":{
       "Write":{
@@ -322,6 +323,8 @@ var Lang = {
  
 function TransStr(str){
   var res = '';
+  var otherEndChar = /((\+\'\")$)|((\+\"\')$)/;
+  var otherStartChar = /(^(\'\"\+))|(^(\"\'\+)$)/;
 
    if(Util.haszh(str)){
     if(!Util.checkTag(str)){
@@ -335,23 +338,45 @@ function TransStr(str){
     //跳过 result += str; i = j;
     res = str;
    }
+   
+   //去掉多余的字符
+   res.replace(otherStartChar, '' );
+   res.replace(otherEndChar, '');
 
    return res;
 }
  
 
  
-function transf(str){
+function transf(str, isMix, isAttr){
   
-  var py = chineseToPinYin(str.replace(/[\\\/\<\>"'~!@#$%^&*()?:]/,''));
+  var py = chineseToPinYin(str.replace(/[\\\/\<\>0123456789-=`,./"'~!@#$%^&*()?:]/,''));
    console.log( py );
   
-  //字符串str是单引号开头
-  if( GLOBELCACHE.signleQuoteStart ){
-    return "\"\'+"  + ("Lang.Mail.Write." + py) +  "+\'\"";
-  } else{
-    return "\"\"+"  + ("Lang.Mail.Write." + py) +  "+\"\"";
+  if(isMix){
+      //字符串str是单引号开头
+      if( GLOBELCACHE.signleQuoteStart ){
+        return "\'+"  + ("Lang.Mail.Write." + py) +  "+\'";
+      } else{
+        return "\"+"  + ("Lang.Mail.Write." + py) +  "+\"";
+      }
+  }else if(isAttr){
+     //字符串str是单引号开头
+      if( GLOBELCACHE.signleQuoteStart ){
+        return "\"\'+"  + ("Lang.Mail.Write." + py) +  "+\'\"";
+      } else{
+        return "\'\"+"  + ("Lang.Mail.Write." + py) +  "+\"\'";
+      }
+  }else{
+      return ("Lang.Mail.Write." + py);
+
+      if( GLOBELCACHE.signleQuoteStart ){
+        return "\'+"  + ("Lang.Mail.Write." + py) +  "+\'";
+      } else{
+        return "\"+"  + ("Lang.Mail.Write." + py) +  "+\"";
+      }
   }
+  
    
 };
 

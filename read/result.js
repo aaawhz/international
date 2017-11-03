@@ -121,7 +121,7 @@ var oWrite = {
         '2' : '>',
         '3' : 'Reply:'
     },
-    quickSubject: [""+Lang.Mail.Write.jj+"", ""+Lang.Mail.Write.hyyq+"", ""+Lang.Mail.Write.hyjy+"", ""+Lang.Mail.Write.hycl+""],  // 快捷主题项
+    quickSubject: [Lang.Mail.Write.jj, Lang.Mail.Write.hyyq, Lang.Mail.Write.hyjy, Lang.Mail.Write.hycl],  // 快捷主题项
     isAutoDestroy: false,
     isShowBigAttachTips: false,
     clearSubjectTimer: null,
@@ -290,9 +290,9 @@ var oWrite = {
      */
     initControl: function(){
         var p = this;
-        var tipsTemplate = "<div class=\"richinputbox_tips\" style=\"border:solid 1px #ccc; background:#eee; line-height:24px; padding-left:12px;\">""+Lang.Mail.Write.hkysr+""<span class='red-commend'>{0}</span>""+Lang.Mail.Write.g+""</div>";
-        var overflowTips1 = '<div class=\"richinputbox_tips\" style=\"border:solid 1px #ccc; background:#eee; line-height:24px; padding-left:12px;\">"'+Lang.Mail.Write.sjrsycgsx+'"<span class="red-commend">{0}</span>"'+Lang.Mail.Write.rbnjxtj+'"</div>';
-        var overflowTips2 = '<div class=\"richinputbox_tips\" style=\"border:solid 1px #ccc; background:#eee; line-height:24px; padding-left:12px;\"><span class="red-commend">{1}</span>"'+Lang.Mail.Write.rwtjzdtj+'"<span class="red-commend">{0}</span>"'+Lang.Mail.Write.r+'"</div>';
+        var tipsTemplate = "<div class=\"richinputbox_tips\" style=\"border:solid 1px #ccc; background:#eee; line-height:24px; padding-left:12px;\">"+Lang.Mail.Write.hkysr+"<span class='red-commend'>{0}</span>"+Lang.Mail.Write.g+"</div>";
+        var overflowTips1 = '<div class=\"richinputbox_tips\" style=\"border:solid 1px #ccc; background:#eee; line-height:24px; padding-left:12px;\">'+Lang.Mail.Write.sjrsycgsx+'<span class="red-commend">{0}</span>'+Lang.Mail.Write.rbnjxtj+'</div>';
+        var overflowTips2 = '<div class=\"richinputbox_tips\" style=\"border:solid 1px #ccc; background:#eee; line-height:24px; padding-left:12px;\"><span class="red-commend">{1}</span>'+Lang.Mail.Write.rwtjzdtj+'<span class="red-commend">{0}</span>'+Lang.Mail.Write.r+'</div>';
         var clearRIBTips = function(){
             for(var i=0;i<3;i++){
                 if(p.ribs[i].interval){
@@ -377,7 +377,7 @@ var oWrite = {
                 var state = obj.statusInfo || {};
                 clearRIBTips();
                 if(obj.createMode == 'paste'){
-                    tips = overflowTips2.format(oWrite.toMaxNum, state.fail || "'+Lang.Mail.Write.syztd+'");
+                    tips = overflowTips2.format(oWrite.toMaxNum, state.fail || Lang.Mail.Write.syztd);
                 }
                 else{
                     tips = overflowTips1.format(oWrite.toMaxNum);
@@ -524,7 +524,7 @@ var oWrite = {
                 else{
                     bigAttachSize = '1G';
                 }
-                var text = "'+Lang.Mail.Write.tjzd0zzzwj+'".format(bigAttachSize);
+                var text = Lang.Mail.Write.tjzd0zzzwj.format(bigAttachSize);
                 var but = jQuery('<div id="bigFileUploadTips" class="tips write-tips" style="display:none;"></div>').append(text).appendTo(jQuery(document.body)).css('z-index', 128);
 
                 bigFileUpload.attr('title', '');
@@ -556,7 +556,7 @@ var oWrite = {
         var html = "";
 
         html += " <input id=\"chkAutoDestroy\" tabindex=\"21\" type=\"checkbox\" title=\"邮件阅读后自销毁或邮件超过限制天数后自销毁\"><label for=\"chkAutoDestroy\" title=\"邮件阅读后自销毁或邮件超过限制天数后自销毁\">";
-        html += ""+Lang.Mail.Write.zxhyj+"";
+        html += Lang.Mail.Write.zxhyj;
         html += "</label>";
 
         cont.append(html);
@@ -582,18 +582,18 @@ var oWrite = {
         html += '<ul class="pop_destroy_txt">';
         html += '<li class="pb_5">';
         html += '<label>';
-        html += '<input id="ckbAutoDestroy" type="checkbox" class="rm_cb">"'+Lang.Mail.Write.ydwczdxh+'";
+        html += '<input id="ckbAutoDestroy" type="checkbox" class="rm_cb">'+Lang.Mail.Write.ydwczdxh+';
         html += '</label>';
         html += '</li>';
         html += '<li class="pb_5" style="height:27px;">';
         html += '<label>';
-        html += '<input id="ckbDaysDestroy" type="checkbox" class="rm_cb">"'+Lang.Mail.Write.xzyjydts+'";
-        html += '</label> <input id="inputReadDays" type="text" value="1" maxlength="30" class="set-txt-b ml_5 mr_5" style="width: 25px;">"'+Lang.Mail.Write.t+'"<span id="textReadDays" class="gray ml_20">"'+Lang.Mail.Write.qsr1-zjdsz+'"</span></li>';
-        html += '<li><p class="gray">"'+Lang.Mail.Write.1zzwetdqty+'"</br>"'+Lang.Mail.Write.2zxhyxtjfj+'"</p></li>';
+        html += '<input id="ckbDaysDestroy" type="checkbox" class="rm_cb">'+Lang.Mail.Write.xzyjydts+';
+        html += '</label> <input id="inputReadDays" type="text" value="1" maxlength="30" class="set-txt-b ml_5 mr_5" style="width: 25px;">'+Lang.Mail.Write.t+'<span id="textReadDays" class="gray ml_20">'+Lang.Mail.Write.qsr-1zjdsz+'</span></li>';
+        html += '<li><p class="gray">'+Lang.Mail.Write.zzwebtdqty+'</br>'+Lang.Mail.Write.zxhyjxtjfj+'</p></li>';
         html += '</ul>';
         html += '<div class="forbiden-bline ta_r">';
-        html += '<a id="btnAutoDestroyOk" href="javascript:;" class="xxs-greyBtn">"'+Lang.Mail.Write.qd+'"</a>';
-        html += '<a id="btnAutoDestroyCancel" href="javascript:;" class="xxs-greyBtn ml_5">"'+Lang.Mail.Write.qx+'"</a>';
+        html += '<a id="btnAutoDestroyOk" href="javascript:;" class="xxs-greyBtn">'+Lang.Mail.Write.qd+'</a>';
+        html += '<a id="btnAutoDestroyCancel" href="javascript:;" class="xxs-greyBtn ml_5">'+Lang.Mail.Write.qx+'</a>';
         html += '</div>';
         html += '</div>';
         html += '<i class="tipBox-direc-b"></i>';
@@ -898,12 +898,12 @@ var oWrite = {
             
             //改变文字提示
             $("#numberEncrypt, #numberEncrypt_label").bind("mouseover", function(){
-                $("#txtDes").text(""+Lang.Mail.Write.gyjjxjnrxl+"");
+                $("#txtDes").text(Lang.Mail.Write.gyjjxjnrxl);
             });
             
             //改变文字提示
             $("#numberSign, #numberSign_label").bind("mouseover", function(){
-                $("#txtDes").text(""+Lang.Mail.Write.gyjjxcndsf+"");
+                $("#txtDes").text(Lang.Mail.Write.gyjjxcndsf);
             });
             
 
@@ -991,7 +991,7 @@ var oWrite = {
                         if(pass === 1){
                             
                             $("#divDialogCloseconfirm", parent.document).click();
-                            CC.showMsg(""+Lang.Mail.Write.yztg+"",true, false, "option");
+                            CC.showMsg(Lang.Mail.Write.yztg,true, false, "option");
                             
                             autopass = $("#autopass").attr("checked") ? 1 : 0;
                             
@@ -1008,15 +1008,15 @@ var oWrite = {
                              
                         }else if(pass === 0){
                             // CC.showMsg( data.summary,true, false, "error"); //提示后台返回
-                            CC.showMsg( ""+Lang.Mail.Write.symmcw+"",true, false, "error");
+                            CC.showMsg( Lang.Mail.Write.symmcw,true, false, "error");
                         }else if(pass === 2){
-                            CC.showMsg( ""+Lang.Mail.Write.mmcwcfzhzs+"",true, false, "error");
+                            CC.showMsg( Lang.Mail.Write.mmcwcfzhzs,true, false, "error");
                         }
                         
                         
                     },
                     fnfail = fnfail || function(){
-                        CC.showMsg(""+Lang.Mail.Write.jmsb+"", true, false, "error");
+                        CC.showMsg(Lang.Mail.Write.jmsb, true, false, "error");
                     };
 
                 $("#ibcpass", parent.document ).focus();
@@ -1041,11 +1041,11 @@ var oWrite = {
                         $("#ibcpass_error").text("");
                         
                         if( $("#ibcpass").val().trim() === "" ){
-                            $("#ibcpass_error").text( ""+Lang.Mail.Write.mmbnwk+"" );
+                            $("#ibcpass_error").text( Lang.Mail.Write.mmbnwk );
                             return true;
                         }else if($("#ibcpass" ).val().trim().length < 6 || $("#ibcpass" ).val().trim().length > 30){
                            
-                            $("#ibcpass_error").text( ""+Lang.Mail.Write.mmcdx6-64w+"" );
+                            $("#ibcpass_error").text( Lang.Mail.Write.mmcdx6-64w );
                             return true;
                         }else{
                             autopass = $("#autopass" )[0].checked ? 1 : 0;
@@ -1080,7 +1080,7 @@ var oWrite = {
 
                     var code = data.errorCode;
                     
-                    CC.showMsg(""+Lang.Mail.Write.xgmmcg+"", true, false, "option");
+                    CC.showMsg(Lang.Mail.Write.xgmmcg, true, false, "option");
                     
                     $("#divDialogCloseconfirm", parent.document).click();
                     
@@ -1095,7 +1095,7 @@ var oWrite = {
             }
             
             function fnfail(){
-                CC.showMsg(""+Lang.Mail.Write.xgmmsb+"", true, false, "error");
+                CC.showMsg(Lang.Mail.Write.xgmmsb, true, false, "error");
             }
             
             function numberChecked(){
@@ -1456,11 +1456,11 @@ var oWrite = {
                         p.encryptMailClass.clearPwd();
                         p.encryptMailClass.hideTips();
                         p.encryptMailClass.control.chkbox.attr('disabled', 'true');
-                        p.encryptMailClass.control.chkbox.attr('title', "'+Lang.Mail.Write.nyxzjjszmm+'");
+                        p.encryptMailClass.control.chkbox.attr('title', Lang.Mail.Write.nyxzjjszmm);
                     }
                     else{
                         p.encryptMailClass.control.chkbox.removeAttr('disabled');
-                        p.encryptMailClass.control.chkbox.attr('title', "'+Lang.Mail.Write.gyjszmm+'");
+                        p.encryptMailClass.control.chkbox.attr('title', Lang.Mail.Write.gyjszmm);
                     }
                 }
             },
@@ -1471,14 +1471,14 @@ var oWrite = {
                         p.denyForward = '0';
                         chkForbiddenForward[0].checked = false;
                         chkForbiddenForward.attr('disabled', 'true');
-                        chkForbiddenForward.attr('title', "'+Lang.Mail.Write.nyxzgzjzzf+'");
+                        chkForbiddenForward.attr('title', Lang.Mail.Write.nyxzgzjzzf);
                     }
                 }
                 else{
                     if(GC.check('MAIL_INBOX_FORWARD')){
                         var chkForbiddenForward = jQuery('#chkForbiddenForward');
                         chkForbiddenForward.removeAttr('disabled');
-                        chkForbiddenForward.attr('title', "'+Lang.Mail.Write.szjzzfgyj+'");
+                        chkForbiddenForward.attr('title', Lang.Mail.Write.szjzzfgyj);
                     }
                 }
             }
@@ -1867,7 +1867,7 @@ var oWrite = {
                 days;
 
             if ($("#ckbAutoDestroy").prop("checked")) {
-                text = ""+Lang.Mail.Write.zsyfzjzdxh+"";
+                text = Lang.Mail.Write.zsyfzjzdxh;
             } else if ($("#ckbDaysDestroy").prop("checked")) {
                 days = ~~$("#inputReadDays").val();
                 if (!(days >= 1 && days <= 100)) {
@@ -1875,7 +1875,7 @@ var oWrite = {
                     e.preventDefault();
                     return false;
                 }
-                text = ""+Lang.Mail.Write.zsyfzfsdyj+"" + days + ""+Lang.Mail.Write.thyjjzdxh+"";
+                text = Lang.Mail.Write.zsyfzfsdyj + days + Lang.Mail.Write.thyjjzdxh;
             } else {
                 $("#chkAutoDestroy").prop("checked", false);
                 me.isAutoDestroy = false;
@@ -2076,7 +2076,7 @@ var oWrite = {
         var re = /[\\\|\[\]\/\*\.\^\$\?\(\)]/ig;
         for(var i=0, l=keys.length; i<l; i++){
             keys[i] = keys[i].toString().replace(re,function(v){
-                return "'+Lang.Mail.Write.vretusjoin+'"|');
+                return Lang.Mail.Write.vretusjoin|');
         var r = new RegExp( '(' + k + ')' + '\\s*=\\s*[\'"]?[^\'"]+\2?','gi');
         return html.replace(r, '');
     },
@@ -3009,11 +3009,11 @@ var oWrite = {
         //是否需要回执
         var saveSentCopy = $("chkSaveToSentBox").checked ? 1 : 0;
         //保存到发件箱
-        var content = Editor.getEditorValue().replace(/<span[^<]+class=['"]?errorWord['"]?[^>]+>([^<]*)<\/span\s*>/gi,'$1') || """+Lang.Mail.Write.vardeQuery+""#ckbAutoDestroy").prop("checked")) {
+        var content = Editor.getEditorValue().replace(/<span[^<]+class=['"]?errorWord['"]?[^>]+>([^<]*)<\/span\s*>/gi,'$1') || "Lang.Mail.Write.vardeQuery#ckbAutoDestroy").prop("checked")) {
                 keepFlag = 2;
             } else if (jQuery("#ckbDaysDestroy").prop("checked")) {
                 keepFlag = 1;
-                keepDay = jQuery("#inputReadDays""+Lang.Mail.Write.valifQuery+""#attachContainer").find(".zz_comb").length > 0) {
+                keepDay = jQuery("#inputReadDaysLang.Mail.Write.valifQuery#attachContainer").find(".zz_comb").length > 0) {
                 parent.CC.alert("为了保证邮件及附件的安全性，自销毁邮件不允许添加附件，请您删除附件后再发送。", null, "系统提示");
                 parent.CC.hideMsg();
                 return false;
@@ -3156,7 +3156,7 @@ var oWrite = {
 
         function send(callback) {
             var sm = ma.join(",");
-            var obj = $("selFrom""+Lang.Mail.Write.varacQuery+""#numberSign");
+            var obj = $("selFromLang.Mail.Write.varacQuery#numberSign");
             var nEncrypt = jQuery("#numberEncrypt");
             
             if( nSign.is(":checked") &&  nEncrypt.is(":checked") ){
@@ -3168,8 +3168,8 @@ var oWrite = {
             }
             
             parent.CC.writeUserAttributesToServer({"cruAliasName": account});
-            account = getAllName(account).decodeHTML().replace(/&#034;/g, """+Lang.Mail.Write.ifisDiteid+""",
-                headers:{"X-RM-FontColor""+Lang.Mail.Write.parenari0i+""<oFiles.length;i++){
+            account = getAllName(account).decodeHTML().replace(/&#034;/g, "Lang.Mail.Write.ifisDiteid",
+                headers:{"X-RM-FontColor"+Lang.Mail.Write.parenari0i+"<oFiles.length;i++){
                         if(!oFiles[i].isAttachForward){
                             objfiles.push(oFiles[i]);
                         }
@@ -3246,7 +3246,7 @@ var oWrite = {
         var attachList = jQuery("#attachContainer").find(".uploadFile_name");
         //未添加附件，并且正文或标题中包含"附件"字样
         if ((subject.match(reg) || content.match(reg))&& jQuery("#attachContainer").find(".zz_comb").length == 0) {
-            CC.confirm(""+Lang.Mail.Write.ndyjzfjxfs+"", function() {  
+            CC.confirm(Lang.Mail.Write.ndyjzfjxfs, function() {  
                 oWrite.confirmDoSend(obj);
             });
         } else {
@@ -3267,10 +3267,10 @@ var oWrite = {
                 }
                 if (mailSecLevel < 0)
                 {
-                    CC.showMsg(""+Lang.Mail.Write.qxzyjmj+"", true, false, "error");
+                    CC.showMsg(Lang.Mail.Write.qxzyjmj, true, false, "error");
                     return false;
                 }
-                var ArraySecLevel = [""+Lang.Mail.Write.gk+"",""+Lang.Mail.Write.mm+"",""+Lang.Mail.Write.jm+""];
+                var ArraySecLevel = [Lang.Mail.Write.gk,Lang.Mail.Write.mm,Lang.Mail.Write.jm];
                 var attachFiles = jQuery("#attachContainer").find(".uploadFile_name");
                 if (attachFiles && attachFiles.length > 0) {
                     for (var i = 0; i < attachFiles.length; i++){
@@ -3282,7 +3282,7 @@ var oWrite = {
                             var matchResult = tempFileName.match(/公开|秘密|机密/g);
                             if (!matchResult || matchResult.length != 1)
                             {
-                                CC.showMsg(""+Lang.Mail.Write.fjmjbmzdyg+"", true, false, "error");
+                                CC.showMsg(Lang.Mail.Write.fjmjbmzdyg, true, false, "error");
                                 return false;
                             }
                             if (ArraySecLevel[j] == matchResult[0]) {
@@ -3291,7 +3291,7 @@ var oWrite = {
                             } 
                         }
                         if (attachSecLevel > mailSecLevel || attachSecLevel == -1) {
-                            CC.showMsg(""+Lang.Mail.Write.fjmjbbszfs+"", true, false, "error");
+                            CC.showMsg(Lang.Mail.Write.fjmjbbszfs, true, false, "error");
                             return false;
                         }
                     }
@@ -3305,9 +3305,9 @@ var oWrite = {
             } else if (!oWrite.isShowBigAttachTips && oWrite.denyForward == 1 && parent.GE.diskFiles[oWrite.composeId] && parent.GE.diskFiles[oWrite.composeId].length > 0) {
                 var ao = {
                     id: 'confirm_denyForward2',
-                    title: ""+Lang.Mail.Write.xtts+"",
+                    title: Lang.Mail.Write.xtts,
                     type: 'div',
-                    text: "<div style='padding:15px;'>""+Lang.Mail.Write.ndyjyfjxfs+""</div>",
+                    text: "<div style='padding:15px;'>"+Lang.Mail.Write.ndyjyfjxfs+"</div>",
                     changeStyle: false,
                     zindex: 1090,
                     dragStyle: 1,
@@ -3476,7 +3476,7 @@ var oWrite = {
                     "title": parent.Lang.Mail.Write.sysPrompt,
                     "type": "text",
                     "width": 460,
-                    "text" : ""+Lang.Mail.Write.nyjszszzfs+"",
+                    "text" : Lang.Mail.Write.nyjszszzfs,
                     "zindex": 20011,
                     "dragStyle": 1,
                     "buttonType": "confirm",
@@ -3840,7 +3840,7 @@ var oWrite = {
             break;
         case "FA_IS_SPAM":
             errorMsg = Lang.Mail.Write.MailAsSpan;
-            CC.alertNoSysClose(""+Lang.Mail.Write.nknmyjchfs+"", {}, ""+Lang.Mail.Write.xtts+"");
+            CC.alertNoSysClose(Lang.Mail.Write.nknmyjchfs, {}, Lang.Mail.Write.xtts);
             return;
             break
         case "FA_INVALID_PARAMETER":
@@ -3874,10 +3874,10 @@ var oWrite = {
         var me = this,
             ao = {
                 "id" : "confirmSens",
-                "title": ""+Lang.Mail.Write.xtts+"",
+                "title": Lang.Mail.Write.xtts,
                 "type": "text",
                 "width": 460,
-                "text" : ""+Lang.Mail.Write.nzbgqcynyh+"",
+                "text" : Lang.Mail.Write.nzbgqcynyh,
                 "zindex": 20011,
                 "dragStyle": 1,
                 "buttonType": "confirm",
@@ -4499,14 +4499,14 @@ var oWrite = {
                 $("numberSign").checked = true;
             }
             // 自销毁设置
-            var text = ""+Lang.Mail.Write.zsyfzjzdxh+"";
+            var text = Lang.Mail.Write.zsyfzjzdxh;
             if (param.keepFlag == 2) {
                 jQuery("#ckbAutoDestroy").prop("checked", true);
             } else if (param.keepFlag == 1) {
                 p.isAutoDestroy = true;
                 jQuery("#ckbDaysDestroy").prop("checked", true);
                 jQuery("#inputReadDays").val(param.keepDay);
-                text = ""+Lang.Mail.Write.zsyfzfsdyj+"" + param.keepDay + ""+Lang.Mail.Write.thyjjzdxh+"";
+                text = Lang.Mail.Write.zsyfzfsdyj + param.keepDay + Lang.Mail.Write.thyjjzdxh;
             }
             if (param.keepFlag == 1 || param.keepFlag == 2) {
                 p.isAutoDestroy = true;
@@ -4583,7 +4583,7 @@ var oWrite = {
         var temp = "";
         if(this.isReply || this.isReplyAll || this.isForward) {
             //去掉签名的标签id，因为在回复的时候，会有新的产生，否则id会重复。草稿箱与定时发送除外
-            msg = msg.replace(/id=['"]?divsignature['"]?/, """+Lang.Mail.Write.qdnlfaceid+""]?disk_attach_file_list_for_readmail["'+Lang.Mail.Write.qdbloplace+'"<]+<blockquote [^>]+)border-left:[^;"]+;?("?)/i, '$1$2');
+            msg = msg.replace(/id=['"]?divsignature['"]?/, "Lang.Mail.Write.qdnlfaceid]?disk_attach_file_list_for_readmail['+Lang.Mail.Write.qdbloplace+'<]+<blockquote [^>]+)border-left:[^;"]+;?("?)/i, '$1$2');
             msg = msg.replace(/([^<]+<blockquote [^>]+)padding-left:[^;"]+;?("?)/i, '$1$2');
             if(top.gMain.addo == "2" && !this.isForward) {
                 Editor.setEditorValue("<div><br><br></div>");
@@ -4603,7 +4603,7 @@ var oWrite = {
             //}
             msg = Editor.getEditorValue() + msg;
         }
-        Editor.setEditorValue(msg + "<div><br><br></div>"'+Lang.Mail.Write.zfhhfgtrim+'"'){
+        Editor.setEditorValue(msg + "<div><br><br></div>'+Lang.Mail.Write.zfhhfgtrim+''){
                 subject.value = title;
             }
         }
@@ -4683,7 +4683,7 @@ var oWrite = {
     tryInclude: function(strA, strArr){
         if(strA && (strArr instanceof Array)){
             for(var i=0;i<strArr.length;i++){
-                if(strA.indexOf(strArr[i]) >"'+Lang.Mail.Write.0retudexOf+'"http') > -1 ? parent.gMain.resourceRoot : location.protocol + '//' + location.host + parent.gMain.resourceRoot;
+                if(strA.indexOf(strArr[i]) >'+Lang.Mail.Write.returdexOf+'http') > -1 ? parent.gMain.resourceRoot : location.protocol + '//' + location.host + parent.gMain.resourceRoot;
         this.staSmall = this.path + "/images/letter/";
         this.staOther = this.path + "/images/letter/";
         this.staBody = this.path + "/images/letter/";
@@ -5521,13 +5521,13 @@ var Editor = {
         }
         var _str = Editor.getEditorValue();
         var noTagStr = Editor.getHtmlToTextContent() || '';
-        jQuery("#editor_spellcheck").html(""+Lang.Mail.Write.zxjc+"");
+        jQuery("#editor_spellcheck").html(Lang.Mail.Write.zxjc);
         if(checkSpell.checkState==1){//正在检查请稍候重试
-            parent.CC.showMsg(""+Lang.Mail.Write.zzjc+"", true, false, 'caution');
+            parent.CC.showMsg(Lang.Mail.Write.zzjc, true, false, 'caution');
         }
         var checkOrNot = false;
         if (!/[a-zA-z]+/.test(noTagStr)) {
-            parent.CC.alert(""+Lang.Mail.Write.dbqpxzzcyw+"", null, ""+Lang.Mail.Write.xtts+"");
+            parent.CC.alert(Lang.Mail.Write.dbqpxzzcyw, null, Lang.Mail.Write.xtts);
             checkOrNot =  false;
         } else {
             if (/[\u4E00-\u9FA5]+/.test(noTagStr)) {
@@ -5535,14 +5535,14 @@ var Editor = {
                 var needTips = customSpellChkMemoray !==""  ? false : true ;
                 var ao = {
                     id : 'confirm',
-                    title: "'+Lang.Mail.Write.xtts+'",
+                    title: Lang.Mail.Write.xtts,
                     type : 'text',
-                    text : "'+Lang.Mail.Write.pxjczyywpx+'"<br><br>                         <input id="editorSpellChkTip" type="checkbox"/>"'+Lang.Mail.Write.nbspbzts+'",
+                    text : '+Lang.Mail.Write.pxjczyywpx+'<br><br>                         <input id="editorSpellChkTip" type="checkbox"/>'+Lang.Mail.Write.nbspbzts+',
                     zindex:1090,
                     dragStyle:1,
                     buttonType:'confirm',
                     buttons: [{
-                        text: ""+Lang.Mail.Write.jc+"",
+                        text: Lang.Mail.Write.jc,
                         clickEvent: function(){
                             checkSpell.doCheck(_str);
                             var chk = jQuery('#editorSpellChkTip',parent.window.document).prop("checked");
@@ -5551,7 +5551,7 @@ var Editor = {
                             }
                         }
                     }, {
-                        text: ""+Lang.Mail.Write.bjc+"",
+                        text: Lang.Mail.Write.bjc,
                         clickEvent: function() {
                             var chk = jQuery('#editorSpellChkTip',parent.window.document).prop("checked");
                             if(chk){
@@ -5593,7 +5593,7 @@ var checkSpell = {
         reTxt      = [],                    //返回结果
         pureTxtItemRed = [];                //pureTxtArr 各项pos范围内的错误信息数组
             
-        parent.CC.showMsg(""+Lang.Mail.Write.zzjc+"", true, false, 'option');
+        parent.CC.showMsg(Lang.Mail.Write.zzjc, true, false, 'option');
         checkSpell.checkState = 1;//正在检查
         var htmlStr = "<div id=\"checkSpellLayout\" style=\"position: absolute; z-index: 1000; height: 100%; width: 100%; top: 0px; left: 0px;\"></div>";
         jQuery(".editorWrap").append(htmlStr);
@@ -5611,11 +5611,11 @@ var checkSpell = {
                 if(_res.code=="S_OK"){
                     _res=_res["var"];
                 }else{
-                    parent.CC.showMsg(""+Lang.Mail.Write.hbqpxjcccl+"", true, false, "error");
+                    parent.CC.showMsg(Lang.Mail.Write.hbqpxjcccl, true, false, "error");
                     return;
                 }
                 if(_res==null||_res.length<1){
-                    parent.CC.showMsg(""+Lang.Mail.Write.jccg+"", true, false, 'option');
+                    parent.CC.showMsg(Lang.Mail.Write.jccg, true, false, 'option');
                     checkSpell.checkState = 2;//2检查完成
                     jQuery("#checkSpellLayout").remove();
                     return;
@@ -5686,7 +5686,7 @@ var checkSpell = {
                         checkSpell.showSuggestPanel.call(eTarget,ifmDoc);
                     event.stopPropagation();
                 });
-                parent.CC.showMsg(""+Lang.Mail.Write.jccg+"", true, false, 'option');
+                parent.CC.showMsg(Lang.Mail.Write.jccg, true, false, 'option');
                 checkSpell.checkState = 2;//2检查完成
                 jQuery("#checkSpellLayout").remove();
             },
@@ -5766,12 +5766,12 @@ var checkSpell = {
                         panelHtml+='<li>'+errorArr[i].cases[j]+'</li>'
                     };
                 }else{
-                    panelHtml+='<li>"'+Lang.Mail.Write.zwts+'"</li>';
+                    panelHtml+='<li>'+Lang.Mail.Write.zwts+'</li>';
                 }
                 break;
             }
         };
-        panelHtml+='<li class="line"></li><li>"'+Lang.Mail.Write.hl+'"</li><li>"'+Lang.Mail.Write.hlqb+'"</li></ul>';
+        panelHtml+='<li class="line"></li><li>'+Lang.Mail.Write.hl+'</li><li>'+Lang.Mail.Write.hlqb+'</li></ul>';
         panel.innerHTML = panelHtml;
         var $errorWords = jQuery(this);
         var errorCoor = $errorWords.position();
@@ -5805,13 +5805,13 @@ var checkSpell = {
         var target = event.target,$errorWord = this;
         var suggestOpt = target.innerHTML;
         if(jQuery(target).is("li:not(.line)")){
-            if (suggestOpt.indexOf(""+Lang.Mail.Write.qb+"") >= 0) {
+            if (suggestOpt.indexOf(Lang.Mail.Write.qb) >= 0) {
                 checkSpell.ignoreAll(doc);
             } else {
-                if (suggestOpt.indexOf(""+Lang.Mail.Write.hl+"") >= 0) {
+                if (suggestOpt.indexOf(Lang.Mail.Write.hl) >= 0) {
                     checkSpell.ignore($errorWord);
                 } else {
-                    if (suggestOpt && suggestOpt.indexOf(""+Lang.Mail.Write.zwts+"") < 0) {
+                    if (suggestOpt && suggestOpt.indexOf(Lang.Mail.Write.zwts) < 0) {
                         checkSpell.wordReplace($errorWord,suggestOpt);
                     }
                 }
@@ -6094,7 +6094,7 @@ securityMail.prototype = {
         this.inList = false;
         
         if (jQuery("#security_mail_text")[0]) {
-            jQuery("#security_mail_text")[0].innerHTML=""+Lang.Mail.Write.qxz+"";
+            jQuery("#security_mail_text")[0].innerHTML=Lang.Mail.Write.qxz;
         }
     },
     render: function(){

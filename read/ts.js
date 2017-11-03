@@ -67,8 +67,8 @@ for (var i = 0; i < data.length; i++) {
     		//console.log(data[j])
     		//console.log(item)
 
-    		//如果前一个字符是 \\ ， 也继续往前走， 避免这种情况 "abc\"bcd"
-    		while( data[j] !== item || data[j-1] == '\\' ){
+    		//如果"abc\"bcd" 遇到\" 也继续
+    		while( data[j] !== item || (data[j] == item && data[j-1] == '\\') ){
     			
     			str += data[j]; 
     			j++
