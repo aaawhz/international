@@ -1,4 +1,16 @@
-/*
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<div id='cc'></div>
+	
+
+<script type="text/javascript">
+	/*
 ** randomWord 产生任意长度随机字母数字组合
 ** randomFlag-是否任意长度 min-任意长度最小位[固定位数] max-任意长度最大位
 ** xuanfeng 2014-08-28
@@ -65,7 +77,7 @@ var PinYin = {"a":"\u554a\u963f\u9515","ai":"\u57c3\u6328\u54ce\u5509\u54c0\u769
       I1 = I1.substr(0,5) + I1.substr(-5);
     }else if(I1.length < 5 ){
       random = randomWord();
-      I1 = I1 + '_' + random;
+      I1 = I1 ; //+ '_' + random;
     }
 
     return I1;  
@@ -299,40 +311,59 @@ function pickText(str){
     }
 
      console.log(reArray.join(''))
-    return reArray;
+    return reArray.join('');
 }
 
+var Lang = {
+		"Mail":{
+			"Write":{
+				hlw : '葫芦娃',
+				hh:'呵呵',
+				ddd: 'd的d',
+				bxjg: '变形金刚'
+			}
+		}
+	}
 
 
 
 //test
 
  var str = '<br><br> 葫芦娃  <input title="呵呵"> <input ttt=\'d的d\'> 变形金刚 ';
- 
- function TransStr(str){
-    if(Util.haszh(str)){
-      if(!Util.checkTag(str)){
-        //进入提取中文
-        return pickText(str);
-      }else{
-        //str全部提取， 直接转换
-        return transf(str);
-      }
-     }else{
-      //跳过 result += str; i = j;
-     }
+ var res = '';
+ if(Util.haszh(str)){
+ 	if(!Util.checkTag(str)){
+ 		//进入提取中文
+ 		res = pickText(str);
+ 	}else{
+ 		//str全部提取， 直接转换
+ 	 	res = transf(str);
+ 	}
+ }else{
+ 	//跳过 result += str; i = j;
+ 	res = str;
  }
- 
-  
+
+ var cc = document.getElementById('cc');
+ cc.innerText = res;
+   
+
 
 function transf(str){
   
   var py = chineseToPinYin(str.replace(/[\\\/\<\>"'~!@#$%^&*()?:]/,''));
    console.log( py );
-
-   return "\'\"+" Lang.Mail.write." + py +  "\"\'";
+  
+  //字符串str是单引号开头
+  if( GLOBELCACHE.signleQuoteStart ){
+  	return "\"\'+"  + ("Lang.Mail.Write." + py) +  "+\'\"";
+  } else{
+  	return "\"\"+"  + ("Lang.Mail.Write." + py) +  "+\"\"";
+  }
+   
 };
 
-
-module.exports = TransStr;
  
+</script>	
+</body>
+</html>

@@ -1,4 +1,6 @@
 var rf=require("fs");  
+
+var Transf = require("./regs");
 var data=rf.readFileSync("origin.js","utf-8");  
 
 var str = '';
@@ -55,10 +57,8 @@ for (var i = 0; i < data.length; i++) {
 
     	next = data[i+1];
  		j = i;
-
-    	if(zhRe.test(next)){ //如果第一个是中文
-    		 		
-    		j++
+ 	 		
+ 			j++
     		//console.log(data[j])
     		//console.log(item)
 
@@ -68,6 +68,7 @@ for (var i = 0; i < data.length; i++) {
     			str += data[j]; 
     			j++
     		}
+    		// 执行到这里获取到引号之间的字符串
 
     		console.log(str)
     		str = item + 'hahhahahha' + item
@@ -76,9 +77,7 @@ for (var i = 0; i < data.length; i++) {
     		//console.log(str);
     		//跳过已匹配的
     		i = j;  		
-    	}else{
-    		result += item;
-    	}
+    	 
     	
     }else{
 
