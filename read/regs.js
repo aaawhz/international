@@ -1,4 +1,4 @@
-/*
+  /*
 ** randomWord 产生任意长度随机字母数字组合
 ** randomFlag-是否任意长度 min-任意长度最小位[固定位数] max-任意长度最大位
 ** xuanfeng 2014-08-28
@@ -65,7 +65,7 @@ var PinYin = {"a":"\u554a\u963f\u9515","ai":"\u57c3\u6328\u54ce\u5509\u54c0\u769
       I1 = I1.substr(0,5) + I1.substr(-5);
     }else if(I1.length < 5 ){
       random = randomWord();
-      I1 = I1 + '_' + random;
+      I1 = I1 ; //+ '_' + random;
     }
 
     return I1;  
@@ -143,30 +143,31 @@ var attribute = new RegExp(
 
 /** -----------------------attrs  end -----------------------**/
 
+var GLOBELCACHE = {};
 
 var Util = {
  haszh: function (str){
- 	//中文
-	var zhRe = /[\u4E00-\u9FA5]/;
+  //中文
+  var zhRe = /[\u4E00-\u9FA5]/;
 
- 	return zhRe.test(str);
+  return zhRe.test(str);
  },
  //检查字符串是否符合国际化要求， 返回true就全部提取出来， 返回false则进入标签解析， 分段提取
  checkTag: function (str){
- 	//字符串是否只有容许的标签， 如果 'abc<br/>好滴' 就把这个整体提取出来做国际化， 简单易行
-	 var onlyAllowTag = true;
-	 //如果有标签
-	 if( getTag.test(str) ){
-	 	str.replace(getTag, function ($s) {
-	 		if(!allowTag.test($s)){
-	 			onlyAllowTag = false;
-	 			return onlyAllowTag;
-	 		}
-	 	});
-	 	return onlyAllowTag;
-	 }else{
-	 	return onlyAllowTag;
-	 }
+  //字符串是否只有容许的标签， 如果 'abc<br/>好滴' 就把这个整体提取出来做国际化， 简单易行
+   var onlyAllowTag = true;
+   //如果有标签
+   if( getTag.test(str) ){
+    str.replace(getTag, function ($s) {
+      if(!allowTag.test($s)){
+        onlyAllowTag = false;
+        return onlyAllowTag;
+      }
+    });
+    return onlyAllowTag;
+   }else{
+    return onlyAllowTag;
+   }
  },
  /**  
   输入 "<br><br> 葫芦娃  <input> 变形金刚 "
@@ -252,11 +253,11 @@ var Util = {
  */
  
  /**
- 	用标签来分割不明智， 应该直接循环用<>来判断， 遇到就截取
+  用标签来分割不明智， 应该直接循环用<>来判断， 遇到就截取
 
- 	1.看看标签属性有没有中文
+  1.看看标签属性有没有中文
 
- 	1.把位置中间的取出来， 看看有没有中文， 如果有中文就全部提取
+  1.把位置中间的取出来， 看看有没有中文， 如果有中文就全部提取
  **/
 
 function pickText(str){
@@ -299,9 +300,19 @@ function pickText(str){
     }
 
      console.log(reArray.join(''))
-    return reArray;
+    return reArray.join('');
 }
 
+var Lang = {
+    "Mail":{
+      "Write":{
+        hlw : '葫芦娃',
+        hh:'呵呵',
+        ddd: 'd的d',
+        bxjg: '变形金刚'
+      }
+    }
+  }
 
 
 
@@ -309,30 +320,43 @@ function pickText(str){
 
  var str = '<br><br> 葫芦娃  <input title="呵呵"> <input ttt=\'d的d\'> 变形金刚 ';
  
- function TransStr(str){
-    if(Util.haszh(str)){
-      if(!Util.checkTag(str)){
-        //进入提取中文
-        return pickText(str);
-      }else{
-        //str全部提取， 直接转换
-        return transf(str);
-      }
-     }else{
-      //跳过 result += str; i = j;
-     }
- }
- 
-  
+function TransStr(str){
+  var res = '';
 
+   if(Util.haszh(str)){
+    if(!Util.checkTag(str)){
+      //进入提取中文
+      res = pickText(str);
+    }else{
+      //str全部提取， 直接转换
+      res = transf(str);
+    }
+   }else{
+    //跳过 result += str; i = j;
+    res = str;
+   }
+
+   return res;
+}
+ 
+
+ 
 function transf(str){
   
   var py = chineseToPinYin(str.replace(/[\\\/\<\>"'~!@#$%^&*()?:]/,''));
    console.log( py );
-
-   return "\'\"+" Lang.Mail.write." + py +  "\"\'";
+  
+  //字符串str是单引号开头
+  if( GLOBELCACHE.signleQuoteStart ){
+    return "\"\'+"  + ("Lang.Mail.Write." + py) +  "+\'\"";
+  } else{
+    return "\"\"+"  + ("Lang.Mail.Write." + py) +  "+\"\"";
+  }
+   
 };
 
 
-module.exports = TransStr;
- 
+module.exports = {
+  TransStr:TransStr,
+  GLOBELCACHE: GLOBELCACHE
+};

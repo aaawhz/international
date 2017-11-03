@@ -1,6 +1,6 @@
 var rf=require("fs");  
 
-var Transf = require("./regs");
+var Regs = require("./regs");
 var data=rf.readFileSync("origin.js","utf-8");  
 
 var str = '';
@@ -54,7 +54,12 @@ for (var i = 0; i < data.length; i++) {
 
     if(spliterRe.test(item) && !iszs ){ //如果匹配 item 就是引号, 而且不在注释中
     	str = '';
-
+    	if( /[\']/.test(item) ){
+    		Regs.GLOBELCACHE.signleQuoteStart = true;
+    	}else{
+    		Regs.GLOBELCACHE.signleQuoteStart = false;
+    	}
+    	
     	next = data[i+1];
  		j = i;
  	 		
@@ -70,8 +75,10 @@ for (var i = 0; i < data.length; i++) {
     		}
     		// 执行到这里获取到引号之间的字符串
 
-    		console.log(str)
-    		str = item + 'hahhahahha' + item
+    		console.log( item + str + item )
+    		str = Regs.TransStr(item + str + item );
+
+
     		result += str;
 
     		//console.log(str);
