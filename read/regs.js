@@ -74,44 +74,75 @@ var Util = {
  },
  /**  
   输入 "<br><br> 葫芦娃  <input> 变形金刚 "
-  输出 {
-     tags: [ <br>, <br>, <input>],
-     texts: ['葫芦娃' ,'变形金刚']
+  输出 
+
+     spliteValue: 
+     0: {value: "<br>", isTag: true}
+     1: {value: "<br>", isTag: true}
+     2: {value: " 葫芦娃  ", isTag: false}
+     3: {value: "<input>", isTag: true}
+     4: {value: " 变形金刚 ", isTag: false}
+
   }
   **/
  getTextsAndTags: function(str){
    // pos 用来记录位置，和 标签的长度
-   var pos = [],  s , item,len,end, isinTag = false;
-   var tags = [], texts = [];
-
-   tags = str.match(getTag);
-
+   var  item, isTag = false, s = '';
+   var tags = [], o = {};
+ 
    for (var i = 0; i < str.length; i++) {
-    item = str.charAt(i);
-    if(item == "<"){
-      isinTag = true;
-      if(s) texts.push(s);
-      s = '';
-    }
+       var item = str.charAt(i);
 
-    if( !isinTag ){
-       s +=item;
-    }
+       if(item == '<'){
+          
+          //如果 < 前面有字符， 先push
+          if(s){
+            o = {
+              value: s,
+              isTag: isTag
+            }
 
-    if( item == ">"){
-      isinTag = false;
-    }
-   
+            tags.push(o);
+          }
+
+          isTag = true;
+          s = '';
+          s += item;
+
+          
+       }
+ 
+       if(item == '>'){
+          
+          s+= item;
+
+          o = {
+            value: s,
+            isTag: isTag
+          };
+          tags.push(o);
+
+          isTag = false;
+          s = ''
+       }
+
+       if( item != '>' && item != '<'){
+          s += item;
+       }
+       
    }
-   
-   //收尾
-    if(s){
-      texts.push(s)
-    }
 
+   if(s){
+     o = {
+            value: s,
+            isTag: isTag
+        };
+
+     tags.push(o);   
+   }
+  
    return {
-      tags: tags,
-      texts: texts
+      spliteValue: tags
    }
  } 
 
@@ -144,7 +175,7 @@ function pickText(str){
  var str = '<br><br> 葫芦娃  <input> 变形金刚 ';
  
  if(Util.haszh(str)){
- 	if(Util.checkTag(str)){
+ 	if(!Util.checkTag(str)){
  		//进入提取中文
  		pickText(str);
  	}else{
