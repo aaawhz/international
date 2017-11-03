@@ -144,13 +144,16 @@ var singleAttrValues = [
   // attr value, single quotes
   /'([^']*)'+/.source,
   // attr value, no quotes
-  /([^\s"'=<>`]+)/.source 
+  /([^\s"'=<>`]+)/.source,
+
+  /\'([^\s"'=<>`]+)\'/.source,
+  /\"([^\s"'=<>`\\]+)\"/.source 
 ]
 
 var attribute = new RegExp(
    singleAttrIdentifier.source +
-  '(?:\\s*(' + singleAttrAssign.source + ')' +
-  '\\s*(' + singleAttrValues.join('|') + '))',
+  '\\s*(' + singleAttrAssign.source + ')' +
+  '\\s*(' + singleAttrValues.join('|') + ')',
   'g'
 )
 
@@ -281,17 +284,18 @@ function pickText(str){
       value = item.value;
       //处理标签属性， 有中文直接替换
       if(item.isTag){
-       
+        console.log('------------------'+value);
         value = value.replace(attribute,function($0,$1,$2,$3,$4){
-                    /*console.log($0)
-                    console.log($1)
-                    console.log($2)
+                   // console.log($4)
+                    console.log("---------$0:    " +$0)
+                  /*  console.log($2)
                     console.log($3)
                     console.log($4)*/
                     //console.log(str[0])
 
                     //replace 会改变匹配到的那部分， 只需要改变值后， 但不会改变原值
                     if(Util.haszh($3)){
+                      console.log('-----------'+$3)
                       return $1 + $2 + transf($3,false,true)
                     } else{
                       return $0
@@ -342,7 +346,7 @@ function TransStr(str){
 
 
    if(Util.haszh(str)){
-    console.log('-----------------'+str)
+   // console.log('-----------------'+str)
     if(!Util.checkTag(str)){
       //进入提取中文
       res = pickText(str);
