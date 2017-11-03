@@ -67,15 +67,16 @@ for (var i = 0; i < data.length; i++) {
     		//console.log(data[j])
     		//console.log(item)
 
-    		//如果"abc\"bcd" 遇到\" 也继续
-    		while( data[j] !== item || (data[j] == item && data[j-1] == '\\') ){
+    		//如果"abc\"bcd" 遇到\" 也继续, 而且不能换行， 换行就停止了 ， 这里可能要手动处理， 
+    		//遇到 ["] 类似这样的
+    		while( (data[j] !== item || (data[j] == item && data[j-1] == '\\') ) && data[j] != '\r'){
     			
     			str += data[j]; 
     			j++
     		}
     		// 执行到这里获取到引号之间的字符串
 
-    		console.log( item + str + item )
+    		//console.log( item + str + item )
     		str = Regs.TransStr(item + str + item );
 
 

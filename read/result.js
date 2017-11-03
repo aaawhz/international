@@ -11,8 +11,7 @@ var PageStateTypes = {
 var WriteState = {
     none : 0,
     send : 1,
-    save : 2,
-    test: '<input title="'+Lang.Mail.Write.haha+'">'
+    save : 2
 };
 
 var TimeUnit = {
@@ -53,7 +52,7 @@ var oWrite = {
     subIndex : 0,
     focusId : "rib_input_1",
     times : 0,
-    minutes : parent.gMain.autoSaveTime || 5,
+    minutes : parent.gMain.autoSaveTime || 2, 
     sendMaxLen : 10,
     toMaxNum : parseInt(parent.gMain.recipientMaxNum) || 200,
     denyForwardMaxAttachSize : 20, // 禁止转发时最大附件大小，单位M
@@ -684,9 +683,10 @@ var oWrite = {
         //自动保存草稿
         //if(GC.check('MAIL_WRITE_SAVE')){
             p.interval = setInterval(function() {
-                if(!Editor.checkValueChange()){
-                    p.needAutoSave = true;
-                }
+                // if(!Editor.checkValueChange()){
+                //  p.needAutoSave = true;
+                // }
+                p.needAutoSave = true;  //产品要求无论是否内容更改都进行保存草稿箱操作2017Q1
                 if(p.needAutoSave){
                     parent.CC.showMsg(Lang.Mail.Write.savingToDraft, false, false, "loading");
                     p.autoSave();
@@ -2077,7 +2077,22 @@ var oWrite = {
         var re = /[\\\|\[\]\/\*\.\^\$\?\(\)]/ig;
         for(var i=0, l=keys.length; i<l; i++){
             keys[i] = keys[i].toString().replace(re,function(v){
-                return Lang.Mail.Write.yichudui|');
+                return '\\'+v;'
+            });
+        }
+        return keys;
+    },
+    /**
+     * 移除html key，value对
+     * @param html
+     * @param keys
+     */
+    clearHTMLKeyValue: function(html, keys){
+        var k;
+        if(!keys.length){
+            return html;
+        }
+        k = oWrite.clearRegString(keys).join('|');
         var r = new RegExp( '(' + k + ')' + '\\s*=\\s*[\'"]?[^\'"]+\2?','gi');
         return html.replace(r, '');
     },
@@ -3010,12 +3025,50 @@ var oWrite = {
         //是否需要回执
         var saveSentCopy = $("chkSaveToSentBox").checked ? 1 : 0;
         //保存到发件箱
-        var content = Editor.getEditorValue().replace(/<span[^<]+class=['"]?errorWord['"]?[^>]+>([^<]*)<\/span\s*>/gi,'$1') || "Lang.Mail.Write.zxhyjcs#ckbAutoDestroy").prop("checked")) {
+        var content = Editor.getEditorValue().replace(/<span[^<]+class=['"]?errorWord['"]?[^>]+>([^<]*)<\/span\s*>/gi,'$1') || "";"
+        var denyForward = p.denyForward;
+        var isHtml = Editor.getEditorMode() ? 1 : 0;
+        var scheduleDate = this.getDefiniteTime();
+        p.isSchedule = (scheduleDate > 0) ? true : false;
+        var account = fromObj.getAttribute('value').decodeHTML();
+        var tmpName = '', tmpAllTxt = '';
+        if(p.ribs[0]){
+             for(var k in p.ribs[0].items){
+                tmpAllTxt = p.ribs[0].items[k].allText;
+                to +=  tmpAllTxt + ';';
+             }
+        }
+        if(p.isCC && p.ribs[1]){
+             for(var k in p.ribs[1].items){
+                tmpAllTxt = p.ribs[1].items[k].allText;
+                csto +=  tmpAllTxt + ';';
+             }
+        }
+        if(p.isSCC && p.ribs[2]){
+             for(var k in p.ribs[2].items){
+                tmpAllTxt = p.ribs[2].items[k].allText;
+                msto += tmpAllTxt + ';';
+             }
+        }
+
+        /** 自销毁邮件参数 */
+        var keepFlag, keepDay;
+
+        if (p.isAutoDestroy) {
+            if (jQuery("#ckbAutoDestroy").prop("checked")) {
                 keepFlag = 2;
             } else if (jQuery("#ckbDaysDestroy").prop("checked")) {
                 keepFlag = 1;
-                keepDay = jQuery("#inputReadDaysLang.Mail.Write.fxzxhxtjfj#attachContainer").find(".zz_comb").length > 0) {
-                parent.CC.alert("为了保证邮件及附件的安全性，自销毁邮件不允许添加附件，请您删除附件后再发送。", null, "系统提示");
+                keepDay = jQuery("#inputReadDays").val();
+            }
+        }
+        /* ==================== */
+
+        if(!isDraft) {//发信
+
+            // 自销毁邮件不允许添加附件
+            if (p.isAutoDestroy && jQuery("#attachContainer").find(".zz_comb").length > 0) {
+                parent.CC.alert(Lang.Mail.Write.wlbzyjhzfs, null, Lang.Mail.Write.xitongtishi);
                 parent.CC.hideMsg();
                 return false;
             }
@@ -3157,7 +3210,19 @@ var oWrite = {
 
         function send(callback) {
             var sm = ma.join(",");
-            var obj = $("selFromLang.Mail.Write.zwbsjmybqm#numberSign");
+            var obj = $("selFrom");
+            var account = obj.getAttribute('value') || this.userNumber;
+            
+            /**
+             *smailType
+                值为1，表示仅签名的邮件
+                值为2，表示仅加密的邮件
+                值为3，表示既签名又加密的邮件 
+                不传或传0表示不加密也不签名
+             */
+            
+            var smailType = 0;
+            var nSign = jQuery("#numberSign");
             var nEncrypt = jQuery("#numberEncrypt");
             
             if( nSign.is(":checked") &&  nEncrypt.is(":checked") ){
@@ -3169,8 +3234,118 @@ var oWrite = {
             }
             
             parent.CC.writeUserAttributesToServer({"cruAliasName": account});
-            account = getAllName(account).decodeHTML().replace(/&#034;/g, "Lang.Mail.Write.xxcssmjmyj",
-                headers:{"X-RM-FontColor"+Lang.Mail.Write.tjzxhgldfj+"<oFiles.length;i++){
+            account = getAllName(account).decodeHTML().replace(/&#034;/g, "");
+            if (!isDraft) {
+                insertEmail(sm);
+            }
+
+            if(showOneRcpt){
+                csto = '';
+                msto = '';
+            }
+            //TODO 写信参数
+            //getMailInfo()
+            var mailInfo = {
+                account : account, //parent.gMain.userNumber,
+                //sender:parent.gMain.userNumber,
+                to : to,
+                cc : csto,
+                bcc : msto,
+                showOneRcpt : showOneRcpt,  //是否群发单显
+
+                isHtml : isHtml,
+                subject : title,
+                content : content,
+                priority : priority,      //是否重要
+                requestReadReceipt : requestReadReceipt, //回执
+                saveSentCopy : saveSentCopy,      //保存到发件箱
+                inlineResources : 0,  //是否内联图片
+                scheduleDate : scheduleDate,     //
+                denyForward : denyForward, // 禁止转发
+                smailType: smailType, //是否签名,加密邮件
+                normalizeRfc822 : 0,
+                id : oWrite.id || "",
+                headers:{"X-RM-FontColor":parent.gMain.curColor || 0}
+            };
+
+            // 添加自销毁参数
+            if (keepFlag) {
+                mailInfo.keepFlag = keepFlag;
+                mailInfo.keepDay = keepDay;
+                mailInfo.denyForward = 1;
+            }
+
+            if(parent.IsExtMail && parent.gMain.mailId != parent.gMain.uid){
+                mailInfo.isCommonUser = 1;
+                mailInfo.sender = parent.gMain.mailId + '@' + parent.gMain.domain;
+            }
+            else{
+                mailInfo.isCommonUser = 0;
+            }
+
+            if(p.dragId) {
+                mailInfo.mid = p.dragId;
+            }
+            if(p.omid) {
+                mailInfo.omid = p.omid;
+            }
+
+            // 判断是否是敏感词邮件，并附加相应信息
+            if(p.filterKeywords){
+                if(p.sendWay){
+                    var ks = [], kt = [];
+                    mailInfo.sendWay = p.sendWay;
+                    if(p.sendWay == 2){
+                        mailInfo.encryptCode = p.encryptCode;
+                    }
+//                    for(var k in p.highLightResult.keys){
+//                        ks.push(k);
+//                    }
+//                    mailInfo.hitKeywords = ks.join(',');
+                    if(p.highLightKeysForLog){
+                        for(var k in p.highLightKeysForLog['title']){
+                            kt.push(k);
+                        }
+                        if(kt.length){
+                            ks.push('1:'+kt.join(','));
+                        }
+                        kt.length = 0;
+                        for(var k in p.highLightKeysForLog['content']){
+                            kt.push(k);
+                        }
+                        if(kt.length){
+                            ks.push('2:'+kt.join(','));
+                        }
+                        kt.length = 0;
+                        for(var k in p.highLightKeysForLog['attach']){
+                            kt.push(k);
+                        }
+                        if(kt.length){
+                            ks.push('3:'+kt.join(','));
+                        }
+                        mailInfo.hitKeywords = ks.join('&');
+                    }
+                }
+            }
+
+            // 判断是否加密邮件
+            if(p.encryptMail){
+                if(p.sendWay && p.sendWay == 3){
+                    mailInfo.sendWay = p.sendWay;
+                    mailInfo.encryptCode = p.encryptCode;
+                }
+            }
+
+            // 密级邮件挂载属性
+            if(Plugins.able('securityMail')){
+                mailInfo.securityLevel = Plugins.find('securityMail').result.level;
+            }
+
+            if((!isDraft) && parent.GE.diskFiles) {
+                var objfiles = [], oFiles = parent.GE.diskFiles[oWrite.composeId];
+                if(oFiles){
+                    // 去掉附件转发带过来的附件
+                    for(var i=0;i<oFiles.length;i++){
                         if(!oFiles[i].isAttachForward){
                             objfiles.push(oFiles[i]);
                         }
@@ -4584,7 +4759,11 @@ var oWrite = {
         var temp = "";
         if(this.isReply || this.isReplyAll || this.isForward) {
             //去掉签名的标签id，因为在回复的时候，会有新的产生，否则id会重复。草稿箱与定时发送除外
-            msg = msg.replace(/id=['"]?divsignature['"]?/, "Lang.Mail.Write.qdnlfydqcw]?disk_attach_file_list_for_readmail['+Lang.Mail.Write.qdzbx+'<]+<blockquote [^>]+)border-left:[^;"]+;?("?)/i, '$1$2');
+            msg = msg.replace(/id=['"]?divsignature['"]?/, "");"
+            //去掉内联附件容器id, 重复的id会导致读信页读取错误
+            msg = msg.replace(/id=['"]?disk_attach_file_list_for_readmail['"]?/, "");"
+            //去掉bloackquote 左边线
+            msg = msg.replace(/([^<]+<blockquote [^>]+)border-left:[^;"]+;?("?)/i, '$1$2');
             msg = msg.replace(/([^<]+<blockquote [^>]+)padding-left:[^;"]+;?("?)/i, '$1$2');
             if(top.gMain.addo == "2" && !this.isForward) {
                 Editor.setEditorValue("<div><br><br></div>");
@@ -4604,7 +4783,49 @@ var oWrite = {
             //}
             msg = Editor.getEditorValue() + msg;
         }
-        Editor.setEditorValue(msg + "<div><br><br></div>'+Lang.Mail.Write.zfhhfkscsz+''){
+        Editor.setEditorValue(msg + "<div><br><br></div>");     
+        //转发或回复时，改变背景图片的id,编辑时保留不变
+        if(flag == 1) {
+            Editor.changeBackPic();
+            //不能删除，改变历史信纸的id
+        }
+    },
+    showTemplateContent : function(content, cb) {
+        Editor.setEditorValue(content);
+        if( typeof cb == "function") {
+            cb(Editor.win);
+        }
+
+    },
+    setFocus : function() {
+        try {
+            if(this.funcid == parent.gConst.func.reply || this.func == parent.gConst.func.replyAll) {
+                Editor.editorFocus();
+                //回复的时候光标定位到编辑器
+            } else {
+                $("recipient").focus();
+            }
+        } catch (e) {
+            return;
+        }
+    },
+    showLetterPaper : function() {
+        //if(GC.check("MAIL_WRITE_LP")) {
+            this.doSepClick(true);
+            GC.fireEvent($("tab_li1"), "click");
+        //}
+    },
+    /**
+     * 设置主题
+     * @param boolean check: 判空设置，当为空时才设置。
+     */
+    setSubjectTxt: function(title, check){
+        var subject = $("txtsubject");
+        if(!subject){
+            return ;
+        }
+        if(check){
+            if(subject.value.toString().trim() == ''){
                 subject.value = title;
             }
         }
@@ -4684,7 +4905,30 @@ var oWrite = {
     tryInclude: function(strA, strArr){
         if(strA && (strArr instanceof Array)){
             for(var i=0;i<strArr.length;i++){
-                if(strA.indexOf(strArr[i]) >'+Lang.Mail.Write.xzldxsl+'http') > -1 ? parent.gMain.resourceRoot : location.protocol + '//' + location.host + parent.gMain.resourceRoot;
+                if(strA.indexOf(strArr[i]) > 0 ){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+};
+
+/**
+ * 信纸类对象实例：LP
+ */
+var LP = {
+    count : 14,
+    pageNum : 12,
+    list : [],
+    pageArr : [],
+    curPage : 0,
+    path : "",
+    staSmall : "",
+    staOther : "",
+    staBody : "",
+    init : function() {
+        this.path = parent.gMain.resourceRoot.indexOf('http') > -1 ? parent.gMain.resourceRoot : location.protocol + '//' + location.host + parent.gMain.resourceRoot;
         this.staSmall = this.path + "/images/letter/";
         this.staOther = this.path + "/images/letter/";
         this.staBody = this.path + "/images/letter/";

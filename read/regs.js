@@ -313,7 +313,7 @@ function pickText(str){
       reArray.push(value);
     }
 
-     console.log(reArray.join(''))
+    // console.log(reArray.join(''))
     return reArray.join('');
 }
 
@@ -333,14 +333,16 @@ var Lang = {
 
 //test
 
- var str = '<br><br> 葫芦娃  <input title="呵呵"> <input ttt=\'d的d\'> 变形金刚 ';
+ //var str = '<br><br> 葫芦娃  <input title="呵呵"> <input ttt=\'d的d\'> 变形金刚 ';
  
 function TransStr(str){
   var res = '';
   var otherEndChar = /((\+\'\")$)|((\+\"\')$)/;
   var otherStartChar = /(^(\'\"\+))|(^(\"\'\+)$)/;
 
+
    if(Util.haszh(str)){
+    console.log('-----------------'+str)
     if(!Util.checkTag(str)){
       //进入提取中文
       res = pickText(str);
@@ -365,7 +367,7 @@ function TransStr(str){
 function transf(str, isMix, isAttr){
   
   var py = chineseToPinYin(str.replace(/[\\\/\<\>0123456789abcdefghijklnmopqrstuvwxyz\-\=`,\./"'~!@\#$%^&*()?:]/g,''));
-   console.log( py );
+  //console.log( py );
   
   if(isMix){
       //字符串str是单引号开头

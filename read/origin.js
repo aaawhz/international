@@ -11,8 +11,7 @@ var PageStateTypes = {
 var WriteState = {
     none : 0,
     send : 1,
-    save : 2,
-    test: '<input title="哈哈aad">'
+    save : 2
 };
 
 var TimeUnit = {
@@ -53,7 +52,7 @@ var oWrite = {
     subIndex : 0,
     focusId : "rib_input_1",
     times : 0,
-    minutes : parent.gMain.autoSaveTime || 5,
+    minutes : parent.gMain.autoSaveTime || 2, 
     sendMaxLen : 10,
     toMaxNum : parseInt(parent.gMain.recipientMaxNum) || 200,
     denyForwardMaxAttachSize : 20, // 禁止转发时最大附件大小，单位M
@@ -684,9 +683,10 @@ var oWrite = {
         //自动保存草稿
         //if(GC.check('MAIL_WRITE_SAVE')){
             p.interval = setInterval(function() {
-                if(!Editor.checkValueChange()){
-                    p.needAutoSave = true;
-                }
+                // if(!Editor.checkValueChange()){
+                //  p.needAutoSave = true;
+                // }
+                p.needAutoSave = true;  //产品要求无论是否内容更改都进行保存草稿箱操作2017Q1
                 if(p.needAutoSave){
                     parent.CC.showMsg(Lang.Mail.Write.savingToDraft, false, false, "loading");
                     p.autoSave();
