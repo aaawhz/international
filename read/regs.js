@@ -40,9 +40,10 @@ var singleAttrValues = [
 ]
 
 var attribute = new RegExp(
-  '^\\s*' + singleAttrIdentifier.source +
+   singleAttrIdentifier.source +
   '(?:\\s*(' + singleAttrAssign.source + ')' +
-  '\\s*(?:' + singleAttrValues.join('|') + '))?'
+  '\\s*(' + singleAttrValues.join('|') + '))',
+  'g'
 )
 
 /** -----------------------attrs  end -----------------------**/
@@ -171,7 +172,13 @@ function pickText(str){
       value = item.value;
       //处理标签属性， 有中文直接替换
       if(item.isTag){
-        value =  value.replace(attribute,function($0,$1,$2,$3){
+       
+           value.replace(attribute,function($0,$1,$2,$3,$4){
+                    console.log($0)
+                    console.log($1)
+                    console.log($2)
+                    console.log($3)
+                    console.log($4)
                     if(Util.haszh($3)){
                       return transf($3)
                     }
