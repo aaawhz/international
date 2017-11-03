@@ -164,15 +164,37 @@ var Util = {
  **/
 
 function pickText(str){
-   var posTag = Util.getTextsAndTags(str);
+   var o = Util.getTextsAndTags(str).spliteValue, item, value, reArray = [];
+    
+    for (var i = 0; i < o.length; i++) {
+      item = o[i];
+      value = item.value;
+      //处理标签属性， 有中文直接替换
+      if(item.isTag){
+        value =  value.replace(attribute,function($0,$1,$2,$3){
+                    if(Util.haszh($3)){
+                      return transf($3)
+                    }
+                  });
+ 
+      }else{
+        //处理文字， 有中文直接替换
+        if(Util.haszh(value)){
+          value = transf(value);
+        }
+      }
 
-   console.dir(posTag)
+      reArray.push(value);
+    }
+
+    console.dir(reArray)
+    return reArray;
 }
 
 
 //test
 
- var str = '<br><br> 葫芦娃  <input> 变形金刚 ';
+ var str = '<br><br> 葫芦娃  <input title="呵呵"> 变形金刚 ';
  
  if(Util.haszh(str)){
  	if(!Util.checkTag(str)){
@@ -188,7 +210,7 @@ function pickText(str){
   
 
 function transf(str){
-
+   return 'uu' + str + 'uu'
 };
 
  
