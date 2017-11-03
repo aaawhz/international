@@ -11,7 +11,8 @@ var PageStateTypes = {
 var WriteState = {
     none : 0,
     send : 1,
-    save : 2
+    save : 2,
+    test: '<input title="哈哈aad">'
 };
 
 var TimeUnit = {
