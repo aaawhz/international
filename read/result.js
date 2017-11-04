@@ -555,7 +555,7 @@ var oWrite = {
     addAutoDesLabelHtml: function (cont) {
         var html = "";
 
-        html += " <input id=\"chkAutoDestroy\" tabindex=\"21\" type=\"checkbox\" title=\"邮件阅读后自销毁或邮件超过限制天数后自销毁\"><label for=\"chkAutoDestroy\" title=\"邮件阅读后自销毁或邮件超过限制天数后自销毁\">";
+        html += " <input id=\"chkAutoDestroy\" tabindex=\"21\" type=\"checkbox\" title='"+Lang.Mail.Write.yjydhshzxh+"'><label for=\"chkAutoDestroy\" title='"+Lang.Mail.Write.yjydhshzxh+"'>";
         html += Lang.Mail.Write.zxhyj;
         html += "</label>";
 

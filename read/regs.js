@@ -138,16 +138,17 @@ var singleAttrIdentifier = /([^\s"'<>/=]+)/;
 var singleAttrAssign = /(?:=)/;
 // https://www.taobao.com
 
+//注意先后顺序
 var singleAttrValues = [
   // attr value double quotes
   /"([^"]*)"+/.source,
   // attr value, single quotes
   /'([^']*)'+/.source,
-  // attr value, no quotes
-  /([^\s"'=<>`]+)/.source,
 
-  /\'([^\s"'=<>`]+)\'/.source,
-  /\"([^\s"'=<>`\\]+)\"/.source 
+  /\\\'([^\s"'=<>`]+)\\\'/.source,
+  /\\\"([^\s"'=<>`\\]+)\\\"/.source ,
+  //attr value, no quotes
+  /([^\s"'=<>`]+)/.source
 ]
 
 var attribute = new RegExp(
@@ -199,7 +200,7 @@ var Util = {
   }
   **/
  getTextsAndTags: function(str){
-   // pos 用来记录位置，和 标签的长度
+   
    var  item, isTag = false, s = '';
    var tags = [], o = {};
  
