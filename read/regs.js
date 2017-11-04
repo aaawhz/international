@@ -165,6 +165,10 @@
       hasTrans: false
   };
 
+  var GLOBELOPTION = {
+     langpath = "top.Lang.Mail.Write."
+  };
+
   var Util = {
       haszh: function(str) {
           //中文
@@ -395,24 +399,24 @@
       if (isMix) {
           //字符串str是单引号开头
           if (GLOBELCACHE.signleQuoteStart) {
-              return "\'+" + ("Lang.Mail.Write." + py) + "+\'";
+              return "\'+" + ( GLOBELOPTION.langpath + py) + "+\'";
           } else {
-              return "\"+" + ("Lang.Mail.Write." + py) + "+\"";
+              return "\"+" + (GLOBELOPTION.langpath + py) + "+\"";
           }
       } else if (isAttr) {
           //字符串str是单引号开头
           if (GLOBELCACHE.signleQuoteStart) {
-              return "\"\'+" + ("Lang.Mail.Write." + py) + "+\'\"";
-          } else {
-              return "\'\"+" + ("Lang.Mail.Write." + py) + "+\"\'";
+              return "\"\'+" + ( GLOBELOPTION.langpath + py) + "+\'\"";
+          } else { 
+              return "\'\"+" + ( GLOBELOPTION.langpath + py) + "+\"\'";
           }
       } else {
           return ("Lang.Mail.Write." + py);
 
           if (GLOBELCACHE.signleQuoteStart) {
-              return "\'+" + ("Lang.Mail.Write." + py) + "+\'";
+              return "\'+" + ( GLOBELOPTION.langpath + py) + "+\'";
           } else {
-              return "\"+" + ("Lang.Mail.Write." + py) + "+\"";
+              return "\"+" + ( GLOBELOPTION.langpath + py) + "+\"";
           }
       }
   };
