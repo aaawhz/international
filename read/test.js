@@ -8,30 +8,7 @@ var data=rf.readFileSync("ot.js",{
 );  
 
 var result = '';
-
-var singleAttrIdentifier = /([^\s"'<>/=]+)/;
-// =
-var singleAttrAssign = /(?:=)/;
-// https://www.taobao.com
-
-var singleAttrValues = [
-  // attr value double quotes
-  /"([^"]*)"+/.source,
-  // attr value, single quotes
-  /'([^']*)'+/.source,
-  // attr value, no quotes
-  /([^\s"'=<>`]+)/.source,
-
-  /\'([^\s"'=<>`]+)\'/.source,
-  /\"([^\s"'=<>`\\]+)\"/.source 
-]
-
-var attribute = new RegExp(
-   singleAttrIdentifier.source +
-  '\\s*(' + singleAttrAssign.source + ')' +
-  '\\s*(' + singleAttrValues.join('|') + ')',
-  'g'
-)
+ 
 
 var s = '';
 
@@ -39,15 +16,15 @@ for (var i = 0; i < data.length; i++) {
     s += data[i];
 }
 
-var ss = "\"abc\"";
-var abc =  /\\\"([a-z]+)\\\"/g;
 
-console.log(s == "\\\"a\\\"")
 
-s = s + "";
 
-console.log(s)
-console.log(abc.test(s));
+
+
+var reg = /((\+\'\")$)|(\+\"\')$/;
+ 
+ 
+console.log(reg.test(s));
 
  
 
