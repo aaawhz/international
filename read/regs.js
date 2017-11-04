@@ -291,10 +291,10 @@
           value = item.value;
           //处理标签属性， 有中文直接替换
           if (item.isTag) {
-              console.log('------------------' + value);
+              //console.log('------------------' + value);
               value = value.replace(attribute, function($0, $1, $2, $3, $4) {
                   // console.log($4)
-                  console.log("---------$0:    " + $0)
+      // console.log("---------$0:    " + $0)
                   /*  console.log($2)
                     console.log($3)
                     console.log($4)*/
@@ -302,7 +302,7 @@
 
                   //replace 会改变匹配到的那部分， 只需要改变值后， 但不会改变原值
                   if (Util.haszh($3)) {
-                      console.log('-----------' + $3)
+    //console.log('-----------' + $3)
                       return $1 + $2 + transf($3, false, true)
                   } else {
                       return $0
@@ -390,7 +390,7 @@
       //进入到了正方法说明已经被转换了
       GLOBELCACHE.hasTrans = true;
 
-      console.log('debug===================================' + GLOBELCACHE.hasTrans)
+      // console.log('debug===================================' + GLOBELCACHE.hasTrans)
 
       if (isMix) {
           //字符串str是单引号开头
@@ -415,8 +415,6 @@
               return "\"+" + ("Lang.Mail.Write." + py) + "+\"";
           }
       }
-
-
   };
 
 

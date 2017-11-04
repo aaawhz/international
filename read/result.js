@@ -992,7 +992,7 @@ var oWrite = {
                         if(pass === 1){
                             
                             $("#divDialogCloseconfirm", parent.document).click();
-                            CC.showMsg(Lang.Mail.Write.yanzhengtongguo,true, false, "option");//验证通过option
+                            CC.showMsg(Lang.Mail.Write.yanzhengtongguo,true, false, "option");//验证通过
                             
                             autopass = $("#autopass").attr("checked") ? 1 : 0;
                             
@@ -1009,15 +1009,15 @@ var oWrite = {
                              
                         }else if(pass === 0){
                             // CC.showMsg( data.summary,true, false, "error"); //提示后台返回
-                            CC.showMsg( Lang.Mail.Write.symmcw,true, false, "error");//私钥密码错误error
+                            CC.showMsg( Lang.Mail.Write.symmcw,true, false, "error");//私钥密码错误
                         }else if(pass === 2){
-                            CC.showMsg( Lang.Mail.Write.mmcwcfzhzs,true, false, "error");//密码错误次数达到限制，请于10分钟后重试error
+                            CC.showMsg( Lang.Mail.Write.mmcwcfzhzs,true, false, "error");//密码错误次数达到限制，请于10分钟后重试
                         }
                         
                         
                     },
                     fnfail = fnfail || function(){
-                        CC.showMsg(Lang.Mail.Write.jiemishibai, true, false, "error");//解密失败error
+                        CC.showMsg(Lang.Mail.Write.jiemishibai, true, false, "error");//解密失败
                     };
 
                 $("#ibcpass", parent.document ).focus();
@@ -1081,7 +1081,7 @@ var oWrite = {
 
                     var code = data.errorCode;
                     
-                    CC.showMsg(Lang.Mail.Write.xgmmcg, true, false, "option");//修改密码成功option
+                    CC.showMsg(Lang.Mail.Write.xgmmcg, true, false, "option");//修改密码成功
                     
                     $("#divDialogCloseconfirm", parent.document).click();
                     
@@ -1096,7 +1096,7 @@ var oWrite = {
             }
             
             function fnfail(){
-                CC.showMsg(Lang.Mail.Write.xgmmsb, true, false, "error");//修改密码失败error
+                CC.showMsg(Lang.Mail.Write.xgmmsb, true, false, "error");//修改密码失败
             }
             
             function numberChecked(){
@@ -3025,7 +3025,7 @@ var oWrite = {
         //是否需要回执
         var saveSentCopy = $("chkSaveToSentBox").checked ? 1 : 0;
         //保存到发件箱
-        var content = Editor.getEditorValue().replace(/<span[^<]+class=['"]?errorWord['"]?[^>]+>([^<]*)<\/span\s*>/gi,'$1') || ";
+        var content = Editor.getEditorValue().replace(/<span[^<]+class=['"]?errorWord['"]?[^>]+>([^<]*)<\/span\s*>/gi,'$1') || "";
         var denyForward = p.denyForward;
         var isHtml = Editor.getEditorMode() ? 1 : 0;
         var scheduleDate = this.getDefiniteTime();
@@ -3443,7 +3443,7 @@ var oWrite = {
                 }
                 if (mailSecLevel < 0)
                 {
-                    CC.showMsg(Lang.Mail.Write.qxzyjmj, true, false, "error");//请选择邮件密级error
+                    CC.showMsg(Lang.Mail.Write.qxzyjmj, true, false, "error");//请选择邮件密级
                     return false;
                 }
                 var ArraySecLevel = [Lang.Mail.Write.gongkai,Lang.Mail.Write.mimi,Lang.Mail.Write.jimi];//公开秘密机密
@@ -3458,7 +3458,7 @@ var oWrite = {
                             var matchResult = tempFileName.match(/公开|秘密|机密/g);
                             if (!matchResult || matchResult.length != 1)
                             {
-                                CC.showMsg(Lang.Mail.Write.fjmjbmzdyg, true, false, "error");//附件密级标识后才能发送，附件名需包含\"公开\"、\"秘密\"或\"机密\"中的一个error
+                                CC.showMsg(Lang.Mail.Write.fjmjbmzdyg, true, false, "error");//附件密级标识后才能发送，附件名需包含\"公开\"、\"秘密\"或\"机密\"中的一个
                                 return false;
                             }
                             if (ArraySecLevel[j] == matchResult[0]) {
@@ -3467,7 +3467,7 @@ var oWrite = {
                             } 
                         }
                         if (attachSecLevel > mailSecLevel || attachSecLevel == -1) {
-                            CC.showMsg(Lang.Mail.Write.fjmjbbszfs, true, false, "error");//附件密级不能高于邮件密级,请重新标识再发送error
+                            CC.showMsg(Lang.Mail.Write.fjmjbbszfs, true, false, "error");//附件密级不能高于邮件密级,请重新标识再发送
                             return false;
                         }
                     }
@@ -4759,9 +4759,9 @@ var oWrite = {
         var temp = "";
         if(this.isReply || this.isReplyAll || this.isForward) {
             //去掉签名的标签id，因为在回复的时候，会有新的产生，否则id会重复。草稿箱与定时发送除外
-            msg = msg.replace(/id=['"]?divsignature['"]?/, ");
+            msg = msg.replace(/id=['"]?divsignature['"]?/, "");
             //去掉内联附件容器id, 重复的id会导致读信页读取错误
-            msg = msg.replace(/id=['"]?disk_attach_file_list_for_readmail['"]?/, ");
+            msg = msg.replace(/id=['"]?disk_attach_file_list_for_readmail['"]?/, "");
             //去掉bloackquote 左边线
             msg = msg.replace(/([^<]+<blockquote [^>]+)border-left:[^;"]+;?("?)/i, '$1$2');
             msg = msg.replace(/([^<]+<blockquote [^>]+)padding-left:[^;"]+;?("?)/i, '$1$2');
@@ -5768,7 +5768,7 @@ var Editor = {
         var noTagStr = Editor.getHtmlToTextContent() || '';
         jQuery("#editor_spellcheck").html(Lang.Mail.Write.zhongxinjiancha);//重新检查
         if(checkSpell.checkState==1){//正在检查请稍候重试
-            parent.CC.showMsg(Lang.Mail.Write.zhengzaijiancha, true, false, 'caution');//正在检查...caution
+            parent.CC.showMsg(Lang.Mail.Write.zhengzaijiancha, true, false, 'caution');//正在检查...
         }
         var checkOrNot = false;
         if (!/[a-zA-z]+/.test(noTagStr)) {
@@ -5838,7 +5838,7 @@ var checkSpell = {
         reTxt      = [],                    //返回结果
         pureTxtItemRed = [];                //pureTxtArr 各项pos范围内的错误信息数组
             
-        parent.CC.showMsg(Lang.Mail.Write.zhengzaijiancha, true, false, 'option');//正在检查...option
+        parent.CC.showMsg(Lang.Mail.Write.zhengzaijiancha, true, false, 'option');//正在检查...
         checkSpell.checkState = 1;//正在检查
         var htmlStr = "<div id=\"checkSpellLayout\" style=\"position: absolute; z-index: 1000; height: 100%; width: 100%; top: 0px; left: 0px;\"></div>";
         jQuery(".editorWrap").append(htmlStr);
@@ -5856,11 +5856,11 @@ var checkSpell = {
                 if(_res.code=="S_OK"){
                     _res=_res["var"];
                 }else{
-                    parent.CC.showMsg(Lang.Mail.Write.hbqpxjcccl, true, false, "error");//很抱歉，拼写检查出错了error
+                    parent.CC.showMsg(Lang.Mail.Write.hbqpxjcccl, true, false, "error");//很抱歉，拼写检查出错了
                     return;
                 }
                 if(_res==null||_res.length<1){
-                    parent.CC.showMsg(Lang.Mail.Write.jianchachenggong, true, false, 'option');//检查成功option
+                    parent.CC.showMsg(Lang.Mail.Write.jianchachenggong, true, false, 'option');//检查成功
                     checkSpell.checkState = 2;//2检查完成
                     jQuery("#checkSpellLayout").remove();
                     return;
@@ -5931,7 +5931,7 @@ var checkSpell = {
                         checkSpell.showSuggestPanel.call(eTarget,ifmDoc);
                     event.stopPropagation();
                 });
-                parent.CC.showMsg(Lang.Mail.Write.jianchachenggong, true, false, 'option');//检查成功option
+                parent.CC.showMsg(Lang.Mail.Write.jianchachenggong, true, false, 'option');//检查成功
                 checkSpell.checkState = 2;//2检查完成
                 jQuery("#checkSpellLayout").remove();
             },
