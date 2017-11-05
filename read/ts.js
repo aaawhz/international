@@ -85,9 +85,9 @@ for (var i = 0; i < data.length; i++) {
     	matchQuote = false;
     } 
 
-    console.log('matchQuote    '+ matchQuote )
+    /*console.log('matchQuote    '+ matchQuote )
     console.log('b      '+isReg )
-    console.log('item     '+item)
+    console.log('item     '+item)*/
     //首先得不在注释中，不在正则中， 才去判断是否是引号开头， 而且不能是\"开头的
     if (!iszs && !isReg && spliterRe.test(item) && (data[i - 1] && data[i - 1] != "\\")) {
     	console.log('c       '+isReg )

@@ -230,9 +230,28 @@
               // console.log(value)
 
           } else {
-              //处理文字， 有中文直接替换
+              // ad处理文字， cc有中文直接替换ddfd
+              // ad  + 处理文字， cc有中文直接替换ddfd
               if (Util.haszh(value)) {
-                  value = transf(value, true);
+                var inners = '';
+                var innerStrStart = '';
+                var innerZh = '';
+                var hasMatchZh = false;
+              //  var innerStrEnd = '';
+
+                for (var j = 0; j < value.length; j++) {
+                  inners= value[j];
+
+                  if(!zhRe.test(inners) && !hasMatchZh){
+                    innerStrStart += inners;
+                  }else{
+                    innerZh += inners;
+                    hasMatchZh = true;
+                  }
+
+                }
+                
+                value = innerStrStart +  transf(innerZh, true); // + innerStrEnd;
 
               }
           }
