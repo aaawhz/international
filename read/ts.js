@@ -80,12 +80,17 @@ for (var i = 0; i < data.length; i++) {
     if(!iszs && !matchQuote && !isReg &&item == sprit && prevValue != sprit && nextValue != sprit && nextValue != '*' && prevValue != '*'){
     	isReg = true;
 
+    	console.log('a       '+isReg )
     	regPos = i;
     	matchQuote = false;
     } 
 
+    console.log('matchQuote    '+ matchQuote )
+    console.log('b      '+isReg )
+    console.log('item     '+item)
     //首先得不在注释中，不在正则中， 才去判断是否是引号开头， 而且不能是\"开头的
     if (!iszs && !isReg && spliterRe.test(item) && (data[i - 1] && data[i - 1] != "\\")) {
+    	console.log('c       '+isReg )
         //已经匹配到了引号
         matchQuote = true;
         str = '';
@@ -110,10 +115,12 @@ for (var i = 0; i < data.length; i++) {
         while (data[j] !== item || (data[j] == item && data[j - 1] == '\\' && data[j-2] != '\\')) {
         	
         	//如果遇到换行符，说明这一行没有可以取的文字
-            if (data[j] == enterchar) {
+            if (data[j] == enterchar || data[i] == '\n') {
+            	 
                 matchQuote = false;
                 break;
             } else {
+
                 str += data[j];
                 j++;
 
@@ -124,6 +131,8 @@ for (var i = 0; i < data.length; i++) {
         if (matchQuote) {
             // 执行到这里获取到引号之间的字符串
             handleStr = item + str + item;
+
+            //console.log('isReg  ' + isReg)
             //console.log( item + str + item )
 
            
@@ -144,6 +153,7 @@ for (var i = 0; i < data.length; i++) {
             //console.log(str);
             //跳过已匹配的
             i = j;
+            matchQuote = false;
         }
     } else {
 
