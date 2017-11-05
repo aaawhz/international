@@ -121,7 +121,7 @@ var oWrite = {
         '2' : '>',
         '3' : 'Reply:'
     },
-    quickSubject: [Lang.Mail.Write.jinji, Lang.Mail.Write.huiyiyaoqing, Lang.Mail.Write.huiyijiyao, Lang.Mail.Write.huiyicailiao],  // 快捷主题项//紧急！会议邀请会议纪要会议材料
+    quickSubject: [top.Lang.Mail.Write.jinji, top.Lang.Mail.Write.huiyiyaoqing, top.Lang.Mail.Write.huiyijiyao, top.Lang.Mail.Write.huiyicailiao],  // 快捷主题项//紧急！  ||  会议邀请  ||  会议纪要  ||  会议材料
     isAutoDestroy: false,
     isShowBigAttachTips: false,
     clearSubjectTimer: null,
@@ -290,9 +290,9 @@ var oWrite = {
      */
     initControl: function(){
         var p = this;
-        var tipsTemplate = "<div class=\"richinputbox_tips\" style=\"border:solid 1px #ccc; background:#eee; line-height:24px; padding-left:12px;\">"+Lang.Mail.Write.hkysr+"<span class='red-commend'>{0}</span>"+Lang.Mail.Write.ge+"</div>";//<div class=\"richinputbox_tips\" style=\"border:solid 1px #ccc; background:#eee; line-height:24px; padding-left:12px;\">还可以输入<span class='red-commend'>{0}</span>个</div>
-        var overflowTips1 = '<div class=\"richinputbox_tips\" style=\"border:solid 1px #ccc; background:#eee; line-height:24px; padding-left:12px;\">'+Lang.Mail.Write.sjrsycgsx+'<span class="red-commend">{0}</span>'+Lang.Mail.Write.rbnjxtj+'</div>';//<div class=\"richinputbox_tips\" style=\"border:solid 1px #ccc; background:#eee; line-height:24px; padding-left:12px;\">收件人数已超过上限<span class="red-commend">{0}</span>人，不能继续添加！</div>
-        var overflowTips2 = '<div class=\"richinputbox_tips\" style=\"border:solid 1px #ccc; background:#eee; line-height:24px; padding-left:12px;\"><span class="red-commend">{1}</span>'+Lang.Mail.Write.rwtjzdtj+'<span class="red-commend">{0}</span>'+Lang.Mail.Write.ren+'</div>';//<div class=\"richinputbox_tips\" style=\"border:solid 1px #ccc; background:#eee; line-height:24px; padding-left:12px;\"><span class="red-commend">{1}</span>人未添加，最多添加<span class="red-commend">{0}</span>人</div>
+        var tipsTemplate = "<div class=\"richinputbox_tips\" style=\"border:solid 1px #ccc; background:#eee; line-height:24px; padding-left:12px;\">"+top.Lang.Mail.Write.huaikeyishuru+"<span class='red-commend'>{0}</span>"+top.Lang.Mail.Write.ge+"</div>";//<div class=\"richinputbox_tips\" style=\"border:solid 1px #ccc; background:#eee; line-height:24px; padding-left:12px;\">还可以输入<span class='red-commend'>{0}</span>个</div>
+        var overflowTips1 = '<div class=\"richinputbox_tips\" style=\"border:solid 1px #ccc; background:#eee; line-height:24px; padding-left:12px;\">'+top.Lang.Mail.Write.sjrsycgsxauwdj+'<span class="red-commend">{0}</span>'+top.Lang.Mail.Write.rbnjxtjbyqal+'</div>';//<div class=\"richinputbox_tips\" style=\"border:solid 1px #ccc; background:#eee; line-height:24px; padding-left:12px;\">收件人数已超过上限<span class="red-commend">{0}</span>人，不能继续添加！</div>
+        var overflowTips2 = '<div class=\"richinputbox_tips\" style=\"border:solid 1px #ccc; background:#eee; line-height:24px; padding-left:12px;\"><span class="red-commend">{1}</span>'+top.Lang.Mail.Write.rwtjzdtjDFslC+'<span class="red-commend">{0}</span>'+top.Lang.Mail.Write.ren+'</div>';//<div class=\"richinputbox_tips\" style=\"border:solid 1px #ccc; background:#eee; line-height:24px; padding-left:12px;\"><span class="red-commend">{1}</span>人未添加，最多添加<span class="red-commend">{0}</span>人</div>
         var clearRIBTips = function(){
             for(var i=0;i<3;i++){
                 if(p.ribs[i].interval){
@@ -377,7 +377,7 @@ var oWrite = {
                 var state = obj.statusInfo || {};
                 clearRIBTips();
                 if(obj.createMode == 'paste'){
-                    tips = overflowTips2.format(oWrite.toMaxNum, state.fail || Lang.Mail.Write.syztd);//所有粘贴的
+                    tips = overflowTips2.format(oWrite.toMaxNum, state.fail || top.Lang.Mail.Write.suoyouzhantiede);//所有粘贴的
                 }
                 else{
                     tips = overflowTips1.format(oWrite.toMaxNum);
@@ -524,7 +524,7 @@ var oWrite = {
                 else{
                     bigAttachSize = '1G';
                 }
-                var text = Lang.Mail.Write.tjzddzzzwj.format(bigAttachSize);//添加最大{0}的附件和文件中转站文件
+                var text = top.Lang.Mail.Write.tjzddDgHtFzzzwj.format(bigAttachSize);//添加最大{0}的附件和文件中转站文件
                 var but = jQuery('<div id="bigFileUploadTips" class="tips write-tips" style="display:none;"></div>').append(text).appendTo(jQuery(document.body)).css('z-index', 128);
 
                 bigFileUpload.attr('title', '');
@@ -555,8 +555,8 @@ var oWrite = {
     addAutoDesLabelHtml: function (cont) {
         var html = "";
 
-        html += " <input id=\"chkAutoDestroy\" tabindex=\"21\" type=\"checkbox\" title='"+Lang.Mail.Write.yjydhshzxh+"'><label for=\"chkAutoDestroy\" title='"+Lang.Mail.Write.yjydhshzxh+"'>";// <input id=\"chkAutoDestroy\" tabindex=\"21\" type=\"checkbox\" title=\"邮件阅读后自销毁或邮件超过限制天数后自销毁\"><label for=\"chkAutoDestroy\" title=\"邮件阅读后自销毁或邮件超过限制天数后自销毁\">
-        html += Lang.Mail.Write.zxhyj;// 自销毁邮件
+        html += "<hehe <input id=\"chkAutoDestroy\" tabindex=\"21\" type=\"checkbox\" title='"+top.Lang.Mail.Write.yjydhSSmJRshzxh+"'><label for=\"chkAutoDestroy\" title='"+top.Lang.Mail.Write.yjydhpDhnDshzxh+"'>";//<hehe <input id=\"chkAutoDestroy\" tabindex=\"21\" type=\"checkbox\" title=\"邮件阅读后自销毁或邮件超过限制天数后自销毁\"><label for=\"chkAutoDestroy\" title=\"邮件阅读后自销毁或邮件超过限制天数后自销毁\">
+        html += top.Lang.Mail.Write.zixiaohuiyoujian;// 自销毁邮件
         html += "</label>";
 
         cont.append(html);
@@ -582,18 +582,18 @@ var oWrite = {
         html += '<ul class="pop_destroy_txt">';
         html += '<li class="pb_5">';
         html += '<label>';
-        html += '<input id="ckbAutoDestroy" type="checkbox" class="rm_cb">'+Lang.Mail.Write.ydwczdxh;//<input id="ckbAutoDestroy" type="checkbox" class="rm_cb">阅读完成自动销毁
+        html += '<input id="ckbAutoDestroy" type="checkbox" class="rm_cb">'+top.Lang.Mail.Write.ydwczdxhGOPjI;//<input id="ckbAutoDestroy" type="checkbox" class="rm_cb">阅读完成自动销毁
         html += '</label>';
         html += '</li>';
         html += '<li class="pb_5" style="height:27px;">';
         html += '<label>';
-        html += '<input id="ckbDaysDestroy" type="checkbox" class="rm_cb">'+Lang.Mail.Write.xzyjydts;//<input id="ckbDaysDestroy" type="checkbox" class="rm_cb">限制邮件阅读天数
-        html += '</label> <input id="inputReadDays" type="text" value="1" maxlength="30" class="set-txt-b ml_5 mr_5" style="width: 25px;">'+Lang.Mail.Write.tian+'<span id="textReadDays" class="gray ml_20">'+Lang.Mail.Write.qsrzjdsz+'</span></li>';//</label> <input id="inputReadDays" type="text" value="1" maxlength="30" class="set-txt-b ml_5 mr_5" style="width: 25px;">天 <span id="textReadDays" class="gray ml_20">请输入1-100之间的数值</span></li>
-        html += '<li><p class="gray">'+Lang.Mail.Write.zzdlstdqty+'</br>'+Lang.Mail.Write.zxhyjxtjfj+'</p></li>';//<li><p class="gray">1.只在web登录使用的系统内部邮箱生效（包含相同邮箱系统的其它域）。</br>2.自销毁邮件不允许添加附件。</p></li>
+        html += '<input id="ckbDaysDestroy" type="checkbox" class="rm_cb">'+top.Lang.Mail.Write.xzyjydtsSQwEM;//<input id="ckbDaysDestroy" type="checkbox" class="rm_cb">限制邮件阅读天数
+        html += '</label> <input id="inputReadDays" type="text" value="1" maxlength="30" class="set-txt-b ml_5 mr_5" style="width: 25px;">'+top.Lang.Mail.Write.tian+'<span id="textReadDays" class="gray ml_20">'+top.Lang.Mail.Write.qsrzjdszguwiD+'</span></li>';//</label> <input id="inputReadDays" type="text" value="1" maxlength="30" class="set-txt-b ml_5 mr_5" style="width: 25px;">天 <span id="textReadDays" class="gray ml_20">请输入1-100之间的数值</span></li>
+        html += '<li><p class="gray">'+top.Lang.Mail.Write.zzdlsfRbNgtdqty+'</br>'+top.Lang.Mail.Write.zxhyjlzvhKxtjfj+'</p></li>';//<li><p class="gray">1.只在web登录使用的系统内部邮箱生效（包含相同邮箱系统的其它域）。</br>2.自销毁邮件不允许添加附件。</p></li>
         html += '</ul>';
         html += '<div class="forbiden-bline ta_r">';
-        html += '<a id="btnAutoDestroyOk" href="javascript:;" class="xxs-greyBtn">'+Lang.Mail.Write.queding+'</a>';//<a id="btnAutoDestroyOk" href="javascript:;" class="xxs-greyBtn">确定</a>
-        html += '<a id="btnAutoDestroyCancel" href="javascript:;" class="xxs-greyBtn ml_5">'+Lang.Mail.Write.quxiao+'</a>';//<a id="btnAutoDestroyCancel" href="javascript:;" class="xxs-greyBtn ml_5">取消</a>
+        html += '<a id="btnAutoDestroyOk" href="javascript:;" class="xxs-greyBtn">'+top.Lang.Mail.Write.queding+'</a>';//<a id="btnAutoDestroyOk" href="javascript:;" class="xxs-greyBtn">确定</a>
+        html += '<a id="btnAutoDestroyCancel" href="javascript:;" class="xxs-greyBtn ml_5">'+top.Lang.Mail.Write.quxiao+'</a>';//<a id="btnAutoDestroyCancel" href="javascript:;" class="xxs-greyBtn ml_5">取消</a>
         html += '</div>';
         html += '</div>';
         html += '<i class="tipBox-direc-b"></i>';
@@ -899,12 +899,12 @@ var oWrite = {
             
             //改变文字提示
             $("#numberEncrypt, #numberEncrypt_label").bind("mouseover", function(){
-                $("#txtDes").text(Lang.Mail.Write.gyjjxjnrxl);//给邮件进行加密，保证邮件全程安全，防止邮件内容泄露。
+                $("#txtDes").text(top.Lang.Mail.Write.gyjjxbxeUejnrxl);//给邮件进行加密，保证邮件全程安全，防止邮件内容泄露。
             });
             
             //改变文字提示
             $("#numberSign, #numberSign_label").bind("mouseover", function(){
-                $("#txtDes").text(Lang.Mail.Write.gyjjxcndsf);//给邮件进行签名，以防止他人冒充您的身份。
+                $("#txtDes").text(top.Lang.Mail.Write.gyjjxDxAfjcndsf);//给邮件进行签名，以防止他人冒充您的身份。
             });
             
 
@@ -992,7 +992,7 @@ var oWrite = {
                         if(pass === 1){
                             
                             $("#divDialogCloseconfirm", parent.document).click();
-                            CC.showMsg(Lang.Mail.Write.yanzhengtongguo,true, false, "option");//验证通过
+                            CC.showMsg(top.Lang.Mail.Write.yanzhengtongguo,true, false, "option");//验证通过
                             
                             autopass = $("#autopass").attr("checked") ? 1 : 0;
                             
@@ -1009,15 +1009,15 @@ var oWrite = {
                              
                         }else if(pass === 0){
                             // CC.showMsg( data.summary,true, false, "error"); //提示后台返回
-                            CC.showMsg( Lang.Mail.Write.symmcw,true, false, "error");//私钥密码错误
+                            CC.showMsg( top.Lang.Mail.Write.symmcwkAxgi,true, false, "error");//私钥密码错误
                         }else if(pass === 2){
-                            CC.showMsg( Lang.Mail.Write.mmcwcfzhzs,true, false, "error");//密码错误次数达到限制，请于10分钟后重试
+                            CC.showMsg( top.Lang.Mail.Write.mmcwcXjSYffzhzs,true, false, "error");//密码错误次数达到限制，请于10分钟后重试
                         }
                         
                         
                     },
                     fnfail = fnfail || function(){
-                        CC.showMsg(Lang.Mail.Write.jiemishibai, true, false, "error");//解密失败
+                        CC.showMsg(top.Lang.Mail.Write.jiemishibai, true, false, "error");//解密失败
                     };
 
                 $("#ibcpass", parent.document ).focus();
@@ -1042,11 +1042,11 @@ var oWrite = {
                         $("#ibcpass_error").text("");
                         
                         if( $("#ibcpass").val().trim() === "" ){
-                            $("#ibcpass_error").text( Lang.Mail.Write.mmbnwk );//密码不能为空
+                            $("#ibcpass_error").text( top.Lang.Mail.Write.mmbnwkBmIlL );//密码不能为空
                             return true;
                         }else if($("#ibcpass" ).val().trim().length < 6 || $("#ibcpass" ).val().trim().length > 30){
                            
-                            $("#ibcpass_error").text( Lang.Mail.Write.mmcdxw );//密码长度需6-64位
+                            $("#ibcpass_error").text( top.Lang.Mail.Write.mmcdxwXhBEq );//密码长度需6-64位
                             return true;
                         }else{
                             autopass = $("#autopass" )[0].checked ? 1 : 0;
@@ -1081,7 +1081,7 @@ var oWrite = {
 
                     var code = data.errorCode;
                     
-                    CC.showMsg(Lang.Mail.Write.xgmmcg, true, false, "option");//修改密码成功
+                    CC.showMsg(top.Lang.Mail.Write.xgmmcgRTWKh, true, false, "option");//修改密码成功
                     
                     $("#divDialogCloseconfirm", parent.document).click();
                     
@@ -1096,7 +1096,7 @@ var oWrite = {
             }
             
             function fnfail(){
-                CC.showMsg(Lang.Mail.Write.xgmmsb, true, false, "error");//修改密码失败
+                CC.showMsg(top.Lang.Mail.Write.xgmmsbttMPT, true, false, "error");//修改密码失败
             }
             
             function numberChecked(){
@@ -1457,11 +1457,11 @@ var oWrite = {
                         p.encryptMailClass.clearPwd();
                         p.encryptMailClass.hideTips();
                         p.encryptMailClass.control.chkbox.attr('disabled', 'true');
-                        p.encryptMailClass.control.chkbox.attr('title', Lang.Mail.Write.nyxzjjszmm);//您已选择禁止转发，不能同时给邮件设置密码
+                        p.encryptMailClass.control.chkbox.attr('title', top.Lang.Mail.Write.nyxzjBPpoDjszmm);//您已选择禁止转发，不能同时给邮件设置密码
                     }
                     else{
                         p.encryptMailClass.control.chkbox.removeAttr('disabled');
-                        p.encryptMailClass.control.chkbox.attr('title', Lang.Mail.Write.gyjszmm);//给邮件设置密码
+                        p.encryptMailClass.control.chkbox.attr('title', top.Lang.Mail.Write.gyjszmmAbDUc);//给邮件设置密码
                     }
                 }
             },
@@ -1472,14 +1472,14 @@ var oWrite = {
                         p.denyForward = '0';
                         chkForbiddenForward[0].checked = false;
                         chkForbiddenForward.attr('disabled', 'true');
-                        chkForbiddenForward.attr('title', Lang.Mail.Write.nyxzgzjzzf);//您已选择给邮件设置密码，不能同时再选择禁止转发
+                        chkForbiddenForward.attr('title', top.Lang.Mail.Write.nyxzgqPVcPzjzzf);//您已选择给邮件设置密码，不能同时再选择禁止转发
                     }
                 }
                 else{
                     if(GC.check('MAIL_INBOX_FORWARD')){
                         var chkForbiddenForward = jQuery('#chkForbiddenForward');
                         chkForbiddenForward.removeAttr('disabled');
-                        chkForbiddenForward.attr('title', Lang.Mail.Write.szjzzfgyj);//设置禁止转发该邮件
+                        chkForbiddenForward.attr('title', top.Lang.Mail.Write.szjzzfgyjHMPbY);//设置禁止转发该邮件
                     }
                 }
             }
@@ -1868,7 +1868,7 @@ var oWrite = {
                 days;
 
             if ($("#ckbAutoDestroy").prop("checked")) {
-                text = Lang.Mail.Write.zsyfzjzdxh;//这是一封自销毁邮件，对方阅读完后，邮件将自动销毁
+                text = top.Lang.Mail.Write.zsyfzcBzoBjzdxh;//这是一封自销毁邮件，对方阅读完后，邮件将自动销毁
             } else if ($("#ckbDaysDestroy").prop("checked")) {
                 days = ~~$("#inputReadDays").val();
                 if (!(days >= 1 && days <= 100)) {
@@ -1876,7 +1876,7 @@ var oWrite = {
                     e.preventDefault();
                     return false;
                 }
-                text = Lang.Mail.Write.zsyfzfsdyj + days + Lang.Mail.Write.thyjjzdxh;//这是一封自销毁邮件，对方收到邮件天后，邮件将自动销毁
+                text = top.Lang.Mail.Write.zsyfzvgyJAfsdyj + days + top.Lang.Mail.Write.thyjjzdxhSRDbB;//这是一封自销毁邮件，对方收到邮件  ||  天后，邮件将自动销毁
             } else {
                 $("#chkAutoDestroy").prop("checked", false);
                 me.isAutoDestroy = false;
@@ -3068,7 +3068,7 @@ var oWrite = {
 
             // 自销毁邮件不允许添加附件
             if (p.isAutoDestroy && jQuery("#attachContainer").find(".zz_comb").length > 0) {
-                parent.CC.alert(Lang.Mail.Write.wlbzyjhzfs, null, Lang.Mail.Write.xitongtishi);//为了保证邮件及附件的安全性，自销毁邮件不允许添加附件，请您删除附件后再发送。系统提示
+                parent.CC.alert(top.Lang.Mail.Write.wlbzyDsQZejhzfs, null, top.Lang.Mail.Write.xitongtishi);//为了保证邮件及附件的安全性，自销毁邮件不允许添加附件，请您删除附件后再发送。  ||  系统提示
                 parent.CC.hideMsg();
                 return false;
             }
@@ -3422,7 +3422,7 @@ var oWrite = {
         var attachList = jQuery("#attachContainer").find(".uploadFile_name");
         //未添加附件，并且正文或标题中包含"附件"字样
         if ((subject.match(reg) || content.match(reg))&& jQuery("#attachContainer").find(".zz_comb").length == 0) {
-            CC.confirm(Lang.Mail.Write.ndyjzfjxfs, function() {  //您的邮件中提到了附件，您可能忘记添加附件，是否继续发送？
+            CC.confirm(top.Lang.Mail.Write.ndyjzNLnUIfjxfs, function() {  //您的邮件中提到了附件，您可能忘记添加附件，是否继续发送？
                 oWrite.confirmDoSend(obj);
             });
         } else {
@@ -3443,10 +3443,10 @@ var oWrite = {
                 }
                 if (mailSecLevel < 0)
                 {
-                    CC.showMsg(Lang.Mail.Write.qxzyjmj, true, false, "error");//请选择邮件密级
+                    CC.showMsg(top.Lang.Mail.Write.qxzyjmjUJOsI, true, false, "error");//请选择邮件密级
                     return false;
                 }
-                var ArraySecLevel = [Lang.Mail.Write.gongkai,Lang.Mail.Write.mimi,Lang.Mail.Write.jimi];//公开秘密机密
+                var ArraySecLevel = [top.Lang.Mail.Write.gongkai,top.Lang.Mail.Write.mimi,top.Lang.Mail.Write.jimi];//公开  ||  秘密  ||  机密
                 var attachFiles = jQuery("#attachContainer").find(".uploadFile_name");
                 if (attachFiles && attachFiles.length > 0) {
                     for (var i = 0; i < attachFiles.length; i++){
@@ -3458,7 +3458,7 @@ var oWrite = {
                             var matchResult = tempFileName.match(/公开|秘密|机密/g);
                             if (!matchResult || matchResult.length != 1)
                             {
-                                CC.showMsg(Lang.Mail.Write.fjmjbmzdyg, true, false, "error");//附件密级标识后才能发送，附件名需包含\"公开\"、\"秘密\"或\"机密\"中的一个
+                                CC.showMsg(top.Lang.Mail.Write.fjmjbphbQdmzdyg, true, false, "error");//附件密级标识后才能发送，附件名需包含\"公开\"、\"秘密\"或\"机密\"中的一个
                                 return false;
                             }
                             if (ArraySecLevel[j] == matchResult[0]) {
@@ -3467,7 +3467,7 @@ var oWrite = {
                             } 
                         }
                         if (attachSecLevel > mailSecLevel || attachSecLevel == -1) {
-                            CC.showMsg(Lang.Mail.Write.fjmjbbszfs, true, false, "error");//附件密级不能高于邮件密级,请重新标识再发送
+                            CC.showMsg(top.Lang.Mail.Write.fjmjbzDyhJbszfs, true, false, "error");//附件密级不能高于邮件密级,请重新标识再发送
                             return false;
                         }
                     }
@@ -3481,9 +3481,9 @@ var oWrite = {
             } else if (!oWrite.isShowBigAttachTips && oWrite.denyForward == 1 && parent.GE.diskFiles[oWrite.composeId] && parent.GE.diskFiles[oWrite.composeId].length > 0) {
                 var ao = {
                     id: 'confirm_denyForward2',
-                    title: Lang.Mail.Write.xitongtishi,//系统提示
+                    title: top.Lang.Mail.Write.xitongtishi,//系统提示
                     type: 'div',
-                    text: "<div style='padding:15px;'>"+Lang.Mail.Write.ndyjyfjxfs+"</div>",//<div style='padding:15px;'>您的邮件邮件开启了禁止转发选项，含有超大附件的邮件，收件人可以下载并转发。是否继续发送？</div>
+                    text: "<div style='padding:15px;'>"+top.Lang.Mail.Write.ndyjyhNwiPfjxfs+"</div>",//<div style='padding:15px;'>您的邮件邮件开启了禁止转发选项，含有超大附件的邮件，收件人可以下载并转发。是否继续发送？</div>
                     changeStyle: false,
                     zindex: 1090,
                     dragStyle: 1,
@@ -3652,7 +3652,7 @@ var oWrite = {
                     "title": parent.Lang.Mail.Write.sysPrompt,
                     "type": "text",
                     "width": 460,
-                    "text" : Lang.Mail.Write.nyjszszzfs,//您已经设置了该邮件为自销毁邮件，不允许添加附件，而邮件加密后，将会以附件形式发送，请您取消自销毁设置再发送
+                    "text" : top.Lang.Mail.Write.nyjszZujhoszzfs,//您已经设置了该邮件为自销毁邮件，不允许添加附件，而邮件加密后，将会以附件形式发送，请您取消自销毁设置再发送
                     "zindex": 20011,
                     "dragStyle": 1,
                     "buttonType": "confirm",
@@ -4016,7 +4016,7 @@ var oWrite = {
             break;
         case "FA_IS_SPAM":
             errorMsg = Lang.Mail.Write.MailAsSpan;
-            CC.alertNoSysClose(Lang.Mail.Write.nknmyjchfs, {}, Lang.Mail.Write.xitongtishi);//您可能没有权限给收件人中的某个用户发信，请检查后发送。系统提示
+            CC.alertNoSysClose(top.Lang.Mail.Write.nknmyULGPujchfs, {}, top.Lang.Mail.Write.xitongtishi);//您可能没有权限给收件人中的某个用户发信，请检查后发送。  ||  系统提示
             return;
             break
         case "FA_INVALID_PARAMETER":
@@ -4050,10 +4050,10 @@ var oWrite = {
         var me = this,
             ao = {
                 "id" : "confirmSens",
-                "title": Lang.Mail.Write.xitongtishi,//系统提示
+                "title": top.Lang.Mail.Write.xitongtishi,//系统提示
                 "type": "text",
                 "width": 460,
-                "text" : Lang.Mail.Write.nzbgqcynyh,//您在办公区，请您使用内网邮箱给域内用户发信，是否清除域内用户？
+                "text" : top.Lang.Mail.Write.nzbgqFLzmmcynyh,//您在办公区，请您使用内网邮箱给域内用户发信，是否清除域内用户？
                 "zindex": 20011,
                 "dragStyle": 1,
                 "buttonType": "confirm",
@@ -4675,14 +4675,14 @@ var oWrite = {
                 $("numberSign").checked = true;
             }
             // 自销毁设置
-            var text = Lang.Mail.Write.zsyfzjzdxh;//这是一封自销毁邮件，对方阅读完后，邮件将自动销毁
+            var text = top.Lang.Mail.Write.zsyfzkfeXGjzdxh;//这是一封自销毁邮件，对方阅读完后，邮件将自动销毁
             if (param.keepFlag == 2) {
                 jQuery("#ckbAutoDestroy").prop("checked", true);
             } else if (param.keepFlag == 1) {
                 p.isAutoDestroy = true;
                 jQuery("#ckbDaysDestroy").prop("checked", true);
                 jQuery("#inputReadDays").val(param.keepDay);
-                text = Lang.Mail.Write.zsyfzfsdyj + param.keepDay + Lang.Mail.Write.thyjjzdxh;//这是一封自销毁邮件，对方收到邮件天后，邮件将自动销毁
+                text = top.Lang.Mail.Write.zsyfzMWRqXfsdyj + param.keepDay + top.Lang.Mail.Write.thyjjzdxhtbNFF;//这是一封自销毁邮件，对方收到邮件  ||  天后，邮件将自动销毁
             }
             if (param.keepFlag == 1 || param.keepFlag == 2) {
                 p.isAutoDestroy = true;
@@ -5766,13 +5766,13 @@ var Editor = {
         }
         var _str = Editor.getEditorValue();
         var noTagStr = Editor.getHtmlToTextContent() || '';
-        jQuery("#editor_spellcheck").html(Lang.Mail.Write.zhongxinjiancha);//重新检查
+        jQuery("#editor_spellcheck").html(top.Lang.Mail.Write.zhongxinjiancha);//重新检查
         if(checkSpell.checkState==1){//正在检查请稍候重试
-            parent.CC.showMsg(Lang.Mail.Write.zhengzaijiancha, true, false, 'caution');//正在检查...
+            parent.CC.showMsg(top.Lang.Mail.Write.zhengzaijiancha, true, false, 'caution');//正在检查...
         }
         var checkOrNot = false;
         if (!/[a-zA-z]+/.test(noTagStr)) {
-            parent.CC.alert(Lang.Mail.Write.dbqpxzzcyw, null, Lang.Mail.Write.xitongtishi);//对不起，拼写检查暂时只支持英文。系统提示
+            parent.CC.alert(top.Lang.Mail.Write.dbqpxJxWVHzzcyw, null, top.Lang.Mail.Write.xitongtishi);//对不起，拼写检查暂时只支持英文。  ||  系统提示
             checkOrNot =  false;
         } else {
             if (/[\u4E00-\u9FA5]+/.test(noTagStr)) {
@@ -5780,14 +5780,14 @@ var Editor = {
                 var needTips = customSpellChkMemoray !==""  ? false : true ;
                 var ao = {
                     id : 'confirm',
-                    title: Lang.Mail.Write.xitongtishi,//系统提示
+                    title: top.Lang.Mail.Write.xitongtishi,//系统提示
                     type : 'text',
-                    text : Lang.Mail.Write.pxjczyywpx+'<br><br>                         <input id="editorSpellChkTip" type="checkbox"/>'+Lang.Mail.Write.buzaitishi,//拼写检查暂不支持中文。不过，我们仍可以检查您邮件中的所有英文拼写。<br><br>                         <input id="editorSpellChkTip" type="checkbox"/>&nbsp;不再提示
+                    text : top.Lang.Mail.Write.pxjczJzEncyywpx+'<br><br>                         <input id="editorSpellChkTip" type="checkbox"/>'+top.Lang.Mail.Write.buzaitishi,//拼写检查暂不支持中文。不过，我们仍可以检查您邮件中的所有英文拼写。<br><br>                         <input id="editorSpellChkTip" type="checkbox"/>&nbsp;不再提示
                     zindex:1090,
                     dragStyle:1,
                     buttonType:'confirm',
                     buttons: [{
-                        text: Lang.Mail.Write.jiancha,//检查
+                        text: top.Lang.Mail.Write.jiancha,//检查
                         clickEvent: function(){
                             checkSpell.doCheck(_str);
                             var chk = jQuery('#editorSpellChkTip',parent.window.document).prop("checked");
@@ -5796,7 +5796,7 @@ var Editor = {
                             }
                         }
                     }, {
-                        text: Lang.Mail.Write.bujiancha,//不检查
+                        text: top.Lang.Mail.Write.bujiancha,//不检查
                         clickEvent: function() {
                             var chk = jQuery('#editorSpellChkTip',parent.window.document).prop("checked");
                             if(chk){
@@ -5838,7 +5838,7 @@ var checkSpell = {
         reTxt      = [],                    //返回结果
         pureTxtItemRed = [];                //pureTxtArr 各项pos范围内的错误信息数组
             
-        parent.CC.showMsg(Lang.Mail.Write.zhengzaijiancha, true, false, 'option');//正在检查...
+        parent.CC.showMsg(top.Lang.Mail.Write.zhengzaijiancha, true, false, 'option');//正在检查...
         checkSpell.checkState = 1;//正在检查
         var htmlStr = "<div id=\"checkSpellLayout\" style=\"position: absolute; z-index: 1000; height: 100%; width: 100%; top: 0px; left: 0px;\"></div>";
         jQuery(".editorWrap").append(htmlStr);
@@ -5856,11 +5856,11 @@ var checkSpell = {
                 if(_res.code=="S_OK"){
                     _res=_res["var"];
                 }else{
-                    parent.CC.showMsg(Lang.Mail.Write.hbqpxjcccl, true, false, "error");//很抱歉，拼写检查出错了
+                    parent.CC.showMsg(top.Lang.Mail.Write.hbqpxjccclEielX, true, false, "error");//很抱歉，拼写检查出错了
                     return;
                 }
                 if(_res==null||_res.length<1){
-                    parent.CC.showMsg(Lang.Mail.Write.jianchachenggong, true, false, 'option');//检查成功
+                    parent.CC.showMsg(top.Lang.Mail.Write.jianchachenggong, true, false, 'option');//检查成功
                     checkSpell.checkState = 2;//2检查完成
                     jQuery("#checkSpellLayout").remove();
                     return;
@@ -5931,7 +5931,7 @@ var checkSpell = {
                         checkSpell.showSuggestPanel.call(eTarget,ifmDoc);
                     event.stopPropagation();
                 });
-                parent.CC.showMsg(Lang.Mail.Write.jianchachenggong, true, false, 'option');//检查成功
+                parent.CC.showMsg(top.Lang.Mail.Write.jianchachenggong, true, false, 'option');//检查成功
                 checkSpell.checkState = 2;//2检查完成
                 jQuery("#checkSpellLayout").remove();
             },
@@ -6011,12 +6011,12 @@ var checkSpell = {
                         panelHtml+='<li>'+errorArr[i].cases[j]+'</li>'
                     };
                 }else{
-                    panelHtml+='<li>'+Lang.Mail.Write.zanwutishi+'</li>';//<li>暂无提示</li>
+                    panelHtml+='<li>'+top.Lang.Mail.Write.zanwutishi+'</li>';//<li>暂无提示</li>
                 }
                 break;
             }
         };
-        panelHtml+='<li class="line"></li><li>'+Lang.Mail.Write.hulue+'</li><li>'+Lang.Mail.Write.huluequanbu+'</li></ul>';//<li class="line"></li><li>忽略</li><li>忽略全部</li></ul>
+        panelHtml+='<li class="line"></li><li>'+top.Lang.Mail.Write.hulue+'</li><li>'+top.Lang.Mail.Write.huluequanbu+'</li></ul>';//<li class="line"></li><li>忽略</li><li>忽略全部</li></ul>
         panel.innerHTML = panelHtml;
         var $errorWords = jQuery(this);
         var errorCoor = $errorWords.position();
@@ -6050,13 +6050,13 @@ var checkSpell = {
         var target = event.target,$errorWord = this;
         var suggestOpt = target.innerHTML;
         if(jQuery(target).is("li:not(.line)")){
-            if (suggestOpt.indexOf(Lang.Mail.Write.quanbu) >= 0) {//全部
+            if (suggestOpt.indexOf(top.Lang.Mail.Write.quanbu) >= 0) {//全部
                 checkSpell.ignoreAll(doc);
             } else {
-                if (suggestOpt.indexOf(Lang.Mail.Write.hulue) >= 0) {//忽略
+                if (suggestOpt.indexOf(top.Lang.Mail.Write.hulue) >= 0) {//忽略
                     checkSpell.ignore($errorWord);
                 } else {
-                    if (suggestOpt && suggestOpt.indexOf(Lang.Mail.Write.zanwutishi) < 0) {//暂无提示
+                    if (suggestOpt && suggestOpt.indexOf(top.Lang.Mail.Write.zanwutishi) < 0) {//暂无提示
                         checkSpell.wordReplace($errorWord,suggestOpt);
                     }
                 }
@@ -6339,7 +6339,7 @@ securityMail.prototype = {
         this.inList = false;
         
         if (jQuery("#security_mail_text")[0]) {
-            jQuery("#security_mail_text")[0].innerHTML=Lang.Mail.Write.qingxuanze;//请选择
+            jQuery("#security_mail_text")[0].innerHTML=top.Lang.Mail.Write.qingxuanze;//请选择
         }
     },
     render: function(){

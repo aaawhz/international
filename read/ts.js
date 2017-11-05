@@ -37,7 +37,10 @@ var handleStr = '';
 var prevValue = '';
 var nextValue = '';
 var readzs = [];
- 
+
+/**
+   多行注释 - 单行注释 - 正则 - 字符串
+**/ 
 
 for (var i = 0; i < data.length; i++) {
     item = data[i];
@@ -46,18 +49,19 @@ for (var i = 0; i < data.length; i++) {
     nextValue = data[i+1] ? data[i+1] : '';
     ditem = item + nextValue;
     
-    //判断是否是单行注释
-    if (singlezs.test(ditem)) {
-        //console.log(singlezs)
-        iszs = true;
-        isSingglezs = true;
-    }
 
     if (doublezs_start.test(ditem)) {
         iszs = true;
         isDoublezs = true;
     }
 
+    //判断是否是单行注释
+    if (!isDoublezs && singlezs.test(ditem)) {
+        //console.log(singlezs)
+        iszs = true;
+        isSingglezs = true;
+    }
+ 
     //如果是回车，单行注释失效
     if (item == enterchar && isSingglezs) {
         //console.log(ditem)
@@ -73,7 +77,7 @@ for (var i = 0; i < data.length; i++) {
     //如果是正则， / 开头， 就不匹配继续加, 这里要先判断，因为字符串中也有/
     //比如 /["]/.test("海南岛")  需要排除掉  /["]/， 再进行引号匹配
     // 并且避免掉 // /* */ 单行和多行注释
-    if(islineStart && !isReg &&item == sprit && prevValue != sprit && nextValue != sprit && nextValue != '*' && prevValue != '*'){
+    if(!iszs && !matchQuote && !isReg &&item == sprit && prevValue != sprit && nextValue != sprit && nextValue != '*' && prevValue != '*'){
     	isReg = true;
 
     	regPos = i;
@@ -87,7 +91,6 @@ for (var i = 0; i < data.length; i++) {
         str = '';
         //进入引号领地了
         islineStart = false;
-
 
         if (/[\']/.test(item)) {
             Regs.GLOBELCACHE.signleQuoteStart = true;
@@ -124,7 +127,11 @@ for (var i = 0; i < data.length; i++) {
             //console.log( item + str + item )
 
            
-            resstr = Regs.TransStr(handleStr);          
+            resstr = Regs.TransStr(handleStr);    
+
+            if(resstr == '' ){
+            	resstr = item + item;
+            }      
             result += resstr;
            
            
