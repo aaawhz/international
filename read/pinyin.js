@@ -45,13 +45,13 @@
 
       fullchar.replace(/ /g, '');
 
-      if (I1.length > 10) {
+      if (I1.length > 20) {
           random = randomWord();
           //被忽略的用随机数替代
-          I1 = I1.substr(0, 5) + random + I1.substr(-5);
-      } else if (I1.length < 6) {
-          //random = randomWord();
-          I1 = fullchar; //+ '_' + random;
+          I1 = I1.substr(0, 10) + random + I1.substr(-10);
+      } else if (I1.length <= 10) {
+          random = randomWord();
+          I1 = fullchar+random; //+ '_' + random;
       }else{
           random = randomWord();
           I1 = I1 + random;
@@ -99,7 +99,7 @@
 
   function randomWord(randomFlag, min, max) {
       var str = "",
-          range = min || 5,
+          range = min || 8,
           arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
       // 随机产生
