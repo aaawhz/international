@@ -29,22 +29,4 @@ demo2:
  
  demo4: 
  
- "html.push(\'<li >\"
-    <p>\
-    <div>\
-    例子
-    </p>\
-    </div>\
-    </li>\');//
-    
- ==>
- 
-  html.push(\'<li >\
-    <p>\
-    <div>\
-    top.Lang.Mail.Write.liezi
-    </p>\
-    </div>\
-    </li>\');//
- 
-
+ 支持 结尾以 \ 来连接字符串的情况
