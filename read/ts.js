@@ -38,6 +38,13 @@ var prevValue = '';
 var nextValue = '';
 var readzs = [];
 
+//兼容 str = " abc \
+ //              大 \   
+ //如果是字符串跨行匹配
+ var matchQuoteInseverLine = false;
+ var matchQuoteInseverLineStr = '';
+ var startQuout = '';
+
 /**
    多行注释 - 单行注释 - 正则 - 字符串
 **/ 
@@ -49,6 +56,31 @@ for (var i = 0; i < data.length; i++) {
     nextValue = data[i+1] ? data[i+1] : '';
     ditem = item + nextValue;
     
+    console.log(matchQuoteInseverLine)
+    //如果是跨行匹配字符串， 优先级最高
+    if(matchQuoteInseverLine){
+ 
+        //如果已经结束
+        if( item == startQuout && prevValue != slash ){
+            // 执行到这里获取到引号之间的字符串
+            handleStr =  matchQuoteInseverLineStr + item;
+
+
+            resstr = Regs.TransStr(handleStr);    
+
+            console.log(resstr)
+           
+            result += resstr;
+
+            matchQuoteInseverLine = false;
+            //break
+ 
+        }else{
+            matchQuoteInseverLineStr += item;
+        }
+        
+        continue;
+    }
 
     if (doublezs_start.test(ditem)) {
         iszs = true;
@@ -113,10 +145,21 @@ for (var i = 0; i < data.length; i++) {
         // j-2 != .. 是排除这种情况  '\\'+v;
         while (data[j] !== item || (data[j] == item && data[j - 1] == '\\' && data[j-2] != '\\')) {
         	
-        	//如果遇到换行符，说明这一行没有可以取的文字
+        	//如果遇到换行符，
             if (data[j] == enterchar || data[i] == '\n') {
-            	 
-                matchQuote = false;
+   
+                //兼容 str = " abc \
+                //              大 \  
+                
+                if(data[j-1] == slash){
+                    startQuout = item;
+                    matchQuoteInseverLine = true;
+                    matchQuote = false;
+                   
+                }else{
+                    //说明这一行没有可以取的文字
+                    matchQuote = false;
+                }
                 break;
             } else {
 
@@ -127,7 +170,10 @@ for (var i = 0; i < data.length; i++) {
 
         }
 
-        if (matchQuote) {
+        if(matchQuoteInseverLine){
+            matchQuoteInseverLineStr = item + str;
+            i = j
+        }else if (matchQuote) {
             // 执行到这里获取到引号之间的字符串
             handleStr = item + str + item;
 

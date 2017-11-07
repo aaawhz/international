@@ -138,13 +138,13 @@
                           isTag: oldIsTag
                         }
                         TextsAndTags.push(o);
-                        console.log("s============"+s)
+                       // console.log("s============"+s)
                          s = '';
 
                     }
 
 
-                    console.log("tag======"+strTag)
+                    //console.log("tag======"+strTag)
 
 
                     //跳过匹配的标签
@@ -210,7 +210,7 @@
           item = o[i];
           value = item.value;
 
-          console.log("value   start========="+value)
+          // console.log("value   start========="+value)
           //处理标签属性， 有中文直接替换
           if (item.isTag) {
               //console.log('------------------' + value);
@@ -272,14 +272,14 @@
                 console.log('value   :'+item.value)
                
                 */
-                 console.log('innerStrStart   :'+innerStrStart);
+                /* console.log('innerStrStart   :'+innerStrStart);
                  console.log('innerZh   :'+innerZh);
-                console.log('innerStrEnd  :'+innerStrEnd)
+                console.log('innerStrEnd  :'+innerStrEnd)*/
                 value = innerStrStart +  transf(innerZh, true) ; // + innerStrEnd;
               }
           }
 
-           console.log("value   end=========="+value)
+           // console.log("value   end=========="+value)
           reArray.push(value);
       }
 

@@ -400,3 +400,766 @@ mail.Write.taibeiYYKvKXGL : 台北
 mail.Write.gaoxiongigTXwLot : 高雄
 mail.Write.xianggangYMrhNhwh : 香港
 mail.Write.aomenzVKpUkDh : 澳门
+mail.Write.qingdianjihuoquyanzhengmaNBDpTBHc : 请点击获取验证码
+mail.Write.qingdianjihuoquyanzhengmahdLFstLf : 请点击获取验证码
+mail.Write.qingdianjihuoquyanzhengmaOipJogpQ : 请点击获取验证码
+mail.Write.qingdianjihuoquyanzhengmahvidJrOg : 请点击获取验证码
+mail.Write.qingdianjihuoquyanzhengmaCtAEcBoA : 请点击获取验证码
+mail.Write.qingdianjihuoquyanzhengmanKBjmxvk : 请点击获取验证码
+mail.Write.qingdianjihuoquyanzhengmaKiqlZyHM : 请点击获取验证码
+mail.Write.qingdianjihuoquyanzhengmayQNnpnVK : 请点击获取验证码
+mail.Write.qingdianjihuoquyanzhengmaXgRtyfbC : 请点击获取验证码
+mail.Write.qingdianjihuoquyanzhengmaoOpTjSJl : 请点击获取验证码
+mail.Write.qingdianjihuoquyanzhengmaDoJGTqWf : 请点击获取验证码
+mail.Write.qingdianjihuoquyanzhengmaELtvyCzz : 请点击获取验证码
+mail.Write.tupianyanzhengmaDFqsmKiS : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikongfUSEYscR : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangqBdGSMtp : 看不清，换一张
+mail.Write.tupianyanzhengmaNtHsdVFd : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikongiahXKbrs : 图片验证码不能为空
+mail.Write.qingshuruzhengquedeyoujiandizhiGWToDGwW : 请输入正确的邮件地址
+mail.Write.kanbuqinghuanyizhangLLyJKkyk : 看不清，换一张
+mail.Write.tupianyanzhengmabunenweikongMCWAixRW : 图片验证码不能为空
+mail.Write.qingshuruzhengquedeyoujiandizhioxAjKgMj : 请输入正确的邮件地址
+mail.Write.tupianyanzhengmavWYufYLr : 图片验证码：
+mail.Write.kanbuqinghuanyizhangzGnkgKFe : 看不清，换一张
+mail.Write.tupianyanzhengmabunenweikongTHKcPtNm : 图片验证码不能为空
+mail.Write.qingshuruzhengquedeyoujiandizhiqPDhViUs : 请输入正确的邮件地址
+mail.Write.qdtpyzmxmdyqsjlsxyzmDhbgzwrC : 取得图片验证码，下面调用其Click事件来刷新验证码
+    var statusFunc = function(){
+        if (status1.checked) {
+            jQuery(txtForward).removeAttr("disabled");
+            if(txtForward.value != Lang.Mail.ConfigJs.forward_lbl_onlyone){
+                jQuery(txtForward).attr("style","color: black;");
+            }else{
+                jQuery(txtForward).removeAttr("style");
+            }
+        }
+        else if(status0.checked) {
+            jQuery(txtForward).attr("disabled", "disabled");
+            //jQuery(txtForward).attr("style","color: black;");
+        }
+    };
+    statusFunc();
+    status0.onclick=function(){statusFunc();};
+    status1.onclick=function(){statusFunc();};
+    captcha.captcha();
+    txtForward.onclick = function(){        
+        if (this.value == Lang.Mail.ConfigJs.forward_lbl_onlyone) {
+            this.value = 
+mail.Write.tupianyanzhengmarJocqBiY : 图片验证码：
+mail.Write.kanbuqinghuanyizhangTrSjwzUI : 看不清，换一张
+mail.Write.tupianyanzhengmabunenweikongyCQvgnHY : 图片验证码不能为空
+mail.Write.tupianyanzhengmaeWEzXBPT : 图片验证码：
+mail.Write.kanbuqinghuanyizhangYYDkFpPE : 看不清，换一张
+mail.Write.qingshuruzhengquedeyoujiandizhiwewJmeSj : 请输入正确的邮件地址
+mail.Write.qdtpyzmxmdyqsjlsxyzmkpNYBVeH : 取得图片验证码，下面调用其Click事件来刷新验证码
+    var statusFunc = function(){
+        if (status1.checked) {
+            jQuery(txtForward).removeAttr("disabled");
+            if(txtForward.value != Lang.Mail.ConfigJs.forward_lbl_onlyone){
+                jQuery(txtForward).attr("style","color: black;");
+            }else{
+                jQuery(txtForward).removeAttr("style");
+            }
+        }
+        else if(status0.checked) {
+            jQuery(txtForward).attr("disabled", "disabled");
+            //jQuery(txtForward).attr("style","color: black;");
+        }
+    };
+    statusFunc();
+    status0.onclick=function(){statusFunc();};
+    status1.onclick=function(){statusFunc();};
+    captcha.captcha();
+    txtForward.onclick = function(){        
+        if (this.value == Lang.Mail.ConfigJs.forward_lbl_onlyone) {
+            this.value = 
+mail.Write.tupianyanzhengmafLocWHlP : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikongbpqMEjic : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangBYQkCdgl : 看不清，换一张
+mail.Write.qingshuruzhengquedeyoujiandizhirUrWFSjh : 请输入正确的邮件地址
+mail.Write.qdtpyzmxmdyqsjlsxyzmTSopVfsr : 取得图片验证码，下面调用其Click事件来刷新验证码
+    var statusFunc = function(){
+        if (status1.checked) {
+            jQuery(txtForward).removeAttr("disabled");
+            if(txtForward.value != Lang.Mail.ConfigJs.forward_lbl_onlyone){
+                jQuery(txtForward).attr("style","color: black;");
+            }else{
+                jQuery(txtForward).removeAttr("style");
+            }
+        }
+        else if(status0.checked) {
+            jQuery(txtForward).attr("disabled", "disabled");
+            //jQuery(txtForward).attr("style","color: black;");
+        }
+    };
+    statusFunc();
+    status0.onclick=function(){statusFunc();};
+    status1.onclick=function(){statusFunc();};
+    captcha.captcha();
+    txtForward.onclick = function(){        
+        if (this.value == Lang.Mail.ConfigJs.forward_lbl_onlyone) {
+            this.value = ;
+            if (this.createTextRange) {
+                var r = this.createTextRange();
+                r.moveStart(
+mail.Write.tupianyanzhengmakQTvUcng : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikonglMsyFSQx : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangIfCXoWgW : 看不清，换一张
+mail.Write.qingshuruzhengquedeyoujiandizhinQmbyibv : 请输入正确的邮件地址
+mail.Write.qdtpyzmxmdyqsjlsxyzmmYGGhAaD : 取得图片验证码，下面调用其Click事件来刷新验证码
+    var statusFunc = function(){
+        if (status1.checked) {
+            jQuery(txtForward).removeAttr("disabled");
+            if(txtForward.value != Lang.Mail.ConfigJs.forward_lbl_onlyone){
+                jQuery(txtForward).attr("style","color: black;");
+            }else{
+                jQuery(txtForward).removeAttr("style");
+            }
+        }
+        else if(status0.checked) {
+            jQuery(txtForward).attr("disabled", "disabled");
+            //jQuery(txtForward).attr("style","color: black;");
+        }
+    };
+    statusFunc();
+    status0.onclick=function(){statusFunc();};
+    status1.onclick=function(){statusFunc();};
+    captcha.captcha();
+    txtForward.onclick = function(){        
+        if (this.value == Lang.Mail.ConfigJs.forward_lbl_onlyone) {
+            this.value = ;
+            if (this.createTextRange) {
+                var r = this.createTextRange();
+                r.moveStart(character
+mail.Write.tupianyanzhengmasjVxVALX : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikongdkkioTNw : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangifAwgFfO : 看不清，换一张
+mail.Write.qingshuruzhengquedeyoujiandizhiAjoanaQb : 请输入正确的邮件地址
+mail.Write.qdtpyzmxmdyqsjlsxyzmyKnHWmpv : 取得图片验证码，下面调用其Click事件来刷新验证码
+    var statusFunc = function(){
+        if (status1.checked) {
+            jQuery(txtForward).removeAttr("disabled");
+            if(txtForward.value != Lang.Mail.ConfigJs.forward_lbl_onlyone){
+                jQuery(txtForward).attr("style","color: black;");
+            }else{
+                jQuery(txtForward).removeAttr("style");
+            }
+        }
+        else if(status0.checked) {
+            jQuery(txtForward).attr("disabled", "disabled");
+            //jQuery(txtForward).attr("style","color: black;");
+        }
+    };
+    statusFunc();
+    status0.onclick=function(){statusFunc();};
+    status1.onclick=function(){statusFunc();};
+    captcha.captcha();
+    txtForward.onclick = function(){        
+        if (this.value == Lang.Mail.ConfigJs.forward_lbl_onlyone) {
+            this.value = ;
+            if (this.createTextRange) {
+                var r = this.createTextRange();
+                r.moveStart(character, this.value.length);
+                r.collapse();
+                r.select();
+            }
+        }
+        jQuery(this).attr("style","color: black;");
+    };
+    txtForward.onblur = function(){        
+        if (this.value.trim() == 
+mail.Write.tupianyanzhengmaCQKpIFst : 图片验证码：
+mail.Write.kanbuqinghuanyizhangmEfKtejA : 看不清，换一张
+mail.Write.tupianyanzhengmabunenweikongSbdrRGlo : 图片验证码不能为空
+mail.Write.qingshuruzhengquedeyoujiandizhimPsQftRt : 请输入正确的邮件地址
+mail.Write.qdtpyzmxmdyqsjlsxyzmPDdguYya : 取得图片验证码，下面调用其Click事件来刷新验证码
+    var statusFunc = function(){
+        if (status1.checked) {
+            jQuery(txtForward).removeAttr("disabled");
+            if(txtForward.value != Lang.Mail.ConfigJs.forward_lbl_onlyone){
+                jQuery(txtForward).attr("style","color: black;");
+            }else{
+                jQuery(txtForward).removeAttr("style");
+            }
+        }
+        else if(status0.checked) {
+            jQuery(txtForward).attr("disabled", "disabled");
+            //jQuery(txtForward).attr("style","color: black;");
+        }
+    };
+    statusFunc();
+    status0.onclick=function(){statusFunc();};
+    status1.onclick=function(){statusFunc();};
+    captcha.captcha();
+    txtForward.onclick = function(){        
+        if (this.value == Lang.Mail.ConfigJs.forward_lbl_onlyone) {
+            this.value = ;
+            if (this.createTextRange) {
+                var r = this.createTextRange();
+                r.moveStart(character, this.value.length);
+                r.collapse();
+                r.select();
+            }
+        }
+        jQuery(this).attr("style","color: black;");
+    };
+    txtForward.onblur = function(){        
+        if (this.value.trim() == 
+mail.Write.tupianyanzhengmasGcbPGdr : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikongemBsjkvk : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangNaopumIP : 看不清，换一张
+mail.Write.qingshuruzhengquedeyoujiandizhiTunFzfFM : 请输入正确的邮件地址
+mail.Write.qdtpyzmxmdyqsjlsxyzmkGnCqrYS : 取得图片验证码，下面调用其Click事件来刷新验证码
+    var statusFunc = function(){
+        if (status1.checked) {
+            jQuery(txtForward).removeAttr("disabled");
+            if(txtForward.value != Lang.Mail.ConfigJs.forward_lbl_onlyone){
+                jQuery(txtForward).attr("style","color: black;");
+            }else{
+                jQuery(txtForward).removeAttr("style");
+            }
+        }
+        else if(status0.checked) {
+            jQuery(txtForward).attr("disabled", "disabled");
+            //jQuery(txtForward).attr("style","color: black;");
+        }
+    };
+    statusFunc();
+    status0.onclick=function(){statusFunc();};
+    status1.onclick=function(){statusFunc();};
+    captcha.captcha();
+    txtForward.onclick = function(){        
+        if (this.value == Lang.Mail.ConfigJs.forward_lbl_onlyone) {
+            this.value = ;
+            if (this.createTextRange) {
+                var r = this.createTextRange();
+                r.moveStart(character, this.value.length);
+                r.collapse();
+                r.select();
+            }
+        }
+        jQuery(this).attr("style","color: black;");
+    };
+    txtForward.onblur = function(){        
+        if (this.value.trim() == ) {
+            this.value = Lang.Mail.ConfigJs.forward_lbl_onlyone;
+            jQuery(this).removeAttr("style");
+        }
+    };
+};
+autoForward.save = function(){
+    var p= this;
+    if(p.check()){
+        var data = p.getSaveData(p.attrs.data);
+        p.doServiceInXml(p.attrs.save.func, data, function(ao){
+            unbind_imgShow.click();
+            p.ok(Lang.Mail.ConfigJs.autoForwardSuc)
+        }, function(ao){
+            unbind_imgShow.click();
+            p.fail(Lang.Mail.ConfigJs.filter_saveFail,ao);
+        });
+        //p.ajaxRequest(p.attrs.save.func, data, function(ao){
+        //  p.ok(Lang.Mail.ConfigJs.autoForwardSuc)
+        //}, function(ao){
+        //  p.fail(Lang.Mail.ConfigJs.filter_saveFail,d);
+        //}, url);
+    }
+    
+};
+
+autoForward.checkUserNumber = function(mail){
+    //var mobileNumber = gMain.mobileNumber+"@"+domain;
+    var retVal = false;
+    for (var i = 0; i < aliasList.length; i++) {
+        if (aliasList[i].value == mail) {
+            retVal = true;
+            break;
+        }
+    }   
+    return retVal;
+};
+
+//autoForward.showTips = function(obj){
+//  var tip = new ToolTips({
+//         id: 
+mail.Write.tupianyanzhengmaPPvsNVgj : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikongxLdJDTLI : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangTXWKAVWQ : 看不清，换一张
+mail.Write.qingshuruzhengquedeyoujiandizhihDodAkBu : 请输入正确的邮件地址
+mail.Write.qdtpyzmxmdyqsjlsxyzmvytQTwLP : 取得图片验证码，下面调用其Click事件来刷新验证码
+    var statusFunc = function(){
+        if (status1.checked) {
+            jQuery(txtForward).removeAttr("disabled");
+            if(txtForward.value != Lang.Mail.ConfigJs.forward_lbl_onlyone){
+                jQuery(txtForward).attr("style","color: black;");
+            }else{
+                jQuery(txtForward).removeAttr("style");
+            }
+        }
+        else if(status0.checked) {
+            jQuery(txtForward).attr("disabled", "disabled");
+            //jQuery(txtForward).attr("style","color: black;");
+        }
+    };
+    statusFunc();
+    status0.onclick=function(){statusFunc();};
+    status1.onclick=function(){statusFunc();};
+    captcha.captcha();
+    txtForward.onclick = function(){        
+        if (this.value == Lang.Mail.ConfigJs.forward_lbl_onlyone) {
+            this.value = ;
+            if (this.createTextRange) {
+                var r = this.createTextRange();
+                r.moveStart(character, this.value.length);
+                r.collapse();
+                r.select();
+            }
+        }
+        jQuery(this).attr("style","color: black;");
+    };
+    txtForward.onblur = function(){        
+        if (this.value.trim() == ) {
+            this.value = Lang.Mail.ConfigJs.forward_lbl_onlyone;
+            jQuery(this).removeAttr("style");
+        }
+    };
+};
+autoForward.save = function(){
+    var p= this;
+    if(p.check()){
+        var data = p.getSaveData(p.attrs.data);
+        p.doServiceInXml(p.attrs.save.func, data, function(ao){
+            unbind_imgShow.click();
+            p.ok(Lang.Mail.ConfigJs.autoForwardSuc)
+        }, function(ao){
+            unbind_imgShow.click();
+            p.fail(Lang.Mail.ConfigJs.filter_saveFail,ao);
+        });
+        //p.ajaxRequest(p.attrs.save.func, data, function(ao){
+        //  p.ok(Lang.Mail.ConfigJs.autoForwardSuc)
+        //}, function(ao){
+        //  p.fail(Lang.Mail.ConfigJs.filter_saveFail,d);
+        //}, url);
+    }
+    
+};
+
+autoForward.checkUserNumber = function(mail){
+    //var mobileNumber = gMain.mobileNumber+"@"+domain;
+    var retVal = false;
+    for (var i = 0; i < aliasList.length; i++) {
+        if (aliasList[i].value == mail) {
+            retVal = true;
+            break;
+        }
+    }   
+    return retVal;
+};
+
+//autoForward.showTips = function(obj){
+//  var tip = new ToolTips({
+//         id: default_id
+mail.Write.qingdianjihuoquyanzhengmaWLrqibXL : 请点击获取验证码
+mail.Write.tupianyanzhengmaNtsXgNxG : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikongcdWLrHkw : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangHlOYbmcj : 看不清，换一张
+mail.Write.tupianyanzhengmamUdmoZvR : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikonggPoODkjL : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangQIhdDfbo : 看不清，换一张
+mail.Write.qingshuruzhengquedeyoujiandizhiqjVuxVhq : 请输入正确的邮件地址
+mail.Write.tupianyanzhengmaFdgRsdfe : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikongCrpMSGKF : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangFLAKqAEf : 看不清，换一张
+mail.Write.qingshuruzhengquedeyoujiandizhiTUeFNMuY : 请输入正确的邮件地址
+mail.Write.tupianyanzhengmaKhVYqKRk : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikongaxLvoQZb : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangvFNqCNCA : 看不清，换一张
+mail.Write.qingshuruzhengquedeyoujiandizhiUUMGsDef : 请输入正确的邮件地址
+mail.Write.qdtpyzmxmdyqsjlsxyzmoYkZlRfm : 取得图片验证码，下面调用其Click事件来刷新验证码
+    var statusFunc = function(){
+        if (status1.checked) {
+            jQuery(txtForward).removeAttr("disabled");
+            if(txtForward.value != Lang.Mail.ConfigJs.forward_lbl_onlyone){
+                jQuery(txtForward).attr("style","color: black;");
+            }else{
+                jQuery(txtForward).removeAttr("style");
+            }
+        }
+        else if(status0.checked) {
+            jQuery(txtForward).attr("disabled", "disabled");
+            //jQuery(txtForward).attr("style","color: black;");
+        }
+    };
+    statusFunc();
+    status0.onclick=function(){statusFunc();};
+    status1.onclick=function(){statusFunc();};
+    captcha.captcha();
+    txtForward.onclick = function(){        
+        if (this.value == Lang.Mail.ConfigJs.forward_lbl_onlyone) {
+            this.value = 
+mail.Write.tupianyanzhengmaARoicrGC : 图片验证码：
+mail.Write.kanbuqinghuanyizhangeQnXYJrR : 看不清，换一张
+mail.Write.qingshuruzhengquedeyoujiandizhiFXnAFAmu : 请输入正确的邮件地址
+mail.Write.qdtpyzmxmdyqsjlsxyzmvtJOznab : 取得图片验证码，下面调用其Click事件来刷新验证码
+    var statusFunc = function(){
+        if (status1.checked) {
+            jQuery(txtForward).removeAttr("disabled");
+            if(txtForward.value != Lang.Mail.ConfigJs.forward_lbl_onlyone){
+                jQuery(txtForward).attr("style","color: black;");
+            }else{
+                jQuery(txtForward).removeAttr("style");
+            }
+        }
+        else if(status0.checked) {
+            jQuery(txtForward).attr("disabled", "disabled");
+            //jQuery(txtForward).attr("style","color: black;");
+        }
+    };
+    statusFunc();
+    status0.onclick=function(){statusFunc();};
+    status1.onclick=function(){statusFunc();};
+    captcha.captcha();
+    txtForward.onclick = function(){        
+        if (this.value == Lang.Mail.ConfigJs.forward_lbl_onlyone) {
+            this.value = 
+mail.Write.tupianyanzhengmaGhSFQaQs : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikonggKdFPmEj : 图片验证码不能为空
+mail.Write.qingshuruzhengquedeyoujiandizhiyOQWiBFk : 请输入正确的邮件地址
+mail.Write.tupianyanzhengmabunenweikongVPPTgAyH : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangbthnonEf : 看不清，换一张
+mail.Write.qdtpyzmxmdyqsjlsxyzmthAUsWiV : 取得图片验证码，下面调用其Click事件来刷新验证码
+    var statusFunc = function(){
+        if (status1.checked) {
+            jQuery(txtForward).removeAttr("disabled");
+            if(txtForward.value != Lang.Mail.ConfigJs.forward_lbl_onlyone){
+                jQuery(txtForward).attr("style","color: black;");
+            }else{
+                jQuery(txtForward).removeAttr("style");
+            }
+        }
+        else if(status0.checked) {
+            jQuery(txtForward).attr("disabled", "disabled");
+            //jQuery(txtForward).attr("style","color: black;");
+        }
+    };
+    statusFunc();
+    status0.onclick=function(){statusFunc();};
+    status1.onclick=function(){statusFunc();};
+    captcha.captcha();
+    txtForward.onclick = function(){        
+        if (this.value == Lang.Mail.ConfigJs.forward_lbl_onlyone) {
+            this.value = ;
+            if (this.createTextRange) {
+                var r = this.createTextRange();
+                r.moveStart(
+mail.Write.tupianyanzhengmaUEWpjrbF : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikongzkICRmSw : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangNrDbCqtl : 看不清，换一张
+mail.Write.qingshuruzhengquedeyoujiandizhitQWXopfM : 请输入正确的邮件地址
+mail.Write.qdtpyzmxmdyqsjlsxyzmGFGrXdDe : 取得图片验证码，下面调用其Click事件来刷新验证码
+    var statusFunc = function(){
+        if (status1.checked) {
+            jQuery(txtForward).removeAttr("disabled");
+            if(txtForward.value != Lang.Mail.ConfigJs.forward_lbl_onlyone){
+                jQuery(txtForward).attr("style","color: black;");
+            }else{
+                jQuery(txtForward).removeAttr("style");
+            }
+        }
+        else if(status0.checked) {
+            jQuery(txtForward).attr("disabled", "disabled");
+            //jQuery(txtForward).attr("style","color: black;");
+        }
+    };
+    statusFunc();
+    status0.onclick=function(){statusFunc();};
+    status1.onclick=function(){statusFunc();};
+    captcha.captcha();
+    txtForward.onclick = function(){        
+        if (this.value == Lang.Mail.ConfigJs.forward_lbl_onlyone) {
+            this.value = ;
+            if (this.createTextRange) {
+                var r = this.createTextRange();
+                r.moveStart(character
+mail.Write.tupianyanzhengmaBITmGwnL : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikongoQBmshZY : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangxWuMPjaQ : 看不清，换一张
+mail.Write.qingshuruzhengquedeyoujiandizhiQrmKHYFo : 请输入正确的邮件地址
+mail.Write.qdtpyzmxmdyqsjlsxyzmsypEjvoY : 取得图片验证码，下面调用其Click事件来刷新验证码
+    var statusFunc = function(){
+        if (status1.checked) {
+            jQuery(txtForward).removeAttr("disabled");
+            if(txtForward.value != Lang.Mail.ConfigJs.forward_lbl_onlyone){
+                jQuery(txtForward).attr("style","color: black;");
+            }else{
+                jQuery(txtForward).removeAttr("style");
+            }
+        }
+        else if(status0.checked) {
+            jQuery(txtForward).attr("disabled", "disabled");
+            //jQuery(txtForward).attr("style","color: black;");
+        }
+    };
+    statusFunc();
+    status0.onclick=function(){statusFunc();};
+    status1.onclick=function(){statusFunc();};
+    captcha.captcha();
+    txtForward.onclick = function(){        
+        if (this.value == Lang.Mail.ConfigJs.forward_lbl_onlyone) {
+            this.value = ;
+            if (this.createTextRange) {
+                var r = this.createTextRange();
+                r.moveStart(character, this.value.length);
+                r.collapse();
+                r.select();
+            }
+        }
+        jQuery(this).attr("style","color: black;");
+    };
+    txtForward.onblur = function(){        
+        if (this.value.trim() == 
+mail.Write.tupianyanzhengmawRrByzNn : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikongLWIBIAjW : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangACqcpDwV : 看不清，换一张
+mail.Write.qingshuruzhengquedeyoujiandizhiYMANTlWl : 请输入正确的邮件地址
+mail.Write.qdtpyzmxmdyqsjlsxyzmBwINQxYD : 取得图片验证码，下面调用其Click事件来刷新验证码
+    var statusFunc = function(){
+        if (status1.checked) {
+            jQuery(txtForward).removeAttr("disabled");
+            if(txtForward.value != Lang.Mail.ConfigJs.forward_lbl_onlyone){
+                jQuery(txtForward).attr("style","color: black;");
+            }else{
+                jQuery(txtForward).removeAttr("style");
+            }
+        }
+        else if(status0.checked) {
+            jQuery(txtForward).attr("disabled", "disabled");
+            //jQuery(txtForward).attr("style","color: black;");
+        }
+    };
+    statusFunc();
+    status0.onclick=function(){statusFunc();};
+    status1.onclick=function(){statusFunc();};
+    captcha.captcha();
+    txtForward.onclick = function(){        
+        if (this.value == Lang.Mail.ConfigJs.forward_lbl_onlyone) {
+            this.value = ;
+            if (this.createTextRange) {
+                var r = this.createTextRange();
+                r.moveStart(character, this.value.length);
+                r.collapse();
+                r.select();
+            }
+        }
+        jQuery(this).attr("style","color: black;");
+    };
+    txtForward.onblur = function(){        
+        if (this.value.trim() == 
+mail.Write.tupianyanzhengmajfeCPpzr : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikongyjnWNcsB : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangfcEXXIRt : 看不清，换一张
+mail.Write.qingshuruzhengquedeyoujiandizhiaGGEYkCS : 请输入正确的邮件地址
+mail.Write.qdtpyzmxmdyqsjlsxyzmBRIcSwlX : 取得图片验证码，下面调用其Click事件来刷新验证码
+    var statusFunc = function(){
+        if (status1.checked) {
+            jQuery(txtForward).removeAttr("disabled");
+            if(txtForward.value != Lang.Mail.ConfigJs.forward_lbl_onlyone){
+                jQuery(txtForward).attr("style","color: black;");
+            }else{
+                jQuery(txtForward).removeAttr("style");
+            }
+        }
+        else if(status0.checked) {
+            jQuery(txtForward).attr("disabled", "disabled");
+            //jQuery(txtForward).attr("style","color: black;");
+        }
+    };
+    statusFunc();
+    status0.onclick=function(){statusFunc();};
+    status1.onclick=function(){statusFunc();};
+    captcha.captcha();
+    txtForward.onclick = function(){        
+        if (this.value == Lang.Mail.ConfigJs.forward_lbl_onlyone) {
+            this.value = ;
+            if (this.createTextRange) {
+                var r = this.createTextRange();
+                r.moveStart(character, this.value.length);
+                r.collapse();
+                r.select();
+            }
+        }
+        jQuery(this).attr("style","color: black;");
+    };
+    txtForward.onblur = function(){        
+        if (this.value.trim() == ) {
+            this.value = Lang.Mail.ConfigJs.forward_lbl_onlyone;
+            jQuery(this).removeAttr("style");
+        }
+    };
+};
+autoForward.save = function(){
+    var p= this;
+    if(p.check()){
+        var data = p.getSaveData(p.attrs.data);
+        p.doServiceInXml(p.attrs.save.func, data, function(ao){
+            unbind_imgShow.click();
+            p.ok(Lang.Mail.ConfigJs.autoForwardSuc)
+        }, function(ao){
+            unbind_imgShow.click();
+            p.fail(Lang.Mail.ConfigJs.filter_saveFail,ao);
+        });
+        //p.ajaxRequest(p.attrs.save.func, data, function(ao){
+        //  p.ok(Lang.Mail.ConfigJs.autoForwardSuc)
+        //}, function(ao){
+        //  p.fail(Lang.Mail.ConfigJs.filter_saveFail,d);
+        //}, url);
+    }
+    
+};
+
+autoForward.checkUserNumber = function(mail){
+    //var mobileNumber = gMain.mobileNumber+"@"+domain;
+    var retVal = false;
+    for (var i = 0; i < aliasList.length; i++) {
+        if (aliasList[i].value == mail) {
+            retVal = true;
+            break;
+        }
+    }   
+    return retVal;
+};
+
+//autoForward.showTips = function(obj){
+//  var tip = new ToolTips({
+//         id: 
+mail.Write.tupianyanzhengmaVxQsgVOq : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikongkWqbxBgh : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangVHlLfYbg : 看不清，换一张
+mail.Write.qingshuruzhengquedeyoujiandizhiFoCUzAii : 请输入正确的邮件地址
+mail.Write.qdtpyzmxmdyqsjlsxyzmFDEyvZxC : 取得图片验证码，下面调用其Click事件来刷新验证码
+    var statusFunc = function(){
+        if (status1.checked) {
+            jQuery(txtForward).removeAttr("disabled");
+            if(txtForward.value != Lang.Mail.ConfigJs.forward_lbl_onlyone){
+                jQuery(txtForward).attr("style","color: black;");
+            }else{
+                jQuery(txtForward).removeAttr("style");
+            }
+        }
+        else if(status0.checked) {
+            jQuery(txtForward).attr("disabled", "disabled");
+            //jQuery(txtForward).attr("style","color: black;");
+        }
+    };
+    statusFunc();
+    status0.onclick=function(){statusFunc();};
+    status1.onclick=function(){statusFunc();};
+    captcha.captcha();
+    txtForward.onclick = function(){        
+        if (this.value == Lang.Mail.ConfigJs.forward_lbl_onlyone) {
+            this.value = ;
+            if (this.createTextRange) {
+                var r = this.createTextRange();
+                r.moveStart(character, this.value.length);
+                r.collapse();
+                r.select();
+            }
+        }
+        jQuery(this).attr("style","color: black;");
+    };
+    txtForward.onblur = function(){        
+        if (this.value.trim() == ) {
+            this.value = Lang.Mail.ConfigJs.forward_lbl_onlyone;
+            jQuery(this).removeAttr("style");
+        }
+    };
+};
+autoForward.save = function(){
+    var p= this;
+    if(p.check()){
+        var data = p.getSaveData(p.attrs.data);
+        p.doServiceInXml(p.attrs.save.func, data, function(ao){
+            unbind_imgShow.click();
+            p.ok(Lang.Mail.ConfigJs.autoForwardSuc)
+        }, function(ao){
+            unbind_imgShow.click();
+            p.fail(Lang.Mail.ConfigJs.filter_saveFail,ao);
+        });
+        //p.ajaxRequest(p.attrs.save.func, data, function(ao){
+        //  p.ok(Lang.Mail.ConfigJs.autoForwardSuc)
+        //}, function(ao){
+        //  p.fail(Lang.Mail.ConfigJs.filter_saveFail,d);
+        //}, url);
+    }
+    
+};
+
+autoForward.checkUserNumber = function(mail){
+    //var mobileNumber = gMain.mobileNumber+"@"+domain;
+    var retVal = false;
+    for (var i = 0; i < aliasList.length; i++) {
+        if (aliasList[i].value == mail) {
+            retVal = true;
+            break;
+        }
+    }   
+    return retVal;
+};
+
+//autoForward.showTips = function(obj){
+//  var tip = new ToolTips({
+//         id: default_id
+mail.Write.qingdianjihuoquyanzhengmaoDYFBEOj : 请点击获取验证码
+mail.Write.tupianyanzhengmaPbGNvCwj : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikongkLYCfqMm : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangwsuHACVM : 看不清，换一张
+mail.Write.qingdianjihuoquyanzhengmaGyCAAXpn : 请点击获取验证码
+mail.Write.tupianyanzhengmawEryhUAs : 图片验证码：
+mail.Write.kanbuqinghuanyizhangzWBGdZfB : 看不清，换一张
+mail.Write.tupianyanzhengmabunenweikonghrWokTHI : 图片验证码不能为空
+mail.Write.qingdianjihuoquyanzhengmaUtXqYIfj : 请点击获取验证码
+mail.Write.tupianyanzhengmaiYqYfPwM : 图片验证码：
+mail.Write.kanbuqinghuanyizhangiCnNSxRX : 看不清，换一张
+mail.Write.tupianyanzhengmabunenweikongPrWyvCyN : 图片验证码不能为空
+mail.Write.qingdianjihuoquyanzhengmanWgPHbWv : 请点击获取验证码
+mail.Write.tupianyanzhengmabunenweikongHhsUBfSx : 图片验证码不能为空
+mail.Write.tupianyanzhengmauRYMYres : 图片验证码：
+mail.Write.kanbuqinghuanyizhangwlhTQwzo : 看不清，换一张
+mail.Write.qingdianjihuoquyanzhengmaKHhwYYQk : 请点击获取验证码
+mail.Write.tupianyanzhengmadbVeSfKz : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikongXCCMWgtb : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangSxUloydo : 看不清，换一张
+mail.Write.qingdianjihuoquyanzhengmaTYyLbdKO : 请点击获取验证码
+mail.Write.tupianyanzhengmabunenweikongcfGkfuqv : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangjQWMdaig : 看不清，换一张
+mail.Write.tupianyanzhengmaHduGQuzw : 图片验证码：
+mail.Write.qingdianjihuoquyanzhengmaUkPwHDUN : 请点击获取验证码
+mail.Write.tupianyanzhengmaddzybNHq : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikongUiSMCVSy : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangjiGiUThH : 看不清，换一张
+mail.Write.qingdianjihuoquyanzhengmaGCtXpTKJ : 请点击获取验证码
+mail.Write.tupianyanzhengmaPIEuwtcA : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikongVNnuVkbu : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangBnGsyTeT : 看不清，换一张
+mail.Write.qingdianjihuoquyanzhengmaJOCkFfQq : 请点击获取验证码
+mail.Write.tupianyanzhengmatyIxImTW : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikongOeuNEIog : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangOTRmtZDz : 看不清，换一张
+mail.Write.qingdianjihuoquyanzhengmagkOfQwua : 请点击获取验证码
+mail.Write.tupianyanzhengmaxKDIQHDn : 图片验证码：
+mail.Write.kanbuqinghuanyizhangahYTnNBS : 看不清，换一张
+mail.Write.tupianyanzhengmabunenweikongnGrIzkWP : 图片验证码不能为空
+mail.Write.qingdianjihuoquyanzhengmaJNdBORxH : 请点击获取验证码
+mail.Write.tupianyanzhengmaSRgthWyF : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikongfXAVFfyM : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangFHlDFdqC : 看不清，换一张
+mail.Write.qingdianjihuoquyanzhengmaRHCVqInc : 请点击获取验证码
+mail.Write.tupianyanzhengmalCBmjYZY : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikongKgjNCRFJ : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangNYnNUaSz : 看不清，换一张
+mail.Write.qingdianjihuoquyanzhengmaEKUygslA : 请点击获取验证码
+mail.Write.tupianyanzhengmaBFYYRovK : 图片验证码：
+mail.Write.tupianyanzhengmabunenweikongVWobXeeZ : 图片验证码不能为空
+mail.Write.kanbuqinghuanyizhangHKdRoKKW : 看不清，换一张
