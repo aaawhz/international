@@ -334,9 +334,9 @@ CC.compose = function (to, text, obj, tid,senderUser) {
     if (text) {
         pm += "&msg=" + encodeURIComponent(text);
     }
-	if(senderUser){
-		pm +='&senderUser='+senderUser;
-	}
+    if(senderUser){
+        pm +='&senderUser='+senderUser;
+    }
     var url = CC.getComposeUrl(pm);
     var name = Lang.Mail.tab_Compose;
     var sid = -1;
@@ -572,15 +572,15 @@ CC.isSessionModeReadMail = function (fid) {
  * @param {String} name 主题
  * @param {Object} parm
  *  fid: 1
-	isSession: false
-	markRead: 1
-	rcptFlag: 5
-	sessionId: 2529
+    isSession: false
+    markRead: 1
+    rcptFlag: 5
+    sessionId: 2529
  * @param {Object} mi 邮件标志
  */
 CC.goReadMail = function (mid, name, parm, mi, closeTab) {
-	
-	//如果开启了安全邮箱
+    
+    //如果开启了安全邮箱
     if(CC.isSecurityMail()){
 
         /**gMain里定义
@@ -658,7 +658,7 @@ CC.goReadMail = function (mid, name, parm, mi, closeTab) {
             function suc(data){
                 if(data){
                     if(data["var"].result == 1){
-                        CC.showMsg("解密成功",true,false,"option");
+                        CC.showMsg(top.Lang.Mail.Write.jiemichenggong,true,false,"option");//解密成功
                         
                         var autopass = jQuery("#autopass", parent.document)[0].checked ? 1 : 0;
                         
@@ -685,10 +685,10 @@ CC.goReadMail = function (mid, name, parm, mi, closeTab) {
                         goRead(mid,name,parm,mi,closeTab,ibcpass,undefined);
      
                     } else if(data["var"].result == 0){
-                        ibcTip.show( jQuery("#ibcPwd", parent.document)[0], "密码错误,请重新输入" );
+                        ibcTip.show( jQuery("#ibcPwd", parent.document)[0], top.Lang.Mail.Write.mmcwqzxsrjhkgL );//密码错误,请重新输入
                         return;
                     }else{
-                        CC.showMsg("密码错误次数达到限制，请10分钟后重试",true,false,"error");
+                        CC.showMsg(top.Lang.Mail.Write.mmcwcbHuecfzhzs,true,false,"error");//密码错误次数达到限制，请10分钟后重试
                         return;
                     }
                     
@@ -703,7 +703,7 @@ CC.goReadMail = function (mid, name, parm, mi, closeTab) {
                     var read = flags.read;
                     var secureEncrypt = flags.secureEncrypt;
                     if(read == 1 && secureEncrypt == 1){
-                        parent.CC.showMsg("请到收信箱解密此封邮件之后再查看", true, false, 'caution');
+                        parent.CC.showMsg(top.Lang.Mail.Write.qdsxxpivqSzhzck, true, false, 'caution');//请到收信箱解密此封邮件之后再查看
                     }else if(read == 0){
                         CC.getSmailNoVerify(mid,smailNoVerifyCall);
                     }
@@ -714,23 +714,23 @@ CC.goReadMail = function (mid, name, parm, mi, closeTab) {
     }else{
         goRead(mid,name,parm,mi,closeTab);
     }
-	
-	//goRead(mid,name,parm,mi,closeTab);
-	
-	function goRead(mid,name,parm,mi,closeTab,ibcpass,smailNoVerify){
+    
+    //goRead(mid,name,parm,mi,closeTab);
+    
+    function goRead(mid,name,parm,mi,closeTab,ibcpass,smailNoVerify){
         //param.goto, 忽视缓存， 继续
-		if(GE.tab.curid=="readMail"+mid && !parm.ignoreCache){return;}
-		
+        if(GE.tab.curid=="readMail"+mid && !parm.ignoreCache){return;}
+        
         var type = gConst.readMail;
-    	    
-    	    
-    		parm = parm || {};
-    		isSession = parm.isSession || false;
-    		
-    	    if(!MM.inited){
+            
+            
+            parm = parm || {};
+            isSession = parm.isSession || false;
+            
+            if(!MM.inited){
             MM.initModule(type);
         }
-    	    
+            
         var co = "";
         var o = type + mid;
         var fid = parm.fid;
@@ -746,25 +746,25 @@ CC.goReadMail = function (mid, name, parm, mi, closeTab) {
             encoding: parm.encode || gConst.encode_utf8,
             mid: mid,
             fid: fid
-    	      
+              
         };
-	    
-	    //需要给读信页验证
-	    if(typeof ibcpass != "undefined"){
-	        data.smailPass = ibcpass;
-	    }
-	    
-	    //smailNoVerify, 安全邮件自动解密串
-	    if( typeof smailNoVerify !== 'undefined' ){
-	        data.smailNoVerify = smailNoVerify;
-	    }
-	    
-	    if( typeof gMain != "undefined" ){
-	    	if( gMain.ifibc == "1" ){
-	    		data.returnHeaders = parm.returnHeaders || [];
-	    	}
-	    }
-	    
+        
+        //需要给读信页验证
+        if(typeof ibcpass != "undefined"){
+            data.smailPass = ibcpass;
+        }
+        
+        //smailNoVerify, 安全邮件自动解密串
+        if( typeof smailNoVerify !== 'undefined' ){
+            data.smailNoVerify = smailNoVerify;
+        }
+        
+        if( typeof gMain != "undefined" ){
+            if( gMain.ifibc == "1" ){
+                data.returnHeaders = parm.returnHeaders || [];
+            }
+        }
+        
         var func = gConst.func.readMail;
         if (CC.isSessionModeReadMail(fid) && isSession) {
             data.sessionId = parm.sessionId;
@@ -774,16 +774,16 @@ CC.goReadMail = function (mid, name, parm, mi, closeTab) {
             func = gConst.func.readSessionMail;
         }
         if (!MM[o] || parm.ignoreCache ) {
-    	    	//得到该模块的方法
+                //得到该模块的方法
             var rm = MM[type];
-    	        
+                
             MM[o] = {};
-    	        
+                
             Object.extend(MM[o], rm);
-    	        
-    	        //这封邮件继承这些方法
+                
+                //这封邮件继承这些方法
             var cd = MM[o];
-    	        
+                
             cd.name = o;
             cd.data = data;
             cd.inited = true;
@@ -792,7 +792,7 @@ CC.goReadMail = function (mid, name, parm, mi, closeTab) {
             cd.func = func;
             cd.sessionId = data.sessionId;
             cd.rcptFlag = parm.rcptFlag || 5;
-    			
+                
             MM[o].closeTab = closeTab;
             MM.goTo(o, 'fid', 2, parm.fid);
             MM.goTo(o, "omid", 2, mid);
@@ -827,9 +827,9 @@ CC.goReadMail = function (mid, name, parm, mi, closeTab) {
     ////   MM.getModuleByAjax(o, null, "", false, co);
     //    CC.updateTitle(name);
     //}
-	}	
-	
-	
+    }   
+    
+    
 };
 CC.getCurLabId = function () {
     return GE.tab.curid;
@@ -868,7 +868,7 @@ CC.goOutLink = function (url, id, name) {
 
 CC.goBillmanager = function (o) {
     if (jQuery("#ifrm_outLink_billmanager").length == 0) {
-        CC.goOutLink(gMain.webPath + '/webtransit.do?sid=' + gMain.sid + '&func=mail:billmanager', "billmanager", "账单明细");
+        CC.goOutLink(gMain.webPath + '/webtransit.do?sid=' + gMain.sid + '&func=mail:billmanager', "billmanager", top.Lang.Mail.Write.zhangdanmingxi);//账单明细
         return false;
     } else {
         GE.tab.active("outLink_billmanager");
@@ -1230,16 +1230,16 @@ CC.searchMail = function (searchParam, isLoadNoReadMail) {
 
             // 如果是会议邀请
             if (ss.flags && ss.flags.meetingFlag) {
-                MM[name].text = "会议邀请";
+                MM[name].text = top.Lang.Mail.Write.huiyiyaoqing;//会议邀请
             }
             if (ss.flags && ss.flags.taskFlag) {
-                MM[name].text = "待办邮件";
+                MM[name].text = top.Lang.Mail.Write.daibanyoujian;//待办邮件
             }
             if (ss.flags && ss.flags.signed) {
-                MM[name].text = "敏感邮件";
+                MM[name].text = top.Lang.Mail.Write.minganyoujian;//敏感邮件
             }
             if (ss.flags && ss.flags.starFlag) {
-                MM[name].text = "星标邮件";
+                MM[name].text = top.Lang.Mail.Write.xingbiaoyoujian;//星标邮件
             }
             MM.createModule(name);
             if (CC.power.offSensMail() && !CC.getUserAttributeFromLocal("tipsSensOpen")) {
@@ -1433,7 +1433,7 @@ CC.closeAllTabs = function () {
     if(aChangedFrame.length==0){//没有未保存的直接跳转
         GE.tab.closeAll();
     }else if(aChangedFrame.length>0){
-        parent.CC.confirm('您还有未完成编辑操作，是否关闭？', function(){
+        parent.CC.confirm(top.Lang.Mail.Write.nhywwsAUkxzsfgb, function(){//您还有未完成编辑操作，是否关闭？
             GE.tab.closeAllForce();
         });
     }
@@ -1703,7 +1703,7 @@ CC.getMailContent = function (data) {
 
 CC.getMailTip = function (s) {
     var tip = s || "";
-    tip = tip.replace(/\"/g, "\\\"");
+    tip = tip.replace(/\"/g, "\\\");
     return tip;
 };
 
@@ -2043,7 +2043,7 @@ CC.showExtMailSelect = function (obj) {
  * @param {object} o 包括两个数组，第一部分mails: 包含邮件对象的数据，第二部分sessionMails：包含
  * 会话邮件对象的数据。callback: 举报完成时的回调函数。数据格式统一如下：
  * {
- * 	  email: 'zhangsan@richinfo.com', //邮件地址
+ *    email: 'zhangsan@richinfo.com', //邮件地址
  *    mid: '008521f245224503001', //邮件id
  *    userName: '张三' //邮件发起人姓名/账号
  * }
@@ -2686,7 +2686,7 @@ JSForFlashUpload = {
                 errorMsg = Lang.Mail.importLimit;//'对不起，导入的邮件大小超出限制';
                 break;
             default:
-                errorMsg = "文件导入失败";
+                errorMsg = top.Lang.Mail.Write.wjdrsbMdnmg;//文件导入失败
                 break;
         }
         CC.alert(errorMsg);
@@ -3045,10 +3045,10 @@ CC.isOA = function () {
  * 判断是否有云网盘
  */
 CC.isDisk = function () {
-//	if(window.gMain && gMain.urlCloudp){
-//		return true;
-//	}
-//	return false;
+//  if(window.gMain && gMain.urlCloudp){
+//      return true;
+//  }
+//  return false;
     return GC.check("DISK");
 };
 /**
@@ -3118,7 +3118,7 @@ CC.gotoSMS = function (defaultNumber) {
     var smsUrl = '{0}/se/sms/smsindex.do?sid={1}&to={2}';
     smsUrl = smsUrl.format(gMain.webPath, gMain.sid, defaultNumber);
 
-    CC.goOutLink(smsUrl, 'sms', '短信');
+    CC.goOutLink(smsUrl, 'sms', top.Lang.Mail.Write.duanxin);//短信
 };
 
 /**
@@ -3356,7 +3356,7 @@ CC.checkNetwork = function (_tipFlag) {
     }
 
     if (!online && flag) {
-        CC.showMsg("网络断开，请检查网络连接.", true, false, 'caution');
+        CC.showMsg(top.Lang.Mail.Write.wldkqGMttpcwllj, true, false, 'caution');//网络断开，请检查网络连接.
     }
     return online;
 };
@@ -3393,7 +3393,7 @@ CC.power.offWorkOrder = function () {
 CC.setAllRead = function (o) {
     var p1 = MM[o];
     p1.isAll = true;
-    p1.mark("", "read", 0, "已读");
+    p1.mark("", "read", 0, top.Lang.Mail.Write.yidu);//已读
     p1.isAll = false;
 };
 
@@ -3444,9 +3444,9 @@ CC.zoomTip = function ($, doc) {
             html += "<a id=\"btnZoomTip\"  href=\"javascript:;\" class=\"clsbtn\"></a>";
             html += "<i class=\"i-oarm ml_5 mr_5 vm\"></i>";
             html += "<span>";
-            html += "您的浏览器目前处于缩放状态，会导致邮箱显示不正常，您可以键盘按\"ctrl+数字键0\"组合键恢复初始状态。";
+            html += top.Lang.Mail.Write.ndllqnDDgNfcszt;//您的浏览器目前处于缩放状态，会导致邮箱显示不正常，您可以键盘按\"ctrl+数字键0\"组合键恢复初始状态。
             html += "</span>";
-            html += "<a class=\"dtno\" href=\"javascript:;\" id=\"btnOffZoomTip\" title=\"不再提示\">不再提示</a>";
+            html += "<a class=\"dtno\" href=\"javascript:;\" id=\"btnOffZoomTip\" title='"+top.Lang.Mail.Write.buzaitishi+"'>"+top.Lang.Mail.Write.buzaitishi+"</a>";//<a class=\"dtno\" href=\"javascript:;\" id=\"btnOffZoomTip\" title=\"不再提示\">不再提示</a>
             html += "</div>";
             $(html).insertBefore($(".top-navbar"));
 
@@ -3481,180 +3481,180 @@ CC.zoomTip = function ($, doc) {
  * 弹出修改IBC密码的框
  */
 CC.showModIBCdiv = function( suc, fnfail, isfirst ){
-	var $ = jQuery;
- 	var call = function( data ){
- 			
-		if( data ){
-			var newPwd = $("#ibcNewPwd", parent.document),
-				oldPwd = $("#ibcOldPwd", parent.document),
-				confirmPwd = $("#ibcConfirmPwd", parent.document);
-		
-			if(data.errorCode == '20022'){
-				oldTip.show( oldPwd[0], "原密码错误, 请重新输入");
-				 
-			}else if(data.errorCode == '20080'){
-			    newTip.show( oldPwd[0], "新密码格式错误, 请重新输入");
-			}else if(data.errorCode == "1"){
+    var $ = jQuery;
+    var call = function( data ){
+            
+        if( data ){
+            var newPwd = $("#ibcNewPwd", parent.document),
+                oldPwd = $("#ibcOldPwd", parent.document),
+                confirmPwd = $("#ibcConfirmPwd", parent.document);
+        
+            if(data.errorCode == '20022'){
+                oldTip.show( oldPwd[0], top.Lang.Mail.Write.ymmcwqzxsrBcmTX);//原密码错误, 请重新输入
+                 
+            }else if(data.errorCode == '20080'){
+                newTip.show( oldPwd[0], top.Lang.Mail.Write.xmmgsylwsLqzxsr);//新密码格式错误, 请重新输入
+            }else if(data.errorCode == "1"){
                 var ibcPwd = confirmPwd.val().trim();
-				$("#divDialogCloseconfirm", parent.document).click();
-				
-	 			CC.showMsg("修改密码成功",true, false, "option");
-	 			
-	 			if( typeof gMain != "undefiend"  && typeof gMain.userAttrs != "undefined"){
-	 				gMain.userAttrs.firstuseibc = "1";
-	 				
-	 				//只要修改过密码, 下次还需要解密( 不管以前是否自动解密过 );
-	 				gMain.userAttrs.modifyibcpwd = "0";
-	 				gMain.userAttrs.autosign = "0";
-	 				
-	 			}
-	 			
-	 			suc && suc(ibcPwd);
-	 			
-	 			
-			}else if(data.summary != "" ){
-			    CC.showMsg(data.summary, true, false, "error");
-			}else{
-			    CC.showMsg("修改密码失败", true, false, "error");
-			}
-			
-		} 			
- 	},
-	fnfail = fnfail || function(){
-		CC.showMsg("修改密码失败", true, false, "error");
-	};
+                $("#divDialogCloseconfirm", parent.document).click();
+                
+                CC.showMsg(top.Lang.Mail.Write.xgmmcgHzcJo,true, false, "option");//修改密码成功
+                
+                if( typeof gMain != "undefiend"  && typeof gMain.userAttrs != "undefined"){
+                    gMain.userAttrs.firstuseibc = "1";
+                    
+                    //只要修改过密码, 下次还需要解密( 不管以前是否自动解密过 );
+                    gMain.userAttrs.modifyibcpwd = "0";
+                    gMain.userAttrs.autosign = "0";
+                    
+                }
+                
+                suc && suc(ibcPwd);
+                
+                
+            }else if(data.summary != "" ){
+                CC.showMsg(data.summary, true, false, "error");
+            }else{
+                CC.showMsg(top.Lang.Mail.Write.xgmmsbIUorO, true, false, "error");//修改密码失败
+            }
+            
+        }           
+    },
+    fnfail = fnfail || function(){
+        CC.showMsg(top.Lang.Mail.Write.xgmmsbhQiza, true, false, "error");//修改密码失败
+    };
  
-	
-	var newTip = new parent.ToolTips({
-						id: '',
-						win: window,
-						left: 117,
-						top: 86,
-						direction: parent.ToolTips.direction.Up
-					});	
-	
-	var oldTip = new parent.ToolTips({
-						id: '',
-						win: window,
-						left: 116,
-						top: 48,
-						direction: parent.ToolTips.direction.Up
-					});	
-					
-	var confirmTip = new parent.ToolTips({
-						id: '',
-						win: window,
-						left: 126,
-						top: 186,
-						direction: parent.ToolTips.direction.Bottom
-					});	
-	
-	var txttip = "你的帐号的私钥密码为初始密码,为保障安全,请修改";
-	
-	if(!isfirst){
-		txttip = "为了保障安全，请修改私钥密码";
-	}
-					
-	//修改密码的html
-	var modHtml = 	  "<div style='padding:0 0 35px 25px' id='ibcWrap'>"
-					+ "<p style='padding:0px 0 10px 0; color:gray'>"+ txttip +"</p>"
-					+ "<ul><li style='padding:5px'><span style='display: inline-block;text-align: right;width: 85px;'>原密码：</span><input class='rm_txt' style='width:180px; height:20px' maxlength='64' type='password' autoComplete='false' id='ibcOldPwd'/></li>"
-					+ "<li style='padding:5px'><span style='display: inline-block;text-align: right;width: 85px;'>新密码：</span><input class='rm_txt' style='width:180px; height:20px'  maxlength='64' type='password' autoComplete='false' id='ibcNewPwd'/></li>"
-					+ "<li style='padding:5px'><span style='display: inline-block;text-align: right;width: 85px;'>确认密码：</span><input class='rm_txt' style='width:180px; height:20px'  maxlength='64' type='password' autoComplete='false' id='ibcConfirmPwd'/></li>"
-					+ "</ul></div>";
-	
-	
-	CC.showDiv( modHtml, function(){
-					return true;
-			}, "私钥密码修改", "", "" );
-	
-	$("#ibcOldPwd", parent.document ).focus();
-	
-	//绑定确定, 取消事件
- 	bindEventModIbc();
-	 
-				
+    
+    var newTip = new parent.ToolTips({
+                        id: '',
+                        win: window,
+                        left: 117,
+                        top: 86,
+                        direction: parent.ToolTips.direction.Up
+                    }); 
+    
+    var oldTip = new parent.ToolTips({
+                        id: '',
+                        win: window,
+                        left: 116,
+                        top: 48,
+                        direction: parent.ToolTips.direction.Up
+                    }); 
+                    
+    var confirmTip = new parent.ToolTips({
+                        id: '',
+                        win: window,
+                        left: 126,
+                        top: 186,
+                        direction: parent.ToolTips.direction.Bottom
+                    }); 
+    
+    var txttip = top.Lang.Mail.Write.ndzhdORdwLaqqxg;//你的帐号的私钥密码为初始密码,为保障安全,请修改
+    
+    if(!isfirst){
+        txttip = top.Lang.Mail.Write.wlbzarSzwcgsymm;//为了保障安全，请修改私钥密码
+    }
+                    
+    //修改密码的html
+    var modHtml =     "<div style='padding:0 0 35px 25px' id='ibcWrap'>"
+                    + "<p style='padding:0px 0 10px 0; color:gray'>"+ txttip +"</p>"
+                    + "<ul><li style='padding:5px'><span style='display: inline-block;text-align: right;width: 85px;'>"+top.Lang.Mail.Write.yuanmima+"</span><input class='rm_txt' style='width:180px; height:20px' maxlength='64' type='password' autoComplete='false' id='ibcOldPwd'/></li>"
+                    + "<li style='padding:5px'><span style='display: inline-block;text-align: right;width: 85px;'>"+top.Lang.Mail.Write.xinmima+"</span><input class='rm_txt' style='width:180px; height:20px'  maxlength='64' type='password' autoComplete='false' id='ibcNewPwd'/></li>"
+                    + "<li style='padding:5px'><span style='display: inline-block;text-align: right;width: 85px;'>"+top.Lang.Mail.Write.querenmima+"</span><input class='rm_txt' style='width:180px; height:20px'  maxlength='64' type='password' autoComplete='false' id='ibcConfirmPwd'/></li>"
+                    + "</ul></div>";//<ul><li style='padding:5px'><span style='display: inline-block;text-align: right;width: 85px;'>原密码：</span><input class='rm_txt' style='width:180px; height:20px' maxlength='64' type='password' autoComplete='false' id='ibcOldPwd'/></li>  ||  <li style='padding:5px'><span style='display: inline-block;text-align: right;width: 85px;'>新密码：</span><input class='rm_txt' style='width:180px; height:20px'  maxlength='64' type='password' autoComplete='false' id='ibcNewPwd'/></li>  ||  <li style='padding:5px'><span style='display: inline-block;text-align: right;width: 85px;'>确认密码：</span><input class='rm_txt' style='width:180px; height:20px'  maxlength='64' type='password' autoComplete='false' id='ibcConfirmPwd'/></li>
+    
+    
+    CC.showDiv( modHtml, function(){
+                    return true;
+            }, top.Lang.Mail.Write.symmxgRVrMc, "", "" );//私钥密码修改
+    
+    $("#ibcOldPwd", parent.document ).focus();
+    
+    //绑定确定, 取消事件
+    bindEventModIbc();
+     
+                
  
-	//绑定修改ibc事件
-	function bindEventModIbc(){
-		//newTip oldTip confirmTip ibcNewPwd ibcOldPwd ibcConfirmPwd
-		var newPwd = $("#ibcNewPwd", parent.document),
-			oldPwd = $("#ibcOldPwd", parent.document),
-			confirmPwd = $("#ibcConfirmPwd", parent.document);
-		
-		
-		//绑定确认按钮弹出框
-		$("#divDialogCloseconfirmbtn_0", parent.document).unbind().bind("click", function(){
-			if( checkModInput() ){
-				ajaxModIbcPwd();
-			}else{
-				return true;
-			}
-		});
-		
-		$("#ibcConfirmPwd", parent.document).unbind().bind("keyup", function(e){
-			if( e.keyCode == 13){
-				if( checkModInput() ){
-					ajaxModIbcPwd();
-				}
-			}
-		});
-	
-		function checkModInput(){
-			if( oldPwd.val().trim() === "" ){
-				oldTip.show( oldPwd[0], "旧密码不能为空");
-				return false;
-			}else if(oldPwd.val().trim().length < 6 || oldPwd.val().trim().length > 64){
-			    oldTip.show( oldPwd[0], "密码长度需6-64位");
+    //绑定修改ibc事件
+    function bindEventModIbc(){
+        //newTip oldTip confirmTip ibcNewPwd ibcOldPwd ibcConfirmPwd
+        var newPwd = $("#ibcNewPwd", parent.document),
+            oldPwd = $("#ibcOldPwd", parent.document),
+            confirmPwd = $("#ibcConfirmPwd", parent.document);
+        
+        
+        //绑定确认按钮弹出框
+        $("#divDialogCloseconfirmbtn_0", parent.document).unbind().bind("click", function(){
+            if( checkModInput() ){
+                ajaxModIbcPwd();
+            }else{
+                return true;
+            }
+        });
+        
+        $("#ibcConfirmPwd", parent.document).unbind().bind("keyup", function(e){
+            if( e.keyCode == 13){
+                if( checkModInput() ){
+                    ajaxModIbcPwd();
+                }
+            }
+        });
+    
+        function checkModInput(){
+            if( oldPwd.val().trim() === "" ){
+                oldTip.show( oldPwd[0], top.Lang.Mail.Write.jmmbnwkRmfAM);//旧密码不能为空
                 return false;
-			}
-			
-			if( newPwd.val().trim() === "" ){
-				newTip.show( newPwd[0], "新密码不能为空");
-				return false;
-			}else if( newPwd.val().trim().length < 6 ||  newPwd.val().trim().length > 64 ){
-			    newTip.show( newPwd[0], "密码长度需6-64位");
+            }else if(oldPwd.val().trim().length < 6 || oldPwd.val().trim().length > 64){
+                oldTip.show( oldPwd[0], top.Lang.Mail.Write.mmcdxwrOfxt);//密码长度需6-64位
                 return false;
-			}
-			
-			if( confirmPwd.val().trim() === "" ){
-				confirmTip.show( confirmPwd[0], "确认密码不能为空");
-				return false;
-			}else if(confirmPwd.val().trim().length < 6 || confirmPwd.val().trim().length > 64){
-			    confirmTip.show( confirmPwd[0], "密码长度需6-64位");
+            }
+            
+            if( newPwd.val().trim() === "" ){
+                newTip.show( newPwd[0], top.Lang.Mail.Write.xmmbnwknULBW);//新密码不能为空
                 return false;
-			}
-			
+            }else if( newPwd.val().trim().length < 6 ||  newPwd.val().trim().length > 64 ){
+                newTip.show( newPwd[0], top.Lang.Mail.Write.mmcdxwGcQyY);//密码长度需6-64位
+                return false;
+            }
+            
+            if( confirmPwd.val().trim() === "" ){
+                confirmTip.show( confirmPwd[0], top.Lang.Mail.Write.qrmmbnwkfkzCT);//确认密码不能为空
+                return false;
+            }else if(confirmPwd.val().trim().length < 6 || confirmPwd.val().trim().length > 64){
+                confirmTip.show( confirmPwd[0], top.Lang.Mail.Write.mmcdxwXJnBP);//密码长度需6-64位
+                return false;
+            }
+            
 
-			if( newPwd.val().trim() !== confirmPwd.val().trim() ){
-				 
-				confirmTip.show( confirmPwd[0], "两次密码不一致，请重新输入");
-				return false;
-			
-			}
-			
-			return true;
-		}
-	}
-	
-	
-	function ajaxModIbcPwd(){
-		var webpath = ( parent.gMain ? (parent.gMain.webPath || "") : "" );
-		
-		parent.MM.doService({
-			func:"mail:SoapModifyMemberPwd",
-			absUrl: webpath + "/service/mail/ibcsoap",
-			data: {
-				newpwd: $("#ibcNewPwd", parent.document).val().trim(),
-				oldpwd: $("#ibcOldPwd", parent.document).val().trim()
-			},
-			call: call,
-			failCall: fnfail
-		});
+            if( newPwd.val().trim() !== confirmPwd.val().trim() ){
+                 
+                confirmTip.show( confirmPwd[0], top.Lang.Mail.Write.lcmmbMbHKEqzxsr);//两次密码不一致，请重新输入
+                return false;
+            
+            }
+            
+            return true;
+        }
+    }
+    
+    
+    function ajaxModIbcPwd(){
+        var webpath = ( parent.gMain ? (parent.gMain.webPath || "") : "" );
+        
+        parent.MM.doService({
+            func:"mail:SoapModifyMemberPwd",
+            absUrl: webpath + "/service/mail/ibcsoap",
+            data: {
+                newpwd: $("#ibcNewPwd", parent.document).val().trim(),
+                oldpwd: $("#ibcOldPwd", parent.document).val().trim()
+            },
+            call: call,
+            failCall: fnfail
+        });
 
-	}
-	
-		
+    }
+    
+        
 
 };
 
@@ -3662,97 +3662,97 @@ CC.showModIBCdiv = function( suc, fnfail, isfirst ){
  * IBC解密输入框 
  */
 CC.showUndoIBCdiv = function(suc, fnfail, ibcTip){
-	var $ = jQuery;
-	var autopass = 0;
- 	var call = suc || function(){
- 			$("#divDialogCloseconfirm", parent.document).click();
- 			CC.showMsg("解密成功",true, false, "option");
- 			
- 			//说明已经自动解密
- 			if( autopass && typeof gMain != "undefined" && typeof gMain.userAttrs != "undefined" ){
- 				gMain.userAttrs.modifyibcpwd = "1";
- 			}	
- 			
- 			
- 		},
- 		fnfail = fnfail || function(){
- 			CC.showMsg("解密失败", true, false, "error");
- 		};
- 	
- 	
- 	var outoPass = "<p style='margin-top:30px'><span><input type='checkbox' id='autopass'/><label for='autopass' style='color:gray'>以后自动验证</label></span></p>";
- 	var modA = "<a id='modIbc' href='###' style='margin-right:143px; padding-left:10px; color:#blue;'>私钥密码修改</a>";
- 	
- 	var ibcHtml = "<div style='padding:20px 0 5px 10px' id='ibcWrap'>"
- 	                  +"<p style='color:gray; margin-bottom:15px;'>此邮件为数字加密邮件，需要输入你的私钥密码进行解密邮件。</p>"
-						+ "<span style='padding-left:36px'>密 码：</span><input class='rm_txt' style='width:180px; height:20px' type='password'maxlength='64' autoComplete='false' id='ibcPwd'/>"
-						+ outoPass
-						+ "</div>";
-	
+    var $ = jQuery;
+    var autopass = 0;
+    var call = suc || function(){
+            $("#divDialogCloseconfirm", parent.document).click();
+            CC.showMsg(top.Lang.Mail.Write.jiemichenggong,true, false, "option");//解密成功
+            
+            //说明已经自动解密
+            if( autopass && typeof gMain != "undefined" && typeof gMain.userAttrs != "undefined" ){
+                gMain.userAttrs.modifyibcpwd = "1";
+            }   
+            
+            
+        },
+        fnfail = fnfail || function(){
+            CC.showMsg(top.Lang.Mail.Write.jiemishibai, true, false, "error");//解密失败
+        };
+    
+    
+    var outoPass = "<p style='margin-top:30px'><span><input type='checkbox' id='autopass'/><label for='autopass' style='color:gray'>"+top.Lang.Mail.Write.yhzdyzUjPDU+"</label></span></p>";//<p style='margin-top:30px'><span><input type='checkbox' id='autopass'/><label for='autopass' style='color:gray'>以后自动验证</label></span></p>
+    var modA = "<a id='modIbc' href='###' style='margin-right:143px; padding-left:10px; color:#blue;'>"+top.Lang.Mail.Write.symmxgbYXgm+"</a>";//<a id='modIbc' href='###' style='margin-right:143px; padding-left:10px; color:#blue;'>私钥密码修改</a>
+    
+    var ibcHtml = "<div style='padding:20px 0 5px 10px' id='ibcWrap'>"
+                      +"<p style='color:gray; margin-bottom:15px;'>"+top.Lang.Mail.Write.cyjwsMjSYfxjmyj+"</p>"
+                        + "<span style='padding-left:36px'>"+top.Lang.Mail.Write.mima+"</span><input class='rm_txt' style='width:180px; height:20px' type='password'maxlength='64' autoComplete='false' id='ibcPwd'/>"
+                        + outoPass//<p style='color:gray; margin-bottom:15px;'>此邮件为数字加密邮件，需要输入你的私钥密码进行解密邮件。</p>  ||  <span style='padding-left:36px'>密 码：</span><input class='rm_txt' style='width:180px; height:20px' type='password'maxlength='64' autoComplete='false' id='ibcPwd'/>
+                        + "</div>";
+    
 
-	var ibcTip = ibcTip || new parent.ToolTips({
-						id: '',
-						win: window,
-						left: 85,
-						top: 75,
-						direction: parent.ToolTips.direction.Bottom
-					});	
-	
-	
-	
-	CC.showDiv( ibcHtml, function(){
-				return true;
-		}, "私钥密码验证", "", "" );
-	
-	$("#ibcPwd", parent.document ).focus();
-	
-	$("#divDialogCloseconfirmbtn_0").before( modA );
-
-	$("#modIbc").bind("click",function(){
-		CC.showModIBCdiv();
-	});
-	
-	$("#divDialogCloseconfirmbtn_0").bind("click", checkInput);
-	
-	$("#ibcPwd", parent.document).unbind().bind("keyup", function(e){
-		if( e.keyCode == 13){
-			checkInput();
-		}
-	});
-	
-	function checkInput(){
-			if( $("#ibcPwd", parent.document).val().trim() === "" ){
-				ibcTip.show( $("#ibcPwd", parent.document)[0], "密码不能为空" );
-				return true;
-			}else if($("#ibcPwd", parent.document).val().trim().length < 6 || $("#ibcPwd", parent.document).val().trim().length > 30){
-			   
-			    ibcTip.show( $("#ibcPwd", parent.document)[0], "密码长度需6-64位" );
+    var ibcTip = ibcTip || new parent.ToolTips({
+                        id: '',
+                        win: window,
+                        left: 85,
+                        top: 75,
+                        direction: parent.ToolTips.direction.Bottom
+                    }); 
+    
+    
+    
+    CC.showDiv( ibcHtml, function(){
                 return true;
-			}else{
-			    autopass = $("#autopass", parent.document)[0].checked ? 1 : 0;
-				ajaxCheck();
-				return false;
-			}
-		}	
+        }, top.Lang.Mail.Write.symmyzqJttT, "", "" );//私钥密码验证
+    
+    $("#ibcPwd", parent.document ).focus();
+    
+    $("#divDialogCloseconfirmbtn_0").before( modA );
 
-	function ajaxCheck(){
-		var webpath = ( parent.gMain ? (parent.gMain.webPath || "") : "" );
-		
-		 parent.MM.doService({
-		 	func:  "mail:SoapVerifyIbcPwd",
+    $("#modIbc").bind("click",function(){
+        CC.showModIBCdiv();
+    });
+    
+    $("#divDialogCloseconfirmbtn_0").bind("click", checkInput);
+    
+    $("#ibcPwd", parent.document).unbind().bind("keyup", function(e){
+        if( e.keyCode == 13){
+            checkInput();
+        }
+    });
+    
+    function checkInput(){
+            if( $("#ibcPwd", parent.document).val().trim() === "" ){
+                ibcTip.show( $("#ibcPwd", parent.document)[0], top.Lang.Mail.Write.mmbnwkWGrYN );//密码不能为空
+                return true;
+            }else if($("#ibcPwd", parent.document).val().trim().length < 6 || $("#ibcPwd", parent.document).val().trim().length > 30){
+               
+                ibcTip.show( $("#ibcPwd", parent.document)[0], top.Lang.Mail.Write.mmcdxweCjTV );//密码长度需6-64位
+                return true;
+            }else{
+                autopass = $("#autopass", parent.document)[0].checked ? 1 : 0;
+                ajaxCheck();
+                return false;
+            }
+        }   
+
+    function ajaxCheck(){
+        var webpath = ( parent.gMain ? (parent.gMain.webPath || "") : "" );
+        
+         parent.MM.doService({
+            func:  "mail:SoapVerifyIbcPwd",
             absUrl:  webpath +  '/service/mail/ibcsoap',
             data: {
-            	oldpwd:  $("#ibcPwd", parent.document).val().trim(),
-            	autodec: autopass
+                oldpwd:  $("#ibcPwd", parent.document).val().trim(),
+                autodec: autopass
             },
     
             call: call,
             failCall: fnfail
         });
 
-	}
+    }
 
- 		
+        
 };
 
 /**

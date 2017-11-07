@@ -610,8 +610,8 @@
                  icoTitle = Lang.Mail.label_NewLabel;
                  break;
                  case -6 :
-                 icoTitle ="添加代收邮箱";
-                 break;	
+                 icoTitle =top.Lang.Mail.Write.tjdsyxssrbc;//添加代收邮箱
+                 break; 
              }
              a.title = icoTitle;
              a.style.right = "22px";
@@ -643,7 +643,7 @@
                     cls += ' ' + actionClass;
                 }
                 a.className = cls;
-                a.title = (flag==-6?"管理代收邮箱":Lang.Mail.folder_AdminFolder);
+                a.title = (flag==-6?top.Lang.Mail.Write.gldsyxVbKui:Lang.Mail.folder_AdminFolder);//管理代收邮箱
                 a.href = "javascript:fGoto();";
                 a.innerHTML = html;
                 if (url) {
@@ -719,7 +719,7 @@
                     initFolderMain({
                         fid: 7,
                         type: 1,
-                        name: "已彻底删除 ",
+                        name: top.Lang.Mail.Write.yichedishanchu,//已彻底删除 
                         stats: {
                             attachmentNum: 0,
                             messageCount: 0,
@@ -859,7 +859,7 @@
                     CC.addFolderItem(ao["var"], {
                         "fid": 9999999,
                         "location": 31800,
-                        "name": "会议邀请",
+                        "name": top.Lang.Mail.Write.huiyiyaoqing,//会议邀请
                         "type": 5,
                         "flag": {"meeting": 1}
                     });
@@ -885,7 +885,7 @@
                     CC.addFolderItem(ao["var"], {
                         "fid": 9999997,
                         "location": 31800,
-                        "name": "敏感邮件",
+                        "name": top.Lang.Mail.Write.minganyoujian,//敏感邮件
                         "type": 5,
                         "flag": {"signed": 1}
                     });
@@ -898,7 +898,7 @@
                     CC.addFolderItem(ao["var"], {
                         "fid": 9999996,
                         "location": 31800,
-                        "name": "星标邮件",
+                        "name": top.Lang.Mail.Write.xingbiaoyoujian,//星标邮件
                         "type": 5,
                         "flag": {"starFlag": 1}
                     });
@@ -1100,13 +1100,13 @@
             //mms : CC.goMms,
             //fax : CC.goFax,
             //calendar : function() {
-            //	MM.goOutLink(GC.getCookie("MMSServer") + "/CMailCal/WebMailCalendar/SSO.aspx?id=1&sid=" + GC.sid, "outLink_Calendar");
+            //  MM.goOutLink(GC.getCookie("MMSServer") + "/CMailCal/WebMailCalendar/SSO.aspx?id=1&sid=" + GC.sid, "outLink_Calendar");
             //},
             //disk : function() {
-            //	MM.goOutLink(GC.getCookie("DiskServer") + "/sso.aspx?id=1&sid=" + GC.sid, "outLink_Disk");
+            //  MM.goOutLink(GC.getCookie("DiskServer") + "/sso.aspx?id=1&sid=" + GC.sid, "outLink_Disk");
             //},
             //epdisk : function() {
-            //	MM.goOutLink(GC.getCookie("DiskServer") + "/sso.aspx?id=2&sid=" + GC.sid, "outLink_EpDisk");
+            //  MM.goOutLink(GC.getCookie("DiskServer") + "/sso.aspx?id=2&sid=" + GC.sid, "outLink_EpDisk");
             //}
         };
         var ma = [];
@@ -1157,7 +1157,7 @@
                     GE.evts = {};
                 }
                 if (!GE.evts.mt) {
-                    mt = new MarqueeTitle('收到 {0} 封新邮件！'.format(newMailCount));
+                    mt = new MarqueeTitle(top.Lang.Mail.Write.sdfxyjXbVnS.format(newMailCount));//收到 {0} 封新邮件！
                     mt.speed = 500;
                     mt.run();
                     GE.evts.mt = mt;
@@ -1385,13 +1385,13 @@
             }
         }
 
-        var htmlcontent = '<p style="padding-bottom:5px; font-size:14px;">想要收到新邮件通知，及时查阅回复邮件吗？</p>'+
-                          '<p style="padding-bottom:5px; font-size:14px;">想要免费发起多人电话会议吗？</p>' +
-                          '<p style="padding-bottom:5px; font-size:14px;">赶紧进绑定手机号码吧~</p>'
- 
+        var htmlcontent = '<p style="padding-bottom:5px; font-size:14px;">'+top.Lang.Mail.Write.xysdxLoMRshfyjm+'</p>'+//<p style="padding-bottom:5px; font-size:14px;">想要收到新邮件通知，及时查阅回复邮件吗？</p>
+                          '<p style="padding-bottom:5px; font-size:14px;">'+top.Lang.Mail.Write.xymffQczbYdhhym+'</p>' +//<p style="padding-bottom:5px; font-size:14px;">想要免费发起多人电话会议吗？</p>
+                          '<p style="padding-bottom:5px; font-size:14px;">'+top.Lang.Mail.Write.gjjbdsjhmbcCGGn+'</p>'
+ //<p style="padding-bottom:5px; font-size:14px;">赶紧进绑定手机号码吧~</p>
         CC.alert(htmlcontent,wo );//Lang.Mail.ConfigJs.phoneBindTip"您还没有绑定手机号码，请进入设置-账号与安全中绑定您的手机号码。"
         if(url){
-            jQuery("#divDialogClosealertbtn_0").find("span").find("span").html("立即绑定");
+            jQuery("#divDialogClosealertbtn_0").find("span").find("span").html(top.Lang.Mail.Write.lijibangding);//立即绑定
         }
     },
     /***
@@ -1598,22 +1598,22 @@ function closeAllConfirm(callback){
     if(aChangedFrame.length==0){//没有未保存的直接跳转
         callback()
     }else if(aChangedFrame.length>1){
-        parent.CC.confirm('您还有未完成编辑操作，是否要立即跳转？', callback);
+        parent.CC.confirm(top.Lang.Mail.Write.nhywwImwgkyljtz, callback);//您还有未完成编辑操作，是否要立即跳转？
     }else if(aChangedFrame.length==1){
         switch(aChangedFrame[0].type){
             case 'mail':
-            parent.CC.confirm('关闭写信页，未保存的内容将会丢失，是否关闭？', callback);
+            parent.CC.confirm(top.Lang.Mail.Write.gbxxyqCLekssfgb, callback);//关闭写信页，未保存的内容将会丢失，是否关闭？
                     //aChangedFrame[0].window.oWrite.doMailInfo(true,callback)
 
                     break;
                     case 'meeting':
-                    parent.CC.confirm('现在离开已编辑的会议邀请内容将会丢失，是否确认关闭？', callback);
+                    parent.CC.confirm(top.Lang.Mail.Write.xzlkyUcPJQfqrgb, callback);//现在离开已编辑的会议邀请内容将会丢失，是否确认关闭？
                     break;
                     case 'sms':
-                    parent.CC.confirm('现在离开已编辑的短信内容将会丢失，是否确认关闭？', callback);
+                    parent.CC.confirm(top.Lang.Mail.Write.xzlkySqjWmfqrgb, callback);//现在离开已编辑的短信内容将会丢失，是否确认关闭？
                     break;
                     case 'mms':
-                    parent.CC.confirm('现在离开已编辑的彩信内容将会丢失，是否确认关闭？', callback);
+                    parent.CC.confirm(top.Lang.Mail.Write.xzlkyIyVgdfqrgb, callback);//现在离开已编辑的彩信内容将会丢失，是否确认关闭？
                     break;
                 }
             }
@@ -1653,7 +1653,7 @@ jQuery(function () {
     jQuery(window).bind('beforeunload', function (e) {
         var aChangedFrame = getChangedFrames();
         if (beforeunloadConfirm && (aChangedFrame.length > 0)) {
-            return "--------------------------------------------------\n提示：未保存的内容将会丢失。\n--------------------------------------------------";
+            return top.Lang.Mail.Write.tswbctYKyjrjhds;//--------------------------------------------------\n提示：未保存的内容将会丢失。\n--------------------------------------------------
         }
     });
 })

@@ -3,7 +3,7 @@
  * @author Dream
  */
 function Weather(){
-	this.name = gConst.weather;
+    this.name = gConst.weather;
     this.imgUrl = GC.frmPath;
     this.url = GC.apiServer + "/WebService/GetWeatherDetail.aspx";
     this.userNumber = gMain.userNumber;
@@ -11,7 +11,7 @@ function Weather(){
 
 Weather.prototype = {
     init: function(){
-		var p = this;
+        var p = this;
         this.weatherDiv = $("homeWeatherDiv");
         this.weatherDetailDiv = $("homeCityDiv");
         if (this.weatherDiv && this.weatherDetailDiv) {
@@ -23,48 +23,48 @@ Weather.prototype = {
             }, 200);
         }*/
     },
-	/***
-	 * 设置获取天气预报信息
-	 * @param {Object} pm
-	 * @param {Object} callback
-	 * @param {Object} isDay
-	 * @param {Object} isChargeCity
-	 */
+    /***
+     * 设置获取天气预报信息
+     * @param {Object} pm
+     * @param {Object} callback
+     * @param {Object} isDay
+     * @param {Object} isChargeCity
+     */
     setData: function(pm, callback, isDay,isChargeCity){
         var dataHref = this.url + "?usernumber=" + this.userNumber + pm;
         El.show($("weatherLoading"));
         El.hide($("weatherContent"));
-		if (!WeatherForecast || isChargeCity) {
-			/*GC.getOtherDomainData("scriptWeather", dataHref, function(){
-				if (typeof(WeatherForecast) == "object") {
-					if (isDay) {
-						Weather.data = WeatherForecast;
-					}
-					callback(WeatherForecast);
-					El.hide($("weatherLoading"));
-					El.show($("weatherContent"));
-				}
-			});*/
+        if (!WeatherForecast || isChargeCity) {
+            /*GC.getOtherDomainData("scriptWeather", dataHref, function(){
+                if (typeof(WeatherForecast) == "object") {
+                    if (isDay) {
+                        Weather.data = WeatherForecast;
+                    }
+                    callback(WeatherForecast);
+                    El.hide($("weatherLoading"));
+                    El.show($("weatherContent"));
+                }
+            });*/
             CC.requestWebApi(dataHref, function(){
-            	if (typeof(WeatherForecast) == "object") {
-            		if (isDay) {
-            			Weather.data = WeatherForecast;
-            		}
-            		callback(WeatherForecast);
-            		El.hide($("weatherLoading"));
-            		El.show($("weatherContent"));
-            	}
+                if (typeof(WeatherForecast) == "object") {
+                    if (isDay) {
+                        Weather.data = WeatherForecast;
+                    }
+                    callback(WeatherForecast);
+                    El.hide($("weatherLoading"));
+                    El.show($("weatherContent"));
+                }
             });
-		}else{
-			if (typeof(WeatherForecast) == "object") {
-					if (isDay) {
-						Weather.data = WeatherForecast;
-					}
-					callback(WeatherForecast);
-					El.hide($("weatherLoading"));
-					El.show($("weatherContent"));
-				}
-		}
+        }else{
+            if (typeof(WeatherForecast) == "object") {
+                    if (isDay) {
+                        Weather.data = WeatherForecast;
+                    }
+                    callback(WeatherForecast);
+                    El.hide($("weatherLoading"));
+                    El.show($("weatherContent"));
+                }
+        }
     },
     
     /***
@@ -81,10 +81,10 @@ Weather.prototype = {
         EV.stopPropagation(ev);
     },
     
-	/***
-	 * 改变城市
-	 * @param {Object} isView
-	 */
+    /***
+     * 改变城市
+     * @param {Object} isView
+     */
     doChangeCity: function(isView){
         var p = this;
         var oc = $("selCity");
@@ -127,7 +127,7 @@ Weather.prototype = {
         if (areaCode || !Weather.data) {        
             p.setData(pm, setHtml, true, isChargeCity||false);
         }
-		setHtml(Weather.data);        
+        setHtml(Weather.data);        
         
         function setHtml(data){
             var html = [];
@@ -135,7 +135,7 @@ Weather.prototype = {
             var bigImg = $("iconWeather");
             var dt = MM["home"].userInfo.nowTime;
             var curDate = dt.getFullYear() + "-" + data.Weather[day].date;
-            var date = Util.parseDate(curDate, "yyyy-m月d日");
+            var date = Util.parseDate(curDate, top.Lang.Mail.Write.yueripVpufWyr);//yyyy-m月d日
             var pic0 = data.Weather[day].pic0;
             //var strDate = Util.formatDate(date,"m{0}d{1} {2}ww".format(Lang.Mail.date_Month,Lang.Mail.date_Day,Lang.Mail.date_Week));  
             var strDate = Util.formatDate(date, Lang.Mail.date_mmddww);
@@ -158,30 +158,30 @@ Weather.prototype = {
     getWeatherDetail: function(){
         var html = [];
         var cityDiv = this.weatherDetailDiv;
-        var provinceArr = ["北京", "天津", "上海", "广东", "广西", "河北", "河南", "湖北", "湖南", "福建", "山东", "安徽", "浙江", "四川", "重庆", "贵州", "云南", "江苏", "山西", "辽宁", "吉林", "内蒙古", "黑龙江", "西藏", "陕西", "甘肃", "青海", "宁夏", "新疆", "江西", "海南", "台湾", "香港", "澳门"];
-        html[html.length] = '<a class="close" href="javascript:fGoto();" onclick="MM[\'weather\'].showWeather(true)">关闭</a>';
+        var provinceArr = [top.Lang.Mail.Write.beijingIhqTQvxm, top.Lang.Mail.Write.tianjinNZQkSnQN, top.Lang.Mail.Write.shanghaiHsYYGLKw, top.Lang.Mail.Write.guangdongSPzJQQee, top.Lang.Mail.Write.guangxiWBORfTyT, top.Lang.Mail.Write.hebeiJXhKyozi, top.Lang.Mail.Write.henanOhxnTXWi, top.Lang.Mail.Write.hubeigOEbGypi, top.Lang.Mail.Write.hunanoYwisJbA, top.Lang.Mail.Write.fujianWIZscpgR, top.Lang.Mail.Write.shandongFbqrhVrX, top.Lang.Mail.Write.anhuiLScorcKX, top.Lang.Mail.Write.zhejiangWDyAnTdp, top.Lang.Mail.Write.sichuanijvjElVE, top.Lang.Mail.Write.zhongqingIoUmIEYz, top.Lang.Mail.Write.guizhoutEpzMybI, top.Lang.Mail.Write.yunnanKeHXxYwu, top.Lang.Mail.Write.jiangsusKihxJWJ, top.Lang.Mail.Write.shanxitUMxUHUP, top.Lang.Mail.Write.liaoningPmkDMjZI, top.Lang.Mail.Write.jilinnOQvFPmk, top.Lang.Mail.Write.namengguXXuMGgfW, top.Lang.Mail.Write.heilongjiangjuIdhcfJ, top.Lang.Mail.Write.xicangbjSQUxLw, top.Lang.Mail.Write.shanxiLiQVBkxE, top.Lang.Mail.Write.gansucGKlKFdz, top.Lang.Mail.Write.qinghaieKByMGdX, top.Lang.Mail.Write.ningxiavbKxSyni, top.Lang.Mail.Write.xinjiangXUSlPHDF, top.Lang.Mail.Write.jiangxirfceNRgU, top.Lang.Mail.Write.hainanYUkzrKAe, top.Lang.Mail.Write.taiwanhEdrQKLl, top.Lang.Mail.Write.xianggangOxofdNxA, top.Lang.Mail.Write.aomenJwsjOEQT];//北京  ||  天津  ||  上海  ||  广东  ||  广西  ||  河北  ||  河南  ||  湖北  ||  湖南  ||  福建  ||  山东  ||  安徽  ||  浙江  ||  四川  ||  重庆  ||  贵州  ||  云南  ||  江苏  ||  山西  ||  辽宁  ||  吉林  ||  内蒙古  ||  黑龙江  ||  西藏  ||  陕西  ||  甘肃  ||  青海  ||  宁夏  ||  新疆  ||  江西  ||  海南  ||  台湾  ||  香港  ||  澳门
+        html[html.length] = '<a class="close" href="javascript:fGoto();" onclick="MM[\'weather\'].showWeather(true)">'+top.Lang.Mail.Write.guanbiSKDYjoqs+'</a>';//<a class="close" href="javascript:fGoto();" onclick="MM[\'weather\'].showWeather(true)">关闭</a>
         html[html.length] = '<p class="action"><label id="cityDiv"></label>';
         html[html.length] = '<select name="selProvince" id="selProvince" onchange="MM[\'weather\'].getCity(this.options[this.selectedIndex].value)">';
-        html[html.length] = '<option>==省份==</option>';
+        html[html.length] = '<option>=='+top.Lang.Mail.Write.shengfenitkubJdN+'</option>';//<option>==省份==</option>
         provinceArr.each(function(i, v){
             html[html.length] = '<option value="' + (101 + i) + '">' + v + '</option>';
         });
         html[html.length] = '</select>';
         html[html.length] = '<select id="selCity" name="selCity">';
-        html[html.length] = '<option value="">==地市==</option></select>';
-        html[html.length] = '<a class="btn btnSee" href="javascript:fGoto();" onclick="MM[\'weather\'].doChangeCity(true);return false;"><b class="r1"></b><span class="rContent"><span>查看</span></span><b class="r1"></b></a>';
-        html[html.length] = '<a class="btn btnSetDefault" href="javascript:fGoto();" onclick="MM[\'weather\'].doChangeCity();return false;"><b class="r1"></b><span class="rContent"><span>设为默认城市</span></span><b class="r1"></b></a>';
+        html[html.length] = '<option value="">=='+top.Lang.Mail.Write.dishidBqUuUGG+'</option></select>';//<option value="">==地市==</option></select>
+        html[html.length] = '<a class="btn btnSee" href="javascript:fGoto();" onclick="MM[\'weather\'].doChangeCity(true);return false;"><b class="r1"></b><span class="rContent"><span>'+top.Lang.Mail.Write.chakanFPpBeDcr+'</span></span><b class="r1"></b></a>';//<a class="btn btnSee" href="javascript:fGoto();" onclick="MM[\'weather\'].doChangeCity(true);return false;"><b class="r1"></b><span class="rContent"><span>查看</span></span><b class="r1"></b></a>
+        html[html.length] = '<a class="btn btnSetDefault" href="javascript:fGoto();" onclick="MM[\'weather\'].doChangeCity();return false;"><b class="r1"></b><span class="rContent"><span>'+top.Lang.Mail.Write.sheweimorenchengshiaFuoiBUf+'</span></span><b class="r1"></b></a>';//<a class="btn btnSetDefault" href="javascript:fGoto();" onclick="MM[\'weather\'].doChangeCity();return false;"><b class="r1"></b><span class="rContent"><span>设为默认城市</span></span><b class="r1"></b></a>
         html[html.length] = '</p>';
         html[html.length] = '<div id="weatherContent">';
         html[html.length] = '</div>';
-        html[html.length] = '<div class="weatherLoading" id="weatherLoading">数据加载中，请稍候....</div>';
+        html[html.length] = '<div class="weatherLoading" id="weatherLoading">'+top.Lang.Mail.Write.shujujiazaizhongqingshaohouqreerUYh+'</div>';//<div class="weatherLoading" id="weatherLoading">数据加载中，请稍候....</div>
         html[html.length] = '</div>';
         cityDiv.innerHTML = html.join("");
     },
     
     getWeatherList: function(isDefault, isView){
         var html = [];
-        var infoArr = ["穿衣指数", "感冒指数", "晨练指数", "交通指数", "中暑指数", "公园指数", "防晒指数", "旅行指数"];
+        var infoArr = [top.Lang.Mail.Write.chuanyizhishucchhnmgS, top.Lang.Mail.Write.ganmaozhishuSiVraPzF, top.Lang.Mail.Write.chenlianzhishuJfdEQENE, top.Lang.Mail.Write.jiaotongzhishuBYLLykxD, top.Lang.Mail.Write.zhongshuzhishuocFKQCzg, top.Lang.Mail.Write.gongyuanzhishupQMUHpeZ, top.Lang.Mail.Write.fangshaizhishuOnbzmxEc, top.Lang.Mail.Write.lvxingzhishuAQTUwnXE];//穿衣指数  ||  感冒指数  ||  晨练指数  ||  交通指数  ||  中暑指数  ||  公园指数  ||  防晒指数  ||  旅行指数
         var p = this;
         var oc = $("selCity");
         var areaCode = "";
@@ -242,426 +242,426 @@ Weather.prototype = {
         code += "";
         switch (code) {
             case "101":
-                html[html.length] = ["北京", "54511"];
+                html[html.length] = [top.Lang.Mail.Write.beijingWSgHLIxl, "54511"];//北京
                 break;
             case "102":
-                html[html.length] = ["天津", "54517"];
+                html[html.length] = [top.Lang.Mail.Write.tianjinvxdruVAT, "54517"];//天津
                 break;
             case "103":
-                html[html.length] = ["上海", "58367"];
+                html[html.length] = [top.Lang.Mail.Write.shanghaiVklIBSdr, "58367"];//上海
                 break;
             case "104":
-                html[html.length] = ["广州", "59287"];
-                html[html.length] = ["潮州", "59312"];
-                html[html.length] = ["肇庆", "59278"];
-                html[html.length] = ["汕尾", "59501"];
-                html[html.length] = ["河源", "59293"];
-                html[html.length] = ["韶关", "59082"];
-                html[html.length] = ["揭阳", "59315"];
-                html[html.length] = ["梅州", "59117"];
-                html[html.length] = ["中山", "59485"];
-                html[html.length] = ["惠州", "59298"];
-                html[html.length] = ["东莞", "59289"];
-                html[html.length] = ["清远", "59280"];
-                html[html.length] = ["江门", "59473"];
-                html[html.length] = ["茂名", "59659"];
-                html[html.length] = ["云浮", "59471"];
-                html[html.length] = ["阳江", "59663"];
-                html[html.length] = ["汕头", "59316"];
-                html[html.length] = ["深圳", "59493"];
-                html[html.length] = ["珠海", "59488"];
-                html[html.length] = ["湛江", "59658"];
-                html[html.length] = ["佛山", "59279"];
+                html[html.length] = [top.Lang.Mail.Write.guangzhouYygrEomC, "59287"];//广州
+                html[html.length] = [top.Lang.Mail.Write.chaozhoucbUrtiMZ, "59312"];//潮州
+                html[html.length] = [top.Lang.Mail.Write.zhaoqingHJYOaDDS, "59278"];//肇庆
+                html[html.length] = [top.Lang.Mail.Write.shanweivQlkPPKi, "59501"];//汕尾
+                html[html.length] = [top.Lang.Mail.Write.heyuanFnIsqphb, "59293"];//河源
+                html[html.length] = [top.Lang.Mail.Write.shaoguanOkHSOIjU, "59082"];//韶关
+                html[html.length] = [top.Lang.Mail.Write.jieyangBCCGGJRk, "59315"];//揭阳
+                html[html.length] = [top.Lang.Mail.Write.meizhouDqkUWXPx, "59117"];//梅州
+                html[html.length] = [top.Lang.Mail.Write.zhongshanWjtCrwRu, "59485"];//中山
+                html[html.length] = [top.Lang.Mail.Write.huizhouQApGNJuI, "59298"];//惠州
+                html[html.length] = [top.Lang.Mail.Write.dongguanwDNVYpDE, "59289"];//东莞
+                html[html.length] = [top.Lang.Mail.Write.qingyuanPfqVxslh, "59280"];//清远
+                html[html.length] = [top.Lang.Mail.Write.jiangmengiehfXLo, "59473"];//江门
+                html[html.length] = [top.Lang.Mail.Write.maomingwmkJKNpI, "59659"];//茂名
+                html[html.length] = [top.Lang.Mail.Write.yunfuSOQzHtwF, "59471"];//云浮
+                html[html.length] = [top.Lang.Mail.Write.yangjiangxmpzJDDY, "59663"];//阳江
+                html[html.length] = [top.Lang.Mail.Write.shantouybqpPVTI, "59316"];//汕头
+                html[html.length] = [top.Lang.Mail.Write.shenchouggkhgTwE, "59493"];//深圳
+                html[html.length] = [top.Lang.Mail.Write.zhuhaicctGpByP, "59488"];//珠海
+                html[html.length] = [top.Lang.Mail.Write.zhanjiangWFTrcYPY, "59658"];//湛江
+                html[html.length] = [top.Lang.Mail.Write.fushanVSCdmfys, "59279"];//佛山
                 break;
             case "105":
-                html[html.length] = ["南宁", "59432"];
-                html[html.length] = ["百色", "59211"];
-                html[html.length] = ["柳州", "59046"];
-                html[html.length] = ["梧州", "59265"];
-                html[html.length] = ["玉林", "59453"];
-                html[html.length] = ["桂平", "59254"];
-                html[html.length] = ["贺州", "59065"];
-                html[html.length] = ["钦州", "59632"];
-                html[html.length] = ["贵港", "59249"];
-                html[html.length] = ["阳朔", "59051"];
-                html[html.length] = ["桂林", "57957"];
-                html[html.length] = ["北海", "59644"];
-                html[html.length] = ["河池", "59023"];
+                html[html.length] = [top.Lang.Mail.Write.nanningILnkmBKB, "59432"];//南宁
+                html[html.length] = [top.Lang.Mail.Write.baiseaqWPFlNL, "59211"];//百色
+                html[html.length] = [top.Lang.Mail.Write.liuzhouATuiDgRZ, "59046"];//柳州
+                html[html.length] = [top.Lang.Mail.Write.wuzhoumgbffIUj, "59265"];//梧州
+                html[html.length] = [top.Lang.Mail.Write.yulinfLKmeblU, "59453"];//玉林
+                html[html.length] = [top.Lang.Mail.Write.guipinghQLlAocS, "59254"];//桂平
+                html[html.length] = [top.Lang.Mail.Write.hezhouAYLXBstH, "59065"];//贺州
+                html[html.length] = [top.Lang.Mail.Write.qinzhouWwEuMcBg, "59632"];//钦州
+                html[html.length] = [top.Lang.Mail.Write.guigangGhFhqmWx, "59249"];//贵港
+                html[html.length] = [top.Lang.Mail.Write.yangshuorhZLSBvp, "59051"];//阳朔
+                html[html.length] = [top.Lang.Mail.Write.guilinRyehkgbw, "57957"];//桂林
+                html[html.length] = [top.Lang.Mail.Write.beihaisymehjAP, "59644"];//北海
+                html[html.length] = [top.Lang.Mail.Write.hechiKAihfEBt, "59023"];//河池
                 break;
             case "106":
-                html[html.length] = ["石家庄", "53698"];
-                html[html.length] = ["唐山", "54534"];
-                html[html.length] = ["张家口", "54401"];
-                html[html.length] = ["廊坊", "54515"];
-                html[html.length] = ["邯郸", "53892"];
-                html[html.length] = ["邢台", "53798"];
-                html[html.length] = ["沧州", "54616"];
-                html[html.length] = ["衡水", "54702"];
-                html[html.length] = ["承德", "54423"];
-                html[html.length] = ["秦皇岛", "54449"];
-                html[html.length] = ["保定", "54602"];
+                html[html.length] = [top.Lang.Mail.Write.shijiazhuangsZiUsQKk, "53698"];//石家庄
+                html[html.length] = [top.Lang.Mail.Write.tangshanjZeWmCGB, "54534"];//唐山
+                html[html.length] = [top.Lang.Mail.Write.zhangjiakoupOtutLEm, "54401"];//张家口
+                html[html.length] = [top.Lang.Mail.Write.langfangkfpFVElH, "54515"];//廊坊
+                html[html.length] = [top.Lang.Mail.Write.handanMeKVvmwW, "53892"];//邯郸
+                html[html.length] = [top.Lang.Mail.Write.xingtaicXmTryUu, "53798"];//邢台
+                html[html.length] = [top.Lang.Mail.Write.cangzhouHGotYMSD, "54616"];//沧州
+                html[html.length] = [top.Lang.Mail.Write.hengshuibRbQnMFj, "54702"];//衡水
+                html[html.length] = [top.Lang.Mail.Write.chengdeDLcvrnsT, "54423"];//承德
+                html[html.length] = [top.Lang.Mail.Write.qinhuangdaojptKyRFM, "54449"];//秦皇岛
+                html[html.length] = [top.Lang.Mail.Write.baodingpsrCEZPI, "54602"];//保定
                 break;
             case "107":
-                html[html.length] = ["郑州", "57083"];
-                html[html.length] = ["开封", "57091"];
-                html[html.length] = ["安阳", "53898"];
-                html[html.length] = ["焦作", "53982"];
-                html[html.length] = ["鹤壁", "53990"];
-                html[html.length] = ["平顶山", "57171"];
-                html[html.length] = ["商丘", "58005"];
-                html[html.length] = ["濮阳", "54900"];
-                html[html.length] = ["南阳", "57178"];
-                html[html.length] = ["许昌", "57089"];
-                html[html.length] = ["信阳", "57297"];
-                html[html.length] = ["三门峡", "57051"];
-                html[html.length] = ["驻马店", "57290"];
-                html[html.length] = ["周口", "57195"];
-                html[html.length] = ["新乡", "53986"];
-                html[html.length] = ["洛阳", "57073"];
-                html[html.length] = ["开封", "57091"];
+                html[html.length] = [top.Lang.Mail.Write.zhengzhouTZCkMqCP, "57083"];//郑州
+                html[html.length] = [top.Lang.Mail.Write.kaifengihRnYNWf, "57091"];//开封
+                html[html.length] = [top.Lang.Mail.Write.anyangWdMSHMdb, "53898"];//安阳
+                html[html.length] = [top.Lang.Mail.Write.jiaozuoCYfwFJSq, "53982"];//焦作
+                html[html.length] = [top.Lang.Mail.Write.hebiNDtjfQRT, "53990"];//鹤壁
+                html[html.length] = [top.Lang.Mail.Write.pingdingshanciUwNXuG, "57171"];//平顶山
+                html[html.length] = [top.Lang.Mail.Write.shangqiurONNuXAn, "58005"];//商丘
+                html[html.length] = [top.Lang.Mail.Write.puyangwBoAjyeB, "54900"];//濮阳
+                html[html.length] = [top.Lang.Mail.Write.nanyangYJRWrzCD, "57178"];//南阳
+                html[html.length] = [top.Lang.Mail.Write.xuchangJiCTbiwL, "57089"];//许昌
+                html[html.length] = [top.Lang.Mail.Write.xinyangesYrgCuF, "57297"];//信阳
+                html[html.length] = [top.Lang.Mail.Write.sanmenxiaSsepKKYF, "57051"];//三门峡
+                html[html.length] = [top.Lang.Mail.Write.zhumadianwNprCcZJ, "57290"];//驻马店
+                html[html.length] = [top.Lang.Mail.Write.zhoukouqyEBUHwX, "57195"];//周口
+                html[html.length] = [top.Lang.Mail.Write.xinxiangPKkcqmHT, "53986"];//新乡
+                html[html.length] = [top.Lang.Mail.Write.luoyangnbiYHEAN, "57073"];//洛阳
+                html[html.length] = [top.Lang.Mail.Write.kaifenghYYfWsUW, "57091"];//开封
                 break;
             case "108":
-                html[html.length] = ["武汉", "57494"];
-                html[html.length] = ["黄冈", "57498"];
-                html[html.length] = ["恩施", "57447"];
-                html[html.length] = ["荆州", "57476"];
-                html[html.length] = ["神农架", "57362"];
-                html[html.length] = ["十堰", "57256"];
-                html[html.length] = ["咸宁", "57590"];
-                html[html.length] = ["襄樊", "57278"];
-                html[html.length] = ["孝感", "57482"];
-                html[html.length] = ["随州", "57381"];
-                html[html.length] = ["黄石", "58407"];
-                html[html.length] = ["荆门", "57377"];
-                html[html.length] = ["鄂州", "57496"];
-                html[html.length] = ["宜昌", "57461"];
+                html[html.length] = [top.Lang.Mail.Write.wuhanxvYXXDvf, "57494"];//武汉
+                html[html.length] = [top.Lang.Mail.Write.huanggangsdwgfoyt, "57498"];//黄冈
+                html[html.length] = [top.Lang.Mail.Write.enshiMvJDhUqj, "57447"];//恩施
+                html[html.length] = [top.Lang.Mail.Write.jingzhouMiPIdQVv, "57476"];//荆州
+                html[html.length] = [top.Lang.Mail.Write.shennongjiaPoGkHiMY, "57362"];//神农架
+                html[html.length] = [top.Lang.Mail.Write.shiyanPOttwwky, "57256"];//十堰
+                html[html.length] = [top.Lang.Mail.Write.xianningMTLErCPy, "57590"];//咸宁
+                html[html.length] = [top.Lang.Mail.Write.xiangfanvtCAeeei, "57278"];//襄樊
+                html[html.length] = [top.Lang.Mail.Write.xiaoganPsiDnQKQ, "57482"];//孝感
+                html[html.length] = [top.Lang.Mail.Write.suizhouGbocSLWa, "57381"];//随州
+                html[html.length] = [top.Lang.Mail.Write.huangshiTOQjdeYt, "58407"];//黄石
+                html[html.length] = [top.Lang.Mail.Write.jingmenHhZYELPQ, "57377"];//荆门
+                html[html.length] = [top.Lang.Mail.Write.ezhouvLjrNACP, "57496"];//鄂州
+                html[html.length] = [top.Lang.Mail.Write.yichangWQzSVLOJ, "57461"];//宜昌
                 break;
             case "109":
-                html[html.length] = ["长沙", "57687"];
-                html[html.length] = ["邵阳", "57766"];
-                html[html.length] = ["常德", "57662"];
-                html[html.length] = ["郴州", "57972"];
-                html[html.length] = ["吉首", "57649"];
-                html[html.length] = ["株洲", "57780"];
-                html[html.length] = ["娄底", "57763"];
-                html[html.length] = ["湘潭", "57773"];
-                html[html.length] = ["永州", "57866"];
-                html[html.length] = ["岳阳", "57584"];
-                html[html.length] = ["衡阳", "57872"];
-                html[html.length] = ["怀化", "57749"];
-                html[html.length] = ["韶山", "57771"];
-                html[html.length] = ["张家界", "57558"];
-                html[html.length] = ["衡山", "57777"];
+                html[html.length] = [top.Lang.Mail.Write.changshaOLitpdGg, "57687"];//长沙
+                html[html.length] = [top.Lang.Mail.Write.shaoyangfumMmJox, "57766"];//邵阳
+                html[html.length] = [top.Lang.Mail.Write.changdexPLcUpZc, "57662"];//常德
+                html[html.length] = [top.Lang.Mail.Write.chenzhouoLEXSkVI, "57972"];//郴州
+                html[html.length] = [top.Lang.Mail.Write.jishouQvHxlvwp, "57649"];//吉首
+                html[html.length] = [top.Lang.Mail.Write.zhuzhouCbnBTaXZ, "57780"];//株洲
+                html[html.length] = [top.Lang.Mail.Write.loudinJSXbVMN, "57763"];//娄底
+                html[html.length] = [top.Lang.Mail.Write.xiangtanLIUctHjw, "57773"];//湘潭
+                html[html.length] = [top.Lang.Mail.Write.yongzhoubDoYAwOR, "57866"];//永州
+                html[html.length] = [top.Lang.Mail.Write.yueyangRQVKxNjC, "57584"];//岳阳
+                html[html.length] = [top.Lang.Mail.Write.hengyangllqaDpAc, "57872"];//衡阳
+                html[html.length] = [top.Lang.Mail.Write.huaihuamCyPUwIb, "57749"];//怀化
+                html[html.length] = [top.Lang.Mail.Write.shaoshanTSXPWYHt, "57771"];//韶山
+                html[html.length] = [top.Lang.Mail.Write.zhangjiajieIjdnvUqH, "57558"];//张家界
+                html[html.length] = [top.Lang.Mail.Write.hengshanPYXIJubN, "57777"];//衡山
                 break;
             case "110":
-                html[html.length] = ["福州", "58847"];
-                html[html.length] = ["龙岩", "58927"];
-                html[html.length] = ["南平", "58834"];
-                html[html.length] = ["宁德", "58846"];
-                html[html.length] = ["莆田", "58946"];
-                html[html.length] = ["泉州", "59137"];
-                html[html.length] = ["三明", "58828"];
-                html[html.length] = ["漳州", "59126"];
-                html[html.length] = ["厦门", "59134"];
-                html[html.length] = ["武夷山市", "58730"];
+                html[html.length] = [top.Lang.Mail.Write.fuzhoujgMWGypp, "58847"];//福州
+                html[html.length] = [top.Lang.Mail.Write.longyanrEGqkTqC, "58927"];//龙岩
+                html[html.length] = [top.Lang.Mail.Write.nanpingCEgoYWEW, "58834"];//南平
+                html[html.length] = [top.Lang.Mail.Write.ningdecTFsqpoQ, "58846"];//宁德
+                html[html.length] = [top.Lang.Mail.Write.putianvUPcoAlR, "58946"];//莆田
+                html[html.length] = [top.Lang.Mail.Write.quanzhouMebdCKYY, "59137"];//泉州
+                html[html.length] = [top.Lang.Mail.Write.sanmingMVrMjWXr, "58828"];//三明
+                html[html.length] = [top.Lang.Mail.Write.zhangzhouvVCsEufb, "59126"];//漳州
+                html[html.length] = [top.Lang.Mail.Write.xiamenpUtLCoTJ, "59134"];//厦门
+                html[html.length] = [top.Lang.Mail.Write.wuyishanshiHNvpccMS, "58730"];//武夷山市
                 break;
             case "111":
-                html[html.length] = ["济南", "54823"];
-                html[html.length] = ["枣庄", "58024"];
-                html[html.length] = ["聊城", "54806"];
-                html[html.length] = ["曲阜", "54918"];
-                html[html.length] = ["济宁", "54915"];
-                html[html.length] = ["临沂", "54938"];
-                html[html.length] = ["菏泽", "54906"];
-                html[html.length] = ["泰安", "54827"];
-                html[html.length] = ["日照", "54945"];
-                html[html.length] = ["东营", "54736"];
-                html[html.length] = ["青岛", "54857"];
-                html[html.length] = ["威海", "54774"];
-                html[html.length] = ["泰山", "54826"];
-                html[html.length] = ["烟台", "54765"];
-                html[html.length] = ["潍坊", "54843"];
-                html[html.length] = ["淄博", "54830"];
+                html[html.length] = [top.Lang.Mail.Write.jinanqBrVXMzO, "54823"];//济南
+                html[html.length] = [top.Lang.Mail.Write.zaozhuangKrKiuFUq, "58024"];//枣庄
+                html[html.length] = [top.Lang.Mail.Write.liaochengkRlUpkxA, "54806"];//聊城
+                html[html.length] = [top.Lang.Mail.Write.qufuLRrYeEOF, "54918"];//曲阜
+                html[html.length] = [top.Lang.Mail.Write.jiningTpFvIyEZ, "54915"];//济宁
+                html[html.length] = [top.Lang.Mail.Write.linyiBPZVULtT, "54938"];//临沂
+                html[html.length] = [top.Lang.Mail.Write.hezeAweJAMVx, "54906"];//菏泽
+                html[html.length] = [top.Lang.Mail.Write.taianyHZJWOZw, "54827"];//泰安
+                html[html.length] = [top.Lang.Mail.Write.rizhaodXFFlBUe, "54945"];//日照
+                html[html.length] = [top.Lang.Mail.Write.dongyingniRXqzmj, "54736"];//东营
+                html[html.length] = [top.Lang.Mail.Write.qingdaomdeEUkXw, "54857"];//青岛
+                html[html.length] = [top.Lang.Mail.Write.weihairkswAVSI, "54774"];//威海
+                html[html.length] = [top.Lang.Mail.Write.taishanNHxWvbkD, "54826"];//泰山
+                html[html.length] = [top.Lang.Mail.Write.yantaiPBGCSQPJ, "54765"];//烟台
+                html[html.length] = [top.Lang.Mail.Write.weifangeqcjOsmB, "54843"];//潍坊
+                html[html.length] = [top.Lang.Mail.Write.zibopMSavfUc, "54830"];//淄博
                 break;
             case "112":
-                html[html.length] = ["合肥", "58321"];
-                html[html.length] = ["巢湖", "58326"];
-                html[html.length] = ["蚌埠", "58221"];
-                html[html.length] = ["安庆", "58424"];
-                html[html.length] = ["六安", "58311"];
-                html[html.length] = ["滁州", "58236"];
-                html[html.length] = ["马鞍山", "58336"];
-                html[html.length] = ["阜阳", "58203"];
-                html[html.length] = ["宣城", "58433"];
-                html[html.length] = ["铜陵", "58429"];
-                html[html.length] = ["淮北", "58116"];
-                html[html.length] = ["芜湖", "58334"];
-                html[html.length] = ["亳州", "58102"];
-                html[html.length] = ["宿州", "58122"];
-                html[html.length] = ["淮南", "58224"];
-                html[html.length] = ["黄山站", "58437"];
-                html[html.length] = ["九华山", "58423"];
+                html[html.length] = [top.Lang.Mail.Write.hefeiPYKYmwCV, "58321"];//合肥
+                html[html.length] = [top.Lang.Mail.Write.chaohujIRRndfh, "58326"];//巢湖
+                html[html.length] = [top.Lang.Mail.Write.bangbujiHUoPrX, "58221"];//蚌埠
+                html[html.length] = [top.Lang.Mail.Write.anqingGUrIiPDh, "58424"];//安庆
+                html[html.length] = [top.Lang.Mail.Write.liuanXFooXJNh, "58311"];//六安
+                html[html.length] = [top.Lang.Mail.Write.chuzhouSqsWjiQA, "58236"];//滁州
+                html[html.length] = [top.Lang.Mail.Write.maanshanfPlBymms, "58336"];//马鞍山
+                html[html.length] = [top.Lang.Mail.Write.fuyangNcmHtdOb, "58203"];//阜阳
+                html[html.length] = [top.Lang.Mail.Write.xuanchengKAQDyMCC, "58433"];//宣城
+                html[html.length] = [top.Lang.Mail.Write.tonglingsKSuVYhd, "58429"];//铜陵
+                html[html.length] = [top.Lang.Mail.Write.huaibeisMuUSXqf, "58116"];//淮北
+                html[html.length] = [top.Lang.Mail.Write.wuhukiwdYaeu, "58334"];//芜湖
+                html[html.length] = [top.Lang.Mail.Write.bozhouTnwsmvAK, "58102"];//亳州
+                html[html.length] = [top.Lang.Mail.Write.suzhouFCfnBvYn, "58122"];//宿州
+                html[html.length] = [top.Lang.Mail.Write.huainanuisNEdSz, "58224"];//淮南
+                html[html.length] = [top.Lang.Mail.Write.huangshanzhanFgVNykrv, "58437"];//黄山站
+                html[html.length] = [top.Lang.Mail.Write.jiuhuashanghebGIMk, "58423"];//九华山
                 break;
             case "113":
-                html[html.length] = ["杭州", "58457"];
-                html[html.length] = ["湖州", "58450"];
-                html[html.length] = ["金华", "58549"];
-                html[html.length] = ["宁波", "58563"];
-                html[html.length] = ["丽水", "58646"];
-                html[html.length] = ["衢州", "58633"];
-                html[html.length] = ["嘉兴", "58452"];
-                html[html.length] = ["台州", "58660"];
-                html[html.length] = ["舟山", "58477"];
-                html[html.length] = ["鄞县", "58562"];
-                html[html.length] = ["乐清", "58656"];
-                html[html.length] = ["温州", "58659"];
-                html[html.length] = ["舟山", "58477"];
+                html[html.length] = [top.Lang.Mail.Write.hangzhoukWhAfFRf, "58457"];//杭州
+                html[html.length] = [top.Lang.Mail.Write.huzhouSKUICXro, "58450"];//湖州
+                html[html.length] = [top.Lang.Mail.Write.jinhuaBvahuimd, "58549"];//金华
+                html[html.length] = [top.Lang.Mail.Write.ningbocXnDiMmg, "58563"];//宁波
+                html[html.length] = [top.Lang.Mail.Write.lishuiUXXBBpGd, "58646"];//丽水
+                html[html.length] = [top.Lang.Mail.Write.quzhouPUxjwEZv, "58633"];//衢州
+                html[html.length] = [top.Lang.Mail.Write.jiaxingtRVvufDC, "58452"];//嘉兴
+                html[html.length] = [top.Lang.Mail.Write.taizhousybETzAE, "58660"];//台州
+                html[html.length] = [top.Lang.Mail.Write.zhoushanZuOrOYXg, "58477"];//舟山
+                html[html.length] = [top.Lang.Mail.Write.yinxianrwNKIvAw, "58562"];//鄞县
+                html[html.length] = [top.Lang.Mail.Write.leqingdoXlkLVh, "58656"];//乐清
+                html[html.length] = [top.Lang.Mail.Write.wenzhoutqTPxRbw, "58659"];//温州
+                html[html.length] = [top.Lang.Mail.Write.zhoushanwiJrSlTf, "58477"];//舟山
                 break;
             case "114":
-                html[html.length] = ["成都", "56294"];
-                html[html.length] = ["泸州", "57602"];
-                html[html.length] = ["内江", "57504"];
-                html[html.length] = ["凉山", "56571"];
-                html[html.length] = ["阿坝", "56171"];
-                html[html.length] = ["巴中", "57313"];
-                html[html.length] = ["广元", "57206"];
-                html[html.length] = ["乐山", "56386"];
-                html[html.length] = ["绵阳", "56196"];
-                html[html.length] = ["德阳", "56198"];
-                html[html.length] = ["攀枝花", "56666"];
-                html[html.length] = ["雅安", "56287"];
-                html[html.length] = ["宜宾", "56492"];
-                html[html.length] = ["自贡", "56396"];
-                html[html.length] = ["甘孜州", "56146"];
-                html[html.length] = ["达州", "57328"];
-                html[html.length] = ["峨眉山", "56385"];
+                html[html.length] = [top.Lang.Mail.Write.chengdumkIMsEbN, "56294"];//成都
+                html[html.length] = [top.Lang.Mail.Write.luzhouvtJVzSFR, "57602"];//泸州
+                html[html.length] = [top.Lang.Mail.Write.najiangpMbixLAI, "57504"];//内江
+                html[html.length] = [top.Lang.Mail.Write.liangshanadpsfrUn, "56571"];//凉山
+                html[html.length] = [top.Lang.Mail.Write.abaFeXskWtQ, "56171"];//阿坝
+                html[html.length] = [top.Lang.Mail.Write.bazhongTysriZoe, "57313"];//巴中
+                html[html.length] = [top.Lang.Mail.Write.guangyuanZDMXFuJg, "57206"];//广元
+                html[html.length] = [top.Lang.Mail.Write.leshanLgSkhWms, "56386"];//乐山
+                html[html.length] = [top.Lang.Mail.Write.mianyangCBUtykMH, "56196"];//绵阳
+                html[html.length] = [top.Lang.Mail.Write.deyangYYKzRilA, "56198"];//德阳
+                html[html.length] = [top.Lang.Mail.Write.panzhihuajCVkzulg, "56666"];//攀枝花
+                html[html.length] = [top.Lang.Mail.Write.yaanSabylsuc, "56287"];//雅安
+                html[html.length] = [top.Lang.Mail.Write.yibinAJyeYmmX, "56492"];//宜宾
+                html[html.length] = [top.Lang.Mail.Write.zigongzWAZOwqN, "56396"];//自贡
+                html[html.length] = [top.Lang.Mail.Write.ganzizhouWMNmbHhQ, "56146"];//甘孜州
+                html[html.length] = [top.Lang.Mail.Write.dazhouIlzgLksF, "57328"];//达州
+                html[html.length] = [top.Lang.Mail.Write.emeishanGmFFDHUJ, "56385"];//峨眉山
                 break;
             case "115":
-                html[html.length] = ["重庆", "57516"];
+                html[html.length] = [top.Lang.Mail.Write.zhongqingVQumMWXe, "57516"];//重庆
                 break;
             case "116":
-                html[html.length] = ["贵阳", "57816"];
-                html[html.length] = ["安顺", "57806"];
-                html[html.length] = ["赤水", "57609"];
-                html[html.length] = ["遵义", "57713"];
-                html[html.length] = ["铜仁", "57741"];
-                html[html.length] = ["六盘水", "56693"];
-                html[html.length] = ["毕节", "57707"];
-                html[html.length] = ["凯里", "57825"];
-                html[html.length] = ["都匀", "57827"];
+                html[html.length] = [top.Lang.Mail.Write.guiyangXPrrfsyd, "57816"];//贵阳
+                html[html.length] = [top.Lang.Mail.Write.anshunJOwnnqtN, "57806"];//安顺
+                html[html.length] = [top.Lang.Mail.Write.chishuiaztgxQdP, "57609"];//赤水
+                html[html.length] = [top.Lang.Mail.Write.zunyihzYqbHmq, "57713"];//遵义
+                html[html.length] = [top.Lang.Mail.Write.tongrenDzHyOrnn, "57741"];//铜仁
+                html[html.length] = [top.Lang.Mail.Write.liupanshuiZTazcIdR, "56693"];//六盘水
+                html[html.length] = [top.Lang.Mail.Write.bijiesJfwOfiR, "57707"];//毕节
+                html[html.length] = [top.Lang.Mail.Write.kailicnOIykQf, "57825"];//凯里
+                html[html.length] = [top.Lang.Mail.Write.duyunUSjJHcml, "57827"];//都匀
                 break;
             case "117":
-                html[html.length] = ["通什", "59941"];
-                html[html.length] = ["昆明", "56778"];
-                html[html.length] = ["保山", "56748"];
-                html[html.length] = ["楚雄", "56768"];
-                html[html.length] = ["德宏", "56844"];
-                html[html.length] = ["红河", "56975"];
-                html[html.length] = ["临沧", "56951"];
-                html[html.length] = ["怒江", "56533"];
-                html[html.length] = ["曲靖", "56783"];
-                html[html.length] = ["思茅", "56964"];
-                html[html.length] = ["文山", "56994"];
-                html[html.length] = ["玉溪", "56875"];
-                html[html.length] = ["昭通", "56586"];
-                html[html.length] = ["大理", "56751"];
-                html[html.length] = ["丽江", "56651"];
-                html[html.length] = ["德钦", "56444"];
+                html[html.length] = [top.Lang.Mail.Write.tongshiLicMcTaT, "59941"];//通什
+                html[html.length] = [top.Lang.Mail.Write.kunmingpupKzfTY, "56778"];//昆明
+                html[html.length] = [top.Lang.Mail.Write.baoshanoGvOsQqi, "56748"];//保山
+                html[html.length] = [top.Lang.Mail.Write.chuxiongsynKOenA, "56768"];//楚雄
+                html[html.length] = [top.Lang.Mail.Write.dehongbujqkyXB, "56844"];//德宏
+                html[html.length] = [top.Lang.Mail.Write.hongheoKRngZKh, "56975"];//红河
+                html[html.length] = [top.Lang.Mail.Write.lincangucnqUUyL, "56951"];//临沧
+                html[html.length] = [top.Lang.Mail.Write.nujianghcjDFGfF, "56533"];//怒江
+                html[html.length] = [top.Lang.Mail.Write.qujingkRnOIpVU, "56783"];//曲靖
+                html[html.length] = [top.Lang.Mail.Write.simaoHonpjBsa, "56964"];//思茅
+                html[html.length] = [top.Lang.Mail.Write.wenshanxhXhmPGG, "56994"];//文山
+                html[html.length] = [top.Lang.Mail.Write.yuxicTIEtDXg, "56875"];//玉溪
+                html[html.length] = [top.Lang.Mail.Write.zhaotongEDqXgDjN, "56586"];//昭通
+                html[html.length] = [top.Lang.Mail.Write.dalitTLdTtKG, "56751"];//大理
+                html[html.length] = [top.Lang.Mail.Write.lijiangPoKJRoGL, "56651"];//丽江
+                html[html.length] = [top.Lang.Mail.Write.deqinIxvsvsnF, "56444"];//德钦
                 break;
             case "118":
-                html[html.length] = ["昆山", "58356"];
-                html[html.length] = ["南京", "58238"];
-                html[html.length] = ["南通", "58259"];
-                html[html.length] = ["太仓", "58377"];
-                html[html.length] = ["苏州", "58357"];
+                html[html.length] = [top.Lang.Mail.Write.kunshanGOUoynfY, "58356"];//昆山
+                html[html.length] = [top.Lang.Mail.Write.nanjingOMTDDvyQ, "58238"];//南京
+                html[html.length] = [top.Lang.Mail.Write.nantongFBppRqkC, "58259"];//南通
+                html[html.length] = [top.Lang.Mail.Write.taicangpGYLXJFT, "58377"];//太仓
+                html[html.length] = [top.Lang.Mail.Write.suzhouLdsojWSG, "58357"];//苏州
                 
-                html[html.length] = ["徐州", "58027"];
-                html[html.length] = ["宜兴", "58346"];
-                html[html.length] = ["镇江", "58248"];
-                html[html.length] = ["淮安", "58145"];
-                html[html.length] = ["常熟", "58352"];
-                html[html.length] = ["盐城", "58151"];
-                html[html.length] = ["泰州", "58246"];
-                html[html.length] = ["苏州", "58357"];
-                html[html.length] = ["无锡", "58354"];
-                html[html.length] = ["连云港", "58044"];
-                html[html.length] = ["扬州", "58245"];
-                html[html.length] = ["常州", "58343"];
+                html[html.length] = [top.Lang.Mail.Write.xuzhoukFbrkSMA, "58027"];//徐州
+                html[html.length] = [top.Lang.Mail.Write.yixingQvIedKOm, "58346"];//宜兴
+                html[html.length] = [top.Lang.Mail.Write.zhenjiangrvwrBnVv, "58248"];//镇江
+                html[html.length] = [top.Lang.Mail.Write.huaianCxzXYBWu, "58145"];//淮安
+                html[html.length] = [top.Lang.Mail.Write.changshupcVzbVnu, "58352"];//常熟
+                html[html.length] = [top.Lang.Mail.Write.yanchengjkCbgAeM, "58151"];//盐城
+                html[html.length] = [top.Lang.Mail.Write.taizhouueUxLddS, "58246"];//泰州
+                html[html.length] = [top.Lang.Mail.Write.suzhouiTUHnVGd, "58357"];//苏州
+                html[html.length] = [top.Lang.Mail.Write.wuxisyNBMJry, "58354"];//无锡
+                html[html.length] = [top.Lang.Mail.Write.lianyungangJdcnAzPN, "58044"];//连云港
+                html[html.length] = [top.Lang.Mail.Write.yangzhouiwlLKJSo, "58245"];//扬州
+                html[html.length] = [top.Lang.Mail.Write.changzhouzhFkBfMs, "58343"];//常州
                 break;
             case "119":
-                html[html.length] = ["太原", "53772"];
-                html[html.length] = ["阳泉", "53782"];
-                html[html.length] = ["晋城", "53976"];
-                html[html.length] = ["晋中", "53778"];
-                html[html.length] = ["临汾", "53868"];
-                html[html.length] = ["运城", "53959"];
-                html[html.length] = ["长治", "53882"];
-                html[html.length] = ["朔州", "53578"];
-                html[html.length] = ["忻州", "53674"];
-                html[html.length] = ["大同", "53487"];
-                html[html.length] = ["五台山", "53588"];
+                html[html.length] = [top.Lang.Mail.Write.taiyuanYDPyqHMv, "53772"];//太原
+                html[html.length] = [top.Lang.Mail.Write.yangquanlyoEMxHF, "53782"];//阳泉
+                html[html.length] = [top.Lang.Mail.Write.jinchengCHpblNKg, "53976"];//晋城
+                html[html.length] = [top.Lang.Mail.Write.jinzhongrLxOVtAn, "53778"];//晋中
+                html[html.length] = [top.Lang.Mail.Write.linfenpgjXuUJz, "53868"];//临汾
+                html[html.length] = [top.Lang.Mail.Write.yunchengzlPIHsYY, "53959"];//运城
+                html[html.length] = [top.Lang.Mail.Write.changzhiKzmtzqbX, "53882"];//长治
+                html[html.length] = [top.Lang.Mail.Write.shuozhouDGEFKdFA, "53578"];//朔州
+                html[html.length] = [top.Lang.Mail.Write.xinzhouMjwVgIRU, "53674"];//忻州
+                html[html.length] = [top.Lang.Mail.Write.datongeFABEhuR, "53487"];//大同
+                html[html.length] = [top.Lang.Mail.Write.wutaishannFCrdPRK, "53588"];//五台山
                 break;
             case "120":
-                html[html.length] = ["沈阳", "54342"];
-                html[html.length] = ["葫芦岛", "54453"];
-                html[html.length] = ["旅顺", "54660"];
-                html[html.length] = ["本溪", "54346"];
-                html[html.length] = ["朝阳", "54324"];
-                html[html.length] = ["抚顺", "54353"];
-                html[html.length] = ["铁岭", "54249"];
-                html[html.length] = ["辽阳", "54347"];
-                html[html.length] = ["营口", "54471"];
-                html[html.length] = ["阜新", "54237"];
-                html[html.length] = ["大连", "54662"];
-                html[html.length] = ["丹东", "54497"];
-                html[html.length] = ["鞍山", "54339"];
-                html[html.length] = ["锦州", "54337"];
+                html[html.length] = [top.Lang.Mail.Write.shenyangksQMBCuv, "54342"];//沈阳
+                html[html.length] = [top.Lang.Mail.Write.huludaolpScObqj, "54453"];//葫芦岛
+                html[html.length] = [top.Lang.Mail.Write.lvshunnhPMscRz, "54660"];//旅顺
+                html[html.length] = [top.Lang.Mail.Write.benxilMhTISGj, "54346"];//本溪
+                html[html.length] = [top.Lang.Mail.Write.chaoyangPUSKUPdD, "54324"];//朝阳
+                html[html.length] = [top.Lang.Mail.Write.fushunnGLcsrtn, "54353"];//抚顺
+                html[html.length] = [top.Lang.Mail.Write.tielingbroyMPZF, "54249"];//铁岭
+                html[html.length] = [top.Lang.Mail.Write.liaoyangcGcPxnwg, "54347"];//辽阳
+                html[html.length] = [top.Lang.Mail.Write.yingkouPeOipzWJ, "54471"];//营口
+                html[html.length] = [top.Lang.Mail.Write.fuxinepMWjoBx, "54237"];//阜新
+                html[html.length] = [top.Lang.Mail.Write.dalianZEsUqYEU, "54662"];//大连
+                html[html.length] = [top.Lang.Mail.Write.dandongYWFyJcBz, "54497"];//丹东
+                html[html.length] = [top.Lang.Mail.Write.anshanrooizNqW, "54339"];//鞍山
+                html[html.length] = [top.Lang.Mail.Write.jinzhoukCWLvCMQ, "54337"];//锦州
                 break;
             case "121":
-                html[html.length] = ["长春", "54161"];
-                html[html.length] = ["延吉", "54292"];
-                html[html.length] = ["吉林", "54172"];
-                html[html.length] = ["白山", "54371"];
-                html[html.length] = ["白城", "50936"];
-                html[html.length] = ["四平", "54157"];
-                html[html.length] = ["松原", "50946"];
-                html[html.length] = ["辽源", "54260"];
-                html[html.length] = ["长白", "54386"];
-                html[html.length] = ["大安", "50945"];
-                html[html.length] = ["通化", "54363"];
+                html[html.length] = [top.Lang.Mail.Write.changchunMbzgCFhB, "54161"];//长春
+                html[html.length] = [top.Lang.Mail.Write.yanjiEPHtecVv, "54292"];//延吉
+                html[html.length] = [top.Lang.Mail.Write.jilinlBEvwhLX, "54172"];//吉林
+                html[html.length] = [top.Lang.Mail.Write.baishanmVpjFksP, "54371"];//白山
+                html[html.length] = [top.Lang.Mail.Write.baichengCaXNYDZd, "50936"];//白城
+                html[html.length] = [top.Lang.Mail.Write.sipingguXFeBhH, "54157"];//四平
+                html[html.length] = [top.Lang.Mail.Write.songyuanXdqPBgvW, "50946"];//松原
+                html[html.length] = [top.Lang.Mail.Write.liaoyuanUtSlehJr, "54260"];//辽源
+                html[html.length] = [top.Lang.Mail.Write.changbaiJYFbaQhd, "54386"];//长白
+                html[html.length] = [top.Lang.Mail.Write.daanPjJjWxIQ, "50945"];//大安
+                html[html.length] = [top.Lang.Mail.Write.tonghuaGTPuoTRN, "54363"];//通化
                 break;
             case "122":
-                html[html.length] = ["呼和浩特", "53463"];
-                html[html.length] = ["包头", "53446"];
-                html[html.length] = ["赤峰", "54218"];
-                html[html.length] = ["海拉尔", "50527"];
-                html[html.length] = ["锡林浩特", "54102"];
-                html[html.length] = ["乌海", "53512"];
-                html[html.length] = ["鄂尔多斯", "53543"];
-                html[html.length] = ["牙克石", "50526"];
-                html[html.length] = ["满洲里", "50514"];
+                html[html.length] = [top.Lang.Mail.Write.huhehaoteUomKBeXt, "53463"];//呼和浩特
+                html[html.length] = [top.Lang.Mail.Write.baotouxpEosHgt, "53446"];//包头
+                html[html.length] = [top.Lang.Mail.Write.chifengjePctcKb, "54218"];//赤峰
+                html[html.length] = [top.Lang.Mail.Write.hailaerOURiiQjM, "50527"];//海拉尔
+                html[html.length] = [top.Lang.Mail.Write.xilinhaoteAzeRtgqt, "54102"];//锡林浩特
+                html[html.length] = [top.Lang.Mail.Write.wuhaiTfMpiShc, "53512"];//乌海
+                html[html.length] = [top.Lang.Mail.Write.eerduositTdLxDyt, "53543"];//鄂尔多斯
+                html[html.length] = [top.Lang.Mail.Write.yakeshitkLArdKn, "50526"];//牙克石
+                html[html.length] = [top.Lang.Mail.Write.manzhoulijmwlMDLS, "50514"];//满洲里
                 break;
             case "123":
-                html[html.length] = ["哈尔滨", "50953"];
-                html[html.length] = ["牡丹江", "54094"];
-                html[html.length] = ["齐齐哈尔", "50745"];
-                html[html.length] = ["大庆", "50842"];
-                html[html.length] = ["伊春", "50774"];
-                html[html.length] = ["双鸭山", "50884"];
-                html[html.length] = ["鹤岗", "50775"];
-                html[html.length] = ["鸡西", "50978"];
-                html[html.length] = ["佳木斯", "50873"];
-                html[html.length] = ["七台河", "50971"];
-                html[html.length] = ["绥化", "50853"];
-                html[html.length] = ["黑河", "50468"];
-                html[html.length] = ["牡丹江", "54094"];
-                html[html.length] = ["大兴安岭", "50442"];
-                html[html.length] = ["黑河", "50468"];
+                html[html.length] = [top.Lang.Mail.Write.haerbinIOdybOLp, "50953"];//哈尔滨
+                html[html.length] = [top.Lang.Mail.Write.mudanjiangEDwsjyAb, "54094"];//牡丹江
+                html[html.length] = [top.Lang.Mail.Write.qiqihaeryRTIRXfx, "50745"];//齐齐哈尔
+                html[html.length] = [top.Lang.Mail.Write.daqingpYmUlpcR, "50842"];//大庆
+                html[html.length] = [top.Lang.Mail.Write.yichunlwXKTTOi, "50774"];//伊春
+                html[html.length] = [top.Lang.Mail.Write.shuangyashanyyGhTHgx, "50884"];//双鸭山
+                html[html.length] = [top.Lang.Mail.Write.hegangsuKSTNEZ, "50775"];//鹤岗
+                html[html.length] = [top.Lang.Mail.Write.jixixwoYcKan, "50978"];//鸡西
+                html[html.length] = [top.Lang.Mail.Write.jiamusiLhsVBLjH, "50873"];//佳木斯
+                html[html.length] = [top.Lang.Mail.Write.qitaihekXugTsVY, "50971"];//七台河
+                html[html.length] = [top.Lang.Mail.Write.suihuaNWzwzHHs, "50853"];//绥化
+                html[html.length] = [top.Lang.Mail.Write.heiheWhMCWHEL, "50468"];//黑河
+                html[html.length] = [top.Lang.Mail.Write.mudanjianglTiCBFzG, "54094"];//牡丹江
+                html[html.length] = [top.Lang.Mail.Write.daxinganlingObvoTvQq, "50442"];//大兴安岭
+                html[html.length] = [top.Lang.Mail.Write.heiheJBEvTLsG, "50468"];//黑河
                 break;
             case "124":
-                html[html.length] = ["拉萨", "55591"];
-                html[html.length] = ["昌都", "56137"];
-                html[html.length] = ["阿里", "55437"];
-                html[html.length] = ["那曲", "55299"];
-                html[html.length] = ["日喀则", "55578"];
-                html[html.length] = ["山南", "55598"];
-                html[html.length] = ["林芝", "56312"];
+                html[html.length] = [top.Lang.Mail.Write.lasaqeQxlMkk, "55591"];//拉萨
+                html[html.length] = [top.Lang.Mail.Write.changduODYDRDNq, "56137"];//昌都
+                html[html.length] = [top.Lang.Mail.Write.alicXAKINSe, "55437"];//阿里
+                html[html.length] = [top.Lang.Mail.Write.naquLGgDywkz, "55299"];//那曲
+                html[html.length] = [top.Lang.Mail.Write.rikazeTMEThVjI, "55578"];//日喀则
+                html[html.length] = [top.Lang.Mail.Write.shannanpJWwZxbm, "55598"];//山南
+                html[html.length] = [top.Lang.Mail.Write.linzhivwmEocDq, "56312"];//林芝
                 break;
             case "125":
-                html[html.length] = ["西安", "57036"];
-                html[html.length] = ["韩城", "53955"];
-                html[html.length] = ["汉中", "57127"];
-                html[html.length] = ["宝鸡", "57016"];
-                html[html.length] = ["咸阳", "57048"];
-                html[html.length] = ["榆林", "53646"];
-                html[html.length] = ["渭南", "57045"];
-                html[html.length] = ["商州", "57143"];
-                html[html.length] = ["铜川", "53947"];
-                html[html.length] = ["华山", "57046"];
-                html[html.length] = ["延安", "53845"];
+                html[html.length] = [top.Lang.Mail.Write.xianzjqZhumG, "57036"];//西安
+                html[html.length] = [top.Lang.Mail.Write.hanchengNgfyiwtE, "53955"];//韩城
+                html[html.length] = [top.Lang.Mail.Write.hanzhongcqlJzKdR, "57127"];//汉中
+                html[html.length] = [top.Lang.Mail.Write.baojiRoGOGxGe, "57016"];//宝鸡
+                html[html.length] = [top.Lang.Mail.Write.xianyangIkxuOkzK, "57048"];//咸阳
+                html[html.length] = [top.Lang.Mail.Write.yulinzrOfmFmP, "53646"];//榆林
+                html[html.length] = [top.Lang.Mail.Write.weinanyzIujpYJ, "57045"];//渭南
+                html[html.length] = [top.Lang.Mail.Write.shangzhoutmSUkLcs, "57143"];//商州
+                html[html.length] = [top.Lang.Mail.Write.tongchuanVXBCtfAt, "53947"];//铜川
+                html[html.length] = [top.Lang.Mail.Write.huashankqLuuHLW, "57046"];//华山
+                html[html.length] = [top.Lang.Mail.Write.yananRzCFqdNe, "53845"];//延安
                 break;
             case "126":
-                html[html.length] = ["兰州", "52889"];
-                html[html.length] = ["白银", "52896"];
-                html[html.length] = ["庆阳", "53829"];
-                html[html.length] = ["酒泉", "52533"];
-                html[html.length] = ["天水", "57006"];
-                html[html.length] = ["武威", "52679"];
-                html[html.length] = ["张掖", "52652"];
-                html[html.length] = ["甘南", "50741"];
-                html[html.length] = ["临夏", "52984"];
-                html[html.length] = ["平凉", "53915"];
-                html[html.length] = ["定西", "52995"];
-                html[html.length] = ["金昌", "52675"];
-                html[html.length] = ["敦煌", "52418"];
+                html[html.length] = [top.Lang.Mail.Write.lanzhourJbdSiKU, "52889"];//兰州
+                html[html.length] = [top.Lang.Mail.Write.baiyiniidoYSoy, "52896"];//白银
+                html[html.length] = [top.Lang.Mail.Write.qingyangSdhWVzyx, "53829"];//庆阳
+                html[html.length] = [top.Lang.Mail.Write.jiuquanMdVdonTD, "52533"];//酒泉
+                html[html.length] = [top.Lang.Mail.Write.tianshuijKRwKSmz, "57006"];//天水
+                html[html.length] = [top.Lang.Mail.Write.wuweiINSufXzs, "52679"];//武威
+                html[html.length] = [top.Lang.Mail.Write.zhangyecAPwJMts, "52652"];//张掖
+                html[html.length] = [top.Lang.Mail.Write.gannaneseLsciW, "50741"];//甘南
+                html[html.length] = [top.Lang.Mail.Write.linxiaHVzpUevp, "52984"];//临夏
+                html[html.length] = [top.Lang.Mail.Write.pingliangFbFkSDWy, "53915"];//平凉
+                html[html.length] = [top.Lang.Mail.Write.dingximFvuCmah, "52995"];//定西
+                html[html.length] = [top.Lang.Mail.Write.jinchangdIrDiEqf, "52675"];//金昌
+                html[html.length] = [top.Lang.Mail.Write.dunhuangGLiFoepI, "52418"];//敦煌
                 break;
             case "127":
-                html[html.length] = ["西宁", "52866"];
-                html[html.length] = ["海北", "52754"];
-                html[html.length] = ["海南", "52856"];
-                html[html.length] = ["海西", "52737"];
-                html[html.length] = ["黄南", "56065"];
-                html[html.length] = ["海东", "52875"];
-                html[html.length] = ["果洛", "56043"];
-                html[html.length] = ["玉树", "56029"];
+                html[html.length] = [top.Lang.Mail.Write.xiningdSCydNwx, "52866"];//西宁
+                html[html.length] = [top.Lang.Mail.Write.haibeivbqpXYdL, "52754"];//海北
+                html[html.length] = [top.Lang.Mail.Write.hainanoiMlrLTs, "52856"];//海南
+                html[html.length] = [top.Lang.Mail.Write.haixiFKRshitM, "52737"];//海西
+                html[html.length] = [top.Lang.Mail.Write.huangnanSXQYrAsn, "56065"];//黄南
+                html[html.length] = [top.Lang.Mail.Write.haidongNnDKtMER, "52875"];//海东
+                html[html.length] = [top.Lang.Mail.Write.guoluoCTMtirtF, "56043"];//果洛
+                html[html.length] = [top.Lang.Mail.Write.yushusuRuDgUI, "56029"];//玉树
                 break;
             case "128":
-                html[html.length] = ["银川", "53614"];
-                html[html.length] = ["固原", "53817"];
-                html[html.length] = ["中卫", "53704"];
-                html[html.length] = ["石嘴山", "53518"];
-                html[html.length] = ["吴忠", "53612"];
+                html[html.length] = [top.Lang.Mail.Write.yinchuanFdJIzxXR, "53614"];//银川
+                html[html.length] = [top.Lang.Mail.Write.guyuannbVONzxG, "53817"];//固原
+                html[html.length] = [top.Lang.Mail.Write.zhongweicGrJEtbM, "53704"];//中卫
+                html[html.length] = [top.Lang.Mail.Write.shizuishanZwrLTOpq, "53518"];//石嘴山
+                html[html.length] = [top.Lang.Mail.Write.wuzhongXAJhaOOt, "53612"];//吴忠
                 break;
             case "129":
-                html[html.length] = ["乌鲁木齐", "51463"];
-                html[html.length] = ["阿勒泰", "51076"];
-                html[html.length] = ["阿克苏", "51628"];
-                html[html.length] = ["昌吉", "51368"];
-                html[html.length] = ["哈密", "52203"];
-                html[html.length] = ["和田", "51828"];
-                html[html.length] = ["喀什", "51709"];
-                html[html.length] = ["克拉玛依", "51243"];
-                html[html.length] = ["石河子", "51356"];
-                html[html.length] = ["塔城", "51133"];
-                html[html.length] = ["库尔勒", "51656"];
-                html[html.length] = ["伊宁", "51431"];
-                html[html.length] = ["吐鲁番", "51573"];
+                html[html.length] = [top.Lang.Mail.Write.wulumuqiaFTyXyWV, "51463"];//乌鲁木齐
+                html[html.length] = [top.Lang.Mail.Write.aletaiaSelgwOi, "51076"];//阿勒泰
+                html[html.length] = [top.Lang.Mail.Write.akesuwRUCQgPt, "51628"];//阿克苏
+                html[html.length] = [top.Lang.Mail.Write.changjiDkSsNaXH, "51368"];//昌吉
+                html[html.length] = [top.Lang.Mail.Write.hamiwSDJenAu, "52203"];//哈密
+                html[html.length] = [top.Lang.Mail.Write.hetianPbiFsuez, "51828"];//和田
+                html[html.length] = [top.Lang.Mail.Write.kashiVwLFZxyf, "51709"];//喀什
+                html[html.length] = [top.Lang.Mail.Write.kelamayiNAiLNmuU, "51243"];//克拉玛依
+                html[html.length] = [top.Lang.Mail.Write.shihezidToJERwg, "51356"];//石河子
+                html[html.length] = [top.Lang.Mail.Write.tachengwtyISiHA, "51133"];//塔城
+                html[html.length] = [top.Lang.Mail.Write.kuerlenZFBcfOC, "51656"];//库尔勒
+                html[html.length] = [top.Lang.Mail.Write.yiningAmAdgUOj, "51431"];//伊宁
+                html[html.length] = [top.Lang.Mail.Write.tulufandUfsdDVm, "51573"];//吐鲁番
                 break;
             case "130":
-                html[html.length] = ["南昌", "58606"];
-                html[html.length] = ["井冈山", "57894"];
-                html[html.length] = ["萍乡", "57786"];
-                html[html.length] = ["九江", "58502"];
-                html[html.length] = ["上饶", "58637"];
-                html[html.length] = ["抚州", "58617"];
-                html[html.length] = ["吉安", "57799"];
-                html[html.length] = ["鹰潭", "58627"];
-                html[html.length] = ["宜春", "57793"];
-                html[html.length] = ["庐山", "58506"];
-                html[html.length] = ["赣州", "57993"];
-                html[html.length] = ["都昌", "58517"];
-                html[html.length] = ["新余", "57796"];
-                html[html.length] = ["景德镇", "58527"];
+                html[html.length] = [top.Lang.Mail.Write.nanchangoNbcsSRg, "58606"];//南昌
+                html[html.length] = [top.Lang.Mail.Write.jinggangshanMEfdygQK, "57894"];//井冈山
+                html[html.length] = [top.Lang.Mail.Write.pingxiangDqicUCqT, "57786"];//萍乡
+                html[html.length] = [top.Lang.Mail.Write.jiujiangKnQozcRz, "58502"];//九江
+                html[html.length] = [top.Lang.Mail.Write.shangraoRQbCgFOm, "58637"];//上饶
+                html[html.length] = [top.Lang.Mail.Write.fuzhouNcvqPLXh, "58617"];//抚州
+                html[html.length] = [top.Lang.Mail.Write.jiandOJsVAVS, "57799"];//吉安
+                html[html.length] = [top.Lang.Mail.Write.yingtanHkhDyJqX, "58627"];//鹰潭
+                html[html.length] = [top.Lang.Mail.Write.yichunhSTQGgzR, "57793"];//宜春
+                html[html.length] = [top.Lang.Mail.Write.lushanlsidIYBd, "58506"];//庐山
+                html[html.length] = [top.Lang.Mail.Write.ganzhouFzyscrYt, "57993"];//赣州
+                html[html.length] = [top.Lang.Mail.Write.duchangOdzYUvnd, "58517"];//都昌
+                html[html.length] = [top.Lang.Mail.Write.xinyuYNNPjAdr, "57796"];//新余
+                html[html.length] = [top.Lang.Mail.Write.jingdezhenbcLocEiY, "58527"];//景德镇
                 break;
             case "131":
-                html[html.length] = ["海口", "59758"];
-                html[html.length] = ["儋州", "59845"];
-                html[html.length] = ["琼山", "59757"];
-                html[html.length] = ["通什", "59941"];
-                html[html.length] = ["文昌", "59856"];
-                html[html.length] = ["三亚", "59948"];
-                html[html.length] = ["西沙", "59981"];
-                html[html.length] = ["南沙岛", "59997"];
+                html[html.length] = [top.Lang.Mail.Write.haikouINlvMpep, "59758"];//海口
+                html[html.length] = [top.Lang.Mail.Write.danzhouMXwaMpKq, "59845"];//儋州
+                html[html.length] = [top.Lang.Mail.Write.qiongshanRcEHrPQF, "59757"];//琼山
+                html[html.length] = [top.Lang.Mail.Write.tongshivvuAVJGi, "59941"];//通什
+                html[html.length] = [top.Lang.Mail.Write.wenchangBiDRxeGf, "59856"];//文昌
+                html[html.length] = [top.Lang.Mail.Write.sanyaxyTDrvjR, "59948"];//三亚
+                html[html.length] = [top.Lang.Mail.Write.xishaQfOsdJxG, "59981"];//西沙
+                html[html.length] = [top.Lang.Mail.Write.nanshadaoHLANLFgx, "59997"];//南沙岛
                 break;
             case "132":
-                html[html.length] = ["台北", "58968"];
-                html[html.length] = ["高雄", "59554"];
+                html[html.length] = [top.Lang.Mail.Write.taibeiYYKvKXGL, "58968"];//台北
+                html[html.length] = [top.Lang.Mail.Write.gaoxiongigTXwLot, "59554"];//高雄
                 break;
             case "133":
-                html[html.length] = ["香港", "45005"];
+                html[html.length] = [top.Lang.Mail.Write.xianggangYMrhNhwh, "45005"];//香港
                 break;
             case "134":
-                html[html.length] = ["澳门", "45011"];
+                html[html.length] = [top.Lang.Mail.Write.aomenzVKpUkDh, "45011"];//澳门
                 break;
         }
         var oCity = $("selCity");

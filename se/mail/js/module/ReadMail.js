@@ -1553,14 +1553,14 @@ ReadMail.prototype = {
             me.replyMeeting(1, data, doc, function () {
                 jQuery("#boxMeetingBtns", doc).hide();
                 jQuery("#boxMeetingReason", doc).hide();
-                jQuery("#boxsettingResult", doc).html(me.getSetMeetingHtml("接受", data.account));
+                jQuery("#boxsettingResult", doc).html(me.getSetMeetingHtml(top.Lang.Mail.Write.jieshou, data.account));//接受
             });
         });
         jQuery("#btnMeetingTentative", doc).click(function () {
             me.replyMeeting(3, data, doc, function () {
                 jQuery("#boxMeetingBtns", doc).hide();
                 jQuery("#boxMeetingReason", doc).hide();
-                jQuery("#boxsettingResult", doc).html(me.getSetMeetingHtml("暂时接受", data.account));
+                jQuery("#boxsettingResult", doc).html(me.getSetMeetingHtml(top.Lang.Mail.Write.zanshijieshou, data.account));//暂时接受
             });
         });
         jQuery("#btnMeetingRefuse", doc).click(function () {
@@ -1570,7 +1570,7 @@ ReadMail.prototype = {
             me.replyMeeting(2, data, doc, function () {
                 jQuery("#boxMeetingBtns", doc).hide();
                 jQuery("#boxMeetingReason", doc).hide();
-                jQuery("#boxsettingResult", doc).html(me.getSetMeetingHtml("谢绝", data.account));
+                jQuery("#boxsettingResult", doc).html(me.getSetMeetingHtml(top.Lang.Mail.Write.xiejue, data.account));//谢绝
             });
         });
         jQuery("#btnMeetingRefuseCancel", doc).click(function () {
@@ -1610,10 +1610,10 @@ ReadMail.prototype = {
             data : mailData,
             call : function () {
                 callback && callback();
-                CC.showMsg("设置成功", true, false, 'option');
+                CC.showMsg(top.Lang.Mail.Write.shezhichenggong, true, false, 'option');//设置成功
             },
             failCall : function () {
-                CC.showMsg("发生错误", true, false, 'error');
+                CC.showMsg(top.Lang.Mail.Write.fashengcuowu, true, false, 'error');//发生错误
             },
             params: {
                 "comefrom": 5,
@@ -1625,7 +1625,7 @@ ReadMail.prototype = {
         top.MM.mailRequestApi(sendData);
     },
     getSetMeetingHtml: function (type, account) {
-        return "您已经" + type + "了" + account + "发起的会议邀请。";
+        return top.Lang.Mail.Write.ninyijing + type + top.Lang.Mail.Write.liao + account + top.Lang.Mail.Write.faqidehuiyiyaoqing;//您已经  ||  了  ||  发起的会议邀请。
     },
     getMeetingHtml: function (data, mailContent) {
         var html = [],
@@ -1657,14 +1657,14 @@ ReadMail.prototype = {
         if (parseInt(data["meetingInfo"]["meetingStart"]) < (new Date()).getTime() / 1000 ) {
             html.push("<div class=\"col_red meet-tip mt_15 radround\">");
             html.push("<i class=\"i-tx mr_5 ml_20\"></i>");
-            html.push("会议已过期");
+            html.push(top.Lang.Mail.Write.huiyiyiguoqi);//会议已过期
             html.push("</div>");
         } else if (top.gMain.userNumber === data.account.match(/<(.*?)>/)[1]) {
-            html.push("<p class=\"meet_til\">您的会议邀请：已有");
-            html.push("<var class=\"col_green\"> ", parterStatusArr[0].length, "</var> 人接受；");
-            html.push("<var class=\"color_blue\"> ", parterStatusArr[2].length, "</var> 人暂时接受；");
-            html.push("<var class=\"col_red\"> ", parterStatusArr[1].length, "</var> 人谢绝；");
-            html.push("<var class=\"col_orange\"> ", parterStatusArr[3].length, "</var> 人未知。");
+            html.push("<p class=\"meet_til\">"+top.Lang.Mail.Write.nindehuiyiyaoqingyiyou);//<p class=\"meet_til\">您的会议邀请：已有
+            html.push("<var class=\"col_green\"> ", parterStatusArr[0].length, "</var> "+top.Lang.Mail.Write.renjieshou);//</var> 人接受；
+            html.push("<var class=\"color_blue\"> ", parterStatusArr[2].length, "</var> "+top.Lang.Mail.Write.renzanshijieshou);//</var> 人暂时接受；
+            html.push("<var class=\"col_red\"> ", parterStatusArr[1].length, "</var> "+top.Lang.Mail.Write.renxiejue);//</var> 人谢绝；
+            html.push("<var class=\"col_orange\"> ", parterStatusArr[3].length, "</var> "+top.Lang.Mail.Write.renweizhi);//</var> 人未知。
             html.push("</p>");
 
             html.push("<div class=\"meet-tip clearfix mt_15 radtop\">");
@@ -1708,27 +1708,27 @@ ReadMail.prototype = {
                 case 0:
                     html.push("<p id=\"boxsettingResult\" class=\"meet_til\">");
                     html.push("<strong class=\"col_green mr_10\">", data.account.encodeHTML(), "</strong>");
-                    html.push("邀请您参与会议，请回应会议发起者：");
+                    html.push(top.Lang.Mail.Write.yqncyukNNbhyfqz);//邀请您参与会议，请回应会议发起者：
                     html.push("</p>");
                     html.push("<p id=\"boxMeetingBtns\" class=\"pt_10\">");
-                    html.push("<a id=\"btnMeetingAccepted\" href=\"javascript:;\" class=\"n_btn_on\"><span><span>接受</span></span></a>");
-                    html.push("<a id=\"btnMeetingTentative\" href=\"javascript:;\" class=\"n_btn ml_5\"><span><span>暂定</span></span></a>");
-                    html.push("<a id=\"btnMeetingRefuse\" href=\"javascript:;\" class=\"n_btn ml_5\"><span><span>谢绝</span></span></a>");
+                    html.push("<a id=\"btnMeetingAccepted\" href=\"javascript:;\" class=\"n_btn_on\"><span><span>"+top.Lang.Mail.Write.jieshou+"</span></span></a>");//<a id=\"btnMeetingAccepted\" href=\"javascript:;\" class=\"n_btn_on\"><span><span>接受</span></span></a>
+                    html.push("<a id=\"btnMeetingTentative\" href=\"javascript:;\" class=\"n_btn ml_5\"><span><span>"+top.Lang.Mail.Write.zanding+"</span></span></a>");//<a id=\"btnMeetingTentative\" href=\"javascript:;\" class=\"n_btn ml_5\"><span><span>暂定</span></span></a>
+                    html.push("<a id=\"btnMeetingRefuse\" href=\"javascript:;\" class=\"n_btn ml_5\"><span><span>"+top.Lang.Mail.Write.xiejue+"</span></span></a>");//<a id=\"btnMeetingRefuse\" href=\"javascript:;\" class=\"n_btn ml_5\"><span><span>谢绝</span></span></a>
                     html.push("</p>");
                     break;
                 case 1:
                     html.push("<p class=\"meet_til\">");
-                    html.push("您已经接受了", data.account.encodeHTML(), "发起的会议邀请。");
+                    html.push(top.Lang.Mail.Write.ninyijingjieshouliao, data.account.encodeHTML(), top.Lang.Mail.Write.faqidehuiyiyaoqing);//您已经接受了  ||  发起的会议邀请。
                     html.push("</p>");
                     break;
                 case 2:
                     html.push("<p class=\"meet_til\">");
-                    html.push("您已经谢绝了", data.account.encodeHTML(), "发起的会议邀请。");
+                    html.push(top.Lang.Mail.Write.ninyijingxiejueliao, data.account.encodeHTML(), top.Lang.Mail.Write.faqidehuiyiyaoqing);//您已经谢绝了  ||  发起的会议邀请。
                     html.push("</p>");
                     break;
                 case 3:
                     html.push("<p class=\"meet_til\">");
-                    html.push("您暂时接受了", data.account.encodeHTML(), "发起的会议邀请。");
+                    html.push(top.Lang.Mail.Write.ninzanshijieshouliao, data.account.encodeHTML(), top.Lang.Mail.Write.faqidehuiyiyaoqing);//您暂时接受了  ||  发起的会议邀请。
                     html.push("</p>");
                     break;
             }
@@ -1739,8 +1739,8 @@ ReadMail.prototype = {
         html.push("<textarea class=\"reject_font\" id=\"textMeetingReason\"></textarea>");
         html.push("</div>");
         html.push("<p class=\"ta_r pt_10\">");
-        html.push("<a id=\"btnMeetingRefuseSubmit\" href=\"javascript:;\" class=\"n_btn_on\"><span><span>确定</span></span></a>");
-        html.push("<a id=\"btnMeetingRefuseCancel\" href=\"javascript:;\" class=\"n_btn ml_5\"><span><span>取消</span></span></a>");
+        html.push("<a id=\"btnMeetingRefuseSubmit\" href=\"javascript:;\" class=\"n_btn_on\"><span><span>"+top.Lang.Mail.Write.queding+"</span></span></a>");//<a id=\"btnMeetingRefuseSubmit\" href=\"javascript:;\" class=\"n_btn_on\"><span><span>确定</span></span></a>
+        html.push("<a id=\"btnMeetingRefuseCancel\" href=\"javascript:;\" class=\"n_btn ml_5\"><span><span>"+top.Lang.Mail.Write.quxiao+"</span></span></a>");//<a id=\"btnMeetingRefuseCancel\" href=\"javascript:;\" class=\"n_btn ml_5\"><span><span>取消</span></span></a>
         html.push("</p>");
         html.push("</div>");
 
@@ -1762,7 +1762,7 @@ ReadMail.prototype = {
         html.push("<p class=\"pl_10 noflow\">");
         html.push("<span>", timeStart.toLocaleDateString(), "</span>");
         html.push("<span class=\"pl_10\">", timeStart.getHours() + ":" + (timeStart.getMinutes() < 10 ? "0" + timeStart.getMinutes() : timeStart.getMinutes()), "</span>");
-        html.push("<span class=\"pl_10\">至</span>");
+        html.push("<span class=\"pl_10\">"+top.Lang.Mail.Write.zhi+"</span>");//<span class=\"pl_10\">至</span>
         html.push("<span class=\"pl_10\">", timeEnd.toLocaleDateString(), "</span>");
         html.push("<span class=\"pl_10\">", timeEnd.getHours() + ":" + (timeEnd.getMinutes() < 10 ? "0" + timeEnd.getMinutes() : timeEnd.getMinutes()), "</span>");
         html.push("</p>", "</div>", "</li>");
@@ -1928,11 +1928,11 @@ ReadMail.prototype = {
             if(data.headers && data.headers["taskDate"] && data.headers["taskDate"] > 0){
                 t = new Date(data.headers["taskDate"] * 1000);
                 timeStr = t.getFullYear() + "-" + (t.getMonth() + 1) + "-" + t.getDate() + " " + t.getHours() + ":" + t.getMinutes();
-                html.push("<div class=\"divTips\"><span>已设为待办邮件，"+timeStr+"提醒。</span><li id=\"btnModRemind_2\"><a href=\"javascript:;\" >修改</a></li><li id=\"btnTaskStatus_2\"><a href=\"javascript:;\" >设为完成</a></li></div>");                   
+                html.push("<div class=\"divTips\"><span>"+top.Lang.Mail.Write.yisheweidaibanyoujian+timeStr+""+top.Lang.Mail.Write.tixing+"</span><li id=\"btnModRemind_2\"><a href=\"javascript:;\" >"+top.Lang.Mail.Write.xiugai+"</a></li><li id=\"btnTaskStatus_2\"><a href=\"javascript:;\" >"+top.Lang.Mail.Write.sheweiwancheng+"</a></li></div>");                   //<div class=\"divTips\"><span>已设为待办邮件，  ||  提醒。</span><li id=\"btnModRemind_2\"><a href=\"javascript:;\" >修改</a></li><li id=\"btnTaskStatus_2\"><a href=\"javascript:;\" >设为完成</a></li></div>
             }else if(data.headers && data.headers["taskDate"] && data.headers["taskDate"] == 0){
                 t = new Date(data.headers["taskDate"] * 1000);
                 timeStr = t.getFullYear() + "-" + (t.getMonth() + 1) + "-" + t.getDate() + " " + t.getHours() + ":" + t.getMinutes();
-                html.push("<div class=\"divTips\"><span>已设为待办邮件。</span><li id=\"btnTaskStatus_2\"><a href=\"javascript:;\" >设为完成</a></li></div>");   
+                html.push("<div class=\"divTips\"><span>"+top.Lang.Mail.Write.yisheweidaibanyoujian+"</span><li id=\"btnTaskStatus_2\"><a href=\"javascript:;\" >"+top.Lang.Mail.Write.sheweiwancheng+"</a></li></div>");   //<div class=\"divTips\"><span>已设为待办邮件。</span><li id=\"btnTaskStatus_2\"><a href=\"javascript:;\" >设为完成</a></li></div>
             }
         }
         //待办邮件-end
@@ -1952,9 +1952,9 @@ ReadMail.prototype = {
             html.push("<strong class=\"gAddrN\">" + trueName + "</strong>");
         }
         html.push("<em class=\"gAddrE\">&lt;" + sendUser + "&gt;</em>");
-		
+        
 
-		
+        
         if (gMain.userNumber != fromMailAddr && GC.check("CONTACTS_PER") && !LMD.userContancts[fromMailAddr]) {
             html.push('<span class="gAddrE"><a id="addToContact1_'+mid+'"  class="addToContact" href="javascript:fGoto();" onclick="'+strEvent+'.addEmailContacts(\'' + p.from.replace(/'|"/ig, '') + '\',\'fromType\');return false;">'+Lang.Mail.readMail_lb_addtocontacts+'</a></span>');
         }
@@ -1963,8 +1963,8 @@ ReadMail.prototype = {
         html.push("</div></div></div>");
         var email =sendUser;// from.substring(from.lastIndexOf("&lt;") + 4, from.lastIndexOf("&gt;"));
         if(data.sender!="" && Email.getValue(data.sender) !=Email.getValue(p.from.decodeHTML())){
-            html.push('<div class="rMList"><span class="rMl" style="visibility: hidden;">发件人：</span><div class="rMr"><div class="gAddr"><span style="margin-left: -17px;">');
-            html.push('（由'+p.from+'代发）</span></div></div></div>');
+            html.push('<div class="rMList"><span class="rMl" style="visibility: hidden;">'+top.Lang.Mail.Write.fajianren+'</span><div class="rMr"><div class="gAddr"><span style="margin-left: -17px;">');//<div class="rMList"><span class="rMl" style="visibility: hidden;">发件人：</span><div class="rMr"><div class="gAddr"><span style="margin-left: -17px;">
+            html.push('('+top.Lang.Mail.Write.you+p.from+''+top.Lang.Mail.Write.daifa+')</span></div></div></div>');//（由  ||  代发）</span></div></div></div>
         }
         html.push("<div class=\"rMList\">");
         html.push("<span class=\"rMl\">" + p.getLang(Lang.Mail.readMail_lb_to, Lang.Mail.recerver) + "</span>");
@@ -2089,9 +2089,9 @@ ReadMail.prototype = {
         // 提醒：这是一封“自销毁”的邮件，回复这封邮件时会隐藏原邮件正文和附件。
         if (data.flag && data.flag.selfdestruct) {
             if (data.flag.selfdestruct === 2) {
-                html.push('<div class="yellowTips">提醒：这是一封自销毁邮件，发信人设置了该邮件被阅读后自动销毁，回复这封邮件时会隐藏原文。</div>');
+                html.push('<div class="yellowTips">'+top.Lang.Mail.Write.txzsyElenhhycyw+'</div>');//<div class="yellowTips">提醒：这是一封自销毁邮件，发信人设置了该邮件被阅读后自动销毁，回复这封邮件时会隐藏原文。</div>
             } else if (data.flag.selfdestruct === 1) {
-                html.push('<div class="yellowTips">提醒：这是一封自销毁邮件，发信人设置了邮件阅读过期时间，过期后将自动销毁，回复这封邮件时会隐藏原文。</div>');
+                html.push('<div class="yellowTips">'+top.Lang.Mail.Write.txzsyyYsMrhycyw+'</div>');//<div class="yellowTips">提醒：这是一封自销毁邮件，发信人设置了邮件阅读过期时间，过期后将自动销毁，回复这封邮件时会隐藏原文。</div>
             }
 
         } else if (denyForward) {
@@ -2120,7 +2120,7 @@ ReadMail.prototype = {
         //如果是安全邮箱, 如果解密 或者 签名验证不通过, 则不显示内容
         //因无法保证发件人的真实性，或邮件内容可能被篡改，考虑到安全性，该邮件已被屏蔽。
         if( CC.isSecurityMail() ){
-            var sm_errorTip = "因无法保证发件人的真实性，或邮件内容可能被篡改，考虑到安全性，该邮件已被屏蔽。";
+            var sm_errorTip = top.Lang.Mail.Write.ywfbzGgnDKjybpb;//因无法保证发件人的真实性，或邮件内容可能被篡改，考虑到安全性，该邮件已被屏蔽。
             if( data.flag && ( data.flag.safemail_sign == -1 || data.flag.secureSigned == -1 )){
                 html.push("<div style='height:110px; font-size:14px; padding:40px;'>"+sm_errorTip+"</div>");
             }else if(data.flag && ( data.flag.safemail_crypt == -1 || data.flag.secureEncrypt == -1 )){
@@ -2200,11 +2200,11 @@ ReadMail.prototype = {
 
         if(sensitive && sensitive.length){
             var solution = sensitive.parent().parent().next().find('p');
-            sensitive.parent().html("您发送的邮件可能触发了安全策略或包含敏感词");
+            sensitive.parent().html(top.Lang.Mail.Write.nfsdynbGzAbhmgc);//您发送的邮件可能触发了安全策略或包含敏感词
             if(solution){
-                solution.html("若您想继续投递该邮件，请选择<a href='#' id='encryptMail' onclick='return false;'>继续发送</a>");
+                solution.html(""+top.Lang.Mail.Write.rnxjxpGmHqyjqxz+"<a href='#' id='encryptMail' onclick='return false;'>"+top.Lang.Mail.Write.jixufasong+"</a>");//若您想继续投递该邮件，请选择<a href='#' id='encryptMail' onclick='return false;'>继续发送</a>
                 jQuery('#encryptMail', doc).bind('click', function(){
-                    var text = '您选择了以加密的方式继续发送该邮件，请输入加密密码';
+                    var text = top.Lang.Mail.Write.nxzlyksCTPrjmmm;//您选择了以加密的方式继续发送该邮件，请输入加密密码
                     text+= parent.Lang.Mail.tips033 + '：<input type="password" id="security_password" class="" /><br/>';
                     text+= parent.Lang.Mail.tips034 + '：<input type="password" id="security_repassword" class="" />';
                     parent.CC.alert(text, function(){
@@ -2238,8 +2238,8 @@ ReadMail.prototype = {
             encryptCode: this.encryptCode,
             attachments: d.attachments
         };
-        var call = function(){parent.CC.showMsg("该邮件已加密发送成功", true, false, 'option');};
-        var fCall = function(){parent.CC.showMsg("该邮件加密发送失败", true, false, 'error');};
+        var call = function(){parent.CC.showMsg(top.Lang.Mail.Write.gaiyoujianyijiamifasongchenggong, true, false, 'option');};//该邮件已加密发送成功
+        var fCall = function(){parent.CC.showMsg(top.Lang.Mail.Write.gaiyoujianjiamifasongshibai, true, false, 'error');};//该邮件加密发送失败
         var q = {
             func: func,
             data: dd,
@@ -2280,7 +2280,7 @@ ReadMail.prototype = {
      * 获取用户写短信按钮UI
      */
     getUserPhoneUI: function(){
-        return '<a id="contact_mail_writeMessage" href="#" class="n_btn ml_5" onclick="return false;"><span><span>写短信</span></span></a>';
+        return '<a id="contact_mail_writeMessage" href="#" class="n_btn ml_5" onclick="return false;"><span><span>'+top.Lang.Mail.Write.xieduanxin+'</span></span></a>';//<a id="contact_mail_writeMessage" href="#" class="n_btn ml_5" onclick="return false;"><span><span>写短信</span></span></a>
     },
     /**
      * 获取往来邮件UI结构
@@ -2317,7 +2317,7 @@ ReadMail.prototype = {
         html.push('</div>');
 
         html.push('<div class="wl-btner">');
-        html.push('<a id="contact_mail_writeMail" href="#" class="n_btn ml_10" onclick="return false;"><span><span>写信</span></span></a>');
+        html.push('<a id="contact_mail_writeMail" href="#" class="n_btn ml_10" onclick="return false;"><span><span>'+top.Lang.Mail.Write.xiexin+'</span></span></a>');//<a id="contact_mail_writeMail" href="#" class="n_btn ml_10" onclick="return false;"><span><span>写信</span></span></a>
         if(phone && GC.check("MAIL_VAS_SMS")){
             html.push(this.getUserPhoneUI());
             this.userPhone = phone;
@@ -2328,8 +2328,8 @@ ReadMail.prototype = {
 
         html.push('<div class="wl-tab-hd">');
         html.push('<ul class="wl-tab-til clearfix">');
-        html.push('<li class="wl-mail-lt on"><a id="contact_mail_mail_tab" href="#" onclick="return false;"><i class="i-readMail-file"></i><span>往来邮件</span></a></li>');
-        html.push('<li class=""><a id="contact_mail_attach_tab" href="#" onclick="return false;"><i class="i-fj mr_5"></i><span>往来附件</span></a></li>');
+        html.push('<li class="wl-mail-lt on"><a id="contact_mail_mail_tab" href="#" onclick="return false;"><i class="i-readMail-file"></i><span>'+top.Lang.Mail.Write.wanglaiyoujian+'</span></a></li>');//<li class="wl-mail-lt on"><a id="contact_mail_mail_tab" href="#" onclick="return false;"><i class="i-readMail-file"></i><span>往来邮件</span></a></li>
+        html.push('<li class=""><a id="contact_mail_attach_tab" href="#" onclick="return false;"><i class="i-fj mr_5"></i><span>'+top.Lang.Mail.Write.wanglaifujian+'</span></a></li>');//<li class=""><a id="contact_mail_attach_tab" href="#" onclick="return false;"><i class="i-fj mr_5"></i><span>往来附件</span></a></li>
         html.push('</ul>');
         html.push('</div>');
 
@@ -2599,10 +2599,10 @@ ReadMail.prototype = {
             listHtml.unshift("<div class='wl-area'>");
             listHtml.push("</div>");
             listHtml.push("<div class='ta_c wl-spa'><img align=\"top\" src=\"" + parent.CC.getResourceAbsoluteURL() + "/images/wl-spa.jpg\" width=\"252\" height=\"6\"></div>");
-            listHtml.push('<p class="ta_c"><a id="mailContact_view_more" href="#" onclick="return false;">查看更多</a></p>');
+            listHtml.push('<p class="ta_c"><a id="mailContact_view_more" href="#" onclick="return false;">'+top.Lang.Mail.Write.chakangengduo+'</a></p>');//<p class="ta_c"><a id="mailContact_view_more" href="#" onclick="return false;">查看更多</a></p>
         }
         else{
-            listHtml.push('<div style="text-align:center;">暂无往来邮件</div>');
+            listHtml.push('<div style="text-align:center;">'+top.Lang.Mail.Write.zanwuwanglaiyoujian+'</div>');//<div style="text-align:center;">暂无往来邮件</div>
         }
         jQuery('#mailContact_mailListContainer', doc).html(listHtml.join(''));
         this.gotCotactControls();
@@ -2656,7 +2656,7 @@ ReadMail.prototype = {
             html.push('</div>');
         }
         else{
-            html.push('<div style="text-align:center;">暂无往来附件</div>');
+            html.push('<div style="text-align:center;">'+top.Lang.Mail.Write.zanwuwanglaifujian+'</div>');//<div style="text-align:center;">暂无往来附件</div>
         }
         jQuery('#mailContact_attachListContainer', doc).html(html.join(''));
     },
@@ -2907,7 +2907,7 @@ ReadMail.prototype = {
         html.push("<span style=\"display:none\" id=\"select_attach\" class=\"fr attrall-title\"></span>");
 
         //附件图片预览  (共多少个)
-        html.push("<span><strong>附件图片预览</strong>(共<var>{0}</var>个)</span></div>");
+        html.push("<span><strong>"+top.Lang.Mail.Write.fujiantupianyulan+"</strong>("+top.Lang.Mail.Write.gong+"<var>{0}</var>"+top.Lang.Mail.Write.ge+")</span></div>");//<span><strong>附件图片预览</strong>(共<var>{0}</var>个)</span></div>
 
         html.push("<ul class=\"attrList clearfix\">");
 
@@ -2994,13 +2994,13 @@ ReadMail.prototype = {
             t = "<i class='status4' title='" + listMailType[4] + "'></i>";
 
         }else if( flag.safemail_sign == "1" && flag.safemail_crypt == "1" ){
-            t = "<i class='i-redmedal' title='" + "签名加密邮件" + "'></i>";
+            t = "<i class='i-redmedal' title='" + top.Lang.Mail.Write.qianmingjiamiyoujian + "'></i>";//签名加密邮件
         }else if( flag.safemail_sign == "1" ){
 
-            t = "<i class='i-graymedal' title='" + "签名邮件" + "'></i>";
+            t = "<i class='i-graymedal' title='" + top.Lang.Mail.Write.qianmingyoujian + "'></i>";//签名邮件
         }else if( flag.safemail_crypt == "1" ){
 
-            t = "<i class='i-ykey' title='" + "加密邮件" + "'></i>";
+            t = "<i class='i-ykey' title='" + top.Lang.Mail.Write.jiamiyoujian + "'></i>";//加密邮件
         }
         else {
 
@@ -3202,7 +3202,7 @@ ReadMail.prototype = {
                  html.push(sendName);
                  html.push('       </p>');
                  html.push('       <div class="session-mode-txt-box">');
-                 html.push('           <div class="session-mode-txt">'+summary+'<a href="javascript:;" onclick=MR.ckMail(\''+index +'\')>【查看邮件详情】</a></div>');
+                 html.push('           <div class="session-mode-txt">'+summary+'<a href="javascript:;" onclick=MR.ckMail(\''+index +'\')>【'+top.Lang.Mail.Write.chakanyoujianxiangqing+'</a></div>');//\')>【查看邮件详情】</a></div>
                  html.push('           <i class="i-l-arr"></i>');
                  html.push('       </div>');
                  html.push('   </div>');
@@ -3227,7 +3227,7 @@ ReadMail.prototype = {
                  html.push(sendName);
                  html.push('       </p>');
                  html.push('       <div class="session-mode-txt-box">');
-                 html.push('           <div class="session-mode-txt">'+summary+'<a href="javascript:;" onclick=MR.ckMail(\''+index +'\')>【查看邮件详情】</a></div>');
+                 html.push('           <div class="session-mode-txt">'+summary+'<a href="javascript:;" onclick=MR.ckMail(\''+index +'\')>【'+top.Lang.Mail.Write.chakanyoujianxiangqing+'</a></div>');//\')>【查看邮件详情】</a></div>
                  html.push('           <i class="i-r-arr"></i>');
                  html.push('       </div>');
                  html.push('   </div>');
@@ -3319,8 +3319,8 @@ ReadMail.prototype = {
         tmpHtml.push(           subject);
         tmpHtml.push('    </div>');
         tmpHtml.push('    <div class="session-mode-state">');
-        tmpHtml.push('        <p class="session-mode-time"><label for="">时&nbsp;&nbsp;&nbsp;&nbsp;间：</label><span>'+date+'</span></p>');
-        tmpHtml.push('        <span class="count-mail">共'+ld.length+'封</span>');
+        tmpHtml.push('        <p class="session-mode-time"><label for="">'+top.Lang.Mail.Write.shijian+'</label><span>'+date+'</span></p>');//        <p class="session-mode-time"><label for="">时&nbsp;&nbsp;&nbsp;&nbsp;间：</label><span>
+        tmpHtml.push('        <span class="count-mail">'+top.Lang.Mail.Write.gong+ld.length+''+top.Lang.Mail.Write.feng+'</span>');//        <span class="count-mail">共  ||  封</span>
       
 
        /* tmpHtml.push('<div class="readMail_wrap">');
@@ -3468,7 +3468,7 @@ ReadMail.prototype = {
     },
     getDate: function (date) {
         if (gMain.lang == "en_US") {
-            return Util.formatDate(date, "yyyy年mm月dd日(周ww) hh:nn");//2012年2月13日(周四) 16：00 ,不支持多语言
+            return Util.formatDate(date, top.Lang.Mail.Write.nianyuerizhou);//2012年2月13日(周四) 16：00 ,不支持多语言//yyyy年mm月dd日(周ww) hh:nn
         } else {
             return Util.formatDate(date, "WW,MM dd,yyyy hh:nn");
         }
@@ -3503,7 +3503,7 @@ ReadMail.prototype = {
             || data.flag.secureSigned == 1
             ||data.flag.secureEncrypt == 1 )){
             html.push('<div class="rMList">');
-            html.push('<span class="rMl">安&nbsp;&nbsp; 全：</span>');
+            html.push('<span class="rMl">'+top.Lang.Mail.Write.anquan+'</span>');//<span class="rMl">安&nbsp;&nbsp; 全：</span>
 
             var spanstart = '<strong class="mb_ept">',
                 spanend = '</strong>';
@@ -3516,7 +3516,7 @@ ReadMail.prototype = {
                 //签名通过
                 html.push( spanstart );
                 html.push('<i class="i-graymedal mr_5"></i>');
-                html.push('<span class="col_green">验证签名通过</span>');
+                html.push('<span class="col_green">'+top.Lang.Mail.Write.yanzhengqianmingtongguo+'</span>');//<span class="col_green">验证签名通过</span>
                 html.push(spanend);
                 isSign = true;
             }
@@ -3525,7 +3525,7 @@ ReadMail.prototype = {
                 //签名不通过
                 html.push( spanstart );
                 html.push('<i class="i-mixmedal mr_5"></i>');
-                html.push('<span class="col_red">签名验证未通过</span>');
+                html.push('<span class="col_red">'+top.Lang.Mail.Write.qianmingyanzhengweitongguo+'</span>');//<span class="col_red">签名验证未通过</span>
                 html.push(spanend);
 
                 isSign = -1;
@@ -3535,7 +3535,7 @@ ReadMail.prototype = {
                 //解密通过
                 html.push( spanstart );
                 html.push('<i class="i-ykey mr_5"></i>');
-                html.push('<span class="col_green">数字加密邮件</span>');
+                html.push('<span class="col_green">'+top.Lang.Mail.Write.shuzijiamiyoujian+'</span>');//<span class="col_green">数字加密邮件</span>
                 html.push(spanend);
 
                 isCrypt = true;
@@ -3545,7 +3545,7 @@ ReadMail.prototype = {
                 //解密不通过
                 html.push( spanstart );
                 html.push('<i class="i-notPassed mr_5"></i>');
-                html.push('<span class="col_red">解密失败</span>');
+                html.push('<span class="col_red">'+top.Lang.Mail.Write.jiemishibai+'</span>');//<span class="col_red">解密失败</span>
                 html.push(spanend);
 
                 isCrypt = -1;
@@ -3572,14 +3572,14 @@ ReadMail.prototype = {
             this.attachImgList[index] = [];
         }
         html.push("<div class=\"rMList\" id='attach_{0}'>".format(index));
-        html.push("<span class=\"rMl\" " + (attach.length == 1 ? "style=padding-top:3px" : "") + ">" + p.getLang(Lang.Mail.readMail_lb_attach, "附　件：") + "</span>")
+        html.push("<span class=\"rMl\" " + (attach.length == 1 ? "style=padding-top:3px" : "") + ">" + p.getLang(Lang.Mail.readMail_lb_attach, top.Lang.Mail.Write.fujian) + "</span>")//附　件：
         html.push("<div class=\"rMr\">");
         var ft = null, link = null;
 
         //附件数量大于一个
         if (attach.length > 1) {
             if (!denyForward) {
-                html.push(attach.length + "个&nbsp;&nbsp;&nbsp;<a  href=\"" + CC.getDownloadsLink(index) + "\"  class='download_link' style='padding-left:5px'>" + Lang.Mail.readmail_attach_downloadall + "</a>");
+                html.push(attach.length + top.Lang.Mail.Write.ge +"&nbsp;&nbsp;&nbsp;<a  href=\""+ CC.getDownloadsLink(index) + "\"  class='download_link' style='padding-left:5px'>" + Lang.Mail.readmail_attach_downloadall + "</a>");//个&nbsp;&nbsp;&nbsp;<a  href=\"
             }
             html.push("</div>");
             html.push('<div class="download-wrap">');
@@ -3604,7 +3604,7 @@ ReadMail.prototype = {
                 html.push(p.getOnLineReaderHTML(attach[i], link, denyForward, index,i));
                 //如果不是oa邮箱，出现增加到网盘， 后续要判断是否有网盘
                 if (!CC.isOA() && CC.isDisk() && denyForward != 1) {
-                    html.push("<a href=\"javascript:void(0);\"  class=\"readmail_download\" onclick=\"oSM.saveInDisk('" + p.mid + "','" + attach[i].fileOffSet + "','" + attach[i].fileSize + "','" + i + "')\">存网盘</a>");
+                    html.push("<a href=\"javascript:void(0);\"  class=\"readmail_download\" onclick=\"oSM.saveInDisk('" + p.mid + "','" + attach[i].fileOffSet + "','" + attach[i].fileSize + "','" + i + "')\">"+top.Lang.Mail.Write.cunwangpan+"</a>");//')\">存网盘</a>
                 }
                 html.push('</div>');
             }
@@ -3679,7 +3679,7 @@ ReadMail.prototype = {
         var p = this,
             html = [];
 
-        html.push("<a href=\"javascript:void(0);\" class=\"readmail_download\" style=\"padding-left:5px\"   onclick=\"oSM.saveInDisk('"+mid+"','"+fileOffSet+"','"+fileSize+"','"+fileName+"')\">存网盘</a>");
+        html.push("<a href=\"javascript:void(0);\" class=\"readmail_download\" style=\"padding-left:5px\"   onclick=\"oSM.saveInDisk('"+mid+"','"+fileOffSet+"','"+fileSize+"','"+fileName+"')\">"+top.Lang.Mail.Write.cunwangpan+"</a>");//')\">存网盘</a>
 
         return html.join("");
     },
@@ -4002,7 +4002,7 @@ ReadMail.prototype = {
                     CC.exit();
                 }
             }
-            top.CC.showMsg('系统繁忙，请稍后再试',true,null,'error')
+            top.CC.showMsg(top.Lang.Mail.Write.xitongfanmangqingshaohouzaishi,true,null,'error')//系统繁忙，请稍后再试
         };
         var data = {
             func: obj.func,
@@ -4114,7 +4114,7 @@ ReadMail.prototype = {
         var p = this;
         var id = "BeforeRecallResultFrm" + p.mid;
         var html = [];                                                                      
-        html.push("<div style=\"padding:25px; \"><ul class=\"clearfix\"><li style=\"background:no-repeat url('"+ parent.CC.getResourceAbsoluteURL() +"/images/u17.png ');width: 54px;height: 44px;float: left;\"></li><li>确定要撤回此邮件么？<br/>如果撤回成功，对方将收到提示邮件已被撤回的邮件。</li></ul><ul style=\" margin-top: 20px; font-size: 13px;   color: rgb(141, 141, 141);\"><li>邮件发送未超过15天，在对方未读或显示未读状态，未被对方从邮件客户端收取过，才支持撤回。</li></ul></div>");
+        html.push("<div style=\"padding:25px; \"><ul class=\"clearfix\"><li style=\"background:no-repeat url('"+ parent.CC.getResourceAbsoluteURL() +"/images/u17.png ');width: 54px;height: 44px;float: left;\"></li><li>"+top.Lang.Mail.Write.quedingyaochehuiciyoujianme+"<br/>"+top.Lang.Mail.Write.rgchcfDpCGchdyj+"</li></ul><ul style=\" margin-top: 20px; font-size: 13px;   color: rgb(141, 141, 141);\"><li>"+top.Lang.Mail.Write.yjfswLoonLczcch+"</li></ul></div>");///images/u17.png ');width: 54px;height: 44px;float: left;\"></li><li>确定要撤回此邮件么？<br/>如果撤回成功，对方将收到提示邮件已被撤回的邮件。</li></ul><ul style=\" margin-top: 20px; font-size: 13px;   color: rgb(141, 141, 141);\"><li>邮件发送未超过15天，在对方未读或显示未读状态，未被对方从邮件客户端收取过，才支持撤回。</li></ul></div>
         var ao = {
             id: id,
             title: p.getLang(Lang.Mail.recallMail, Lang.Mail.RecallMessage_RecallMail),

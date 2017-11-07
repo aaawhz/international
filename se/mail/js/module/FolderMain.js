@@ -77,7 +77,7 @@ FolderMain.prototype = {
             del: {name: Lang.Mail.folder_Del, id: "MAIL_FOLDER_DEL"},
             rename: {name: Lang.Mail.folder_ReName, id: "MAIL_FOLDER_UPDATE"},
             filter: {name: Lang.Mail.folder_AddFilter, id: "MAIL_CONFIG_FILTER"},
-            label: {name: "给指定邮件贴标签", id: "MAIL_CONFIG_FILTER", authority:"MAIL_MANAGER_FILTER"},
+            label: {name: top.Lang.Mail.Write.gzdyjtbqQybHL, id: "MAIL_CONFIG_FILTER", authority:"MAIL_MANAGER_FILTER"},//给指定邮件贴标签
             edit: {nam: Lang.Mail.folder_Edit, id: "MAIL_FOLDER_UPDATE"},
             pop: {name: Lang.Mail.folder_Pop, id: "MAIL_FOLDER_POP"},
             encrypt: {name: Lang.Mail.Write.encryption, id: "MAIL_FOLDER_ENCRYPT"},  //加密
@@ -177,7 +177,7 @@ FolderMain.prototype = {
 //                html.push('<td width="12%">' + size + '</td>');
 //                html.push('<td width="34%"><a>' + getOpteration(type, fid, op, nodes, index, parentNodeCount, isLock) + '</a></td>');
             }
-            html[html.length] = '<td>邮件:<span class="c_ff6600">' + su.unreadMessageCount + '</span>/' + su.messageCount + ' 占用:' + size + '</td>';
+            html[html.length] = '<td>'+top.Lang.Mail.Write.youjian+'<span class="c_ff6600">' + su.unreadMessageCount + '</span>/' + su.messageCount + top.Lang.Mail.Write.zhanyong + size + '</td>';//<td>邮件:<span class="c_ff6600">  ||   占用:
             html[html.length] = '<td width="40%">' + getOpteration(type, fid, op, nodes, index, parentNodeCount, isLock) + '</td>';
             html.push('</tr>');
             return html.join("");
@@ -325,17 +325,17 @@ FolderMain.prototype = {
 
         var opterationList_user = [];
         if (GC.check("MAIL_CONFIG_FOLDER")){
-			opterationList_user.push("empty");
-			 opterationList_user.push("del");
-			 opterationList_user.push("rename");
-			 opterationList_user.push("sort");
-		}        
+            opterationList_user.push("empty");
+             opterationList_user.push("del");
+             opterationList_user.push("rename");
+             opterationList_user.push("sort");
+        }        
         html[html.length] = getData(opterationList_user, GE.folder.user);
         html[html.length] = '</div>';
 
         if (GC.check("MAIL_MANAGER_FILTER")) {
         html[html.length] = '<div class="mail-tips "><strong>' + Lang.Mail.FolderManageTips + '：</strong>';
-        html[html.length] = ' <p>创建<a href="javascript:void(0)" onclick=MM.folderMain.opt("filter",1,"sys");return false;>邮件分拣</a>规则，按发件人自动投到指定邮件夹，邮件处理更方便。</p></div>';
+        html[html.length] = ' <p>'+top.Lang.Mail.Write.chuangjian+'<a href="javascript:void(0)" onclick=MM.folderMain.opt("filter",1,"sys");return false;>'+top.Lang.Mail.Write.youjianfenjian+'</a>'+top.Lang.Mail.Write.gzafjTPhAWclgfb+'</p></div>';// <p>创建<a href="javascript:void(0)" onclick=MM.folderMain.opt("filter",1,"sys");return false;>邮件分拣</a>规则，按发件人自动投到指定邮件夹，邮件处理更方便。</p></div>
         }
 
         if (CC.checkConfig("mailPOP")) {
@@ -547,7 +547,7 @@ FolderMain.prototype = {
                 $("txtNewFolderName").focus();
                 return true;
             }
-            if (fn == Lang.Mail.folder_MyFolder || fn === "代收邮件夹" || fn === "我的标签") {
+            if (fn == Lang.Mail.folder_MyFolder || fn === top.Lang.Mail.Write.daishouyoujianjia || fn === top.Lang.Mail.Write.wodebiaoqian) {//代收邮件夹  ||  我的标签
                 tip.show($("txtNewFolderName"), Lang.Mail.folder_NameExist);
                 $("txtNewFolderName").focus();
                 return true;
@@ -603,19 +603,19 @@ FolderMain.prototype = {
                 }
                 if (chk && chk.checked && email) {
                     if (email.value == "") {
-                        tip.show(email, "请选择要收取的联系人");
+                        tip.show(email, top.Lang.Mail.Write.qxzysqdlxrtmcjq);//请选择要收取的联系人
                         email.focus();
                         return true;
                     }
 
                     if (email.value.replace(/[,;，；]/g, ';').split(";").length > 1) {
-                        tip.show(email, "只能输入一个联系人地址");
+                        tip.show(email, top.Lang.Mail.Write.znsryvFtjklxrdz);//只能输入一个联系人地址
                         email.focus();
                         return true;
                     }
 
                     if (!Email.match(email.value)) {
-                        tip.show(email, "请输入正确的联系人地址");
+                        tip.show(email, top.Lang.Mail.Write.qsrzqyHqmSlxrdz);//请输入正确的联系人地址
                         email.focus();
                         return true;
                     }
@@ -637,7 +637,7 @@ FolderMain.prototype = {
             location += GE.locationAdd;
 
             if (flag) {
-                tip.show($("txtNewFolderName"), isLabel ? "同名标签已经存在" : Lang.Mail.folder_NameExist);
+                tip.show($("txtNewFolderName"), isLabel ? top.Lang.Mail.Write.tmbqyjczvJFKG : Lang.Mail.folder_NameExist);//同名标签已经存在
                 $("txtNewFolderName").focus();
                 return true;
             }
@@ -742,10 +742,10 @@ FolderMain.prototype = {
                             MM.mailRequest(postData);
                         }
                         if (!isEdit) {
-                            CC.showMsg(isLabel ? "创建标签成功" : Lang.Mail.mailFolderCreateSuccess, true, false, "option");
+                            CC.showMsg(isLabel ? top.Lang.Mail.Write.cjbqcgqNClA : Lang.Mail.mailFolderCreateSuccess, true, false, "option");//创建标签成功
                         }
                         else {
-                            CC.showMsg(isLabel ? "修改标签成功" : Lang.Mail.mailFolderUpdateSuccess, true, false, "option");
+                            CC.showMsg(isLabel ? top.Lang.Mail.Write.xgbqcgAeBeo : Lang.Mail.mailFolderUpdateSuccess, true, false, "option");//修改标签成功
                         }
                         p1.callback(au, fid);
 
@@ -757,15 +757,15 @@ FolderMain.prototype = {
                     }
                     , function (d) {
                         if (!isEdit) {
-                            CC.showMsg(isLabel ? "创建标签失败" : Lang.Mail.CreateFolderFail, true, false, "error");
+                            CC.showMsg(isLabel ? top.Lang.Mail.Write.cjbqsbZefUP : Lang.Mail.CreateFolderFail, true, false, "error");//创建标签失败
                         }
                         else {
-                            CC.showMsg(isLabel ? "修改标签失败" : Lang.Mail.EditFolderFail, true, false, "error");
+                            CC.showMsg(isLabel ? top.Lang.Mail.Write.xgbqsbRzjln : Lang.Mail.EditFolderFail, true, false, "error");//修改标签失败
                         }
                     });//顺序调用
                 var func = null;
                 var logdata = [];
-				/*
+                /*
                 if (!isEdit) {
                     func = "log:addFolder";
                     logdata = {folderList: [
@@ -952,7 +952,7 @@ FolderMain.prototype = {
 //                            {fid: oFolder.fid, folderName: oFolder.name}
 //                        ]}, param: ""});
                     p1.callback(au);
-                    CC.showMsg(oFolder.type == 5 ? "标签删除成功" : Lang.Mail.mailFolderDelSuccess, true, false, "option");
+                    CC.showMsg(oFolder.type == 5 ? top.Lang.Mail.Write.bqsccgBxCLd : Lang.Mail.mailFolderDelSuccess, true, false, "option");//标签删除成功
                 }, p1.failCallBack);
 
             });
@@ -1193,9 +1193,9 @@ FolderMain.prototype = {
         var call = function () {
             //标签邮件 新增
             CC.isLabelMail();
-			if(p1.folderCallback){
-				p1.folderCallback(fid);
-			}
+            if(p1.folderCallback){
+                p1.folderCallback(fid);
+            }
         };
         var on = MM[name].opFolder;
         if (au.code == gConst.statusOk) {//&& au['var'][1].code == gConst.statusOk
@@ -1276,7 +1276,7 @@ FolderMain.prototype = {
             }
 
             // 用于检测不能与代收邮件夹重复
-            LM.folders.push({"name": "待办任务"},{"name": Lang.Mail.folder_13},{"name": Lang.Mail.folder_14},{"name": Lang.Mail.Write.accoutMail});
+            LM.folders.push({"name": top.Lang.Mail.Write.daibanrenwu},{"name": Lang.Mail.folder_13},{"name": Lang.Mail.folder_14},{"name": Lang.Mail.Write.accoutMail});//待办任务
 
             // 新功能暂时屏蔽
             if (CC.isLabelMail()) {
@@ -1875,7 +1875,7 @@ FolderMain.prototype = {
 
         //我的邮件夹；
         if (name == "" && (id == -1 || id == -2)) {
-			var checkKey = id ==-1?"MAIL_CONFIG_FOLDER":"MAIL_MANAGER_LABELMAIL";
+            var checkKey = id ==-1?"MAIL_CONFIG_FOLDER":"MAIL_MANAGER_LABELMAIL";
             if (GC.check(checkKey)) {
                 attr.actionClass = 'add';
                 actionClick = function (e) {
@@ -1937,7 +1937,7 @@ FolderMain.prototype = {
         }
         window.setTimeout(function () {
             //var opt = {
-            //	async:true
+            //  async:true
             //};
             Ajax.get(url, null);
             CC.alert(Lang.Mail.folder_PopSuccess);
@@ -2148,9 +2148,9 @@ FolderMain.prototype = {
      * @param {Object} moveDiv 移动的dom对象
 
      moveByDrag: function(moveTo,moveDiv){
-		if (moveTo&&moveDiv.id) {
+        if (moveTo&&moveDiv.id) {
             var p1 = MM.folderMain;
-			var temp = moveDiv.id.split("_");
+            var temp = moveDiv.id.split("_");
             var fromType = temp[1];
             var fromFid = temp[2];
             var from = MM.getFolderObjectFromTree(fromType,fromFid);
@@ -2165,9 +2165,9 @@ FolderMain.prototype = {
                 to = {fid:0,parentId:0,type:from.type};
             }
             p1.move(from,to,mode);
-		}
+        }
         EV.stopEvent(ev);
-	},*/
+    },*/
     /**
      * 设置checkbox状态
      * @param {Boolean} check true||false
@@ -2252,7 +2252,7 @@ FolderMain.prototype = {
                         LM.loadFolderMain(false, function () {
                             p1.folderCallback();
                         });
-                        CC.showMsg("标签修改成功", true, false, "option");
+                        CC.showMsg(top.Lang.Mail.Write.bqxgcgghlRf, true, false, "option");//标签修改成功
                     }, function () {
                     });
                 }

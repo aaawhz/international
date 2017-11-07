@@ -434,10 +434,10 @@ filter.showAdd = function (b, id, item) {
     CC.isLabelMail() && this.attrs.dropLabel.loadEvent();
     pref.updatePosition("filterWrapper");
     //setTimeout(function(){
-    //	RTB_items.init();
-    //	if(item && item.replayContent)
-    //		RTB_items["option_filter_replay_content"].setEditorValue(item.replayContent);
-    //	},200);
+    //  RTB_items.init();
+    //  if(item && item.replayContent)
+    //      RTB_items["option_filter_replay_content"].setEditorValue(item.replayContent);
+    //  },200);
     var olist = $("pageFilter");
     if (b) {
         El.show(olist);
@@ -463,7 +463,7 @@ filter.showAdd = function (b, id, item) {
     var txtOnclick = function (obj) {
         var txtid = obj.id;
         var checkid = obj.id.replace("_", "_check_");
-        if (obj.value == "例如：@qq.com;test@abc.com;")
+        if (obj.value == top.Lang.Mail.Write.liru)//例如：@qq.com;test@abc.com;
         {
             obj.value = "";
             if (obj.createTextRange) {
@@ -509,7 +509,7 @@ filter.showAdd = function (b, id, item) {
         if (obj.value.trim() == '') {
             jQuery(obj).removeAttr("style");
             if (obj.id == "option_from" || obj.id == "option_to") {
-                obj.value = "例如：@qq.com;test@abc.com;";
+                obj.value = top.Lang.Mail.Write.liru;//例如：@qq.com;test@abc.com;
             }
             else if (obj.id == "option_fromDomain") {
                 obj.value = Lang.Mail.ConfigJs.filter_InputDoMain;// "例：*@example.com";
@@ -569,7 +569,7 @@ filter.showAdd = function (b, id, item) {
 };
 filter.contactCall = function (data) {
     var txtValue = jQuery("#option_from").val();
-    if (txtValue == "例如：@qq.com;test@abc.com;") txtValue = "";
+    if (txtValue == top.Lang.Mail.Write.liru) txtValue = "";//例如：@qq.com;test@abc.com;
     var emailList = txtValue.split(";");
     for (var i = 0; i < emailList.length; i++) {
         var email = Email.getValue(emailList[i]);
@@ -706,7 +706,7 @@ filter.getAddHtml = function (attrs, filterId, sortId) {
         html.push('<tr>');
         html.push('<td width="80"><input id="option_check_from" class="checkbox-com" type="checkbox"/><label for="option_check_from">' + Lang.Mail.ConfigJs.filter_From + '</label></td>');
         html.push('<td width="300"><span class="set-txt-wrap3 w284">');
-        html.push('<input id="option_from" class="sendMail-txt w270" type="text" value="例如：@qq.com;test@abc.com;"/>');
+        html.push('<input id="option_from" class="sendMail-txt w270" type="text" value="'+top.Lang.Mail.Write.liru+'"/>');//<input id="option_from" class="sendMail-txt w270" type="text" value="例如：@qq.com;test@abc.com;"/>
         //html.push('<i class="i-people"></i>');
         html.push("<i title='" + Lang.Mail.ConfigJs.chooseFromMailList + "' style='' class=\"i-rush-pe\" id='filter_AddContact'></i>");
         html.push('</span></td>');
@@ -724,7 +724,7 @@ filter.getAddHtml = function (attrs, filterId, sortId) {
         html.push('<tr>');
         html.push('<td><input class="checkbox-com" id="option_check_to" type="checkbox"/><label for="option_check_to">' + Lang.Mail.ConfigJs.filter_ToContain + '</label></td>');
         html.push('<td ><span class="set-txt-wrap">');
-        html.push('<input id="option_to" class="set-mand-txt w284" type="text" value="例如：@qq.com;test@abc.com;"/>');
+        html.push('<input id="option_to" class="set-mand-txt w284" type="text" value="'+top.Lang.Mail.Write.liru+'"/>');//<input id="option_to" class="set-mand-txt w284" type="text" value="例如：@qq.com;test@abc.com;"/>
         html.push('</span><span class="ml_10">');
         html.push('<input class="checkbox-com" id="option_to_all" type="checkbox"/><label for="option_to_all">' + Lang.Mail.ConfigJs.filter_ContainAll + '</label>');
         html.push('</span>');
@@ -812,7 +812,7 @@ filter.getAddHtml = function (attrs, filterId, sortId) {
             html.push('    <td><span class="set-txt-wrap">');
             html.push('      <input type="text" id="option_dealType3" class="set-mand-txt w196">');
             html.push('    </span>');
-            html.push('		<span><input type="checkbox" checked="checked" id="option_check_dealType3_save" class="checkbox-com">');
+            html.push('     <span><input type="checkbox" checked="checked" id="option_check_dealType3_save" class="checkbox-com">');
             html.push('<label for="option_check_dealType3_save">' + Lang.Mail.ConfigJs.filter_SaveMail + '</label></span>');
             html.push('</td>');
             html.push('  </tr>');
@@ -911,7 +911,7 @@ filter.getContent = function (of) {
     var typeList = dealType.split(",");
     var tempstr = "", temptype = dealType;
     if (typeList.length > 1) {
-        tempstr = "等";
+        tempstr = top.Lang.Mail.Write.deng;//等
         temptype = typeList[0];
     }
     switch (temptype) {
@@ -1006,7 +1006,7 @@ filter.save = function () {
     var text3 = $("option_subject").value.trim();
     var text4 = $("option_mailSize").value.trim();
     var text5 = $("option_fromDomain").value.trim();
-    text1 = text1 == "例如：@qq.com;test@abc.com;" ? "" : text1;
+    text1 = text1 == top.Lang.Mail.Write.liru ? "" : text1;//例如：@qq.com;test@abc.com;
     text5 = text5 == Lang.Mail.ConfigJs.filter_InputDoMain ? "" : text5;
     text3 = text3 == Lang.Mail.ConfigJs.filter_SubValue ? "" : text3;
     if (text3 != "" && $("option_check_subject").checked) {
@@ -1157,9 +1157,9 @@ filter.save = function () {
             //检查是否在允许 或 禁止的转发地址中   [0:不限制  1:允许 2:禁止]
             if (!mailPOP.checkMail(forwardMail, "autoForward")) {
                 if (gMain.forwardcorpConfigType == "1") {
-                    CC.alert("仅支持转发到 " + gMain.forwardcorpConfig, txtFocus);
+                    CC.alert(top.Lang.Mail.Write.jinzhichizhuanfadao + gMain.forwardcorpConfig, txtFocus);//仅支持转发到 
                 } else if (gMain.forwardcorpConfigType == "2") {
-                    CC.alert("禁止转发到 " + gMain.forwardcorpConfig, txtFocus);
+                    CC.alert(top.Lang.Mail.Write.jinzhizhuanfadao + gMain.forwardcorpConfig, txtFocus);//禁止转发到 
                 }
                 return false;
             }
@@ -1302,7 +1302,7 @@ filter.getEmailList = function (list, t) {
             if (Vd.checkData('email', email))
                 tempList.push(email);
             else {
-                CC.alert("请输入正确的邮件地址<br/>如：@qq.com;test@abc.com", txtFocus);
+                CC.alert(top.Lang.Mail.Write.qsrzqdyjdzrlEsSqnGX, txtFocus);//请输入正确的邮件地址<br/>如：@qq.com;test@abc.com
                 return false;
             }
         }
@@ -1310,7 +1310,7 @@ filter.getEmailList = function (list, t) {
             if (Vd.checkData("*@domain", list[i]))
                 tempList.push(list[i]);
             else {
-                CC.alert("请输入正确的邮件地址<br/>如：@qq.com;test@abc.com", txtFocus);
+                CC.alert(top.Lang.Mail.Write.qsrzqdyjdzrxTCaSKyM, txtFocus);//请输入正确的邮件地址<br/>如：@qq.com;test@abc.com
                 return false;
             }
         }

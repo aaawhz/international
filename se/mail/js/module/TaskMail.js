@@ -21,7 +21,7 @@
                         hideFlag: 0,
                         keepPeriod: 0,
                         order: 15,
-                        name: "待办邮件",
+                        name: top.Lang.Mail.Write.daibanyoujian,//待办邮件
                         parentId: 0,
                         pop3Flag: 0,
                         reserve: 0,
@@ -150,7 +150,7 @@
                 }
             }
 
-            html.push('<a title="待办邮件" data-action="showTaskMenu" href="javascript:;" data-taskDate = "' + ao.taskDate + '" data-mail="' + ao.emailName.encodeHTML() + '" data-mid="' + ao.mid + '" data-time="' + ao.sendDate + '" data-subject="' + ao.subject.encodeHTML() + '"');
+            html.push('<a title="'+top.Lang.Mail.Write.daibanyoujian+'" data-action="showTaskMenu" href="javascript:;" data-taskDate = "' + ao.taskDate + '" data-mail="' + ao.emailName.encodeHTML() + '" data-mid="' + ao.mid + '" data-time="' + ao.sendDate + '" data-subject="' + ao.subject.encodeHTML() + '"');//<a title="待办邮件" data-action="showTaskMenu" href="javascript:;" data-taskDate = "
             if (ao[fieldFlag].taskFlag === 1) {
                 html.push(' data-taskStatus="' + 1 + '" class="'+ clsArr[type][1] +'">');
             } else if (ao[fieldFlag].taskFlag === 2) {
@@ -160,12 +160,12 @@
             }
             html.push('</a>');
             if (type === "readMail" && !mode) {
-                html.push('<p class="pt_5">待办邮件</p>');
+                html.push('<p class="pt_5">'+top.Lang.Mail.Write.daibanyoujian+'</p>');//<p class="pt_5">待办邮件</p>
             }
             if (+(ao.taskDate) > 0) {
                 timeStr = me.getTimeStr(+(ao.taskDate))
             }
-            html.push('<div class="y_tips" style="position:absolute;top: ' + topStyle + '; font-weight: normal; line-height: 22px; left:-210px;width:195px;display: none;">处理时间：<span class="textTaskDate col_orange">' + timeStr + '</span></div>');
+            html.push('<div class="y_tips" style="position:absolute;top: ' + topStyle + '; font-weight: normal; line-height: 22px; left:-210px;width:195px;display: none;">'+top.Lang.Mail.Write.chulishijian+'<span class="textTaskDate col_orange">' + timeStr + '</span></div>');//; font-weight: normal; line-height: 22px; left:-210px;width:195px;display: none;">处理时间：<span class="textTaskDate col_orange">
 
             return html.join("");
         },
@@ -307,12 +307,12 @@
             }
             html.push('<div id="menuTaskMail" class="pop_wrapper w120" style="position:absolute; overflow: hidden; z-index: 10000; display: none;">');
             html.push('<ul class="module_pop">');
-            html.push('<li clsType="' + clsType + '" class="btnTaskStatus" type="2"><a href="javascript:;">标记完成</a></li>');
-            html.push('<li clsType="' + clsType + '" class="btnAddRemind"><a href="javascript:;">添加提醒</a></li>');
-            html.push('<li clsType="' + clsType + '" class="btnTaskStatus" type="1"><a href="javascript:;">标记任务</a></li>');
-            html.push('<li clsType="' + clsType + '" class="btnModRemind"><a href="javascript:;">修改提醒</a></li>');
-            html.push('<li clsType="' + clsType + '" class="btnDelRemind"><a href="javascript:;">取消提醒</a></li>');
-            html.push('<li clsType="' + clsType + '" class="btnTaskStatus" type="0"><a href="javascript:;">取消任务</a></li>');
+            html.push('<li clsType="' + clsType + '" class="btnTaskStatus" type="2"><a href="javascript:;">'+top.Lang.Mail.Write.biaojiwancheng+'</a></li>');//" class="btnTaskStatus" type="2"><a href="javascript:;">标记完成</a></li>
+            html.push('<li clsType="' + clsType + '" class="btnAddRemind"><a href="javascript:;">'+top.Lang.Mail.Write.tianjiatixing+'</a></li>');//" class="btnAddRemind"><a href="javascript:;">添加提醒</a></li>
+            html.push('<li clsType="' + clsType + '" class="btnTaskStatus" type="1"><a href="javascript:;">'+top.Lang.Mail.Write.biaojirenwu+'</a></li>');//" class="btnTaskStatus" type="1"><a href="javascript:;">标记任务</a></li>
+            html.push('<li clsType="' + clsType + '" class="btnModRemind"><a href="javascript:;">'+top.Lang.Mail.Write.xiugaitixing+'</a></li>');//" class="btnModRemind"><a href="javascript:;">修改提醒</a></li>
+            html.push('<li clsType="' + clsType + '" class="btnDelRemind"><a href="javascript:;">'+top.Lang.Mail.Write.quxiaotixing+'</a></li>');//" class="btnDelRemind"><a href="javascript:;">取消提醒</a></li>
+            html.push('<li clsType="' + clsType + '" class="btnTaskStatus" type="0"><a href="javascript:;">'+top.Lang.Mail.Write.quxiaorenwu+'</a></li>');//" class="btnTaskStatus" type="0"><a href="javascript:;">取消任务</a></li>
             html.push('</ul>');
             html.push('</div>');
             $(doc.body, doc).append(html.join(""));
@@ -369,7 +369,7 @@
                     }else{
                     //如果没有权限
                         $('#checkSmsNotify').attr('checked', false);
-                        CC.alert("您没有绑定手机的权限，无法使用该功能!",function(){
+                        CC.alert(top.Lang.Mail.Write.nmybdsjdqxwfsyggnswjyvHXh,function(){//您没有绑定手机的权限，无法使用该功能!
                             $('#shareLayer').css({'z-index':'2100'}); 
                             setTimeout(function(){
                                 $(".shareLayer").css('display', 'block');
@@ -432,7 +432,7 @@
 
             ao = {
                  "id":"remindNotify",
-                 "title":"系统提示",
+                 "title":top.Lang.Mail.Write.xitongtishi,//系统提示
                  "text":html,
                  "type":"div",
                  "width": 507,
@@ -560,14 +560,14 @@
 
             if (type === "add") {
                 actionType = "add";
-                title = "添加提醒";
+                title = top.Lang.Mail.Write.tianjiatixing;//添加提醒
                 formVal.time = (new Date()).getTime() + 1000 * 60 * 60 * 24;
                 t = new Date((~~dataObj.attr("data-time")) * 1000);
-                mailDateStr = (t.getMonth() + 1) + "月" + t.getDate() + "日" + " " + t.getHours() + ":" + t.getMonth();
-                formVal.cont = "请处理" + mailDateStr + "来自" + mail + "的邮件：" + subject;
+                mailDateStr = (t.getMonth() + 1) + top.Lang.Mail.Write.yue + t.getDate() + top.Lang.Mail.Write.ri + " " + t.getHours() + ":" + t.getMonth();//月  ||  日
+                formVal.cont = top.Lang.Mail.Write.qingchuli + mailDateStr + top.Lang.Mail.Write.laizi + mail + top.Lang.Mail.Write.deyoujian + subject;//请处理  ||  来自  ||  的邮件：
             } else {
                 actionType = "mod";
-                title = "修改提醒";
+                title = top.Lang.Mail.Write.xiugaitixing;//修改提醒
             }
 
             ao = {
@@ -653,27 +653,27 @@
             var html = [];
 
             html.push('<div class="box-cont">');
-            html.push('<p class="p-remind mb_10">在以下时间提醒我：<span class="col_orange fw_b" id="textCalTime"></span></p>');
+            html.push('<p class="p-remind mb_10">'+top.Lang.Mail.Write.zaiyixiashijiantixingwo+'<span class="col_orange fw_b" id="textCalTime"></span></p>');//<p class="p-remind mb_10">在以下时间提醒我：<span class="col_orange fw_b" id="textCalTime"></span></p>
             html.push('<div class="in-form mb_10">');
             html.push('<div class="input-cont clearfix">');
             html.push('<input type="text" name="" id="textCalDate" readonly="readonly" class="in-t" />');
             html.push('<i class="i-keyboard"></i></div>');
             html.push(' <span id="selectCalHour"></span>');
-            html.push(' <span class="hour">时</span>');
+            html.push(' <span class="hour">'+top.Lang.Mail.Write.shi+'</span>');// <span class="hour">时</span>
             html.push(' <span id="selectCalMinute"></span>');
-            html.push(' <span class="minute">分</span>');
+            html.push(' <span class="minute">'+top.Lang.Mail.Write.fen+'</span>');// <span class="minute">分</span>
             html.push('</div>');
             html.push('<dl class="box-cont-dl">');
-            html.push('<dt class="title">提醒内容：</dt>');
+            html.push('<dt class="title">'+top.Lang.Mail.Write.tixingnarong+'</dt>');//<dt class="title">提醒内容：</dt>
             html.push('<dd>');
             html.push('<textarea class="box-texar" id="textCalCont"></textarea>');
             html.push('</dd>');
-            html.push('<dd>您还可以输入<span class="col_orange" id="numCanInput"></span>字，最多<span class="col_orange">100</span>字</dd>');
+            html.push('<dd>'+top.Lang.Mail.Write.ninhuaikeyishuru+'<span class="col_orange" id="numCanInput"></span>'+top.Lang.Mail.Write.zizuiduo+'<span class="col_orange">100</span>'+top.Lang.Mail.Write.zi+'</dd>');//<dd>您还可以输入<span class="col_orange" id="numCanInput"></span>字，最多<span class="col_orange">100</span>字</dd>
             
             //增加邮件提醒和短信提醒多选框 --2015.08.25
 
             html.push('<dd class="mt_8">');
-            html.push('<input type="checkbox" checked="checked" id="checkMailNotify" /> 邮件提醒   <input type="checkbox" id="checkSmsNotify" class="ml_20"  /> 短信提醒  <span style="display:none" class="col_orange ml_20" id="checkKeepOne">请至少选择一种提醒方式</span>');
+            html.push('<input type="checkbox" checked="checked" id="checkMailNotify" /> '+top.Lang.Mail.Write.youjiantixing+'<input type="checkbox" id="checkSmsNotify" class="ml_20"  /> '+top.Lang.Mail.Write.duanxintixing+'<span style="display:none" class="col_orange ml_20" id="checkKeepOne">'+top.Lang.Mail.Write.qzsxzyztxfsZftaKsKX+'</span>');//<input type="checkbox" checked="checked" id="checkMailNotify" /> 邮件提醒   <input type="checkbox" id="checkSmsNotify" class="ml_20"  /> 短信提醒  <span style="display:none" class="col_orange ml_20" id="checkKeepOne">请至少选择一种提醒方式</span>
             html.push('</dd>');
 
             html.push('</dl>');
@@ -694,17 +694,17 @@
                 me = this;
 
             if ($("#textCalCont").val().trimAll().length < 1) {
-                CC.alert("提醒内容不能为空", function(){}, "系统提示");
+                CC.alert(top.Lang.Mail.Write.tixingnarongbunenweikong, function(){}, top.Lang.Mail.Write.xitongtishi);//提醒内容不能为空  ||  系统提示
                 return false;
             }
 
             if ($("#textCalCont").val().trimAll().length > 100) {
-                CC.alert("提醒内容不能超过100字", function(){}, "系统提示");
+                CC.alert(top.Lang.Mail.Write.tixingnarongbunenchaoguozi, function(){}, top.Lang.Mail.Write.xitongtishi);//提醒内容不能超过100字  ||  系统提示
                 return false;
             }
 
             if (time < nowTime) {
-                CC.alert("下发提醒的时间不能早于当前时间，请重新选择提醒时间", function(){}, "系统提示");
+                CC.alert(top.Lang.Mail.Write.xftxdsjbnzIDvQCiOyjqzxxztxsj, function(){}, top.Lang.Mail.Write.xitongtishi);//下发提醒的时间不能早于当前时间，请重新选择提醒时间  ||  系统提示
                 return false;
             }
 
@@ -751,7 +751,7 @@
                 LM.loadFolderMain();
                 if (type === 2) {
                     status = 2;
-                    msgStr = "待办任务已标识为已完成";
+                    msgStr = top.Lang.Mail.Write.dbrwybswywcQIjhrDLS;//待办任务已标识为已完成
                     GE.taskedMailNum++;
                     GE.taskMailNum--;
                     me.delMailCalendar(mid, undefined, true);
@@ -760,7 +760,7 @@
                     }
                 } else if (type === 1) {
                     status = 1;
-                    msgStr = "添加待办任务成功";
+                    msgStr = top.Lang.Mail.Write.tianjiadaibanrenwuchenggong;//添加待办任务成功
                     if (oldStaus === 0) {
                         GE.taskMailNum++;
                     } else if (oldStaus === 2) {
@@ -769,7 +769,7 @@
                     }
                 } else {
                     status = 0;
-                    msgStr = "取消待办任务成功";
+                    msgStr = top.Lang.Mail.Write.quxiaodaibanrenwuchenggong;//取消待办任务成功
                     me.delMailCalendar(mid, undefined, true);
                     if (oldStaus === 1) {
                         GE.taskMailNum--;
@@ -857,15 +857,15 @@
                 "call": function (data) {
                     if (!noMsg) {
                         if (type === "add") {
-                            CC.showMsg("添加待办提醒成功", true, false, "option");
+                            CC.showMsg(top.Lang.Mail.Write.tianjiadaibantixingchenggong, true, false, "option");//添加待办提醒成功
                         } else {
-                            CC.showMsg("修改待办提醒成功", true, false, "option");
+                            CC.showMsg(top.Lang.Mail.Write.xiugaidaibantixingchenggong, true, false, "option");//修改待办提醒成功
 
                             var $ifrmReadmail = $('#'+'ifrmReadmail_Content_readMail'+mid).contents();
                             var $divTips = $(".divTips",$ifrmReadmail);
                             var newTime = hour.toString() + ":" + minute.toString();
                             if($divTips.length>0){
-                                $("span",$divTips).html("已设为待办邮件，"+date+" "+newTime+"提醒。");
+                                $("span",$divTips).html(top.Lang.Mail.Write.yisheweidaibanyoujian+date+" "+newTime+top.Lang.Mail.Write.tixing);//已设为待办邮件，  ||  提醒。
                             }
                         }
                     }
@@ -895,7 +895,7 @@
                     },
                     "call": function () {
                         if (!noMsg) {
-                            CC.showMsg("取消待办提醒成功", true, false, "option");
+                            CC.showMsg(top.Lang.Mail.Write.quxiaodaibantixingchenggong, true, false, "option");//取消待办提醒成功
                         }
                         if (el) {
                             me.modTaskStatus(mid, 0, 1, el, true);
@@ -903,7 +903,7 @@
                     },
                     "failCall": function () {
                         if (!noMsg) {
-                            CC.showMsg("取消待办提醒失败", true, false, "option");
+                            CC.showMsg(top.Lang.Mail.Write.quxiaodaibantixingshibai, true, false, "option");//取消待办提醒失败
                         }
                     },
                     "msg": ""
