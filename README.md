@@ -29,22 +29,22 @@ demo2:
  
  demo4: 
  
- html.push('<li >\
+ html.push(\'<li >\
     <p>\
     <div>\
     例子
     </p>\
     </div>\
-    </li>');//
+    </li>\');//
     
  ==>
  
-  html.push('<li >\
+  html.push(\'<li >\
     <p>\
     <div>\
     top.Lang.Mail.Write.liezi
     </p>\
     </div>\
-    </li>');//
+    </li>\');//
  
 
