@@ -79,8 +79,7 @@ for (var i = 0; i < data.length; i++) {
     // 并且避免掉 // /* */ 单行和多行注释
     if(!iszs && !matchQuote && !isReg &&item == sprit && prevValue != sprit && nextValue != sprit && nextValue != '*' && prevValue != '*'){
     	isReg = true;
-
-    	console.log('a       '+isReg )
+ 
     	regPos = i;
     	matchQuote = false;
     } 

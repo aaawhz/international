@@ -1,7 +1,8 @@
 
   var fs = require('fs');
-   //中文
-  var zhRe = /[\u4E00-\u9FA5]/g;
+   //中文 http://blog.csdn.net/leolu007/article/details/8576490  注意不要加g
+  var zhRe = /[\u4E00-\u9FA5]/;
+ 
 
   var chineseToPinYin = require("./pinyin.js");
   //匹配 <br> </br> </  br>  或者  <br  /> <br/>
@@ -137,11 +138,13 @@
                           isTag: oldIsTag
                         }
                         TextsAndTags.push(o);
-                        console.log("============"+s)
+                        console.log("s============"+s)
                          s = '';
 
                     }
 
+
+                    console.log("tag======"+strTag)
 
 
                     //跳过匹配的标签
@@ -162,7 +165,7 @@
                     s += item;
                   }
               }else{
-                console.log("============item=========="+item)
+              
                 s += item;
               }
           }
@@ -206,20 +209,16 @@
       for (var i = 0; i < o.length; i++) {
           item = o[i];
           value = item.value;
+
+          console.log("value   start========="+value)
           //处理标签属性， 有中文直接替换
           if (item.isTag) {
               //console.log('------------------' + value);
               value = value.replace(attribute, function($0, $1, $2, $3, $4) {
-                  // console.log($4)
-      // console.log("---------$0:    " + $0)
-                  /*  console.log($2)
-                    console.log($3)
-                    console.log($4)*/
-                  //console.log(str[0])
-
+    
                   //replace 会改变匹配到的那部分， 只需要改变值后， 但不会改变原值
                   if (Util.haszh($3)) {
-    //console.log('-----------' + $3)
+        
                       return $1 + $2 + transf($3, false, true)
                   } else {
                       return $0
@@ -242,13 +241,15 @@
                 var pos = '';//爱的发达<sad;   ==> pos:-4  
 
                 for (var j = 0; j < value.length; j++) {
-                  inners= value[j];
+                  inners= value.charAt(j);
 
-                  if(!zhRe.test(inners) && !hasMatchZh){
-                    innerStrStart += inners;
-                  }else{
+                  //console.log('zhRe.test(inners)' + zhRe.test(inners) +'and  ' +inners)
+               
+                  if(!!zhRe.test(inners) || hasMatchZh){
                     innerZh += inners;
                     hasMatchZh = true;
+                  }else{
+                    innerStrStart += inners;
                   }
 
                 }
@@ -269,12 +270,16 @@
                 innerZh = innerZh.substring(0,pos);
 
                 console.log('value   :'+item.value)
-                console.log('innerZh   :'+innerZh);
-                console.log('innerStrEnd  :'+innerStrEnd)
+               
                 */
+                 console.log('innerStrStart   :'+innerStrStart);
+                 console.log('innerZh   :'+innerZh);
+                console.log('innerStrEnd  :'+innerStrEnd)
                 value = innerStrStart +  transf(innerZh, true) ; // + innerStrEnd;
               }
           }
+
+           console.log("value   end=========="+value)
           reArray.push(value);
       }
 
