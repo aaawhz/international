@@ -345,7 +345,7 @@
 
   function transf(str, isMix, isAttr) {
       var lagPropery = '';
-      var py = chineseToPinYin(str.replace(/[\\\/\<\>0123456789abcdefghijklnmopqrstuvwxyz\-\=`,\./"'~!@\#$%^&*()?:]/g, ''));
+      var py = chineseToPinYin(str.replace(/[\\\/\<\>0123456789\-\=`,\./"'~!@\#$%^&*()?:]/g, ''));
       //console.log( py );
 
       //进入到了正方法说明已经被转换了

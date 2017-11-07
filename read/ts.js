@@ -56,7 +56,7 @@ for (var i = 0; i < data.length; i++) {
     nextValue = data[i+1] ? data[i+1] : '';
     ditem = item + nextValue;
     
-    console.log(matchQuoteInseverLine)
+     
     //如果是跨行匹配字符串， 优先级最高
     if(matchQuoteInseverLine){
  
@@ -68,7 +68,7 @@ for (var i = 0; i < data.length; i++) {
 
             resstr = Regs.TransStr(handleStr);    
 
-            console.log(resstr)
+             
            
             result += resstr;
 
