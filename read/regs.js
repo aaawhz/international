@@ -1,4 +1,5 @@
 
+  var fs = require('fs');
    //中文
   var zhRe = /[\u4E00-\u9FA5]/g;
 
@@ -54,14 +55,14 @@
       'g'
   )
 
-  /** -----------------------attrs  end -----------------------**/
-
+ 
   var GLOBELCACHE = {
       hasTrans: false
   };
 
   var GLOBELOPTION = {
-     langpath : "top.Lang.Mail.Write."
+     langpath : "top.Lang.Mail.Write.",
+     langkey : "mail.Write."
   };
 
   var Util = {
@@ -237,7 +238,8 @@
                 var innerStrStart = '';
                 var innerZh = '';
                 var hasMatchZh = false;
-              //  var innerStrEnd = '';
+                var innerStrEnd = '';
+                var pos = '';//爱的发达<sad;   ==> pos:-4  
 
                 for (var j = 0; j < value.length; j++) {
                   inners= value[j];
@@ -250,12 +252,29 @@
                   }
 
                 }
-                
-                value = innerStrStart +  transf(innerZh, true); // + innerStrEnd;
 
+                /*console.log(innerZh)
+                // 发达sad;
+                // 1
+                for (var n = innerZh.length-1; n >0; n--) {
+                   if(zhRe.test(innerZh[n])){
+                      pos = n+1;
+                      break;
+                   } 
+                }
+
+
+                
+                innerStrEnd = innerZh.substring( pos, innerZh.length );
+                innerZh = innerZh.substring(0,pos);
+
+                console.log('value   :'+item.value)
+                console.log('innerZh   :'+innerZh);
+                console.log('innerStrEnd  :'+innerStrEnd)
+                */
+                value = innerStrStart +  transf(innerZh, true) ; // + innerStrEnd;
               }
           }
-
           reArray.push(value);
       }
 
@@ -320,7 +339,7 @@
 
 
   function transf(str, isMix, isAttr) {
-
+      var lagPropery = '';
       var py = chineseToPinYin(str.replace(/[\\\/\<\>0123456789abcdefghijklnmopqrstuvwxyz\-\=`,\./"'~!@\#$%^&*()?:]/g, ''));
       //console.log( py );
 
@@ -328,6 +347,14 @@
       GLOBELCACHE.hasTrans = true;
 
       // console.log('debug===================================' + GLOBELCACHE.hasTrans)
+
+      str = str.replace(/^['"]/, '');
+      str = str.replace(/['"]$/, '')
+      lagPropery =  '' + GLOBELOPTION.langkey+py +' : ' + str + '\r\n';
+     
+
+      fs.appendFile("./propertis.js", lagPropery);
+
 
       if (isMix) {
           //字符串str是单引号开头
@@ -352,6 +379,8 @@
               return "\"+" + ( GLOBELOPTION.langpath + py) + "+\"";
           }
       }
+
+
   };
 
 

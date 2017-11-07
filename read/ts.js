@@ -2,7 +2,7 @@ var rf=require("fs");
 
 var Regs = require("./regs");
 var data=rf.readFileSync("origin.js","utf-8");  
-
+var repeat = require("./repeat");
 var str = '';
 var resstr = '';
 var result = '';
@@ -90,7 +90,7 @@ for (var i = 0; i < data.length; i++) {
     console.log('item     '+item)*/
     //首先得不在注释中，不在正则中， 才去判断是否是引号开头， 而且不能是\"开头的
     if (!iszs && !isReg && spliterRe.test(item) && (data[i - 1] && data[i - 1] != "\\")) {
-    	console.log('c       '+isReg )
+    	//console.log('c       '+isReg )
         //已经匹配到了引号
         matchQuote = true;
         str = '';
@@ -190,7 +190,6 @@ for (var i = 0; i < data.length; i++) {
  
 //同步方法
 rf.writeFileSync('./result.js', result);
-  
-
-
  
+//repeat();
+
