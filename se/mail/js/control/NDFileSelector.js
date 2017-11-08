@@ -214,12 +214,12 @@
         okCall: function () {
             var p = this;
             var data = {
-                "parentId": p.selectedFid, 		 //网盘文件的id
-                "fileName": p.attachName,    	 //附件名
-                "diskType": 1,					 //都传一
-                "fileUrl": p.attachUrl,					 //要找到这个附近的下载地址  后台获取这个路径在去下载这个附件到网盘中
-                "userId": gMain.mailId,			     //登陆名 如：admin
-                "fileSize": p.fileSize   			 //附近的大小
+                "parentId": p.selectedFid,       //网盘文件的id
+                "fileName": p.attachName,        //附件名
+                "diskType": 1,                   //都传一
+                "fileUrl": p.attachUrl,                  //要找到这个附近的下载地址  后台获取这个路径在去下载这个附件到网盘中
+                "userId": gMain.mailId,              //登陆名 如：admin
+                "fileSize": p.fileSize               //附近的大小
             };
 
             var func = gConst.func.netDisk_attachUpload;
@@ -231,7 +231,7 @@
                 CC.showMsg(Lang.Mail.ConfigJs.saveToDiskFail, true, false, "error");
             };
 
-            CC.showMsg("附件正在存网盘，", true, false, "loadding");
+            CC.showMsg(top.Lang.Mail.Write.fujianzhengzaicunwangpan, true, false, "loadding");//附件正在存网盘，
 
             //保存到网盘
             p.ajax(url, func, data, call, failcallback);
@@ -290,7 +290,7 @@
 
                 //判断特殊字符
                 if (!txt.checkSpecialChar()) {
-                    CC.alert("文件夹名称不能包含特殊字符");
+                    CC.alert(top.Lang.Mail.Write.wjjmcbnbhtszfjfMLZRhj);//文件夹名称不能包含特殊字符
                     return;
                 }
 
@@ -307,7 +307,7 @@
                 var url = p.postData.add.url;
                 var call = function (data) {
                     if (data.code = "S_OK") {
-                        CC.showMsg("新建文件夹成功", true, false, "option");
+                        CC.showMsg(top.Lang.Mail.Write.xinjianwenjianjiachenggong, true, false, "option");//新建文件夹成功
                         p.initData(function () {
                             parentul.html(p.getFolderChildHTML());
                             p.addEvent();

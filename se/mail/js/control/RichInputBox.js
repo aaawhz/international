@@ -290,7 +290,7 @@ RichInputBox.prototype = {
             }
         }
         else{
-            var text = prompt("因为你的浏览器的安全设置原因，不能直接使用剪贴板，请将内容粘贴在以下输入框内：");
+            var text = prompt(top.Lang.Mail.Write.ywndllqdaqwsexTffCrztzyxsrkn);//因为你的浏览器的安全设置原因，不能直接使用剪贴板，请将内容粘贴在以下输入框内：
             if(text){
                 if(/[;,；，]/.test(text) ||(this.type == 'email' && MailTool.checkEmailText(text))||(this.type == 'mobile' && NumberTool.isChinaMobileNumber(text))){
                     this.insertItem(text);
@@ -748,63 +748,63 @@ RichInputBox.Tool = {
         this.delayKeys[key].func();
         clearTimeout(this.delayKeys[key].timer);
     },
-	mouseupDelay: function(e) {
-		RichInputBox.Tool.fireDelay("drawInsertFlag");
-		var current = RichInputBox.Events.currentRichInputBox;
-		if (!current) return;
-		if (RichInputBox.Tool.dragEnable) {
-			var dragItems = RichInputBox.Tool.dragItems;
-			var insertFlag = RichInputBox.Tool.insertFlag;
-			if (insertFlag && dragItems && insertFlag.richInputBox) {
-				if (current.id == insertFlag.richInputBox.id) {
-					return;
-				}
-				var insertCurrent = insertFlag.richInputBox;
-				current.repeatable = true;
+    mouseupDelay: function(e) {
+        RichInputBox.Tool.fireDelay("drawInsertFlag");
+        var current = RichInputBox.Events.currentRichInputBox;
+        if (!current) return;
+        if (RichInputBox.Tool.dragEnable) {
+            var dragItems = RichInputBox.Tool.dragItems;
+            var insertFlag = RichInputBox.Tool.insertFlag;
+            if (insertFlag && dragItems && insertFlag.richInputBox) {
+                if (current.id == insertFlag.richInputBox.id) {
+                    return;
+                }
+                var insertCurrent = insertFlag.richInputBox;
+                current.repeatable = true;
                     
-				/*动态设置maxMailNum*/
-				if(insertCurrent.maxMailNum==0){
-					insertCurrent.maxMailNum++;
-				}
+                /*动态设置maxMailNum*/
+                if(insertCurrent.maxMailNum==0){
+                    insertCurrent.maxMailNum++;
+                }
                     
-				for (var i = 0; i < dragItems.length; i++) {
-					var moveItem = dragItems[i];
-					insertCurrent.insertItem(moveItem.allText, insertFlag.isAfter, insertFlag.element, true);
-				}
-				current.repeatable = false;
-				for (var i = 0; i < dragItems.length; i++) {
-					var moveItem = dragItems[i];
-					moveItem.remove();
-				}
-			}
-		} else if (current.selectArea) {
-			var endPosition = {
-				x: e.clientX,
-				y: e.clientY
-			};
-			//RichInputBox.Tool.draw(current.startPosition, endPosition);
-			current.trySelect(current.startPosition, endPosition);
-			if (current.getSelectedItems().length == 0) {
-				Utils.focusTextBox(current.textbox);
-			}
-		} else {
-			return;
-		}
-		if (jQuery.browser.msie) {
-			//this.releaseCapture();
-			if (RichInputBox.Events.captureElement) {
-				RichInputBox.Events.captureElement.releaseCapture();
-				RichInputBox.Events.captureElement = null;
-			}
-		} else {
-			window.releaseEvents(Event.MOUSEMOVE | Event.MOUSEUP);
-		}
-		RichInputBox.Tool.dragEnable = false;
-		current.selectArea = false;
-		RichInputBox.Tool.dragItems = null;
-		RichInputBox.Tool.insertFlag = null;
-		RichInputBox.Tool.hidDragEffect();
-		RichInputBox.Tool.hidDrawInsertFlag();
+                for (var i = 0; i < dragItems.length; i++) {
+                    var moveItem = dragItems[i];
+                    insertCurrent.insertItem(moveItem.allText, insertFlag.isAfter, insertFlag.element, true);
+                }
+                current.repeatable = false;
+                for (var i = 0; i < dragItems.length; i++) {
+                    var moveItem = dragItems[i];
+                    moveItem.remove();
+                }
+            }
+        } else if (current.selectArea) {
+            var endPosition = {
+                x: e.clientX,
+                y: e.clientY
+            };
+            //RichInputBox.Tool.draw(current.startPosition, endPosition);
+            current.trySelect(current.startPosition, endPosition);
+            if (current.getSelectedItems().length == 0) {
+                Utils.focusTextBox(current.textbox);
+            }
+        } else {
+            return;
+        }
+        if (jQuery.browser.msie) {
+            //this.releaseCapture();
+            if (RichInputBox.Events.captureElement) {
+                RichInputBox.Events.captureElement.releaseCapture();
+                RichInputBox.Events.captureElement = null;
+            }
+        } else {
+            window.releaseEvents(Event.MOUSEMOVE | Event.MOUSEUP);
+        }
+        RichInputBox.Tool.dragEnable = false;
+        current.selectArea = false;
+        RichInputBox.Tool.dragItems = null;
+        RichInputBox.Tool.insertFlag = null;
+        RichInputBox.Tool.hidDragEffect();
+        RichInputBox.Tool.hidDrawInsertFlag();
     },
     blinkBox: function(obj,className){
         var This = this;
@@ -836,25 +836,25 @@ RichInputBox.Item.prototype = {
              richInputBox.errorfun(this,text);
            }else{
             this.error = !MailTool.checkEmailText(text);
-            this.errorMsg = "该地址格式有错，请双击修改";
+            this.errorMsg = top.Lang.Mail.Write.gdzgsycqsjxgCFjgODCt;//该地址格式有错，请双击修改
            }
         } else if (richInputBox.type == "mobile") {
             if(parent.CorpType=='2'){  //139企业版不支持向电信、联通用户发送
                 if(NumberTool.isChinaMobileNumberText(text)){
                     if(!NumberTool.checkMobileText(text,mobilelimit)){
                         this.error = true;
-                        this.errorMsg = "不支持向电信、联通用户发送";
+                        this.errorMsg = top.Lang.Mail.Write.bzcxdxltyhfsFeYuAFbT;//不支持向电信、联通用户发送
                     }else{
                         this.error = false;
                         this.errorMsg = "";
                     }
                 }else{
                     this.error = true;
-                    this.errorMsg = "该号码不是正确的手机号码，请双击修改";
+                    this.errorMsg = top.Lang.Mail.Write.ghmbszqdsjhmqsjxgrVKHyYFY;//该号码不是正确的手机号码，请双击修改
                 }
             }else{
                 this.error = !NumberTool.isChinaMobileNumberText(text);
-                this.errorMsg = "该号码不是正确的手机号码，请双击修改";
+                this.errorMsg = top.Lang.Mail.Write.ghmbszqdsjhmqsjxgICHjiFlZ;//该号码不是正确的手机号码，请双击修改
             }
         }
         if (this.error) {
@@ -972,11 +972,11 @@ RichInputBox.Events = {
             while (o) {
                 if (o.className == "RichInputBox") {
                     current = RichInputBox.getInstanceByContainer(o);
-					//拖拽时阻止默认行为
+                    //拖拽时阻止默认行为
                     /*
-					if (o.childElementCount&&o.childElementCount >1) {
-						parent.EV.preventDefault(e);
-					}
+                    if (o.childElementCount&&o.childElementCount >1) {
+                        parent.EV.preventDefault(e);
+                    }
                     */
                     break;
                 }
@@ -988,17 +988,17 @@ RichInputBox.Events = {
                 if (item != current) item.unselectAllItems();
             }
         },
-		mouseup: function(e) {
-			var This = this;
-			RichInputBox.Tool.delay("mouseupDelayFlg", function() {
-				RichInputBox.Tool.mouseupDelay(e);
+        mouseup: function(e) {
+            var This = this;
+            RichInputBox.Tool.delay("mouseupDelayFlg", function() {
+                RichInputBox.Tool.mouseupDelay(e);
                 RichInputBox.Tool.dragEnable = false;
                 RichInputBox.Tool.hidDragEffect();
-			}, 10);
-			//setTimeout(function(e) {
-			//	RichInputBox.Tool.mouseupDelay(e);
-			//}, 10);
-		},
+            }, 10);
+            //setTimeout(function(e) {
+            //  RichInputBox.Tool.mouseupDelay(e);
+            //}, 10);
+        },
         click: function(e){
             RichInputBox.dispose();
         }
@@ -1152,11 +1152,11 @@ RichInputBox.Events = {
                         'line-height':  '24px'
                     });
                     var ul = jQuery("<ul id='" + contextMenuId + "_list' class='contextmenu_list'></ul>", doc).appendTo(el);
-                    jQuery("<li class='contextmenu_list_item'><a id='contextmenu_copy' href='javascript:void(0)' class='contextmenu_item'>复制 Ctrl + C</a></li>" +
-                           "<li class='contextmenu_list_item'><a id='contextmenu_paste' href='javascript:void(0)' class='contextmenu_item'>粘贴 Ctrl + V</a></li>" +
-                           "<li class='contextmenu_list_item'><a id='contextmenu_cut' href='javascript:void(0)' class='contextmenu_item'>剪切 Ctrl + X</a></li>" +
-                           "<li class='contextmenu_list_item'><a id='contextmenu_selectAll' href='javascript:void(0)' class='contextmenu_item'>全选 Ctrl + A</a></li>"
-                    , doc).appendTo(ul);
+                    jQuery("<li class='contextmenu_list_item'><a id='contextmenu_copy' href='javascript:void(0)' class='contextmenu_item'>"+top.Lang.Mail.Write.fuzhiop+"</a></li>" +//<li class='contextmenu_list_item'><a id='contextmenu_copy' href='javascript:void(0)' class='contextmenu_item'>复制 Ctrl + C</a></li>
+                           "<li class='contextmenu_list_item'><a id='contextmenu_paste' href='javascript:void(0)' class='contextmenu_item'>"+top.Lang.Mail.Write.zhantieop+"</a></li>" +//<li class='contextmenu_list_item'><a id='contextmenu_paste' href='javascript:void(0)' class='contextmenu_item'>粘贴 Ctrl + V</a></li>
+                           "<li class='contextmenu_list_item'><a id='contextmenu_cut' href='javascript:void(0)' class='contextmenu_item'>"+top.Lang.Mail.Write.jianqieop+"</a></li>" +//<li class='contextmenu_list_item'><a id='contextmenu_cut' href='javascript:void(0)' class='contextmenu_item'>剪切 Ctrl + X</a></li>
+                           "<li class='contextmenu_list_item'><a id='contextmenu_selectAll' href='javascript:void(0)' class='contextmenu_item'>"+top.Lang.Mail.Write.quanxuan+"</a></li>"
+                    , doc).appendTo(ul);//<li class='contextmenu_list_item'><a id='contextmenu_selectAll' href='javascript:void(0)' class='contextmenu_item'>全选 Ctrl + A</a></li>
                 }
 
                 el.show();

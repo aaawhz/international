@@ -195,8 +195,8 @@ initAppDomain();
 
                 var html = ['<div class="ui-date-head ui-date-top">'];
                 (i == 0) && html.push('<a  data-action="YEAR_LEFT" class="ui-year-left" href="javascript:void(0)" title="' + dp.lang.previousYear + '">&laquo;</a><a  data-action="MONTH_LEFT" class="ui-month-left" href="javascript:void(0)" title="' + dp.lang.previousMonth + '">&lsaquo;</a>');
-                html.push('<a  data-action="SELECT_YEAR"  class="ui-year" href="javascript:void(0)" title="' + dp.lang.selectYear + '">' + year + '</a>年<a  data-action="SELECT_MONTH" class="ui-month" data-year="' + year + '" href="javascript:void(0)" data-dom="month" title="' + dp.lang.selectMonth + '" >' + (((month+1)< 10 ? '0' : '')+(month+1)) + '</a>月');
-                (i + 1 == options.showCount) &&	html.push('<a  data-action="MONTH_RIGHT"  class="ui-month-right" href="javascript:void(0)" title="' + dp.lang.nextMonth + '">&rsaquo;</a><a  data-action="YEAR_RIGHT"  class="ui-year-right" href="javascript:void(0)" title="' + dp.lang.nextYear + '">&raquo;</a>');
+                html.push('<a  data-action="SELECT_YEAR"  class="ui-year" href="javascript:void(0)" title="' + dp.lang.selectYear + '">' + year + '</a>'+top.Lang.Mail.Write.nian+'<a  data-action="SELECT_MONTH" class="ui-month" data-year="' + year + '" href="javascript:void(0)" data-dom="month" title="' + dp.lang.selectMonth + '" >' + (((month+1)< 10 ? '0' : '')+(month+1)) + '</a>'+top.Lang.Mail.Write.yue);//</a>年<a  data-action="SELECT_MONTH" class="ui-month" data-year="  ||  </a>月
+                (i + 1 == options.showCount) && html.push('<a  data-action="MONTH_RIGHT"  class="ui-month-right" href="javascript:void(0)" title="' + dp.lang.nextMonth + '">&rsaquo;</a><a  data-action="YEAR_RIGHT"  class="ui-year-right" href="javascript:void(0)" title="' + dp.lang.nextYear + '">&raquo;</a>');
 
                 //星期
                 html.push('</div><div class="ui-date-content clearfix"><div class="ui-date-week">');
@@ -472,16 +472,16 @@ initAppDomain();
         //语言包
         lang : {
             "cn" : {
-                week : ['日', '一', '二', '三', '四', '五', '六'],
-                previousMonth : '上一月',
-                nextMonth : '下一月',
-                previousYear : '上一年',
-                nextYear : '下一年',
-                selectYear : '选择年',
-                selectMonth : '选择月',
-                more : '更多',
-                today : '今'
-            }
+                week : [top.Lang.Mail.Write.ri, top.Lang.Mail.Write.yi, top.Lang.Mail.Write.er, top.Lang.Mail.Write.san, top.Lang.Mail.Write.si, top.Lang.Mail.Write.wu, top.Lang.Mail.Write.liu],//日  ||  一  ||  二  ||  三  ||  四  ||  五  ||  六
+                previousMonth : top.Lang.Mail.Write.shangyiyue,//上一月
+                nextMonth : top.Lang.Mail.Write.xiayiyue,//下一月
+                previousYear : top.Lang.Mail.Write.shangyinian,//上一年
+                nextYear : top.Lang.Mail.Write.xiayinian,//下一年
+                selectYear : top.Lang.Mail.Write.xuanzenian,//选择年
+                selectMonth : top.Lang.Mail.Write.xuanzeyue,//选择月
+                more : top.Lang.Mail.Write.gengduo,//更多
+                today : top.Lang.Mail.Write.jin
+            }//今
         },
         //今天
         today : {

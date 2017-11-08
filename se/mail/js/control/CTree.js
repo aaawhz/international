@@ -23,7 +23,7 @@
 function Tree(Tname,ck)
 {
   if(typeof(Tname) != "string" || Tname == "")
-    throw(new Error('创建类实例的时候请把类实例的引用变量名传递进来！'));
+    throw(new Error(top.Lang.Mail.Write.cjlsldshqbkAsibVCvdyyblmcdjl));//创建类实例的时候请把类实例的引用变量名传递进来！
   
   //【property】
   this.url      = "#";
@@ -73,54 +73,54 @@ function Tree(Tname,ck)
     exit      : 'exit.gif'
   };
 
-	//扩展 document.getElementById(id) 多浏览器兼容性
-	//id 要查找的对象 id
-	this.getElementById = function(id){
-	  if (typeof(id) != "string" || id == "") return null;
-	  if (document.getElementById) return document.getElementById(id);
-	  if (document.all) return document.all(id);
-	  try {
-	      return eval(id);
-	  } catch (e) {
-	      return null;
-	  }
-	}
+    //扩展 document.getElementById(id) 多浏览器兼容性
+    //id 要查找的对象 id
+    this.getElementById = function(id){
+      if (typeof(id) != "string" || id == "") return null;
+      if (document.getElementById) return document.getElementById(id);
+      if (document.all) return document.all(id);
+      try {
+          return eval(id);
+      } catch (e) {
+          return null;
+      }
+    }
 
-  	//MzTreeView 初始化入口函数
-	this.toString = function(isAll){
-		var html = [];
-		this.browserCheck();
-		this.dataFormat();
-		this.node[this.rootId] = {
-			"id": this.rootId,
-			"parentId":this.rootId,
-			"path": this.rootId,
-			"isLoad": false,
-			"childNodes": [],
-			"childAppend": "",
-			"sourceIndex": this.rootId
-		};
-		this.load(this.rootId);
-	  	var p = this;
-	  
-		var rootCN = this.node[this.rootId].childNodes;
-		var str = "<A id='" + this.name + "_RootLink' href='#' style='DISPLAY: none'></A>";
-		if (rootCN.length > 0) {
-		  this.node[this.rootId].hasChild = true;
-		  for (var i = 0; i < rootCN.length; i++) {
-		      str += this.nodeToHTML(rootCN[i], i == rootCN.length - 1);
-		      
-		  }
-		  //nodesToHtml(rootCN);
-		  //str += html.join("");
-		 setTimeout(this.name + ".atRootIsEmpty();" + this.name + ".focusClientNode('" + rootCN[0].id + "'); ", 10);
-		}
-		if (this.useArrow) { //使用方向键控制跳转到上级下级父级子级节点
-		  if (document.attachEvent) document.attachEvent("onkeydown", this.onkeydown);
-		  else if (document.addEventListener) document.addEventListener('keydown', this.onkeydown, false);
-		}
-		return "<DIV class='" + this.className + "' onclick='" + this.name + ".clickHandle(event)' ondblclick='" + this.name + ".dblClickHandle(event)'>" + str + "</DIV>";
-	};
+    //MzTreeView 初始化入口函数
+    this.toString = function(isAll){
+        var html = [];
+        this.browserCheck();
+        this.dataFormat();
+        this.node[this.rootId] = {
+            "id": this.rootId,
+            "parentId":this.rootId,
+            "path": this.rootId,
+            "isLoad": false,
+            "childNodes": [],
+            "childAppend": "",
+            "sourceIndex": this.rootId
+        };
+        this.load(this.rootId);
+        var p = this;
+      
+        var rootCN = this.node[this.rootId].childNodes;
+        var str = "<A id='" + this.name + "_RootLink' href='#' style='DISPLAY: none'></A>";
+        if (rootCN.length > 0) {
+          this.node[this.rootId].hasChild = true;
+          for (var i = 0; i < rootCN.length; i++) {
+              str += this.nodeToHTML(rootCN[i], i == rootCN.length - 1);
+              
+          }
+          //nodesToHtml(rootCN);
+          //str += html.join("");
+         setTimeout(this.name + ".atRootIsEmpty();" + this.name + ".focusClientNode('" + rootCN[0].id + "'); ", 10);
+        }
+        if (this.useArrow) { //使用方向键控制跳转到上级下级父级子级节点
+          if (document.attachEvent) document.attachEvent("onkeydown", this.onkeydown);
+          else if (document.addEventListener) document.addEventListener('keydown', this.onkeydown, false);
+        }
+        return "<DIV class='" + this.className + "' onclick='" + this.name + ".clickHandle(event)' ondblclick='" + this.name + ".dblClickHandle(event)'>" + str + "</DIV>";
+    };
 
   this.onkeydown= function(e)
   {
@@ -178,8 +178,8 @@ Tree.prototype.atRootIsEmpty = function(){
 Tree.prototype.dataFormat = function(){
     var a = [];
     for (var id in this.nodes){
-		a[a.length] = id;
-	}   
+        a[a.length] = id;
+    }   
     this.names = a.join(this._d + this._d);
     this.totalNode = a.length;
     a = null;
@@ -209,8 +209,8 @@ Tree.prototype.nodeInit = function(sourceIndex, parentId){
     var text = this.getAttribute(source, "text");
     var hint = this.getAttribute(source, "hint");
     var data = this.getAttribute(source, "data");
-	var type = this.getAttribute(source, "type");
-	var id = this.getAttribute(source, "id");
+    var type = this.getAttribute(source, "type");
+    var id = this.getAttribute(source, "id");
     //复选框属性
     var checkName = this.getAttribute(source, "checkName"); //Dream  modify on 2007-3-21 16:08:55
     var checked = "false";
@@ -224,7 +224,7 @@ Tree.prototype.nodeInit = function(sourceIndex, parentId){
     var sid = sourceIndex.substr(sourceIndex.indexOf(d) + d.length);
     this.node[this.index] = {
         "id": this.index,
-		"nodeId":id,
+        "nodeId":id,
         "text": text,
         "hint": hint ? hint : text,
         "icon": this.getAttribute(source, "icon"),
@@ -235,10 +235,10 @@ Tree.prototype.nodeInit = function(sourceIndex, parentId){
         "parentNode": this.node[parentId],
         "sourceIndex": sourceIndex,
         "childAppend": "",
-		"data" : data||"",				//data中数据url格式
-        "checked": checked, 			//是否选中复选框	            	
-        "checkName": checkName||"", 	//复选框名称
-        "checkValue": checkValue||"", 	//复选框的value值
+        "data" : data||"",              //data中数据url格式
+        "checked": checked,             //是否选中复选框                   
+        "checkName": checkName||"",     //复选框名称
+        "checkValue": checkValue||"",   //复选框的value值
         "type":type||""
     };
     this.nodes[sourceIndex] = "index:" + this.index + ";" + source;
@@ -303,14 +303,14 @@ Tree.prototype.nodeToHTML = function(node, AtEnd, isShow){
         if (node.checked == "true") {
             HTML[HTML.length] = " checked='" + node.checked;
         }
-		HTML[HTML.length] = ">";
+        HTML[HTML.length] = ">";
     }
     if(node.icon && node.icon == 'folder'){
-    	HTML[HTML.length] = '<span  style="position:relative;top:5px;"><i class="filing-unfold"></i></span>';
+        HTML[HTML.length] = '<span  style="position:relative;top:5px;"><i class="filing-unfold"></i></span>';
     }
     //HTML[HTML.length] = "<IMG align='absMiddle' id='" + this.name + "_icon_" + id + "' src='" + this.icons[node.icon].src + "'>";
     if(node.icon && node.icon == 'file'){
-    	HTML[HTML.length] = "<i class='" + this.getFileType(fileExt) + "' style=\"margin-bottom:-5px;\"></i>";
+        HTML[HTML.length] = "<i class='" + this.getFileType(fileExt) + "' style=\"margin-bottom:-5px;\"></i>";
     }
     var sid = node.sourceIndex.substr(node.sourceIndex.indexOf(this.divider) + this.divider.length);
     
@@ -318,12 +318,12 @@ Tree.prototype.nodeToHTML = function(node, AtEnd, isShow){
     HTML[HTML.length] = "<A class='MzTreeview file_disk_text' hideFocus='1' id='" + this.name + "_link_" + id + "' href='" + url + "' target='" + target + "' ";
     HTML[HTML.length] = " title='" + node.hint + "' onfocus=\"" + this.name + ".focusLink('" + id + "')\" onclick=\"return " + this.name + ".nodeClick('" + id + "')\">" + fileName + "</A></NOBR></DIV>";
     var str = HTML.join("");
-	if (isRoot && node.text == "") {
+    if (isRoot && node.text == "") {
         str = "";
     }
-	var p = this;
-	
-	
+    var p = this;
+    
+    
     str = "\r\n<SPAN id='" + this.name + "_tree_" + id + "'>" + str + "<SPAN style='DISPLAY: "+(isShow?"block":"none")+"'></SPAN></SPAN>";
     return str;
 };
@@ -380,12 +380,12 @@ Tree.prototype.word2image = function(word){
 //将某个节点下的所有子节点转化成详细的<HTML>元素表达
 //id 树的客户端节点 id
 Tree.prototype.buildNode = function(id){
-	var str = [];
+    var str = [];
     if (this.node[id].hasChild) {
         var tcn = this.node[id].childNodes, str = [];
         for (var i = 0; i < tcn.length; i++) {
-			str[str.length] = this.nodeToHTML(tcn[i], i == tcn.length - 1);
-		}
+            str[str.length] = this.nodeToHTML(tcn[i], i == tcn.length - 1);
+        }
         var temp = this.getElementById(this.name + "_tree_" + id).childNodes;
         temp[temp.length - 1].innerHTML = str.join("");
     }
@@ -418,42 +418,42 @@ Tree.prototype.focusLink = function(id){
 
 //点击展开树节点的对应方法
 Tree.prototype.expand = function(id, sureExpand){
-	var node  = this.node[id];
-	if (sureExpand && node.isExpand) return;
-	if(node.icon == 'folder'){
-		var chk = this.getElementById(this.name + '_checbox_' + id);
-		if(chk){
-			chk = jQuery(chk).next().find('i');
-			if(chk && chk.attr('class')){
-				if(chk.attr('class').trim() == 'filing-unfold'){
-					chk.attr('class', 'folder')
-				}
-				else{
-					chk.attr('class', 'filing-unfold');
-				}
-			}
-		}
-	}
-	if (!node.hasChild){
-		return;
-	};
-	var area  = this.getElementById(this.name +"_tree_"+ id);
-	if (area)   area = area.childNodes[area.childNodes.length-1];
-	if (area){
-	//node.icon == 'folder' ? node.icon = 'PM1' : node.icon;
-	var icon  = this.icons[node.icon];
-	var iconE = this.iconsExpand[node.icon];
-	node.isExpand = (sureExpand || area.style.display == "none");
-	var Bool  = node.isExpand;
-	//var img   = this.getElementById(this.name +"_icon_"+ id);
-	//if (img)  img.src = !Bool ? icon.src :typeof(iconE)=="undefined" ? icon.src : iconE.src;
-	var exp   = this.icons[node.iconExpand];
-	var expE  = this.iconsExpand[node.iconExpand];
-	var expand= this.getElementById(this.name +"_expand_"+ id);
-	if (expand){
-		if(this.wordLine) expand.innerHTML = !Bool ? "+"  : "-";
-		else expand.src = (!Bool ? exp.src : typeof(expE) =="undefined" ? exp.src  : expE.src).replace('2.gif', '1.gif');
-	}
+    var node  = this.node[id];
+    if (sureExpand && node.isExpand) return;
+    if(node.icon == 'folder'){
+        var chk = this.getElementById(this.name + '_checbox_' + id);
+        if(chk){
+            chk = jQuery(chk).next().find('i');
+            if(chk && chk.attr('class')){
+                if(chk.attr('class').trim() == 'filing-unfold'){
+                    chk.attr('class', 'folder')
+                }
+                else{
+                    chk.attr('class', 'filing-unfold');
+                }
+            }
+        }
+    }
+    if (!node.hasChild){
+        return;
+    };
+    var area  = this.getElementById(this.name +"_tree_"+ id);
+    if (area)   area = area.childNodes[area.childNodes.length-1];
+    if (area){
+    //node.icon == 'folder' ? node.icon = 'PM1' : node.icon;
+    var icon  = this.icons[node.icon];
+    var iconE = this.iconsExpand[node.icon];
+    node.isExpand = (sureExpand || area.style.display == "none");
+    var Bool  = node.isExpand;
+    //var img   = this.getElementById(this.name +"_icon_"+ id);
+    //if (img)  img.src = !Bool ? icon.src :typeof(iconE)=="undefined" ? icon.src : iconE.src;
+    var exp   = this.icons[node.iconExpand];
+    var expE  = this.iconsExpand[node.iconExpand];
+    var expand= this.getElementById(this.name +"_expand_"+ id);
+    if (expand){
+        if(this.wordLine) expand.innerHTML = !Bool ? "  : "-";
+        else expand.src = (!Bool ? exp.src : typeof(expE) =="undefined" ? exp.src  : expE.src).replace('2.gif', '1.gif');
+    }
     if(!Bool && this.currentNode.path.indexOf(node.path)==0 && this.currentNode.id!=id){
       try{this.getElementById(this.name +"_link_"+ id).click();}
       catch(e){this.focusClientNode(id);}
@@ -467,9 +467,9 @@ Tree.prototype.expand = function(id, sureExpand){
         setTimeout(this.name +".buildNode('"+ id +"')", 1);
         var temp = this.getElementById(this.name +"_tree_"+ id).childNodes;
         var html = "<DIV noWrap><NOBR><SPAN>"+ (this.wordLine?node.childAppend +"└" : this.word2image(node.childAppend +"└"))+"</SPAN>";
-		html+= "<IMG border='0' height='16' align='absmiddle' src='"+this.icons["file"].src+"'>";
-        html+= "<A style='background-Color: "+ this.colors.highLight +"; color: "+this.colors.highLightText +"; font-size: 9pt'>请稍候...</A></NOBR></DIV>";
-		temp[temp.length-1].innerHTML = html;
+        html+= "<IMG border='0' height='16' align='absmiddle' src='"+this.icons["file"].src+"'>";
+        html+= "<A style='background-Color: "+ this.colors.highLight +"; color: "+this.colors.highLightText +"; font-size: 9pt'>"+top.Lang.Mail.Write.qingshaohou+"</A></NOBR></DIV>";//; font-size: 9pt'>请稍候...</A></NOBR></DIV>
+        temp[temp.length-1].innerHTML = html;
       }else this.buildNode(id);
     }
   }
@@ -523,8 +523,8 @@ Tree.prototype.focus = function(sourceId, defer)
   var path = this.getPath(sourceId);
   if(path[0]!=this.rootId)
   {
-    alert("节点 "+ sourceId +" 没有正确的挂靠有效树节点上！\r\n"+
-      "节点 id 序列 = "+ path.join(this.divider));
+    alert(top.Lang.Mail.Write.jiedian+ sourceId +top.Lang.Mail.Write.myzqdgkyxsjdskcwWUrwV+//节点   ||   没有正确的挂靠有效树节点上！\r\n
+      top.Lang.Mail.Write.jiedianxulie+ path.join(this.divider));//节点 id 序列 = 
     return;
   }
   var root = this.node[this.rootId], len = path.length;
@@ -718,9 +718,9 @@ Tree.prototype.setTarget  = function(target){this.target = target;};
  * @param {Object} id
  */
 Tree.prototype.checkChild = function(id){
-	var thisCkId = this.name + "_checbox_" + id;
+    var thisCkId = this.name + "_checbox_" + id;
     var thisCkBox = this.getElementById(thisCkId)
-	this.node[id].checked = thisCkBox.checked;
+    this.node[id].checked = thisCkBox.checked;
     this.selChild(id)
     this.selParent(id)
 };
@@ -743,7 +743,7 @@ Tree.prototype.selParent = function(id){
         var pckboxid = this.name + "_checbox_" + pnode.id;
         var pckbox = this.getElementById(pckboxid);
         pckbox.checked = isChecked;
-		pnode.checked = isChecked;
+        pnode.checked = isChecked;
         this.selParent(pnode.id);
     }
 };
@@ -758,7 +758,7 @@ Tree.prototype.selChild = function(id){
             var ckbox = this.getElementById(ckboxID);
             if (ckbox) {
                 ckbox.checked = tcn.checked;
-				this.node[id].childNodes[i].checked = tcn.checked;
+                this.node[id].childNodes[i].checked = tcn.checked;
             }
             this.selChild(this.node[id].childNodes[i].id);
         }
@@ -770,21 +770,21 @@ Tree.prototype.selChild = function(id){
  * @param {Object} cv
  */
 Tree.prototype.getCheckedNodesRecursion = function(nodes,cv){
-	var tcn = nodes || this.node[this.rootId];
-	cv = cv || "";
+    var tcn = nodes || this.node[this.rootId];
+    cv = cv || "";
     //处理子节点
     if (tcn.hasChild) {
         for (var i = 0; i < tcn.childNodes.length; i++) {
             var node = tcn.childNodes[i];
-			if(node.checked){
-				if(cv){
-					if (cv == node.checkValue) {
-						this.checkedNodes[this.checkedNodes.length] = node;
-					}
-				}else{
-					this.checkedNodes[this.checkedNodes.length] = node;
-				}
-			}
+            if(node.checked){
+                if(cv){
+                    if (cv == node.checkValue) {
+                        this.checkedNodes[this.checkedNodes.length] = node;
+                    }
+                }else{
+                    this.checkedNodes[this.checkedNodes.length] = node;
+                }
+            }
             this.getCheckedNodesRecursion(node,cv);
         }
     }
@@ -795,9 +795,9 @@ Tree.prototype.getCheckedNodesRecursion = function(nodes,cv){
  * @param {Object} cv
  */
 Tree.prototype.getCheckedNodes = function(nodes,cv){
-	this.checkedNodes = [];
-	this.getCheckedNodesRecursion(nodes,cv);
-	return this.checkedNodes;
+    this.checkedNodes = [];
+    this.getCheckedNodesRecursion(nodes,cv);
+    return this.checkedNodes;
 };
 
 // -->

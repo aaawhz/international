@@ -48,7 +48,7 @@ Tips_Message.prototype.show=function()
        str +="<TR>";
        str +="<TD style='FONT-SIZE: 12px; width=30 height=24></TD>";
        str +="<TD style='PADDING-LEFT: 4px; FONT-WEIGHT: normal; FONT-SIZE: 12px; PADDING-TOP: 4px' vAlign=center width='100%'>"+this.title+"</TD><TD style='PADDING-RIGHT: 2px; PADDING-TOP: 2px' vAlign=center align=right width=19>";
-       str +="<SPAN title=¹Ø±Õ style='FONT-WEIGHT: bold; FONT-SIZE: 20px; CURSOR: hand; COLOR: red; MARGIN-RIGHT: 4px' id='btSysClose' >¡Á</SPAN></TD>";
+       str +="<SPAN title='"+top.Lang.Mail.Write.guanbi+"' style='FONT-WEIGHT: bold; FONT-SIZE: 20px; CURSOR: hand; COLOR: red; MARGIN-RIGHT: 4px' id='btSysClose' >¡Á</SPAN></TD>";//<SPAN title=¹Ø±Õ style='FONT-WEIGHT: bold; FONT-SIZE: 20px; CURSOR: hand; COLOR: red; MARGIN-RIGHT: 4px' id='btSysClose' >¡Á</SPAN></TD>
        str +="</TR>";
        str +="<tr><td colspan='3'>"
        str +=this.innerHTML;

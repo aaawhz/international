@@ -133,10 +133,10 @@ var P = (function (prototype, ownProperty, undefined) {
                 <div class="pop-wrap">\
                     <div class="msgDialog fz_14">\
                         <form method="post" action="{webPath}/login/loginapi.do" id="login_form">\
-                            <p>您的邮箱可能由于您长时间未进行操作，导致登录超时，已被退出，请重新登录</p>\
-                            <p class="mt_20">账号：{mail}</p>\
-                            <p class="mt_10">密码：\
-                                <input type="password" name="password" class="rm_txt w162" name="titleText" maxlength="15" value="" tabindex="1">\
+                            <p>'+top.Lang.Mail.Write.ndyxknyyncsiUoIYiFsybtcqzxdl+'</p>\
+                            <p class="mt_20">'+top.Lang.Mail.Write.zhanghao+'</p>\
+                            <p class="mt_10">'+top.Lang.Mail.Write.mimamao+
+                            '<input type="password" name="password" class="rm_txt w162" name="titleText" maxlength="15" value="" tabindex="1">\
                             </p>\
                             <input type="hidden" name="loginType" value="WEB" /> \
                             <input type="hidden" name="returnurl" value="{href}" />\
@@ -146,7 +146,7 @@ var P = (function (prototype, ownProperty, undefined) {
                         </form>\
                     </div>\
                 </div>'
-            ].join(''),
+            ].join(''),//
 
             /**
              * @name defaults 默认配置属性
@@ -164,7 +164,7 @@ var P = (function (prototype, ownProperty, undefined) {
             defaults: {
                 id: "WLogin",
                 model: "MAIL",
-                title: "登录验证",
+                title: top.Lang.Mail.Write.dengluyanzheng,//登录验证
                 width: "424",
                 func: "user:login",
                 webPath: gMain.webPath,
@@ -452,8 +452,5 @@ var P = (function (prototype, ownProperty, undefined) {
 
     return WLogin;
 }));
-
-
-
 
 
