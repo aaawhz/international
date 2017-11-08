@@ -143,19 +143,19 @@ var smsRecord = {
                     switch(sendStatus){
                         case 0:
                             statucClass='sms-status-icon sms-succ-icon';
-                            statusTitle='发送成功';
+                            statusTitle=top.Lang.Mail.Write.fasongchenggong;//发送成功
                             break;
                         case 1:
                             statucClass='sms-status-icon sms-fail-icon';
-                            statusTitle='发送失败';
+                            statusTitle=top.Lang.Mail.Write.fasongshibai;//发送失败
                             break;
                         case 2:
                             statucClass='sms-status-icon sms-time-icon';
-                            statusTitle='定时发送';
+                            statusTitle=top.Lang.Mail.Write.dingshifasong;//定时发送
                             break;
                         case 3:
                             statucClass='sms-status-icon sms-sending-icon';
-                            statusTitle='发送中';
+                            statusTitle=top.Lang.Mail.Write.fasongzhong;//发送中
                             break;
                     }
 
@@ -502,7 +502,7 @@ var smsRecord = {
         window.location.href=parent.gMain.webPath + "/se/sms/smsindex.do?sid="+parent.gMain.sid+'&smsid='+smsid+'&editflag='+editflag+'&sendflag='+sendflag;
     },
     Ajax: function(url,func,data, callback,failcallback){
-		failcallback = failcallback || function(d){
+        failcallback = failcallback || function(d){
             parent.CC.alert(d.summary);
         };
         parent.MM.doService({

@@ -43,7 +43,7 @@ OutLink.prototype = {
         }
         if (win&&win.Meeting) {
                 if (win.Meeting.isChanged()) {
-                    parent.CC.confirm('现在离开已编辑的会议邀请内容将会丢失,是否确认关闭?', function () {
+                    parent.CC.confirm(top.Lang.Mail.Write.xzlkybjdhycTgRgyRpjhdssfqrgb, function () {//现在离开已编辑的会议邀请内容将会丢失,是否确认关闭?
                         GE.tab.del(id)
                     });
                     return false;

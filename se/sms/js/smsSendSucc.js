@@ -48,7 +48,7 @@ var SmsSucc = {
         var url=link.attr('href');
         link.die().live('click',function(){
             if(isFenpi){
-                parent.CC.confirm('你还有未发送的联系人，确定要离开当前页?',function(){
+                parent.CC.confirm(top.Lang.Mail.Write.nhywfsdlxrqdylkdqyPfSzBzGO,function(){//你还有未发送的联系人，确定要离开当前页?
                     window.location.href=url;
                 });
                 return false;
@@ -71,9 +71,9 @@ var SmsSucc = {
         jQuery('#send_succ').show().find('h2').eq(0).html(tips);
         p.getRecordSet(function(pagesizeset,autosaveset){
             if(autosaveset=='1'){
-                jQuery('#send_succ').show().find('p').eq(0).html('此短信发送成功，并已保存到“短信记录”中 <a href="'+parent.gMain.webPath+'/se/sms/smsrecord.do?sid='+parent.gMain.sid+'&reflag=all">立即查看&gt;&gt;</a>');
+                jQuery('#send_succ').show().find('p').eq(0).html(''+top.Lang.Mail.Write.cdxfscgbybcddxjlzSagpFuFb+'<a href="'+parent.gMain.webPath+'/se/sms/smsrecord.do?sid='+parent.gMain.sid+'&reflag=all">'+top.Lang.Mail.Write.lijichakan+'</a>');//此短信发送成功，并已保存到“短信记录”中 <a href="  ||  &reflag=all">立即查看&gt;&gt;</a>
             }else{
-                jQuery('#send_succ').show().find('p').eq(0).html('<span class="save-status">该短信记录尚未保存。</span> <a href="javascript:void(0);" onclick="SmsSucc.openSave('+pagesizeset+',\'send_succ\');">立即开启自动保存&gt;&gt;</a>');
+                jQuery('#send_succ').show().find('p').eq(0).html('<span class="save-status">'+top.Lang.Mail.Write.gaiduanxinjilushangweibaocun+'</span> <a href="javascript:void(0);" onclick="SmsSucc.openSave('+pagesizeset+',\'send_succ\');">'+top.Lang.Mail.Write.lijikaiqizidongbaocun+'</a>');//<span class="save-status">该短信记录尚未保存。</span> <a href="javascript:void(0);" onclick="SmsSucc.openSave(  ||  ,\'send_succ\');">立即开启自动保存&gt;&gt;</a>
             }
         });
         p.showSended(isFenpi,'send_succ');
@@ -94,9 +94,9 @@ var SmsSucc = {
         jQuery('#time_send_succ').show().find('h2').eq(0).html(tips);
         p.getRecordSet(function(pagesizeset,autosaveset){
             if(autosaveset=='1'){
-                jQuery('#time_send_succ').show().find('p').eq(0).html('此短信暂时保存在“定时短信”中，它将在您指定的时间发出。 <a href="'+parent.gMain.webPath+'/se/sms/smsrecord.do?sid='+parent.gMain.sid+'&reflag=time">立即查看&gt;&gt;</a>');
+                jQuery('#time_send_succ').show().find('p').eq(0).html(''+top.Lang.Mail.Write.cdxzsbczdswGYxWFJvjznzddsjfc+'<a href="'+parent.gMain.webPath+'/se/sms/smsrecord.do?sid='+parent.gMain.sid+'&reflag=time">'+top.Lang.Mail.Write.lijichakan+'</a>');//此短信暂时保存在“定时短信”中，它将在您指定的时间发出。 <a href="  ||  &reflag=time">立即查看&gt;&gt;</a>
             }else{
-                jQuery('#time_send_succ').show().find('p').eq(0).html('<span class="save-status">该短信记录尚未保存。</span> <a href="javascript:void(0);" onclick="SmsSucc.openSave('+pagesizeset+',\'time_send_succ\');">立即开启自动保存&gt;&gt;</a>');
+                jQuery('#time_send_succ').show().find('p').eq(0).html('<span class="save-status">'+top.Lang.Mail.Write.gaiduanxinjilushangweibaocun+'</span> <a href="javascript:void(0);" onclick="SmsSucc.openSave('+pagesizeset+',\'time_send_succ\');">'+top.Lang.Mail.Write.lijikaiqizidongbaocun+'</a>');//<span class="save-status">该短信记录尚未保存。</span> <a href="javascript:void(0);" onclick="SmsSucc.openSave(  ||  ,\'time_send_succ\');">立即开启自动保存&gt;&gt;</a>
             }
         });
         p.showSended(isFenpi,'time_send_succ');
@@ -208,7 +208,7 @@ var SmsSucc = {
         jQuery('#fenpi_back').die().live('click',function(){
            var url=parent.gMain.webPath+'/se/sms/smsindex.do?sid='+parent.gMain.sid;
            if(!_this.sendCompleted){
-                parent.CC.confirm('你还有未发送的联系人，确定要离开当前页?',function(){
+                parent.CC.confirm(top.Lang.Mail.Write.nhywfsdlxrqdylkdqyLiGIBQto,function(){//你还有未发送的联系人，确定要离开当前页?
                     window.location.href=url;
                 });
             }else{
@@ -503,10 +503,10 @@ var SmsSucc = {
 
         function saveCallBack(data){
             if(data.code='S_OK'){
-                parent.CC.showMsg('自动保存短信记录设置成功', true, false, "option");
-                jQuery('#'+wrapid).find('p').eq(0).html('您已设置自动保存短信记录。');
+                parent.CC.showMsg(top.Lang.Mail.Write.zdbcdxjlszcgDLjnnygo, true, false, "option");//自动保存短信记录设置成功
+                jQuery('#'+wrapid).find('p').eq(0).html(top.Lang.Mail.Write.nyszzdbcdxjlUijucnIc);//您已设置自动保存短信记录。
             }else{
-                parent.CC.showMsg('自动保存短信记录设置成功', true, false, "error");
+                parent.CC.showMsg(top.Lang.Mail.Write.zdbcdxjlszcgfkNUUnCU, true, false, "error");//自动保存短信记录设置成功
             }
         }
     },
@@ -540,34 +540,4 @@ var SmsSucc = {
             data: data,
             failCall: failcallback,
             call: function(d){
-                callback(d)
-            },
-            param: ""
-        });
-    },
-    Init:function(mobiles,receiverText,sendMsg,startSendTime,serialId){
-        var _this=this;
-        _this.mobiles=mobiles;
-        _this.receiverText=receiverText;
-        _this.sendMsg=sendMsg;
-        _this.startSendTime=startSendTime;
-        _this.serialId=serialId;
-        _this.sendSatus();
-        if(mobiles.length>0){
-            _this.initLinkMan();
-        }
-
-        jQuery('#continue_sms').die().live('click',function(){
-            window.location.href=_this.smsSendIndexUrl;
-            return false;
-        })
-
-        //重写关闭标签
-        var labId=parent.CC.getCurLabId();
-        top.document.getElementById('tab_h_'+labId).getElementsByTagName('a')[0].onclick=function(){
-            parent.GE.tab.del(labId);
-        }
-    }
-}
-
-
+                

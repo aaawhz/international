@@ -47,7 +47,7 @@ ModuleManager.prototype.get = function (o, isShow, sid) {
         } else {
             this.laterRequestModule = sid;
         }
-//		//新增id!="attachList"
+//      //新增id!="attachList"
 //        if (GE.tab.exist(sid) && id!="attachList"){
 //            GE.tab.active(sid);
 //            call.call(MM[o],sid);
@@ -76,9 +76,9 @@ ModuleManager.prototype.getAjaxXml = function (data) {
 
 ModuleManager.prototype.getAjaxJson = function (data) {
     //var xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
-	//两边加单引号，(把unicode编码转化为中文)，"\u9020\u29291"--> '"分组1"', eval后-->'分组1'
+    //两边加单引号，(把unicode编码转化为中文)，"\u9020\u29291"--> '"分组1"', eval后-->'分组1'
     //解决这个问在IE8下调用json2.js里面的JSON.stringify() 而不使用IE8自带的
-	//var json = eval("'"+JSON.stringify(data)+"'");;
+    //var json = eval("'"+JSON.stringify(data)+"'");;
     //var json;
     //try {
      //   json = eval("'"+JSON.stringify(data)+"'");
@@ -121,11 +121,11 @@ ModuleManager.prototype.create = function (o, sid, isNotActive, oldsid, target) 
         //if( MM[o].toolbarPosition && MM[o].toolbarPosition == gConst.toolBarPosition.afterTitle ){
         //}
         //else {
-        //	html = '<div id="' + gConst.mainToolbar + sid + '"></div>' + html;
+        //  html = '<div id="' + gConst.mainToolbar + sid + '"></div>' + html;
         //}
         //if(o == GE.folderObj.inbox)
         //{
-        //	MM[o].group = 99;
+        //  MM[o].group = 99;
         //}
         var t = {
             name: (oldsid || sid),
@@ -600,7 +600,7 @@ ModuleManager.prototype.failCallBack = function (ao, url) {
             var errorCode = ao.errorCode || code;
             var s = Lang.Mail.fail;
             if (IsDebug) {
-                s += "<br>错误代码：" + errorCode + "<br>" + msg;
+                s += top.Lang.Mail.Write.cuowudaima + errorCode + "<br>" + msg;//<br>错误代码：
             }
             //if (msg&&errorCode) {
             //CC.alert(s, null, Lang.Mail.sys_SystemInfo);
@@ -791,9 +791,9 @@ ModuleManager.prototype.mainResize = function () {
 
 //        sh = mh - size * singleHeight - 20;
             sh = mh - jQuery(objUl).outerHeight() - 20 - 32;
-//		sh = mh - ch - 53-26;
-//		if(document.getElementById("12"))
-//			sh = sh-26;
+//      sh = mh - ch - 53-26;
+//      if(document.getElementById("12"))
+//          sh = sh-26;
             if (El.visible($(gConst.menuC.service))) {
                 El.height($(gConst.menuC.service), sh);
             }

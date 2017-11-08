@@ -798,7 +798,7 @@
 // /**
     // * 包装自动完成菜单实例,从集合中找出联系人然后显示手机菜单
     // * <pre>示例：<br>
-    // * <br>AutoCompleteMenu.createPhoneNumberMenuFromLinkManList(document.getElementById("inputText"),"张三",["张三","李四"])
+    // * <br>AutoCompleteMenu.createPhoneNumberMenuFromLinkManList(document.getElementById("inputText"),top.Lang.Mail.Write.zhangsan,[top.Lang.Mail.Write.zhangsan,top.Lang.Mail.Write.lisi])//张三  ||  张三  ||  李四
     // * @param {Object} host 必选参数，文本框。
     // * @param {string} withAddrName 必选参数，联系人。
     // * @param {Object} data 必选参数，联系人集合。
@@ -1210,7 +1210,7 @@ NumberTool = {
         var result = {};
         result.error = "";
         if (typeof inputText != "string") {
-            result.error = "参数不合法";
+            result.error = top.Lang.Mail.Write.canshubuhefa;//参数不合法
             return result;
         }
         /*
@@ -1224,7 +1224,7 @@ NumberTool = {
             if (this.isChinaMobileNumberText(text)) {
                 resultList.push(text);
             } else {
-                result.error = "该号码不是正确的手机号码：“" + text + "”";
+                result.error = top.Lang.Mail.Write.ghmbszqdsjhmVkiNsdfv + text + "”";//该号码不是正确的手机号码：“
             }
         }
         if (!result.error) {

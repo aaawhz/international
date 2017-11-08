@@ -18,8 +18,8 @@ var Page=function(config){
         config.count=1
     }
 
-    var html='<div  class="pager"><div class="pagediv"><span class="pageNum pageNum-on"><var>'+(config.index+1)+'/'+config.count+'</var><i class="ptg"></i></span><a class="page_forword" href="javascript:void(0);" 上一页</a><a class="page_next" href="javascript:void(0);" >下一页</a><ul class="pageitem" style="display: none;">'
-    for(var i=0;i<config.count;i++){
+    var html='<div  class="pager"><div class="pagediv"><span class="pageNum pageNum-on"><var>'+(config.index+1)+'/'+config.count+'</var><i class="ptg"></i></span><a class="page_forword" href="javascript:void(0);" 上一页</a><a class="page_next" href="javascript:void(0);" >'+top.Lang.Mail.Write.xiayiye+'</a><ul class="pageitem" style="display: none;">'
+    for(var i=0;i<config.count;i++){//</var><i class="ptg"></i></span><a class="page_forword" href="javascript:void(0);" 上一页</a><a class="page_next" href="javascript:void(0);" >下一页</a><ul class="pageitem" style="display: none;">
         html+='<li><a href="javascript:void(0);" index="'+i+'">'+(i+1)+' / '+config.count+'</a></li></li>'
     }
     html+='</ul></div></div>'

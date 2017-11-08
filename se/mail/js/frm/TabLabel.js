@@ -15,7 +15,7 @@ function TabLabel(){
     this.count = 0;
     this.width = 0;
     this.max = 100;
-	this.pw = 41;
+    this.pw = 41;
     this.min = 10;
     this.fixLeftWidth = 199; //左侧固定宽度
     this.closeAllWidth = 22; //关闭所有图标占用宽度
@@ -30,7 +30,7 @@ function TabLabel(){
             this.main = this.doc.getElementById(this.id);
             this.tabbody = this.doc.getElementById(this.bodyId);
             if(top.Browser.isIE){
-            	this.closeAllWidth = 24; // ie 有2像素误差
+                this.closeAllWidth = 24; // ie 有2像素误差
             }
             this.width = CC.docWidth() - this.fixLeftWidth - this.closeAllWidth - this.rightSpace;
             jQuery(window).resize(function () {
@@ -53,13 +53,13 @@ TabLabel.prototype = {
      * 增加一个标签<br>
      * json对象定义样例：<br.
      * var ao = {
-     * 		name:'name', //标签名   <br>
-     * 		text:'text', //标签显示文本<br>
-     * 		group:groupid, //组id<br>
-     * 		url:'test.htm', //标签打开的url地址<br>
-     * 		html:html,//显示的内容<br>
-     *		isLink:true,    //是否连接到一个url(同url使用)<br>
-     *		exitcall:p(before,after)//退出的回调函数<br>
+     *      name:'name', //标签名   <br>
+     *      text:'text', //标签显示文本<br>
+     *      group:groupid, //组id<br>
+     *      url:'test.htm', //标签打开的url地址<br>
+     *      html:html,//显示的内容<br>
+     *      isLink:true,    //是否连接到一个url(同url使用)<br>
+     *      exitcall:p(before,after)//退出的回调函数<br>
      * };
      * @param {object} ao json对象数据
      * @param {boolean} isHide 是否不激活标签，默认激活标签
@@ -90,13 +90,13 @@ TabLabel.prototype = {
             if (ao.srep) {
                 t.b.innerHTML = ao.html;
             }
-			if(ao.name=="sys0")
-			{
-				this.title(ao.name,ao.text);
-				//t.t.title=ao.text;
-				//t.t.textContent=ao.text;
-				//document.getElementById
-			}
+            if(ao.name=="sys0")
+            {
+                this.title(ao.name,ao.text);
+                //t.t.title=ao.text;
+                //t.t.textContent=ao.text;
+                //document.getElementById
+            }
             return;
         } else if (target === "blank") {
             isreplace = false;
@@ -120,20 +120,20 @@ TabLabel.prototype = {
         tab.setAttribute("tabid", id);
         tab.className = "";
         tab.onclick = doTabClick;
-		tab.title = text.encodeHTML();
+        tab.title = text.encodeHTML();
        // tab.title = text.stripTags();
         tab.onmouseover=function()
-		{	
-			if (this.className != "on") {
-				this.className = "hover";
-			}
-		}
-		tab.onmouseout = function()
-		{
-			if (this.className != "on") {
-				this.className = "";
-			}
-		}
+        {   
+            if (this.className != "on") {
+                this.className = "hover";
+            }
+        }
+        tab.onmouseout = function()
+        {
+            if (this.className != "on") {
+                this.className = "";
+            }
+        }
         //创建tab左边元素
         var tabL = El.createElement('i', "", "l");
         //创建tab右边元素
@@ -144,11 +144,11 @@ TabLabel.prototype = {
             tab.className = " on";
             tabM.innerHTML = "<p>" + Lang.Mail.tab_Home + "</p>";
         } 
-		else if((id.indexOf("sys") != -1 || id.indexOf("user") != -1) && !isShowWelcome ){
-			tab.className = " on";
+        else if((id.indexOf("sys") != -1 || id.indexOf("user") != -1) && !isShowWelcome ){
+            tab.className = " on";
             tabM.innerHTML = "<p>" +  ao.text.encodeHTML() + "</p>";
-		}
-		else {
+        }
+        else {
             tabM.innerHTML = "<p>" + ao.text.encodeHTML() + "</p>";
             var tabClose = El.createElement('a');
             tabClose.title = Lang.Mail.Close;
@@ -186,7 +186,7 @@ TabLabel.prototype = {
         }
         tabBody.innerHTML = html;
         /*parent.El.setStyle(tabBody, {
-        	'overflow-x': 'hidden'
+            'overflow-x': 'hidden'
         });*/
         this.tabbody.appendChild(tabBody);
         this.tabs[id] = id;
@@ -197,7 +197,7 @@ TabLabel.prototype = {
         v.count++;
         v.size();
         if (v.count > gConst.tab_ShowCloseAll) {
-        	this.updateCloseAllPosition(true);
+            this.updateCloseAllPosition(true);
             //$(gConst.tab_CloseAllId).style.display = "";
         }
         
@@ -261,29 +261,29 @@ TabLabel.prototype = {
      */
     updateCloseAllPosition: function(open){
 
-    	var o = $(gConst.tab_CloseAllId);
-    	var docWidth = jQuery("#" + gConst.divTop).width();
+        var o = $(gConst.tab_CloseAllId);
+        var docWidth = jQuery("#" + gConst.divTop).width();
 
-    	var boxTabWidth = 0;
+        var boxTabWidth = 0;
 //        jQuery('#divTabls li').each(function(){
 //            boxTabWidth=jQuery(this).outerWidth(true)+boxTabWidth
 //        })
         var boxTabWidth=jQuery("#" + gConst.divTab).width()
 
         var left = jQuery("#" + gConst.divTab).offset().left-jQuery('#header').offset().left;
-    	var r = 0;
-    	var ow = El.width(o);
-    	r = docWidth- left - boxTabWidth  - ow -15;
-    	
-    	El.setStyle(o, {
-    		right: r + 'px'
-    	});
-    	if(open){
-    		El.show(o);
-    	}
-    	else{
-    		El.hide(o);
-    	}
+        var r = 0;
+        var ow = El.width(o);
+        r = docWidth- left - boxTabWidth  - ow -15;
+        
+        El.setStyle(o, {
+            right: r + 'px'
+        });
+        if(open){
+            El.show(o);
+        }
+        else{
+            El.hide(o);
+        }
     },
     /**
      * 删除一个标签
@@ -318,12 +318,12 @@ TabLabel.prototype = {
             this.history.length--;
             this.active(nid);
         }
-		this.updateCloseAllPosition(true);
-		if (this.count <= gConst.tab_ShowCloseAll) {
+        this.updateCloseAllPosition(true);
+        if (this.count <= gConst.tab_ShowCloseAll) {
             this.updateCloseAllPosition(false);
             //El.hide($(gConst.tab_CloseAllId));
         }
-		
+        
     },
     /**
      * 激活一个标签
@@ -387,20 +387,20 @@ TabLabel.prototype = {
             //ch("Tab Title Error", null);
             return;
         }
-		var newmid = id.substr(8);
-		//var tabId = tab.b.id.substr(14);
-		/*
+        var newmid = id.substr(8);
+        //var tabId = tab.b.id.substr(14);
+        /*
 if (newmid != mid) {
-		$("tab_b_" + id).setAttribute("id","tab_b_readMail"+mid);
-		$("tab_h_" + id).setAttribute("id","tab_h_readMail"+mid);
-		$("tab_h_" + id).setAttribute("tabid","readMail"+mid);
-		}
+        $("tab_b_" + id).setAttribute("id","tab_b_readMail"+mid);
+        $("tab_h_" + id).setAttribute("id","tab_h_readMail"+mid);
+        $("tab_h_" + id).setAttribute("tabid","readMail"+mid);
+        }
 */
         var txt = tab.t.childNodes[1].childNodes[0];
         if (title) {
             txt.innerHTML = title.encodeHTML();
             //tab.t.title = title.stripTags();
-			tab.t.title = title.decodeHTML();
+            tab.t.title = title.decodeHTML();
         } else {
             return txt.innerHTML.stripTags();
         }
@@ -418,17 +418,17 @@ if (newmid != mid) {
             }
         }
     },
-	/**
+    /**
      * 关闭所有标签
      */
     closeAll: function(){
-		var p = this;
+        var p = this;
         var tabs = this.tabs;
         if (tabs) {
             Util.eachObj(tabs,function(k, v){
                 if(k!=gConst.home){
-					p.close(k);
-				}
+                    p.close(k);
+                }
             });
         } else {
             ch("closeAll Error", null);
@@ -469,7 +469,7 @@ if (newmid != mid) {
         var liPadding=44;
         var maxUlWidth=jQuery('#header').width()-214;
         if(jQuery('#divTabls li div').first().find('a').length==0){
-            jQuery('#divTabls li div').first().append('<a title="关闭" class="close" style="visibility: hidden;" href="javascript:fGoto()"></a>')
+            jQuery('#divTabls li div').first().append('<a title="'+top.Lang.Mail.Write.guanbi+'" class="close" style="visibility: hidden;" href="javascript:fGoto()"></a>')//<a title="关闭" class="close" style="visibility: hidden;" href="javascript:fGoto()"></a>
             jQuery('#divTabls li p').first().css('text-align','center');
         }
 
@@ -550,6 +550,6 @@ if (newmid != mid) {
                       el[clearElementProps[c]] = null;
                   }
               }
-          });		
+          });       
     }
 };

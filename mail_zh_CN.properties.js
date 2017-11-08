@@ -1985,31 +1985,6 @@ mail.write.ntfcfj = 粘贴方式上传附件
 mail.write.jp = 截屏
 mail.write.qyxzts = 企邮小工具安装提示
 
-mail.write.xzaz = 下载安装
-mail.write.cancel = 取消
-mail.write.fjsdfj = 附件上传中，请稍后再添加新的附件
-mail.write.ntjxcg = 您添加的文件大小超过{0}
-mail.write.bydlfs = 不用担心 您可以使用超大附件来发送。
-mail.write.cdfsxz = 超大附件保存在文件中转站中，更环保，对方也可以高速下载.
-mail.write.xtdzsc = 相同的文件名已经存在,请重命名后再上传
-mail.write.wjscsb = 文件\"{0}'上传失败
-mail.write.dbqhzs = 对不起，文件正在被其它应用程序占用，请关闭文件后再试。
-mail.write.ndlpgn = 您的浏览器暂不支持截屏功能
-mail.write.hqdhzs = 获取大附件失败，请稍后再试
-mail.write.yschzs = 已上传附件中存在相同文件名，请重命名后再试。
-
-mail.write.wjdfsc = 文件大小为 0 字节，无法上传
-mail.write.wjshcs = 文件上传失败，请删除后重试！
-mail.write.dbqhcs = 对不起，上传附件失败，请删除后重试！
-mail.write.qbwjtj = 请把文件拖放到这个区域，就可作为附件添加。
-mail.write.bntdwj = 不能拖放文件夹，以及大小为零的文件
-mail.write.tpjzz = 图片加载中...
-mail.write.scz = 上传中
-mail.write.scsqcs = 上传失败，请重试
-mail.write.fjsqcs = 附件上传失败，请重试。
-mail.write.scfj = 上传附件
-mail.write.sxfjsb = 刷新附件失败
-mail.write.wjmszf = "文件名包含:\\\/*\?\"\'\<\>等特殊字符"
 
 mail.Write.gzdyjtbqQybHL : 给指定邮件贴标签
 mail.Write.youjian : 邮件:
@@ -2855,6 +2830,512 @@ mail.Write.da : 大
 mail.Write.jiaoda : 较大
 mail.Write.henda : 很大
 mail.Write.bianjiqizicaidanjieshu : <!----编辑器子菜单结束----->
+
+ 
+ 
+ 
+mail.Write.putong : 普通
+mail.Write.zhiding : 置顶
+mail.Write.quxiaozhiding : 取消置顶
+mail.Write.biaoji : 标记
+mail.Write.quanbu : 全部
+mail.Write.yidu : 已读
+mail.Write.weidu : 未读
+mail.Write.yihuifu : 已回复
+mail.Write.yizhuanfa : 已转发
+mail.Write.yijiaxingbiao : 已加星标
+mail.Write.weijiaxingbiao : 未加星标
+mail.Write.hanfujian : 含附件
+mail.Write.wufujian : 无附件
+mail.Write.jinji : 紧急
+mail.Write.shaixuan : 筛选
+mail.Write.daochuxuanzhongyoujian : 导出选中邮件
+mail.Write.youjiandaoru : eml邮件导入
+ 
+mail.Write.jiaruheimingdan : 加入黑名单
+mail.Write.bianji : 编辑
+mail.Write.zhuanfa : 转发
+mail.Write.shuaxin : 刷新
+ 
+mail.Write.chedishanchu : 彻底删除
+mail.Write.qingkong : 清空
+mail.Write.yidongdao : 移动到
+mail.Write.sousuoyoujian : 搜索邮件
+mail.Write.jushou : 拒收
+mail.Write.zhebushilajiyoujian : 这不是垃圾邮件
+mail.Write.shoujianxiang : 收件箱
+mail.Write.xiugaimima : 修改密码
+mail.Write.zidonghuifu : 自动回复&nbsp;
+mail.Write.zidongzhuanfa : 自动转发
+mail.Write.daishouwenjianjia : 代收文件夹&nbsp;
+mail.Write.heimingdan : 黑名单
+mail.Write.baimingdan : 白名单
+mail.Write.fujianguanli : 附件管理
+mail.Write.youjianfenjian : 邮件分拣
+mail.Write.jiemianshezhi : 界面设置&nbsp;
+mail.Write.jibencanshu : 基本参数
+mail.Write.youjianqianming : 邮件签名
+mail.Write.youjiandaishou : 邮件代收
+mail.Write.anquansuo : 安全锁
+mail.Write.shezhi : 设置
+mail.Write.zaicifasong : 再次发送
+mail.Write.fasong : 发送
+mail.Write.cuncaogao : 存草稿
+mail.Write.dayinyulan : 打印预览
+mail.Write.quxiao : 取消
+mail.Write.fujianshangchuan : 附件上传
+mail.Write.fujianshangchuan : Flash附件上传
+mail.Write.wenjianguifujianshangchuan : 文件柜附件上传
+mail.Write.xinzhimokuai : 信纸模块
+mail.Write.youbiantongxunlumokuai : 右边通讯录模块
+mail.Write.lianxirenzidongwancheng : 联系人自动完成
+mail.Write.jiepinggongnen : 截屏功能
+mail.Write.xiexinmoban : 写信模板
+mail.Write.xiexinmokuai : 写信模块
+mail.Write.xiazaiyuanwen : 下载原文
+mail.Write.daishangyuanyoujiandefujian : 带上原邮件的附件
+mail.Write.budaiyuanyoujiandefujian : 不带原邮件的附件
+mail.Write.budaiyuanyoujiandefujian : 不带原邮件的附件
+mail.Write.daishangyuanyoujiandefujian : 带上原邮件的附件
+mail.Write.huifu : 回复
+mail.Write.huifusuoyou : 回复所有
+mail.Write.dayin : 打印
+mail.Write.chakanyuanwen : 查看原文
+mail.Write.xinjian : 新建
+mail.Write.shanchu : 删除
+mail.Write.qingkong : 清空
+mail.Write.xiugai : 修改
+mail.Write.paixu : 排序
+mail.Write.youxiang : 邮箱
+mail.Write.gerentongxunlu : 个人通讯录
+mail.Write.qiyetongxunlu : 企业通讯录
+mail.Write.tongxunlu : 通讯录
+mail.Write.lianxiren : 联系人
+mail.Write.fenzu : 分组
+mail.Write.xinjian : 新建
+mail.Write.wenjian : 文件
+mail.Write.daoru : 导入
+mail.Write.daochu : 导出
+mail.Write.shanchulianxizu : 删除联系组
+mail.Write.shanchulianxiren : 删除联系人
+mail.Write.xiugailianxiren : 修改联系人
+mail.Write.xiugailianxizu : 修改联系组
+mail.Write.fuzhi : 复制
+mail.Write.yidong : 移动
+mail.Write.youjianzuliebiao : 邮件组列表
+mail.Write.zuijinlianxiren : 最近联系人
+mail.Write.tongxunlu : 通讯录
+mail.Write.duanxin : 短信
+mail.Write.shangchuan : 上传
+ 
+mail.Write.fasong : 发送
+mail.Write.shanchu : 删除
+mail.Write.zhongmingming : 重命名
+mail.Write.xuqi : 续期
+mail.Write.wenjianzhongzhuanzhan : 文件中转站
+mail.Write.xinzengrichengtixing : 新增日程提醒
+mail.Write.xiugairichengtixing : 修改日程提醒
+mail.Write.richengtixing : 日程提醒
+mail.Write.zuzhitongxunlu : 组织通讯录
+mail.Write.qiyegonggao : 企业公告
+
+mail.Write.cuowudaima : <br>错误代码：
+
+mail.Write.xzlkybjdhycTgRgyRpjhdssfqrgb : 现在离开已编辑的会议邀请内容将会丢失,是否确认关闭?
+ 
+ mail.Write.shanchubencishangchuandefujian : 删除本次上传的附件:
+mail.Write.wjscsbqschzsoaqSSYxh : 文件上传失败，请删除后重试！
+mail.Write.tianjiaxiaoyudefujian : 添加小于{0}M的附件
+mail.Write.tianjiazuidadefujian : 添加最大1G的附件
+mail.Write.ninshifuyaojinyongshangchuanzujian : 您是否要禁用Flash上传组件?
+mail.Write.sczjyjjynxWsCgeDQssdswddscfs : Flash上传组件已经禁用，您下次打开写信页将使用原始但是稳定的上传方式。
+mail.Write.anzhuangxiaogongju : 安装小工具
+mail.Write.fjsczqshztjxdfjyfKuFGEm : 附件上传中，请稍后再添加新的附件
+mail.Write.bydxnkysycdfjlfsODeWPHoq : 不用担心 您可以使用超大附件来发送。
+mail.Write.nintianjiadewenjiandaxiaochaoguo : 您添加的文件大小超过{0}M
+mail.Write.cdfjbczwjzrvhXPwBYbdfykygsxz : 超大附件保存在文件中转站中，更环保，对方也可以高速下载.
+mail.Write.xtdwjmyjczqzmmhzsczHQHcmex : "{0}"相同的文件名已经存在,请重命名后再上传
+mail.Write.wenjianshangchuanshibai : 文件\"{0}'上传失败
+mail.Write.dbqwjzzbqtorFmGuhJzyqgbwjhzs : 对不起，文件正在被其它应用程序占用，请关闭文件后再试。
+mail.Write.ndllqzbzcjpgnXjGXjIwm : 您的浏览器暂不支持截屏功能
+mail.Write.hqdfjsbqshzsyNTSJbcP : 获取大附件失败，请稍后再试
+mail.Write.yscfjzczxtwjmqzmmhzsYLSyisnA : 已上传附件中存在相同文件名，请重命名后再试。
+mail.Write.wjdxwzjwfscTDYVgrmJ : "{0}"文件大小为 0 字节，无法上传
+mail.Write.wjscsbqschzsgeMFwPjy : 文件上传失败，请删除后重试！
+mail.Write.dbqscfjsbqschzsIFTRNqft : 对不起，上传附件失败，请删除后重试！
+mail.Write.bntfwjjyjdxwldwjHmSHTCKc : 不能拖放文件夹，以及大小为零的文件
+mail.Write.tupianjiazaizhong : 图片加载中...
+mail.Write.shangchuanzhong : 上传中
+mail.Write.shangchuanshibai : 上传失败
+mail.Write.xuchuan : 续传
+mail.Write.jiepingshibaiqingzhongshi : 截屏失败，请重试
+mail.Write.fujianshangchuanshibaiqingzhongshi : 附件上传失败，请重试。
+mail.Write.shangchuanfujian : 上传附件
+mail.Write.fujianshangchuanshibaiqingzhongshi : 附件上传失败，请重试。
+mail.Write.shangchuanfujian : 上传附件
+mail.Write.shuaxinfujianshibai : 刷新附件失败
+
+ 
+mail.Write.huaikeyishuru : 还可以输入
+mail.Write.shoujianrenshuyichaoguoshangxian : 收件人数已超过上限
+mail.Write.renbunenjixutianjia : 人，不能继续添加！
+mail.Write.renweitianjiazuiduotianjia : 人未添加，最多添加
+mail.Write.ren : 人
+mail.Write.suoyouzhantiede : 所有粘贴的
+mail.Write.huiyizhuti : 会议主题
+mail.Write.didian : 地点
+mail.Write.chakanfasongzhuangtai : 查看发送状态
+mail.Write.yincangfasongzhuangtai : 隐藏发送状态
+mail.Write.zhuangtaiyishuaxin : 状态已刷新
+ 
+ 
+mail.Write.zhuangtaiyishuaxin : 状态已刷新
+ 
+mail.Write.qingshuruhuiyizhuti : 请输入会议主题
+ 
+mail.Write.qingshuruhuiyididian : 请输入会议地点
+mail.Write.hysjbnzydqsjUQLbfFpS : 会议时间不能早于当前时间
+mail.Write.hyyqzzbcdcgxTuBSsEUs : 会议邀请正在保存到草稿箱
+mail.Write.zhengzaifasonghuiyiyoujian : 正在发送会议邮件
+mail.Write.youjianyiyu : 邮件已于
+mail.Write.baocundaocaogaoxiang : 保存到草稿箱
+ 
+mail.Write.jinruduilie : 进入队列
+mail.Write.yitoudidaoduifangyouxiang : 已投递到对方邮箱
+mail.Write.ytdddfyxdbdfrdwbdyjsslDgUHK : 已投递到对方邮箱，但被对方认定为病毒邮件
+mail.Write.bytdsbytxfbdybddlSyqnRd : 本域投递失败，已退信，反病毒，有病毒
+mail.Write.bytdsbytxfhyhbczucJjwyYd : 本域投递失败，已退信，MD返回，用户不存在
+mail.Write.bytdsbytxfhyhydjhzxoIRiqYlv : 本域投递失败，已退信，MD返回，用户已冻结或注销
+mail.Write.bytdsbytxtxnbfwqtxcwRPlMCINC : 本域投递失败，已退信，通信，内部服务器通信错误
+mail.Write.bytdsbytxzglsjrzhmdziiDTjwCu : 本域投递失败，已退信，组过滤，收件人在黑名单中
+mail.Write.bytdsbytxzekhmgsEOjrbstyqyyh : 本域投递失败，已退信，组过滤，发件人与收件人不是同一企业用户
+mail.Write.bytdsbytxzGUfHPqmmlfjrbzbmdz : 本域投递失败，已退信，组过滤，发件人不在白名单中
+mail.Write.bytdsbytxqXHkXOFfirzqyczhmdz : 本域投递失败，已退信，企业入站黑名单，收件人在企业出站黑名单中
+mail.Write.bytdsbytxqWWaqiJOdrzqyrzhmdz : 本域投递失败，已退信，企业入站黑名单，发件人在企业入站黑名单中
+mail.Write.bytdsbytxyCrxCBpXWsjrzyhhmdz : 本域投递失败，已退信，用户黑名单，收件人在用户黑名单中
+mail.Write.bytdsbytxfJNvbUALWgzyhfjgzjs : 本域投递失败，已退信，分拣规则，用户分拣规则拒收
+mail.Write.bytdsbtxsbenQGCJEMxnbfwqtxcw : 本域投递失败，退信失败，通信，内部服务器通信错误
+mail.Write.jinruwaiyutoudiduilie : 进入外域投递队列
+mail.Write.wyyzfddffwqVDdOrEhx : 外域已转发到对方服务器
+mail.Write.waiyuchangshizhongfa : 外域尝试重发
+mail.Write.waiyuzhuanfashibai : 外域转发失败
+mail.Write.gyjyccyxqwfcxfxztQwpkGeLz : 该邮件已超出有效期，无法查询发信状态
+mail.Write.toudizhong : 投递中
+
+
+ 
+  
+mail.Write.shangchuanchenggong : 上传成功
+mail.Write.wenjianmingbaohandengteshuzifu : 文件名包含:\\\/\*\?\"\'\<\>等特殊字符
+mail.Write.zuida : (最大{0})
+ 
+mail.Write.wjscsbqschzstrjhjjez : 文件上传失败，请删除后重试！
+mail.Write.shanchubencishangchuandefujian : 删除本次上传的附件:
+mail.Write.tianjiaxiaoyudefujian : 添加小于{0}的附件
+mail.Write.tianjiazuidadefujian : 添加最大{0}的附件
+mail.Write.tjzddfjksyztscfjZslyTFlA : 添加最大{0}的附件<br/>可使用Ctrl+V粘贴上传附件
+mail.Write.jikezhantieshangchuanfujian : 即可Ctrl+V粘贴上传附件
+mail.Write.youxiangxiaogongju : 邮箱小工具
+mail.Write.tjzddfjksyztscfjWEepMVlG : 添加最大{0}的附件<br/>可使用Ctrl+V粘贴上传附件
+mail.Write.anzhuang : 安装
+mail.Write.ninshifuyaojinyongshangchuanzujian : 您是否要禁用Flash上传组件?
+mail.Write.sczjyjjynxHmfYMUJosdswddscfs : Flash上传组件已经禁用，您下次打开写信页将使用原始但是稳定的上传方式。
+ 
+mail.Write.fjcgjzwcdfcSwFuzqVgqsjrjwfxz : 附件超过{0}, 将作为超大附件上传, 保存在文件中转站, 15天内有效, 若被删除或过期, 收件人将无法下载.
+mail.Write.shiyongchaodafujianshangchuan : 使用超大附件上传
+mail.Write.quxiaoshangchuan : 取消上传
+mail.Write.sccdfjxyxazqyxgjcjYtpnzVyH : 上传超大附件, 需要先安装企邮小工具插件.
+mail.Write.azhnkysyyxgnNTLKgjko : 安装后：您可以使用以下功能：
+ 
+mail.Write.chaodafujian : 超大附件
+mail.Write.zhantietudaozhengwen : 粘贴图到正文
+mail.Write.zhantiefangshishangchuanfujian : 粘贴方式上传附件
+mail.Write.jieping : 截屏
+mail.Write.qiyouxiaogongjuanzhuangtishi : 企邮小工具安装提示
+mail.Write.xiazaianzhuang : 下载安装
+ 
+mail.Write.fjsczqshztjxdfjhyEUAUPW : 附件上传中，请稍后再添加新的附件
+mail.Write.nintianjiadewenjiandaxiaochaoguo : 您添加的文件大小超过{0}
+mail.Write.bydxnkysycdfjlfsYJbwICVN : 不用担心 您可以使用超大附件来发送。
+mail.Write.cdfjbczwjzwpDuZAuobdfykygsxz : 超大附件保存在文件中转站中，更环保，对方也可以高速下载.
+mail.Write.xtdwjmyjczqzmmhzscZkPvDumQ : "{0}"相同的文件名已经存在,请重命名后再上传
+mail.Write.wenjianshangchuanshibai : 文件\"{0}'上传失败
+mail.Write.dbqwjzzbqtQQwNoFiezyqgbwjhzs : 对不起，文件正在被其它应用程序占用，请关闭文件后再试。
+mail.Write.ndllqzbzcjpgnAsyiWBSv : 您的浏览器暂不支持截屏功能
+mail.Write.hqdfjsbqshzsfSygvKgz : 获取大附件失败，请稍后再试
+mail.Write.yscfjzczxtwjmqzmmhzsSlKeuFzF : 已上传附件中存在相同文件名，请重命名后再试。
+mail.Write.wjdxwzjwfsclWCUpHIa : "{0}"文件大小为 0 字节，无法上传
+mail.Write.wjscsbqschzssbgmlQOW : 文件上传失败，请删除后重试！
+mail.Write.dbqscfjsbqschzstwbKydrh : 对不起，上传附件失败，请删除后重试！
+mail.Write.qbwjtfdzgqyjkzwfjtjHuscigtX : 请把文件拖放到这个区域，就可作为附件添加。
+mail.Write.qbwjtfdzgqyjkzwfjtjQWiDyHYX : 请把文件拖放到这个区域，就可作为附件添加。
+mail.Write.bntfwjjyjdxwldwjBoKkjHBT : 不能拖放文件夹，以及大小为零的文件
+mail.Write.tupianjiazaizhong : 图片加载中...
+mail.Write.shangchuanzhong : 上传中
+mail.Write.shangchuanshibaiqingzhongshi : 上传失败，请重试
+mail.Write.fujianshangchuanshibaiqingzhongshi : 附件上传失败，请重试。
+mail.Write.shangchuanfujian : 上传附件
+ 
+mail.Write.shuaxinfujianshibai : 刷新附件失败
+
+ 
+ 
+mail.Write.canshubuhefa : 参数不合法
+ 
+mail.Write.ghmbszqdsjhmVkiNsdfv : 该号码不是正确的手机号码：“
+
+ mail.Write.jinji : 紧急！
+mail.Write.huiyiyaoqing : 会议邀请
+mail.Write.huiyijiyao : 会议纪要
+mail.Write.huaikeyishuru : 还可以输入
+mail.Write.huiyicailiao : 会议材料
+ 
+mail.Write.shoujianrenshuyichaoguoshangxian : 收件人数已超过上限
+mail.Write.renbunenjixutianjia : 人，不能继续添加！
+mail.Write.renweitianjiazuiduotianjia : 人未添加，最多添加
+mail.Write.ren : 人
+mail.Write.suoyouzhantiede : 所有粘贴的
+mail.Write.tjzddfjhwjzzzwjNAJyQhoj : 添加最大{0}的附件和文件中转站文件
+mail.Write.yjydhzxhhyGMdKThzkcgxztshzxh : 邮件阅读后自销毁或邮件超过限制天数后自销毁
+mail.Write.yueduwanchengzidongxiaohui : 阅读完成自动销毁
+ 
+mail.Write.tian : 天 
+mail.Write.xianzhiyoujianyuedutianshu : 限制邮件阅读天数
+mail.Write.qingshuruzhijiandeshuzhi : 请输入1-100之间的数值
+mail.Write.zzdlsydxtnXNMEOJVgxtyxxtdqty : 只在web登录使用的系统内部邮箱生效（包含相同邮箱系统的其它域）。
+mail.Write.zxhyjbyxtjfjMLAJbNLA : 自销毁邮件不允许添加附件。
+mail.Write.queding : 确定
+mail.Write.zixiaohuiyoujian :  自销毁邮件
+mail.Write.gyjjxjmbzyTLgsrwrWaqfzyjnrxl : 给邮件进行加密，保证邮件全程安全，防止邮件内容泄露。
+mail.Write.quxiao : 取消
+mail.Write.gyjjxqmyfztrmcndsfNLDghcgZ : 给邮件进行签名，以防止他人冒充您的身份。
+mail.Write.yanzhengtongguo : 验证通过
+mail.Write.siyuemimacuowu : 私钥密码错误
+mail.Write.mmcwcsddxzqyfzhzsNzYhnHta : 密码错误次数达到限制，请于10分钟后重试
+mail.Write.jiemishibai : 解密失败
+mail.Write.mimabunenweikong : 密码不能为空
+mail.Write.xiugaimimachenggong : 修改密码成功
+mail.Write.mimachangduxuwei : 密码长度需6-64位
+mail.Write.xiugaimimashibai : 修改密码失败
+mail.Write.nyxzjzzfbntsgyjszmmDYjvxpVp : 您已选择禁止转发，不能同时给邮件设置密码
+mail.Write.geiyoujianshezhimima : 给邮件设置密码
+mail.Write.nyxzgyjszmGZFlMVOuntszxzjzzf : 您已选择给邮件设置密码，不能同时再选择禁止转发
+mail.Write.shezhijinzhizhuanfagaiyoujian : 设置禁止转发该邮件
+mail.Write.zsyfzxhyjdebWtRiGWdwhyjjzdxh : 这是一封自销毁邮件，对方阅读完后，邮件将自动销毁
+mail.Write.zsyfzxhyjdfsdyjLDvkkPSO : 这是一封自销毁邮件，对方收到邮件
+mail.Write.tianhouyoujianjiangzidongxiaohui : 天后，邮件将自动销毁
+mail.Write.wlbzyjjfjdjCUCEPxxqnscfjhzfs : 为了保证邮件及附件的安全性，自销毁邮件不允许添加附件，请您删除附件后再发送。
+ 
+mail.Write.ndyjztdlfjHECIppdqtjfjsfjxfs : 您的邮件中提到了附件，您可能忘记添加附件，是否继续发送？
+mail.Write.gongkai : 公开
+mail.Write.qingxuanzeyoujianmiji : 请选择邮件密级
+mail.Write.mimi : 秘密
+mail.Write.jimi : 机密
+mail.Write.fjmjbshcnfeePywrEFkmmhjmzdyg : 附件密级标识后才能发送，附件名需包含\"公开\"、\"秘密\"或\"机密\"中的一个
+mail.Write.fjmjbngyyjmjqzxbszfsfcWyIVYs : 附件密级不能高于邮件密级,请重新标识再发送
+mail.Write.xitongtishi : 系统提示
+mail.Write.ndyjyjkqljzjXohndrzbzfsfjxfs : 您的邮件邮件开启了禁止转发选项，含有超大附件的邮件，收件人可以下载并转发。是否继续发送？
+mail.Write.nyjszlgyjwafEhjlvmqxzxhszzfs : 您已经设置了该邮件为自销毁邮件，不允许添加附件，而邮件加密后，将会以附件形式发送，请您取消自销毁设置再发送
+mail.Write.nknmyqxgsjEICGipURyhfxqjchfs : 您可能没有权限给收件人中的某个用户发信，请检查后发送。
+ 
+mail.Write.nzbgqqnsynxBCizqNLfxsfqcynyh : 您在办公区，请您使用内网邮箱给域内用户发信，是否清除域内用户？
+mail.Write.zsyfzxhyjdOyvxTRPpdwhyjjzdxh : 这是一封自销毁邮件，对方阅读完后，邮件将自动销毁
+mail.Write.zsyfzxhyjdfsdyjGrpWWQXV : 这是一封自销毁邮件，对方收到邮件
+mail.Write.tianhouyoujianjiangzidongxiaohui : 天后，邮件将自动销毁
+mail.Write.zhongxinjiancha : 重新检查
+mail.Write.zhengzaijiancha : 正在检查...
+mail.Write.dbqpxjczszzcywcSzDAzzB : 对不起，拼写检查暂时只支持英文。
+ 
+mail.Write.pxjczbzczwqgGWXwtsyjzdsyywpx : 拼写检查暂不支持中文。不过，我们仍可以检查您邮件中的所有英文拼写。
+mail.Write.buzaitishi : 不再提示
+mail.Write.jiancha : 检查
+mail.Write.bujiancha : 不检查
+ 
+mail.Write.henbaoqianpinxiejianchachucuoliao : 很抱歉，拼写检查出错了
+mail.Write.jianchachenggong : 检查成功
+ 
+ 
+mail.Write.hulue : 忽略
+mail.Write.huluequanbu : 忽略全部
+mail.Write.quanbu : 全部
+ 
+mail.Write.zanwutishi : 暂无提示
+mail.Write.qingxuanze : 请选择
+
+mail.Write.zhelikeyishuruwenzi : 这里可以输入文字
+mail.Write.qingdianjihuoquyanzhengma : 请点击获取验证码
+mail.Write.zjdyhnzswfrmAaQgjoydsjktqyyx : 尊敬的用户，你暂时无法使用本功能，如需使用完整功能，请使用中国移动手机开通139企业邮箱。
+mail.Write.zjdyhnzswfJHwGRWdSydsjktqyyx : 尊敬的用户，你暂时无法使用本功能，如需使用完整功能，请使用中国移动手机开通139企业邮箱。
+mail.Write.caixinnarongbunenweikong : 彩信内容不能为空！
+mail.Write.qingshuruyanzhengma : 请输入验证码
+mail.Write.nbymfzsdcxUiCVZPClytjfkngrfy : 您本月免费赠送的彩信已用完，继续使用将以0.3元/条计费扣您个人费用。
+mail.Write.xzlkybjdcxVnSjkgcQjhdssfqrgb : 现在离开已编辑的彩信内容将会丢失，是否确认关闭？
+mail.Write.bzcxltdxyhfsomtyegYf : ，不支持向联通、电信用户发送
+mail.Write.weininzhizuodecaixin : 为您制作的彩信
+mail.Write.lianxirenbaocunshibai : 联系人保存失败
+ 
+mail.Write.qingxuanzeyaoshanchudecaixin : 请选择要删除的彩信！
+mail.Write.zhuanfa : 转发
+ 
+mail.Write.shoujianren : 收件人：
+mail.Write.querenyaoshanchuxuanzhongcaixin : 确认要删除选中彩信？
+ 
+mail.Write.fasongchenggong : 发送成功
+mail.Write.fasongshibai : 发送失败
+mail.Write.dingshifasong : 定时发送
+mail.Write.fasongzhong : 发送中
+
+mail.Write.qingdianjihuoquyanzhengma : 请点击获取验证码
+mail.Write.zjdyhnzswffeHkzMMrydsjktqyyx : 尊敬的用户，你暂时无法使用本功能，如需使用完整功能，请使用中国移动手机开通139企业邮箱。
+mail.Write.nhmybdsjhmNPzgsaNwqzbdndsjhm : 您还没有绑定手机号码，请进入设置-账号与安全中绑定您的手机号码。
+ 
+mail.Write.ninjintianzhishengxia : 您今天只剩下
+mail.Write.tiaoduanxinkeyifasong : 条短信可以发送！
+mail.Write.ninbenyuezhishengxia : 您本月只剩下
+mail.Write.tiaoduanxinkeyifasong : 条短信可以发送！
+mail.Write.qingdianjihuoquyanzhengma : 请点击获取验证码
+mail.Write.zjdyhnzswfOgOkONBQydsjktqyyx : 尊敬的用户，你暂时无法使用本功能，如需使用完整功能，请使用中国移动手机开通139企业邮箱。
+mail.Write.nbysyqydxyRmfCLuLfytjfkngrfy : 您本月所用企业短信已达上限，若继续使用将以0.1元/条计费扣您个人费用。
+ 
+mail.Write.nbymfzsddxenYCpSYLyytjfkqyfy : 您本月免费赠送的短信已用完，继续使用将以0.1元/条计费扣企业费用。
+ 
+mail.Write.nbymfzsddxNFRPYHFxytjfkngrfy : 您本月免费赠送的短信已用完，若继续使用将以0.1元/条计费扣您个人费用。
+ 
+mail.Write.dbqnbyzsddDrtZrhIFgnxyhkzcsy : 对不起，您本月赠送的短信已用完，暂不能使用此功能，下月1号可正常使用
+ 
+mail.Write.kong : 空
+mail.Write.xzlkybjddxInypYIiljhdssfqrgb : 现在离开已编辑的短信内容将会丢失，是否确认关闭？
+
+mail.Write.nhywfsdlxrqdylkdqyPfSzBzGO : 你还有未发送的联系人，确定要离开当前页?
+mail.Write.cdxfscgbybcddxjlzSagpFuFb : 此短信发送成功，并已保存到“短信记录”中 
+mail.Write.lijichakan : 立即查看&gt;&gt;
+mail.Write.gaiduanxinjilushangweibaocun : 该短信记录尚未保存。
+mail.Write.lijikaiqizidongbaocun : 立即开启自动保存&gt;&gt;
+mail.Write.cdxzsbczdswGYxWFJvjznzddsjfc : 此短信暂时保存在“定时短信”中，它将在您指定的时间发出。 
+mail.Write.lijichakan : 立即查看&gt;&gt;
+mail.Write.gaiduanxinjilushangweibaocun : 该短信记录尚未保存。
+mail.Write.lijikaiqizidongbaocun : 立即开启自动保存&gt;&gt;
+mail.Write.zdbcdxjlszcgDLjnnygo : 自动保存短信记录设置成功
+mail.Write.nhywfsdlxrqdylkdqyLiGIBQto : 你还有未发送的联系人，确定要离开当前页?
+mail.Write.nyszzdbcdxjlUijucnIc : 您已设置自动保存短信记录。
+mail.Write.zdbcdxjlszcgfkNUUnCU : 自动保存短信记录设置成功
+
+
+mail.Write.ndllqbzcdxqsjdysbbDSPoZIxT : 你的浏览器不支持XMLHTTP对象，请升级到IE6以上版本！
+mail.Write.zhengzaishenpi : 正在审批
+mail.Write.shenpitongguo : 审批通过
+mail.Write.shenpibohui : 审批驳回
+mail.Write.shenpiyijian : 审批意见：<br>&nbsp;&nbsp;
+mail.Write.shijia : 事假
+mail.Write.nianjia : 年假
+mail.Write.burujia : 哺乳假
+mail.Write.huli : 护理
+mail.Write.bingjia : 病假
+mail.Write.gongjia : 公假
+mail.Write.hunjia : 婚假
+mail.Write.chanqianjia : 产前假
+mail.Write.chanjia : 产假
+mail.Write.qita : 其他
+mail.Write.xiayiye : 下一页
+ 
+
+ 
+mail.Write.qingshurushixiangmingchensousuo : 请输入事项名称搜索
+mail.Write.quanbushixiang : 全部事项
+mail.Write.weishenpi : 未审批
+ 
+mail.Write.xinjianshenpi : 新建审批
+mail.Write.qsrsxmchfqrssDcAQWCSh : 请输入事项名称或发起人搜索
+ 
+ 
+mail.Write.wanchengshenpi : 完成审批
+mail.Write.bohui : 驳回
+mail.Write.beibohui : 被驳回
+ 
+ 
+mail.Write.qsrsxmchfqrssCcAxTwMI : 请输入事项名称或发起人搜索
+mail.Write.weichayue : 未查阅
+mail.Write.yichayue : 已查阅
+mail.Write.shenpizhong : 审批中
+mail.Write.qsrspsxlxhztpksaSoqb : 请输入审批事项类型或主题
+mail.Write.qingshurushenpishixiangshuoming : 请输入审批事项说明
+mail.Write.zhengzaifasong : 正在发送
+mail.Write.huaiyouwenjianzhengzaishangchuan : 还有文件正在上传
+mail.Write.qingshurushenpibiaoti : 请输入审批标题
+mail.Write.gbbjynrjdssfygbJIJDlIMw : 关闭编辑页，内容将丢失，是否要关闭？
+ 
+mail.Write.tongyongshenpi : 通用审批
+mail.Write.yongyutongyongshenpi : 用于通用审批
+mail.Write.zhengzaifasong : 正在发送
+ 
+mail.Write.tongguo : 通过
+mail.Write.qsrspsxlxhztQzxOAcWh : 请输入审批事项类型或主题
+mail.Write.zhengzaishenpi : 正在审批
+mail.Write.qingshurushenpinarongshuoming : 请输入审批内容说明
+ 
+mail.Write.qingshuruzhengquedeqingjiatianshu : 请输入正确的请假天数
+mail.Write.qingxuanzeqingjialeixing : 请选择请假类型
+mail.Write.kssjbndyjssjPirDsifK : 开始时间不能大于结束时间
+mail.Write.qingxuanzeqingjiashijian : 请选择请假时间
+mail.Write.huaiyouwenjianzhengzaishangchuan : 还有文件正在上传
+mail.Write.qingjiashenpi : 请假审批
+mail.Write.yongyuqingjiashenpi : 用于请假审批
+mail.Write.gbbjynrjdssfygbIRoUfftx : 关闭编辑页，内容将丢失，是否要关闭？
+ 
+ 
+ 
+ 
+mail.Write.xiazai : 下载
+ 
+ 
+ 
+mail.Write.qsrspsxlxhztPVzntbcz : 请输入审批事项类型或主题
+mail.Write.qingshurushenpinarongshuoming : 请输入审批内容说明
+mail.Write.qingxuanzejiabanshijian : 请选择加班时间
+mail.Write.kssjbndyjssjOuGpCbJb : 开始时间不能大于结束时间
+mail.Write.qingshuruzhengquedejiabantianshu : 请输入正确的加班天数
+mail.Write.qsrzqdjbxssWrsqOBhm : 请输入正确的加班小时数
+mail.Write.huaiyouwenjianzhengzaishangchuan : 还有文件正在上传
+mail.Write.jiabanshenpi : 加班审批
+mail.Write.yongyujiabanshenpi : 用于加班审批
+mail.Write.gbbjynrjdssfygbqTnCEIZE : 关闭编辑页，内容将丢失，是否要关闭？
+ 
+ 
+ 
+ 
+mail.Write.qsrspsxlxhztywsIivuK : 请输入审批事项类型或主题
+mail.Write.qingshuruxuqiushuoming : 请输入需求说明
+mail.Write.huaiyouwenjianzhengzaishangchuan : 还有文件正在上传
+mail.Write.xiangmushenpi : 项目审批
+mail.Write.yongyuxiangmushenpi : 用于项目审批
+mail.Write.gbgdbjynrjdssfygbtjmVNcFb : 关闭工单编辑页，内容将丢失，是否要关闭？
+ 
+mail.Write.xiazai : 下载
+ 
+mail.Write.bohui : 驳回
+mail.Write.tongguo : 通过 
+ 
+mail.Write.querenshanchushenpi : 确认删除审批？
+mail.Write.shanchuchenggong : 删除成功
+mail.Write.shenpi : OA审批
+mail.Write.zhengzaishanchu : 正在删除
+ 
+mail.Write.xinjianshenpi : 新建审批
+ 
+mail.Write.zaixianyulan : 在线预览
+mail.Write.wenjianchaoguobunenshangchuan : 文件超过50M，不能上传
+ 
+ 
+mail.Write.shangchuanchucuo : 上传出错
+mail.Write.shangchuanchenggong : 上传成功
+mail.Write.shangchuanshibai : 上传失败
+mail.Write.zhengzaichaxun : 正在查询
+mail.Write.tiaozhuandaoxiangqingyemian : 跳转到详情页面
+mail.Write.chakanxiangqing : 查看详情
+ 
+mail.Write.caozuoshibai : 操作失败
+ 
+
 
 
 

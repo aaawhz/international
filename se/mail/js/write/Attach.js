@@ -103,11 +103,11 @@ var upload_template = {
         '   <div class="prisdr-progress"></div>',
         '   <div class="prisdr-progress-cur ta_c" style="width:{progress}%;"></div>',
         '</div><var class="fl" style=" margin:-2px 0 0 5px; color:#a2b0c6;font-size:11px; -webkit-text-size-adjust:none;-webkit-transform:scale(0.875);">{progress}%</var>'].join(''),
-    'continue': '<a href="javascript:fGoto();" class="fr" command="ResumeUpload" taskid="{taskId}">续传</a>',
-    'delete': '<a href="#" class="fr ml_15" taskid="{taskId}" fileid="{fileId}" uploadType="{uploadType}" fileType="{fileType}" command="DeleteFile" onclick="javascript:fGoto()">删除</a>',
-    error: '<p class="fl"><i class="i-warm mr_5"></i><span class="inbm col_red">上传失败</span></p>',
-    success: '<p class="fl"><i class="i-gsuss mr_5"></i><span class="inbm col_green">上传成功</span></p>',
-    cancel: '<a href="#" class="fr ml_15" taskid="{taskId}" fileid="{fileId}" uploadType="{uploadType}" fileType="{fileType}" command="CancelUpload" onclick="javascript:fGoto()">删除</a>',
+    'continue': '<a href="javascript:fGoto();" class="fr" command="ResumeUpload" taskid="{taskId}">'+top.Lang.Mail.Write.xuchuan+'</a>',//<a href="javascript:fGoto();" class="fr" command="ResumeUpload" taskid="{taskId}">续传</a>
+    'delete': '<a href="#" class="fr ml_15" taskid="{taskId}" fileid="{fileId}" uploadType="{uploadType}" fileType="{fileType}" command="DeleteFile" onclick="javascript:fGoto()">'+top.Lang.Mail.Write.shanchu+'</a>',//<a href="#" class="fr ml_15" taskid="{taskId}" fileid="{fileId}" uploadType="{uploadType}" fileType="{fileType}" command="DeleteFile" onclick="javascript:fGoto()">删除</a>
+    error: '<p class="fl"><i class="i-warm mr_5"></i><span class="inbm col_red">'+top.Lang.Mail.Write.shangchuanshibai+'</span></p>',//<p class="fl"><i class="i-warm mr_5"></i><span class="inbm col_red">上传失败</span></p>
+    success: '<p class="fl"><i class="i-gsuss mr_5"></i><span class="inbm col_green">'+top.Lang.Mail.Write.shangchuanchenggong+'</span></p>',//<p class="fl"><i class="i-gsuss mr_5"></i><span class="inbm col_green">上传成功</span></p>
+    cancel: '<a href="#" class="fr ml_15" taskid="{taskId}" fileid="{fileId}" uploadType="{uploadType}" fileType="{fileType}" command="CancelUpload" onclick="javascript:fGoto()">'+top.Lang.Mail.Write.shanchu+'</a>',//<a href="#" class="fr ml_15" taskid="{taskId}" fileid="{fileId}" uploadType="{uploadType}" fileType="{fileType}" command="CancelUpload" onclick="javascript:fGoto()">删除</a>
     waiting: '<p class="fl"><img src="' + parent.CC.getResourceAbsoluteURL() + '/images/load.gif"></p>',
     removeDiskFile: '<a style="top:5px; right:5px;" class="i-fakeTxt-close" href="javascript:fGoto();" onclick="attach.deleteDiskFiles(\'{fileId}\',\'{index}\');return false;"></a>'
 };
@@ -230,7 +230,7 @@ var attach = {
             
              if (p.delegateFun['onFormatError'] && (typeof p.delegateFun['onFormatError'] == 'function')){
                  this.fileCheckMode = 2;
-                 p.delegateFun['onFormatError'] && p.delegateFun['onFormatError'](name, '文件名包含:\\\/*\?\"\'\<\>等特殊字符');
+                 p.delegateFun['onFormatError'] && p.delegateFun['onFormatError'](name, top.Lang.Mail.Write.wenjianmingbaohandengteshuzifu);//文件名包含:\\\/*\?\"\'\<\>等特殊字符
                  return false;
              }
            
@@ -725,7 +725,7 @@ var attach = {
         }
         var ul = this.$(this.ulId);
         var uploadType = obj.uploadType || "form";    //上传类型
-        var type = obj.type || "upload";			  //附件类型
+        var type = obj.type || "upload";              //附件类型
         var fileId = obj.fileId;
         var taskId = obj.taskId || fileId;
         var fn = subject = obj.fileName;
@@ -1186,22 +1186,22 @@ var activeXAttach = {
         }
         this.files = files;
         uploadManager.uploadFile(files);
-//		this.currentIndex = 0;
+//      this.currentIndex = 0;
 //
-//		//attach.showAttachContainer(files);
-//		if(this.files.length){
-//			for(var i=0;i<this.files.length;i++){
-//				this.currentIndex = i;
-//				if(attach.checkAttach(this.files[i])){
-//					if(attach.checkFileSize(this.files[i].fileSize)){
-//						this.upload();
-//					}
-//					else{
-//						CC.alert(Lang.Mail.Write.attachmentSize);
-//					}
-//				}
-//			}
-//		}
+//      //attach.showAttachContainer(files);
+//      if(this.files.length){
+//          for(var i=0;i<this.files.length;i++){
+//              this.currentIndex = i;
+//              if(attach.checkAttach(this.files[i])){
+//                  if(attach.checkFileSize(this.files[i].fileSize)){
+//                      this.upload();
+//                  }
+//                  else{
+//                      CC.alert(Lang.Mail.Write.attachmentSize);
+//                  }
+//              }
+//          }
+//      }
     },
     upload: function () {
         var p = this;
@@ -1371,7 +1371,7 @@ function ScreenSnapComplete(id, nResult, strResponse) {
                 else {
                     bigAttachSize = '1G';
                 }
-                jQuery('#aattach').html((jQuery('#aattach').html() + '(最大{0})').format(bigAttachSize));
+                jQuery('#aattach').html((jQuery('#aattach').html() + top.Lang.Mail.Write.zuida).format(bigAttachSize));//(最大{0})
                 if(jQuery.browser.mozilla || navigator.userAgent.indexOf("Windows NT 6.3") > -1){
                     registerNormalUpload();
                 }
@@ -1507,7 +1507,7 @@ function ScreenSnapComplete(id, nResult, strResponse) {
             };
             RequestBuilder.call("upload:deleteTasks", requestXml, function (result) {
                 if (result["code"] == "S_OK") {
-                    top.Debug.write("删除本次上传的附件:" + fileName);
+                    top.Debug.write(top.Lang.Mail.Write.shanchubencishangchuandefujian + fileName);//删除本次上传的附件:
                     upload_module.asynDeletedFile = "";
                 }
             });
@@ -1793,7 +1793,7 @@ JSForFlashUpload = {
         } else {
             file.state = "error";
             file.updateUI();
-            CC.alert('文件上传失败，请删除后重试！');
+            CC.alert(top.Lang.Mail.Write.wjscsbqschzstrjhjjez);//文件上传失败，请删除后重试！
         }
         uploadManager.autoUpload();
     },
@@ -1881,7 +1881,7 @@ utool = {
         return false;
     },
     getUploadTipMessage: function () {
-        var tip = Utils.format("添加小于{0}的附件", [utool.getMaxUploadSizeWithUnit()]);
+        var tip = Utils.format(top.Lang.Mail.Write.tianjiaxiaoyudefujian, [utool.getMaxUploadSizeWithUnit()]);//添加小于{0}的附件
         var attachLink = jQuery('#aattach');
         if (supportUploadType.isSupportScreenShotUpload) {
             //tip += "，可使用 Ctrl+V 粘贴附件和图片";
@@ -1893,16 +1893,16 @@ utool = {
                 else {
                     bigAttachSize = '1G';
                 }
-                tip = '添加最大{0}的附件'.format(bigAttachSize);
+                tip = top.Lang.Mail.Write.tianjiazuidadefujian.format(bigAttachSize);//添加最大{0}的附件
             }
             else {
                 bigAttachSize = '1G';
             }
-            tip = '添加最大{0}的附件<br/>可使用Ctrl+V粘贴上传附件'.format(bigAttachSize);
+            tip = top.Lang.Mail.Write.tjzddfjksyztscfjZslyTFlA.format(bigAttachSize);//添加最大{0}的附件<br/>可使用Ctrl+V粘贴上传附件
         } else {
             if (navigator.platform.indexOf("Mac") === -1) {
-                tip += "<br/>安装<a hideFocus='1' style='color:blue' target='_blank' href='" + parent.gMain.frmPath + "/activex/MailThinkmail_Tool.exe'>邮箱小工具</a>，即可Ctrl+V粘贴上传附件"
-            }
+                tip += "<br/>"+top.Lang.Mail.Write.anzhuang+"<a hideFocus='1' style='color:blue' target='_blank' href='" + parent.gMain.frmPath + "/activex/MailThinkmail_Tool.exe'>"+top.Lang.Mail.Write.youxiangxiaogongju+"</a>，"+top.Lang.Mail.Write.jikezhantieshangchuanfujian
+            }//<br/>安装<a hideFocus='1' style='color:blue' target='_blank' href='  ||  /activex/MailThinkmail_Tool.exe'>邮箱小工具</a>，即可Ctrl+V粘贴上传附件
         }
         /*
          if (supportUploadType.isSupportFlashUpload) {
@@ -1925,7 +1925,7 @@ utool = {
             else {
                 bigAttachSize = '1G';
             }
-            var text = '添加最大{0}的附件<br/>可使用Ctrl+V粘贴上传附件'.format(bigAttachSize);
+            var text = top.Lang.Mail.Write.tjzddfjksyztscfjWEepMVlG.format(bigAttachSize);//添加最大{0}的附件<br/>可使用Ctrl+V粘贴上传附件
             var but = jQuery('<div id="bigFileUploadTips1" class="tips write-tips" style="display:none;"></div>').append(text).appendTo(jQuery(document.body)).css('z-index', 128);
 
             bigFileUpload.attr('title', '');
@@ -1950,11 +1950,11 @@ utool = {
     },
     //弹出禁用flash上传的对话框
     showDisableFlashMsg: function () {
-        if (confirm("您是否要禁用Flash上传组件?")) {
+        if (confirm(top.Lang.Mail.Write.ninshifuyaojinyongshangchuanzujian)) {//您是否要禁用Flash上传组件?
             var d = new Date();
             d.setFullYear(2099);
             $Cookie.set({name: 'flashUploadDisabled', value: '1', expries: d});
-            alert("Flash上传组件已经禁用，您下次打开写信页将使用原始但是稳定的上传方式。");
+            alert(top.Lang.Mail.Write.sczjyjjynxHmfYMUJosdswddscfs);//Flash上传组件已经禁用，您下次打开写信页将使用原始但是稳定的上传方式。
         }
     },
     //检测加上文件大小是否超标
@@ -2063,7 +2063,7 @@ utool = {
         var j = $("#divUploadTip");
         if (j.length == 0) {
             if (!jQuery.browser.safari) {
-                j = $("<div id='divUploadTip' style='position:absolute;display:none'>安装小工具</div>").appendTo(document.body);
+                j = $("<div id='divUploadTip' style='position:absolute;display:none'>"+top.Lang.Mail.Write.anzhuangxiaogongju+"</div>").appendTo(document.body);//<div id='divUploadTip' style='position:absolute;display:none'>安装小工具</div>
             }
         }
         var offset = $("#realUploadButton").offset();
@@ -2092,7 +2092,7 @@ utool = {
     },
     showBigAttachTransformTips: function () {
         this.hideBigAttachTransformTips();
-        var tips_ui = jQuery('<div id="bigAttachTransform_tips" class="yellowTips p_relative" style=""><i id="bigAttachTransformCloseBtn" style="right:2px; top:2px;" class="i-fakeTxt-close"></i>附件超过{0}, 将作为超大附件上传, 保存在文件中转站, 15天内有效, 若被删除或过期, 收件人将无法下载.</div>'.format(attach.maxSize + 'M'));
+        var tips_ui = jQuery('<div id="bigAttachTransform_tips" class="yellowTips p_relative" style=""><i id="bigAttachTransformCloseBtn" style="right:2px; top:2px;" class="i-fakeTxt-close"></i>'+top.Lang.Mail.Write.fjcgjzwcdfcSwFuzqVgqsjrjwfxz+'</div>'.format(attach.maxSize + 'M'));//<div id="bigAttachTransform_tips" class="yellowTips p_relative" style=""><i id="bigAttachTransformCloseBtn" style="right:2px; top:2px;" class="i-fakeTxt-close"></i>附件超过{0}, 将作为超大附件上传, 保存在文件中转站, 15天内有效, 若被删除或过期, 收件人将无法下载.</div>
         var container = jQuery('.edi_container');
 
         container.prepend(tips_ui);
@@ -2286,13 +2286,13 @@ UploadManager.prototype = {
                             text: Utils.format(ComposeMessages.FileSizeOverFlow, [utool.getMaxUploadSizeWithUnit()]),
                             buttons: [
                                 {
-                                    text: "使用超大附件上传",
+                                    text: top.Lang.Mail.Write.shiyongchaodafujianshangchuan,//使用超大附件上传
                                     clickEvent: function () {
                                         setTimeout(attach.btnAddAttachFromTempDisk, 30);
                                     },
                                     isCancelBtn: false
                                 },
-                                {text: "取消上传", clickEvent: function () {
+                                {text: top.Lang.Mail.Write.quxiaoshangchuan, clickEvent: function () {//取消上传
                                 }}
                             ]
                         };
@@ -2305,18 +2305,18 @@ UploadManager.prototype = {
                 else {
                     var info = ['<div class="pop-wrap">',
                         '<div class="j_tool_w">',
-                        '    <p class="j_tool_note">上传超大附件, 需要先安装企邮小工具插件.</p>',
+                        '    <p class="j_tool_note">'+top.Lang.Mail.Write.sccdfjxyxazqyxgjcjYtpnzVyH+'</p>',//    <p class="j_tool_note">上传超大附件, 需要先安装企邮小工具插件.</p>
                         '    <div class="j_tool_b">',
-                        '        <p>安装后：您可以使用以下功能：</p>',
+                        '        <p>'+top.Lang.Mail.Write.azhnkysyyxgnNTLKgjko+'</p>',//        <p>安装后：您可以使用以下功能：</p>
                         '        <ul class="j_tool_ul clearfix">',
                         '            <li>',
-                        '                <i class="j_upload mr_10"></i><span>上传 <var class="col_green">1G</var> 超大附件</span>',
+                        '                <i class="j_upload mr_10"></i><span>'+top.Lang.Mail.Write.shangchuan+'<var class="col_green">1G</var> '+top.Lang.Mail.Write.chaodafujian+'</span>',//                <i class="j_upload mr_10"></i><span>上传 <var class="col_green">1G</var> 超大附件</span>
                         '            </li>',
                         '            <li>',
-                        '                <i class="i-zt mr_10"></i><span>粘贴图到正文<br>粘贴方式上传附件</span>',
+                        '                <i class="i-zt mr_10"></i><span>'+top.Lang.Mail.Write.zhantietudaozhengwen+'<br>'+top.Lang.Mail.Write.zhantiefangshishangchuanfujian+'</span>',//                <i class="i-zt mr_10"></i><span>粘贴图到正文<br>粘贴方式上传附件</span>
                         '            </li>',
                         '                <li style="">',
-                        '                    <i class="i-snap mr_10"></i><span>截屏</span>',
+                        '                    <i class="i-snap mr_10"></i><span>'+top.Lang.Mail.Write.jieping+'</span>',//                    <i class="i-snap mr_10"></i><span>截屏</span>
                         '                </li>',
                         '            </ul>',
                         '        </div>',
@@ -2328,16 +2328,16 @@ UploadManager.prototype = {
                         type: 'div',
                         width: "480",
                         text: info,
-                        title: '企邮小工具安装提示',
+                        title: top.Lang.Mail.Write.qiyouxiaogongjuanzhuangtishi,//企邮小工具安装提示
                         buttons: [
                             {
-                                text: "下载安装",
+                                text: top.Lang.Mail.Write.xiazaianzhuang,//下载安装
                                 clickEvent: function () {
                                     window.open(parent.CC.getResourceAbsoluteURL() + '/mail/activex/MailThinkmail_Tool.exe');
                                 },
                                 isCancelBtn: false
                             },
-                            {text: "取消", clickEvent: function () {
+                            {text: top.Lang.Mail.Write.quxiao, clickEvent: function () {//取消
                             }}
                         ]
                     };
@@ -2502,16 +2502,16 @@ UploadManager.prototype = {
 ;
 
 var ComposeMessages = {
-    PleaseUploadSoon: "附件上传中，请稍后再添加新的附件",
-    FileSizeOverFlow: '<div class="pop-wrap"><div class="j_tool_w"><p style="padding:0 10px"><strong>您添加的文件大小超过{0}</strong></p><p class="j_tool_note"><font style="color:#333;">不用担心 您可以使用超大附件来发送。</font><br/>超大附件保存在文件中转站中，更环保，对方也可以高速下载.</p></div></div>',//"对不起，文件大小超出附件容量限制。"
-    FileNameExist: '"{0}"相同的文件名已经存在,请重命名后再上传',
-    FileUploadError: "文件\"{0}'上传失败",
-    FileIsUsing: "对不起，文件正在被其它应用程序占用，请关闭文件后再试。",
-    BrowserDonotSuppertScreenShot: "您的浏览器暂不支持截屏功能",
-    GetLargeAttachFail: "获取大附件失败，请稍后再试",
-    ExistFileName: "已上传附件中存在相同文件名，请重命名后再试。",
-    NoFileSize: '"{0}"文件大小为 0 字节，无法上传'
-};
+    PleaseUploadSoon: top.Lang.Mail.Write.fjsczqshztjxdfjhyEUAUPW,//附件上传中，请稍后再添加新的附件
+    FileSizeOverFlow: '<div class="pop-wrap"><div class="j_tool_w"><p style="padding:0 10px"><strong>'+top.Lang.Mail.Write.nintianjiadewenjiandaxiaochaoguo+'</strong></p><p class="j_tool_note"><font style="color:#333;">'+top.Lang.Mail.Write.bydxnkysycdfjlfsYJbwICVN+'</font><br/>'+top.Lang.Mail.Write.cdfjbczwjzwpDuZAuobdfykygsxz+'</p></div></div>',//"对不起，文件大小超出附件容量限制。"//<div class="pop-wrap"><div class="j_tool_w"><p style="padding:0 10px"><strong>您添加的文件大小超过{0}</strong></p><p class="j_tool_note"><font style="color:#333;">不用担心 您可以使用超大附件来发送。</font><br/>超大附件保存在文件中转站中，更环保，对方也可以高速下载.</p></div></div>
+    FileNameExist: top.Lang.Mail.Write.xtdwjmyjczqzmmhzscZkPvDumQ,//"{0}"相同的文件名已经存在,请重命名后再上传
+    FileUploadError: top.Lang.Mail.Write.wenjianshangchuanshibai,//文件\"{0}'上传失败
+    FileIsUsing: top.Lang.Mail.Write.dbqwjzzbqtQQwNoFiezyqgbwjhzs,//对不起，文件正在被其它应用程序占用，请关闭文件后再试。
+    BrowserDonotSuppertScreenShot: top.Lang.Mail.Write.ndllqzbzcjpgnAsyiWBSv,//您的浏览器暂不支持截屏功能
+    GetLargeAttachFail: top.Lang.Mail.Write.hqdfjsbqshzsfSygvKgz,//获取大附件失败，请稍后再试
+    ExistFileName: top.Lang.Mail.Write.yscfjzczxtwjmqzmmhzsSlKeuFzF,//已上传附件中存在相同文件名，请重命名后再试。
+    NoFileSize: top.Lang.Mail.Write.wjdxwzjwfsclWCUpHIa
+};//"{0}"文件大小为 0 字节，无法上传
 
 upload_module_common = {
     init: function (model) {
@@ -2758,7 +2758,7 @@ UploadFacade = {
             file.state = "error";
             file.updateUI();
             //FF.alert("文件上传失败，请删除后重试！");
-            CC.alert('文件上传失败，请删除后重试！');
+            CC.alert(top.Lang.Mail.Write.wjscsbqschzssbgmlQOW);//文件上传失败，请删除后重试！
             //utool.logUpload(UploadLogs.FlashFailInfo);
         }
         uploadManager.autoUpload();
@@ -2929,7 +2929,7 @@ var HTML5AJAXUpload = {
                         CC.alert(Utils.format(ComposeMessages.FileSizeOverFlow, [utool.getMaxUploadSizeWithUnit()]));
                     } else if (response.indexOf('FS_UNKNOWN') > 0) {
                         //console.log('上传文件未知错误!responseText:'+response);
-                        CC.alert('对不起，上传附件失败，请删除后重试！');
+                        CC.alert(top.Lang.Mail.Write.dbqscfjsbqschzstwbKydrh);//对不起，上传附件失败，请删除后重试！
                     }
                 }
                 uploadManager.autoUpload();
@@ -2964,7 +2964,7 @@ function _dragenter(e) {
         return;
     }    
     if (box.find(".R0_in").length < 1) {
-        html = "<div class=\"R0\"><div class=\"R0_in\">请把文件拖放到这个区域，就可作为附件添加。</div></div>";
+        html = "<div class=\"R0\"><div class=\"R0_in\">"+top.Lang.Mail.Write.qbwjtfdzgqyjkzwfjtjHuscigtX+"</div></div>";//<div class=\"R0\"><div class=\"R0_in\">请把文件拖放到这个区域，就可作为附件添加。</div></div>
         box.append(html);
     } else {
         box.find(".R0").show();
@@ -2982,7 +2982,7 @@ function _dragover(e) {
         return;
     }    
     if (box.find(".R0_in").length < 1) {
-        html = "<div class=\"R0\"><div class=\"R0_in\">请把文件拖放到这个区域，就可作为附件添加。</div></div>";
+        html = "<div class=\"R0\"><div class=\"R0_in\">"+top.Lang.Mail.Write.qbwjtfdzgqyjkzwfjtjQWiDyHYX+"</div></div>";//<div class=\"R0\"><div class=\"R0_in\">请把文件拖放到这个区域，就可作为附件添加。</div></div>
         box.append(html);
     } else {
         box.find(".R0").show();
@@ -3007,7 +3007,7 @@ function _drop(e) {
     var files = e.dataTransfer.files;
     for (var i = 0; i < files.length; i++) {
         if (files[i].fileSize == 0) {
-            var errorMsg = '不能拖放文件夹，以及大小为零的文件';
+            var errorMsg = top.Lang.Mail.Write.bntfwjjyjdxwldwjBoKkjHBT;//不能拖放文件夹，以及大小为零的文件
             CC.alert(errorMsg);
             return;
         }
@@ -3125,7 +3125,7 @@ UploadFileItem.prototype = {
         switch (this.state) {
             case "waiting":
             case "uploading":
-                CC.showMsg('图片加载中...');
+                CC.showMsg(top.Lang.Mail.Write.tupianjiazaizhong);//图片加载中...
                 break;
             case "complete":
                 CC.hideMsg();
@@ -3293,7 +3293,7 @@ UploadFileItem.prototype = {
             prefix = shortName.substring(0, shortName.lastIndexOf('.') + 1),
             suffix = shortName.substring(shortName.lastIndexOf('.') + 1, shortName.length);
         var fileIconClass = parent.Util.getFileClasssName(this.fileName);
-        var uploadTipText = "上传中";
+        var uploadTipText = top.Lang.Mail.Write.shangchuanzhong;//上传中
         if (args && args.resume) {
 //            uploadTipText = '<span style="float:none;" class="colorff0101">上传失败</span>';
 //            htmlCode += "&nbsp;|&nbsp;<a href=\"javascript:void(0)\" command=\"ResumeUpload\" taskid=\"{taskId}\">续传</a>"
@@ -3851,7 +3851,7 @@ MultiThreadUpload = {
             <composeId>{composeId}</composeId>\
             <referer></referer>\
             <cookie>{cookie}</cookie>\
-            <filePathName>{fileName}</filePathName>	\
+            <filePathName>{fileName}</filePathName> \
             <size>{fileSize}</size>\
             </param>";
         var param = {
@@ -4071,7 +4071,7 @@ MultiThreadUpload = {
                                 sendedSize: file.sendedSize
                             });
                             //console && console.log(errorLog);
-                            errorLog = '上传失败，请重试'; //errorLog.stopReason;
+                            errorLog = top.Lang.Mail.Write.shangchuanshibaiqingzhongshi; //errorLog.stopReason;//上传失败，请重试
                             uploadManager.onUploadError(errorLog);
                         } catch (e) {
                         }
@@ -4119,11 +4119,11 @@ function commonAttachFrameOnLoad(frmAttach, isInserImage) {
             CC.alert(Utils.format(ComposeMessages.FileSizeOverFlow, [utool.getMaxUploadSizeWithUnit()]));
         } else {
             CC.confirm(
-                "附件上传失败，请重试。",
+                top.Lang.Mail.Write.fujianshangchuanshibaiqingzhongshi,//附件上传失败，请重试。
                 function () {
                     form.submit();
                 },
-                "上传附件",
+                top.Lang.Mail.Write.shangchuanfujian,//上传附件
                 function () {
                     form.reset();
                     uploadManager.cancelUploading();
@@ -4133,11 +4133,11 @@ function commonAttachFrameOnLoad(frmAttach, isInserImage) {
         form.reset();
     } catch (e) {
         CC.confirm(
-            "附件上传失败，请重试。",
+            top.Lang.Mail.Write.fujianshangchuanshibaiqingzhongshi,//附件上传失败，请重试。
             function () {
                 form.submit();
             },
-            "上传附件",
+            top.Lang.Mail.Write.shangchuanfujian,//上传附件
             function () {
                 form.reset();
                 uploadManager.cancelUploading();
@@ -4185,8 +4185,8 @@ function refreshAttach(onlyRefreshAttach) {
                     parent.ch("refresh attach error." + e);
                 }
             },
-            msg: "刷新附件失败"
-        };
+            msg: top.Lang.Mail.Write.shuaxinfujianshibai
+        };//刷新附件失败
         parent.MM.mailRequestApi(obj);
     }
     attach.setAttachHeight();

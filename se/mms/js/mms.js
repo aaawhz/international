@@ -1,4 +1,5 @@
-﻿var $ = function(id) {
+
+var $ = function(id) {
     return document.getElementById(id);
 };
 var smsLang=Lang.Sms;
@@ -8,7 +9,7 @@ var smsLang=Lang.Sms;
  */
 
 var MMS={
-	rib:null,
+    rib:null,
     mmsReceiverID:'mms_receiver',                         //接收用户DIV ID
     mmsReceiver:$('mms_receiver'),                        //接收用户DIV对象
     mmsReceiverInput:null,                                //接收用户文本框对象
@@ -23,7 +24,7 @@ var MMS={
     mmsIconWidth:0,
     mmsIconHeight:0,
     searchkeyValue:smsLang.searchkeyValue,                //搜索联系人关键字
-    mmstextTips:'这里可以输入文字',
+    mmstextTips:top.Lang.Mail.Write.zhelikeyishuruwenzi,//这里可以输入文字
     processbar:jQuery('#process_wrap .prisdr-progress-cur').eq(0),
     processtext:jQuery('#process_wrap .ta_c'),
     sendMMSUrl:parent.gMain.webPath+'/service/webmms.do',
@@ -31,7 +32,7 @@ var MMS={
     sendMMSFunc:'mms:sendMmsFunc',
     getMMSRecordFunc:'mms:inquiryMmsInfoFunc',
     delMMSRecordFunc:'mms:delMmsInfoFunc',
-    codeTips:'请点击获取验证码',
+    codeTips:top.Lang.Mail.Write.qingdianjihuoquyanzhengma,//请点击获取验证码
     isChanged: function () {
         var mmstext=jQuery.trim(jQuery('#mms_text').val());
         var mmsTitle=jQuery.trim(jQuery('#mms_title').val());
@@ -62,12 +63,12 @@ var MMS={
             jQuery('#sendMMS_wrap').hide();
             return;
         }else{
-        	jQuery('#mobile_empty').hide();
+            jQuery('#mobile_empty').hide();
             jQuery('#sendMMS_wrap').show();
         }
 
         this.initNav();
-    	this.bindInputControl();
+        this.bindInputControl();
         this.defaultTitle();
         this.bindUploadControl();
         this.initAddrList();
@@ -82,7 +83,7 @@ var MMS={
         
         //如果是联通, 电信, 不能使用该功能
         if( ltReg.test(mmsConfig.bindMobile) || dxReg.test(mmsConfig.bindMobile) ||  mmsConfig.UserPackMmsCount <= 0){
-            parent.CC.alert('尊敬的用户，你暂时无法使用本功能，如需使用完整功能，请使用中国移动手机开通139企业邮箱。');
+            parent.CC.alert(top.Lang.Mail.Write.zjdyhnzswfrmAaQgjoydsjktqyyx);//尊敬的用户，你暂时无法使用本功能，如需使用完整功能，请使用中国移动手机开通139企业邮箱。
             
         }
         
@@ -99,7 +100,7 @@ var MMS={
         jQuery('#btnSend')[0].onclick=function(){
 
             var data={
-            	receiverNumer:'',
+                receiverNumer:'',
                 subject:encodeURIComponent(jQuery('#mms_title').val().encodeHTML()),
                 mmsText:'',
                 mmsIconPath:'',
@@ -118,7 +119,7 @@ var MMS={
             
             //如果是联通, 电信, 不能使用该功能
             if( ltReg.test(mmsConfig.bindMobile) || dxReg.test(mmsConfig.bindMobile) ||  mmsConfig.UserPackMmsCount <= 0){
-                parent.CC.alert('尊敬的用户，你暂时无法使用本功能，如需使用完整功能，请使用中国移动手机开通139企业邮箱。');
+                parent.CC.alert(top.Lang.Mail.Write.zjdyhnzswfJHwGRWdSydsjktqyyx);//尊敬的用户，你暂时无法使用本功能，如需使用完整功能，请使用中国移动手机开通139企业邮箱。
                 return;
             }
             
@@ -163,7 +164,7 @@ var MMS={
                     data.height=self.mmsIconHeight;
                 }
             }else{
-                parent.CC.alert('彩信内容不能为空！');
+                parent.CC.alert(top.Lang.Mail.Write.caixinnarongbunenweikong);//彩信内容不能为空！
                 return;
             }
 
@@ -178,7 +179,7 @@ var MMS={
             if(mmsConfig.checkcode){
                 var codeVal=jQuery.trim(jQuery('#codeInput').val());
                 if(codeVal==self.codeTips){
-                    parent.CC.alert('请输入验证码');
+                    parent.CC.alert(top.Lang.Mail.Write.qingshuruyanzhengma);//请输入验证码
                     return;
                 }
                 data.code= codeVal;
@@ -187,7 +188,7 @@ var MMS={
             
             if(  ydReg.test(mmsConfig.bindMobile) && mmsConfig.UserPackMmsCount > 0 && mmsConfig.UserPackMmsRemain <= 0){
                    
-                parent.CC.confirm("您本月免费赠送的彩信已用完，继续使用将以0.3元/条计费扣您个人费用。", send, "系统提示", function() {
+                parent.CC.confirm(top.Lang.Mail.Write.nbymfzsdcxUiCVZPClytjfkngrfy, send, top.Lang.Mail.Write.xitongtishi, function() {//您本月免费赠送的彩信已用完，继续使用将以0.3元/条计费扣您个人费用。  ||  系统提示
                         return;
                 });
                 
@@ -214,7 +215,7 @@ var MMS={
         var labId=parent.CC.getCurLabId();
         top.document.getElementById('tab_h_'+labId).getElementsByTagName('a')[0].onclick=function(){
             if(MMS.isChanged()){
-                parent.CC.confirm('现在离开已编辑的彩信内容将会丢失，是否确认关闭？', function(){
+                parent.CC.confirm(top.Lang.Mail.Write.xzlkybjdcxVnSjkgcQjhdssfqrgb, function(){//现在离开已编辑的彩信内容将会丢失，是否确认关闭？
                     parent.GE.tab.del(labId);
                 });
             }else{
@@ -228,7 +229,7 @@ var MMS={
         var data={id:mmsid};
         this.Ajax(this.sendMMSUrl,'mms:forwardMmsFunc',data,function(data){
             if(data.code == "S_OK"){
-            	var imgdata=data["var"][0];
+                var imgdata=data["var"][0];
                 var mmsinfo={
                     title:imgdata.subject,
                     mmstext:imgdata.mmsText,
@@ -239,18 +240,18 @@ var MMS={
                 jQuery('#mms_title').val(mmsinfo.title.decodeHTML().decodeHTML());
                 
                 if(imgdata.mmsText!=''){
-                	jQuery('#mms_text').css('color','#333').val(mmsinfo.mmstext.decodeHTML().decodeHTML());
+                    jQuery('#mms_text').css('color','#333').val(mmsinfo.mmstext.decodeHTML().decodeHTML());
                 }
                 
                 if(imgdata.fileName!=''){
-                	var imgurl=self.sendMMSUrl+'?func=upload:getFile&sid='+parent.gMain.sid+'&fileName='+imgdata.fileName+'&id='+imgdata.id+'&flag=1';
+                    var imgurl=self.sendMMSUrl+'?func=upload:getFile&sid='+parent.gMain.sid+'&fileName='+imgdata.fileName+'&id='+imgdata.id+'&flag=1';
                     jQuery('#showimg').show().attr('src',imgurl).css({width:width,height:height});
                 }
 
                 self.mmsIconPath=mmsinfo.mmsIconPath;
                 self.mmsIconName=mmsinfo.fileName;
                 self.mmsIconWidth=width;
-    			self.mmsIconHeight=height;
+                self.mmsIconHeight=height;
                 self.bindImgEvent();
             }
         });
@@ -259,7 +260,7 @@ var MMS={
      * 发彩信成功
      */
     sendMMSSucc:function(isSave,mobiles){
-    	var self=this;
+        var self=this;
         jQuery('#sendMMS_wrap').hide();
         jQuery('#sendMMS_succ').show();
         if(isSave==0){
@@ -271,8 +272,8 @@ var MMS={
         self.mmsIconPath="";
         self.mmsIconName="";
         self.mmsIconWidth=0;
-		self.mmsIconHeight=0;
-		jQuery('#mms_text').val("");
+        self.mmsIconHeight=0;
+        jQuery('#mms_text').val("");
 
         //保存最近联系人
         var mobiles=mobiles.split(',');
@@ -315,19 +316,19 @@ var MMS={
             maxMailNum:self.mmsReceiverMax,
             skinAble: true,
             change: function(){
-            	var items=self.rib.getItems();
-            	var resetNum=self.mmsReceiverMax-items.length;
-            	self.rib.maxMailNum=resetNum; 
-			},
+                var items=self.rib.getItems();
+                var resetNum=self.mmsReceiverMax-items.length;
+                self.rib.maxMailNum=resetNum; 
+            },
             mailNumError:function(){
-            	self.showTips('MmsNumErr',self.mmsReceiverMaxError.replace(/{\d}/g,mmsConfig.receiverMaxNum),self.mmsReceiverInput,self.mmsReceiverID,true);
+                self.showTips('MmsNumErr',self.mmsReceiverMaxError.replace(/{\d}/g,mmsConfig.receiverMaxNum),self.mmsReceiverInput,self.mmsReceiverID,true);
             },
             container:this.mmsReceiver,
             mobilelimit:mmsConfig.mobileChinamobile
         };
 
         var mmsReceiver=new RichInputBox(param);
-        mmsReceiver.setTipText(self.mmsReceiverTips+'，不支持向联通、电信用户发送');
+        mmsReceiver.setTipText(self.mmsReceiverTips+top.Lang.Mail.Write.bzcxltdxyhfsomtyegYf);//，不支持向联通、电信用户发送
 
         self.rib=mmsReceiver;
         self.mmsReceiverInput=$('rib_input_1');
@@ -372,7 +373,7 @@ var MMS={
         }
     },
     defaultTitle:function(){
-        var defaultTitle=parent.gMain.mainName+'为您制作的彩信';
+        var defaultTitle=parent.gMain.mainName+top.Lang.Mail.Write.weininzhizuodecaixin;//为您制作的彩信
         this.mmsTitle.val(defaultTitle);
         this.mmsTitleTip=defaultTitle;
         this.mmsTitle.blur(function(){
@@ -400,7 +401,7 @@ var MMS={
         attributes.name = "MMSImgUpload";
         attributes.align = "middle";
         swfobject.embedSWF(
-        	parent.gMain.webPath+"/static/se/mms/flash/MMSImgUpload.swf?t=20130830c", "flashContent",
+            parent.gMain.webPath+"/static/se/mms/flash/MMSImgUpload.swf?t=20130830c", "flashContent",
             "70", "25",
             swfVersionStr, xiSwfUrlStr,
             flashvars, params, attributes);
@@ -413,11 +414,11 @@ var MMS={
         }
     },
     getImgSize:function(){
-    	var currImgSize=jQuery('#changesize').val().split(',');
-    	return {
-    		width:currImgSize[0],
-    		height:currImgSize[1]
-    	}
+        var currImgSize=jQuery('#changesize').val().split(',');
+        return {
+            width:currImgSize[0],
+            height:currImgSize[1]
+        }
     },
     flashUploaded:function(){},
     imgUploadFail:function(option){
@@ -432,19 +433,19 @@ var MMS={
         this.processbar.css('width',(loaded/total)+'%');
     },
     imgUploadSucc:function(option){
-    	var self=this;
-    	var code=option.msg;
-    	if(code=='S_OK'){
-			jQuery('#uploadfail').html('');
-			
-			var w=option.width;
-			var h=option.height;
-			self.mmsIconPath=option.filePath;
-			self.mmsIconName=option.name;
-			self.mmsIconWidth=option.width;
-			self.mmsIconHeight=option.height;
-			
-			var imgurl=self.sendMMSUrl+'?func=upload:getFile&sid='+parent.gMain.sid+'&fileName='+option.name+'&flag=1';
+        var self=this;
+        var code=option.msg;
+        if(code=='S_OK'){
+            jQuery('#uploadfail').html('');
+            
+            var w=option.width;
+            var h=option.height;
+            self.mmsIconPath=option.filePath;
+            self.mmsIconName=option.name;
+            self.mmsIconWidth=option.width;
+            self.mmsIconHeight=option.height;
+            
+            var imgurl=self.sendMMSUrl+'?func=upload:getFile&sid='+parent.gMain.sid+'&fileName='+option.name+'&flag=1';
             jQuery('#showimg').show().attr('src',imgurl).css({width:w,height:h});
            
             self.processtext.html(parent.Util.formatSize(option.total, null, 2)+'/'+parent.Util.formatSize(option.total, null, 2));
@@ -455,10 +456,10 @@ var MMS={
             },100);
 
             self.bindImgEvent();
-    	}
+        }
     },
     bindImgEvent:function(){
-    	var self=this;
+        var self=this;
         jQuery('.cm_imgdiy').hover(function(){
             if(jQuery('#showimg').attr('src')!=''){
                 jQuery('#delimg').show().click(function(){
@@ -467,7 +468,7 @@ var MMS={
                     self.mmsIconPath='';
                     self.mmsIconName='';
                     self.mmsIconWidth=0;
-        			self.mmsIconHeight=0;
+                    self.mmsIconHeight=0;
                     return false;
                 })
             }
@@ -476,24 +477,24 @@ var MMS={
         })
     },
     changeImgSize:function(){
-    	var self=this;
+        var self=this;
         var showimg=jQuery('#showimg');     
         jQuery('#changesize').change(function(){
-        	if(showimg.attr('src')!=''){
+            if(showimg.attr('src')!=''){
                 var filename=self.mmsIconName;
                 var selectSize=jQuery(this).val().split(',');
                 var mmsid=parent.GC.getUrlParamValue(location.href,'mmsid')||'';
                 //等比缩放
                 var param='&fileName='+filename+'&width='+selectSize[0]+'&height='+selectSize[1]+'&id='+mmsid;
                 self.Ajax(self.sendMMSUrl,self.changeImgSizeFunc,null,function(data){
-                	if(data.code=='S_OK'){
-                		self.mmsIconWidth=data["var"].width;
-            			self.mmsIconHeight=data["var"].height;
-                		var imgurl=self.sendMMSUrl+'?func=upload:getFile&sid='+parent.gMain.sid+'&fileName='+filename+'&flag=1&id='+mmsid;
-                		showimg.css({width:data["var"].width,height:data["var"].height}).attr('src',imgurl);
-                	}
-                },null,'GET',param);	
-        	}
+                    if(data.code=='S_OK'){
+                        self.mmsIconWidth=data["var"].width;
+                        self.mmsIconHeight=data["var"].height;
+                        var imgurl=self.sendMMSUrl+'?func=upload:getFile&sid='+parent.gMain.sid+'&fileName='+filename+'&flag=1&id='+mmsid;
+                        showimg.css({width:data["var"].width,height:data["var"].height}).attr('src',imgurl);
+                    }
+                },null,'GET',param);    
+            }
         })
     },
     mmsText:function(){
@@ -717,7 +718,7 @@ var MMS={
                 MMS.createSavedItem(list);
             }
         }else{
-            parent.CC.alert('联系人保存失败');
+            parent.CC.alert(top.Lang.Mail.Write.lianxirenbaocunshibai);//联系人保存失败
         }
     },
     /**
@@ -803,7 +804,7 @@ var MMS={
         jQuery('#del_btn').click(function(){
             var selCheckbox=self.getSelectedItem();
             if(selCheckbox.size()==0){
-                parent.CC.alert('请选择要删除的彩信！');
+                parent.CC.alert(top.Lang.Mail.Write.qingxuanzeyaoshanchudecaixin);//请选择要删除的彩信！
             }else{
                 var mmsids=[];
                 for(var i=0;i<selCheckbox.size();i++){
@@ -826,7 +827,7 @@ var MMS={
         var data={pageNo:page};
         self.Ajax(self.sendMMSUrl,self.getMMSRecordFunc,data,function(data){
          if(data.code == "S_OK"){
-        	 var totalrecords=data["var"].totalRecords;
+             var totalrecords=data["var"].totalRecords;
              jQuery('#mmsnum').html(totalrecords);
              
              var currpage=data["var"].currentPage;
@@ -853,7 +854,7 @@ var MMS={
                        +'   <div class="clearfix pt_10">'
                        +'       <div class="fl" style="width:240px;">';
             if(list[i].mmsImg!=''){
-            	var imgurl=parent.gMain.webPath+'/'+list[i].mmsImg;
+                var imgurl=parent.gMain.webPath+'/'+list[i].mmsImg;
                 mmsHtml+='<div class="cm-uploadimg" style="width:240px;height:160px;overflow:hidden;text-align:center;">'
                         +'  <img class="mmsimg" src="" width="'+list[i].width+'" height="'+list[i].height+'" alt="" style="vertical-align:middle;"/>'
                         +'</div>';
@@ -861,12 +862,12 @@ var MMS={
                 mmsHtml+='<div class="cm-uploadimg font-board" style="width:240px;word-wrap: break-word;word-break: break-all;">'+list[i].mmsText.decodeHTML()+'</div>';
             }
 
-            mmsHtml+='         <p class="pt_5"><a href="javascript:void(0);" class="rewardmms" mmsid="'+list[i].mmsId+'" mmswidth="'+list[i].width+'" mmsheight="'+list[i].height+'">转发</a><a href="javascript:void(0);" class="ml_10 delmms" mmsid="'+list[i].mmsId+'">删除</a></p>'
+            mmsHtml+='         <p class="pt_5"><a href="javascript:void(0);" class="rewardmms" mmsid="'+list[i].mmsId+'" mmswidth="'+list[i].width+'" mmsheight="'+list[i].height+'">'+top.Lang.Mail.Write.zhuanfa+'</a><a href="javascript:void(0);" class="ml_10 delmms" mmsid="'+list[i].mmsId+'">'+top.Lang.Mail.Write.shanchu+'</a></p>'
                     +'         <p class="col999">'+list[i].createTime+'</p>'
                     +'       </div>'
                     +'       <div class="fl pl10">'
-                    +'           <p>收件人：</p>'
-                    +'           <ul>';
+                    +'           <p>'+top.Lang.Mail.Write.shoujianren+'</p>'
+                    +'           <ul>';//">转发</a><a href="javascript:void(0);" class="ml_10 delmms" mmsid="  ||  ">删除</a></p>  ||             <p>收件人：</p>
             var receivers=list[i].receiver;
             var rhtml='';
             for(var j= 0,len=receivers.length;j<len;j++){
@@ -879,22 +880,22 @@ var MMS={
             
             //显示图片
             if(list[i].mmsImg!=''){
-            	var imgurl=self.sendMMSUrl+'?func=upload:getFile&sid='+parent.gMain.sid+'&fileName='+list[i].mmsImg+'&id='+list[i].mmsId+'&flag=1';
-            	//等比缩放
-            	var width=list[i].width;
-            	var height=list[i].height;
+                var imgurl=self.sendMMSUrl+'?func=upload:getFile&sid='+parent.gMain.sid+'&fileName='+list[i].mmsImg+'&id='+list[i].mmsId+'&flag=1';
+                //等比缩放
+                var width=list[i].width;
+                var height=list[i].height;
 
-            	if(height>160){
-            		width=width*160/height;
-            		height=160;
-            	}
-            	
-            	if(width>240){
-            		height=height*240/width;
-            		width=240;
-            	}
-            	
-            	mmsItem.find('.mmsimg').eq(0).attr('src',imgurl).attr('width',width).attr('height',height);
+                if(height>160){
+                    width=width*160/height;
+                    height=160;
+                }
+                
+                if(width>240){
+                    height=height*240/width;
+                    width=240;
+                }
+                
+                mmsItem.find('.mmsimg').eq(0).attr('src',imgurl).attr('width',width).attr('height',height);
             }
             
             
@@ -958,16 +959,16 @@ var MMS={
     },
     delRecord:function(mmsid){
         var self=this;
-        parent.CC.confirm('确认要删除选中彩信？',function(){
-        	var data={
-        		id:	mmsid
-        	};
-        	self.Ajax(self.sendMMSUrl,self.delMMSRecordFunc,data,function(data){
+        parent.CC.confirm(top.Lang.Mail.Write.querenyaoshanchuxuanzhongcaixin,function(){//确认要删除选中彩信？
+            var data={
+                id: mmsid
+            };
+            self.Ajax(self.sendMMSUrl,self.delMMSRecordFunc,data,function(data){
                 if(data.code == "S_OK"){
-                	self.getRecordList();
+                    self.getRecordList();
                 }
             });
-        },'系统提示',null,'delmms');
+        },top.Lang.Mail.Write.xitongtishi,null,'delmms');//系统提示
     },
     showTips:function(id,text,obj,containerId,nobodyclose){
         var tip = new ToolTips({
@@ -989,7 +990,7 @@ var MMS={
             parent.CC.alert(d.summary);
         };
         parent.MM.doService({
-        	absUrl:url,
+            absUrl:url,
             func: func,
             data: data,
             method:method||'POST',
