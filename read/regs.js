@@ -20,7 +20,9 @@
   //'</div>'.match(endTag)
   // ["</div>", "div", index: 0, input: "</div>"]
   var endTag = new RegExp('<\\/' + qnameCapture + '[^>]*?(\/)?>');
-  var getTag = new RegExp('<(\\/)?' + qnameCapture + '[^>]*>', 'g');
+  var getTag = new RegExp('<(\\/)?' + qnameCapture + '[^>]*(>)?', 'g');
+
+  var lickTag = new RegExp('<(\\/)?' + qnameCapture + '[^>]*');
 
 
   /** -----------------------attrs  REGs -----------------------**/
@@ -113,14 +115,14 @@
           for (var i = 0; i < str.length; i++) {
               var item = str.charAt(i);
 
-              if (item == '<') {
+              if (str.charAt(i-1) != '\\' && item == '<') {
                   //用来保存试探的标签
                   strTag = '';
                   //判断剩余的是不是标签
                   for (var j = i; j< str.length; ) {
                       strTag += str.charAt(j);
 
-                      if( startTag.test(strTag) || endTag.test(strTag)){
+                      if(  (startTag.test(strTag) || endTag.test(strTag))){
                         oldIsTag = isTag;
                         isTag = true;
                         //console.log(strTag)
@@ -128,6 +130,15 @@
                       }
 
                       j++
+                  }
+
+                  console.log(strTag);
+                  console.log(lickTag.test(strTag))
+                  if(!isTag){
+                    if(lickTag.test(strTag)){
+                      oldIsTag = isTag;
+                      isTag = true;
+                    }
                   }
 
                   if( isTag ){
@@ -213,7 +224,7 @@
           // console.log("value   start========="+value)
           //处理标签属性， 有中文直接替换
           if (item.isTag) {
-              //console.log('------------------' + value);
+             // console.log('------------------' + value);
               value = value.replace(attribute, function($0, $1, $2, $3, $4) {
     
                   //replace 会改变匹配到的那部分， 只需要改变值后， 但不会改变原值
@@ -317,6 +328,7 @@
           // console.log('-----------------'+str)
           if (!Util.checkTag(str)) {
               //进入提取中文
+
               res = pickText(str);
           } else {
               //str全部提取， 直接转换
