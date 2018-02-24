@@ -1,7 +1,7 @@
 var rf = require("fs");
 
 var Regs = require("./regs");
-var data = rf.readFileSync("./origin.js", "utf-8");
+var data = rf.readFileSync("../.././origin.js", "utf-8");
 
 var str = '';
 var resstr = '';
@@ -46,6 +46,16 @@ var readzs = [];
 var matchQuoteInseverLine = false;
 var matchQuoteInseverLineStr = '';
 var startQuout = '';
+
+var fs = rf;
+var propertyPath = "../.././propertis.json";
+try{
+    fs.unlinkSync(propertyPath);
+}catch(e){
+
+}
+
+fs.appendFileSync(propertyPath, "{\n\r");
 
 /**
    多行注释 - 单行注释 - 正则 - 字符串
@@ -259,4 +269,5 @@ for (var i = 0; i < data.length; i++) {
 }
 
 //同步方法
-rf.writeFileSync('./result.js', result);
+rf.writeFileSync('../.././result.js', result);
+fs.appendFileSync(propertyPath, "\n\r}");

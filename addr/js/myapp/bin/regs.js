@@ -388,7 +388,7 @@ function transf(str, isMix, isAttr) {
     lagPropery = '"' + GLOBELOPTION.langkey + py + '"' + ' :  "' + str + '" ,\r\n';
 
 
-    fs.appendFileSync("../.././propertis.js", lagPropery);
+    fs.appendFileSync("../.././propertis.json", lagPropery);
 
 
     if (isMix) {
