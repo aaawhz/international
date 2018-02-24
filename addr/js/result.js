@@ -876,13 +876,13 @@
                 "#s#=lang.a0136#e#：#s#=user.birthday#e#<br/>",
                 "#s#}#e#",
                 "#s#if(user.sex){#e#",
-                top.Lang.Addr.xingbie,//性别：#s#=user.sex#e#<br/>
+                ""+top.Lang.Addr.xingbie,//性别：#s#=user.sex#e#<br/>
                 "#s#}#e#",
                 "#s#if(user.fax){#e#",
                 "#s#=lang.a0021#e#：#s#=user.fax#e#<br/>",
                 "#s#}#e#",
                 "#s#if(user.zip){#e#",
-                top.Lang.Addr.youzhengbianma,//邮政编码：#s#=user.zip#e#<br/>
+                ""+top.Lang.Addr.youzhengbianma,//邮政编码：#s#=user.zip#e#<br/>
                 "#s#}#e#",
                 "#s#if(user.memo){#e#",
                 "#s#=lang.a0063#e#：#s#=user.memo#e#<br/>",
@@ -910,7 +910,7 @@
                 "#s#=lang.a0136#e#：#s#=user.birthday#e#<br/>",
                 "#s#}#e#",
                 "#s#if(user.sex){#e#",
-                top.Lang.Addr.xingbie,//性别：#s#=user.sex#e#<br/>
+                ""+top.Lang.Addr.xingbie,//性别：#s#=user.sex#e#<br/>
                 "#s#}#e#",
                 "#s#if(user.fax){#e#",
                 "#s#=lang.a0021#e#：#s#=user.fax#e#<br/>",
@@ -922,7 +922,7 @@
                 "#s#=lang.a0157#e#：#s#=user.position#e#<br/>",
                 "#s#}#e#",
                 "#s#if(user.zip){#e#",
-                top.Lang.Addr.youzhengbianma,//邮政编码：#s#=user.zip#e#<br/>
+                ""+top.Lang.Addr.youzhengbianma,//邮政编码：#s#=user.zip#e#<br/>
                 "#s#}#e#",
                 "#s#if(user.memo){#e#",
                 "#s#=lang.a0063#e#：#s#=user.memo#e#<br/>",
