@@ -2,7 +2,7 @@ var rf=require("fs");
 
 var Regs = require("./regs");
 var data=rf.readFileSync("origin.js","utf-8");  
-var repeat = require("./repeat");
+
 var str = '';
 var resstr = '';
 var result = '';
@@ -21,6 +21,8 @@ var doublezs_end = /\*\//;
 var enterchar = '\r';
 var sprit = '/';
 var slash = '\\';
+var templateStart = /(?:temp|tmp|tmpl|template)\s*:\s*(?:\[|\{)\s*$/i; //是否是定义模板
+var templateEnd = /join\((?:(\'\')|(\"\"))\s*[^,]\s*$/;    //是否是模板结束， 如果 join('') , 这说明模板还没结束
 
  
 var isSingglezs = false;
@@ -65,10 +67,7 @@ for (var i = 0; i < data.length; i++) {
             // 执行到这里获取到引号之间的字符串
             handleStr =  matchQuoteInseverLineStr + item;
 
-
             resstr = Regs.TransStr(handleStr);    
-
-             
            
             result += resstr;
 
@@ -105,20 +104,44 @@ for (var i = 0; i < data.length; i++) {
         iszs = false;
         isDoublezs = false;
     }
+    
+    
+    /**
+     * 判断是否进入了模板, 再判断是否进入正则, 首先应该在新的一行, 如果再模板中， 需要做一点特殊处理
+     */
+    if( islineStart && !iszs && !matchQuote && !isReg && prevValue != sprit && nextValue != sprit && nextValue != '*' && prevValue != '*' ){
+       var tpos = i;
+       var singleLine = ''; 
+      
+       //当没有换行， 而且没有超过data长度
+        while(  data[tpos] != enterchar && data[tpos] != '\n' && tpos < data.length) {
+            
+            singleLine += data[tpos];    
+            tpos++;   
+ 
+        }
+
+        if(templateStart.test(singleLine)){
+           
+            Regs.GLOBELCACHE.isInTemplate = true;
+           
+        }
+
+        if(templateEnd.test( singleLine )){
+            Regs.GLOBELCACHE.isInTemplate = false;
+        }
+    }
 
     //如果是正则， / 开头， 就不匹配继续加, 这里要先判断，因为字符串中也有/
     //比如 /["]/.test("海南岛")  需要排除掉  /["]/， 再进行引号匹配
     // 并且避免掉 // /* */ 单行和多行注释
-    if(!iszs && !matchQuote && !isReg &&item == sprit && prevValue != sprit && nextValue != sprit && nextValue != '*' && prevValue != '*'){
+    if( item == sprit && !iszs && !matchQuote && !isReg &&prevValue != sprit && nextValue != sprit && nextValue != '*' && prevValue != '*'){
     	isReg = true;
  
     	regPos = i;
     	matchQuote = false;
     } 
-
-    /*console.log('matchQuote    '+ matchQuote )
-    console.log('b      '+isReg )
-    console.log('item     '+item)*/
+ 
     //首先得不在注释中，不在正则中， 才去判断是否是引号开头， 而且不能是\"开头的
     if (!iszs && !isReg && spliterRe.test(item) && (data[i - 1] && data[i - 1] != "\\")) {
     	//console.log('c       '+isReg )
@@ -139,10 +162,12 @@ for (var i = 0; i < data.length; i++) {
         j++;
         //console.log(data[j])
         //console.log(item)
-   
-        //走到这里， item是引号， 如果不是引号，就继续取文字 ~~
+        
+        //===========================matchQuoteInseverLine=========================================
+        // 走到这里， item是引号， 如果不是引号，就继续取文字 ~~
         // 然后排除 "abc\"bcd" 这种情况,
         // j-2 != .. 是排除这种情况  '\\'+v;
+        // ===========================matchQuoteInseverLine======================================== 
         while (data[j] !== item || (data[j] == item && data[j - 1] == '\\' && data[j-2] != '\\')) {
         	
         	//如果遇到换行符，
@@ -169,6 +194,7 @@ for (var i = 0; i < data.length; i++) {
             }
 
         }
+
 
         if(matchQuoteInseverLine){
             matchQuoteInseverLineStr = item + str;
@@ -230,11 +256,9 @@ for (var i = 0; i < data.length; i++) {
     	//换行后重置
     	Regs.GLOBELCACHE.hasTrans = false;
     }
-
 }
  
 //同步方法
 rf.writeFileSync('./result.js', result);
  
-//repeat();
 
