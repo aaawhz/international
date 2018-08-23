@@ -3,8 +3,8 @@
    //中文 http://blog.csdn.net/leolu007/article/details/8576490  注意不要加g
   var zhRe = /[\u4E00-\u9FA5]/;
  
-
-  var chineseToPinYin = require("./pinyin.js");
+  var ot = require('./util/translate.js')
+  var chineseToPinYin = require("./util/pinyin.js");
   //匹配 <br> </br> </  br>  或者  <br  /> <br/>
   var allowTag = /<br\s{0,20}(\/?)>|<(\/?)\s{0,20}br>/;
 
@@ -64,7 +64,7 @@
   };
 
   var GLOBELOPTION = {
-     langpath : "top.Lang.Addr.",
+     langpath : "message.",
      langkey : ""
   };
 
@@ -350,9 +350,12 @@
       lagPropery =  '' + GLOBELOPTION.langkey+py +' : ' + str + '\r\n';
      
 
-      fs.appendFileSync("./propertis.js", lagPropery);
+      fs.appendFileSync("./zh_result.js", lagPropery);
 
-
+      ot.translate(str).then(function(r){
+        fs.appendFileSync("./zh_result.js",  '' + GLOBELOPTION.langkey+ r.result[0] +' : ' + str + '\r\n');
+         
+      }) ;
       if (isMix) {
           //字符串str是单引号开头
           if (GLOBELCACHE.signleQuoteStart) {
@@ -368,7 +371,7 @@
               return "\'\"+" + ( GLOBELOPTION.langpath + py) + "+\"\'";
           }
       } else {
-          return (GLOBELOPTION.langpath + py);
+          return ("o.$t('"+GLOBELOPTION.langpath + py +"')");
 
           if (GLOBELCACHE.signleQuoteStart) {
               return "\'+" + ( GLOBELOPTION.langpath + py) + "+\'";

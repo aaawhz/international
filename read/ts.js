@@ -2,7 +2,7 @@ var rf=require("fs");
 
 var Regs = require("./regs");
 var data=rf.readFileSync("origin.js","utf-8");  
-var repeat = require("./repeat");
+ 
 var str = '';
 var resstr = '';
 var result = '';
