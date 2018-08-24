@@ -371,7 +371,7 @@
               return "\'\"+" + ( GLOBELOPTION.langpath + py) + "+\"\'";
           }
       } else {
-          return ("o.$t('"+GLOBELOPTION.langpath + py +"')");
+          return ("this.$t('"+GLOBELOPTION.langpath + py +"')");
 
           if (GLOBELCACHE.signleQuoteStart) {
               return "\'+" + ( GLOBELOPTION.langpath + py) + "+\'";

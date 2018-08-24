@@ -99,7 +99,7 @@ for (var i = 0; i < data.length; i++) {
     }
  
     //如果是回车，单行注释失效
-    if (item == enterchar && isSingglezs) {
+    if ( (item == enterchar|| item=='\n') && isSingglezs) {
         //console.log(ditem)
         iszs = false;
         isSingglezs = false;
@@ -113,7 +113,7 @@ for (var i = 0; i < data.length; i++) {
     //如果是正则， / 开头， 就不匹配继续加, 这里要先判断，因为字符串中也有/
     //比如 /["]/.test("海南岛")  需要排除掉  /["]/， 再进行引号匹配
     // 并且避免掉 // /* */ 单行和多行注释
-    if(!iszs && !matchQuote && !isReg &&item == sprit && prevValue != sprit && nextValue != sprit && nextValue != '*' && prevValue != '*'){
+    if(!iszs && !matchQuote && !isReg && item == sprit && prevValue != sprit && nextValue != sprit && nextValue != '*' && prevValue != '*'){
     	isReg = true;
  
     	regPos = i;
@@ -125,7 +125,7 @@ for (var i = 0; i < data.length; i++) {
     console.log('item     '+item)*/
     //首先得不在注释中，不在正则中， 才去判断是否是引号开头， 而且不能是\"开头的
     if (!iszs && !isReg && spliterRe.test(item) && (data[i - 1] && data[i - 1] != "\\")) {
-    	//console.log('c       '+isReg )
+    	console.log('c       '+isReg )
         //已经匹配到了引号
         matchQuote = true;
         str = '';
