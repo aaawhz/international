@@ -223,11 +223,13 @@ for (var i = 0; i < data.length; i++) {
  		matchQuote = false;
  
  	}
-
+     
     //如果要换行了， 把被替换掉的文字追加上去
-    if(nextValue == enterchar && Regs.GLOBELCACHE.hasTrans ){
+    if((nextValue == enterchar || nextValue == '\n') && Regs.GLOBELCACHE.hasTrans ){
     	//result[i-1] = '';
-    	result += '//'+readzs.join('  ||  ');
+        result += '//'+readzs.join('  ||  ');
+        
+        console.log( 333333333)
     	//result += item;
     	//清空数组
     	readzs.splice(0,readzs.length);

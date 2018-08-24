@@ -5,7 +5,7 @@
       msg = dictionaryTable.login[code];
 
       if (!msg) {
-        this.$message.success(o.$t('message.youxiangbangdingchenggong'));
+        this.$message.success(o.$t('message.youxiangbangdingchenggong'));//邮箱绑定成功
       } else {
         this.$message.error(msg);
       }
@@ -16,7 +16,7 @@
       msg = dictionaryTable.login[code];
 
       if (!msg) {
-        this.$message.success(o.$t('message.caozuochenggong'));
+        this.$message.success(o.$t('message.caozuochenggong'));//操作成功
       } else {
         this.$message.error(msg);
       }
@@ -26,7 +26,7 @@
       msg = dictionaryTable.login[code];
 
       if (!msg) {
-        this.$message.success(o.$t('message.shoujibangdingchenggong'));
+        this.$message.success(o.$t('message.shoujibangdingchenggong'));//手机绑定成功
       } else {
         this.$message.error(msg);
       }
@@ -37,7 +37,7 @@
       msg = dictionaryTable.login[code];
 
       if (!msg) {
-        this.$message.success(o.$t('message.nichenxiugaichenggong'));
+        this.$message.success(o.$t('message.nichenxiugaichenggong'));//昵称修改成功
       } else {
         this.$message.error(msg);
       }
