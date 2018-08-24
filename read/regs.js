@@ -347,13 +347,13 @@
 
       str = str.replace(/^['"]/, '');
       str = str.replace(/['"]$/, '')
-      lagPropery =  '' + GLOBELOPTION.langkey+py +' : ' + str + '\r\n';
+      lagPropery =  '' + GLOBELOPTION.langkey+py +' : "' + str + '",\r\n';
      
-
+        
       fs.appendFileSync("./zh_result.js", lagPropery);
 
       ot.translate(str).then(function(r){
-        fs.appendFileSync("./zh_result.js",  '' + GLOBELOPTION.langkey+ r.result[0] +' : ' + str + '\r\n');
+        fs.appendFileSync("./en_result.js",  '' + GLOBELOPTION.langkey+ py +' : "' +  r.result[0] + '",\r\n');
          
       }) ;
       if (isMix) {

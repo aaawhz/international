@@ -1,4 +1,5 @@
 var rf=require("fs");  
+var fs = rf;
 
 var Regs = require("./regs");
 var data=rf.readFileSync("origin.js","utf-8");  
@@ -44,6 +45,9 @@ var readzs = [];
  var matchQuoteInseverLine = false;
  var matchQuoteInseverLineStr = '';
  var startQuout = '';
+ 
+ fs.writeFileSync('./zh_result.js','');
+ fs.writeFileSync('./en_result.js', '');
 
 /**
    多行注释 - 单行注释 - 正则 - 字符串
