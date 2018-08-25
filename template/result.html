@@ -1,0 +1,71 @@
+﻿<template>
+  <el-main>
+
+    <el-dialog title="输入两步验证码" :visible.sync="dialogFormVisible" width="390">
+      <el-form>
+        <el-form-item>
+          <div>{{$t('message.qsryggsfyzqscdlbyzmRhjOBwcT')}}</div><!--请输入由谷歌身份验证器生成的两步验证码-->
+          <el-input v-model="tfa" auto-complete="off" ref='twoCodeInput' @keyup.enter.native.stop.prevent='login_with_pin()' style="width:200px;margin-top:20px" maxlength="6" type="tel" :class="{ warning: is_warning }"></el-input>
+        </el-form-item>
+      </el-form>
+      <div align=center slot="footer" class="dialog-footer" style="margin-top:-20px">
+
+        <!-- <el-button type="primary" @click="login_with_pin()">验 证</el-button> -->
+
+        <submit-Loading-Button :isloading='isloading_two' :sub='login_with_pin' sub_text='验 证' :not_allow='tow_not_allow'></submit-Loading-Button>
+
+        <div class="gray" style="font-size:12px">{{$t('message.rgnyslndggsfyzqqwmIGIfui')}}<a href="http://baidu.com" style="font-size:12px">{{$t('message.lianluokefu')}}</a><!--如果您遗失了您的谷歌身份验证器，请
+            ||  联络客服-->
+        </div>
+      </div>
+    </el-dialog>
+
+    <el-card class="box-card">
+      <div slot="header" class="clearfix">
+        <span style="font-size:30px">
+          <strong>{{ $t("message.login") }}</strong>
+        </span>
+
+      </div>
+
+      <!-- 登录表单 -->
+      <el-form ref="formsub" label-width="80px" status-icon :rules="rules">
+        <div align=left>{{ $t("message.email_mobile") }}</div>
+        <el-form-item prop='email'>
+          <el-input v-model="email_mobile"></el-input>
+        </el-form-item>
+
+       
+        <div align=left>{{ $t("message.password") }}</div> 
+
+        <el-form-item prop='pass'>
+          <el-input v-model="password" type="password" @keyup.enter.native="login"></el-input>
+        </el-form-item>
+
+        <!-- 登录 -->
+        <submit-Loading-Button :isloading='isloading' :sub='login' :sub_text='login_text' :not_allow='not_allow'  :lineStyle='lineStyle'>
+
+        </submit-Loading-Button>
+
+        <div>
+
+          <span class="gray">{{ $t("message.not_registered") }}</span>
+
+          <router-link to="register">
+            <span class="link">{{ $t("message.fast_register") }}</span>
+          </router-link>
+        </div>
+        <div>
+          <span class="gray">{{ $t("message.forget_password") }}</span>
+
+          <router-link to="reset_password">
+            <span class="link">{{ $t("message.reset_password") }}</span>
+          </router-link>
+        </div>
+      </el-form>
+
+    </el-card>
+
+  </el-main>
+
+</template>
